@@ -1,0 +1,59 @@
+{
+ "autoPublish": true,
+ "draft": false,
+ "descendants": [],
+ "firstCommentText": "Senin poliçende sel teminatı var mı? Hiç baktın mı? Yoruma yaz 👇",
+ "hasNotReadNotes": false,
+ "media": [
+  "https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/<slug>.mp4"
+ ],
+ "mediaAltText": [],
+ "providers": [
+  {
+   "network": "instagram"
+  },
+  {
+   "network": "tiktok"
+  },
+  {
+   "network": "youtube"
+  }
+ ],
+ "publicationDate": {
+  "dateTime": "2026-10-20T19:45:00",
+  "timezone": "Europe/Istanbul"
+ },
+ "shortener": false,
+ "smartLinkData": {
+  "ids": []
+ },
+ "text": "Kirası 200.000 TL'ye varan Ayazağa'da arabalar sel suyunda üst üste bindi. O evlerin ilanlarında tek kelime yoktu: sel. 🌧️\n\nJaponya'da emlakçı sel risk haritasını göstermek zorunda. ABD'de Zillow sel puanı ekledi, emlak tarafı itiraz edince bir yılda kaldırdı. Çünkü risk görünürse fiyat düşer.\n\nBizde fatura kime kalıyor? Sana. DASK sel zararını ödemez. Konut sigortanda ve kaskonda sel teminatı yoksa zararın tamamı cebinden çıkar.\n\nEv tutmadan önce: taşkın haritasına bak, poliçeni kontrol et.\n\nKaynaklar: İnternet Haber (14 Ekim 2026 görüntüleri, @asayisberkemal34_), Japonya Arazi Bakanlığı yönetmeliği (28 Ağustos 2020), RISMedia (2 Aralık 2025), Türkgün (16 Ekim 2026).\nYatırım tavsiyesi değildir.\n\n#sel #konut #sigorta #dask #paranindili",
+ "instagramData": {
+  "type": "REEL",
+  "showReelOnFeed": true,
+  "isAiGenerated": false
+ },
+ "tiktokData": {
+  "privacyOption": "PUBLIC_TO_EVERYONE",
+  "title": "200 bin kiralık evleri sel bastı, zararı kim ödüyor?",
+  "isAigc": false,
+  "disableComment": false,
+  "disableDuet": false,
+  "disableStitch": false
+ },
+ "youtubeData": {
+  "title": "Ayazağa'da 200 Bin TL Kiralık Evleri Sel Bastı: Zararı Kim Ödüyor? #shorts",
+  "type": "short",
+  "privacy": "public",
+  "tags": [
+   "sel",
+   "konut",
+   "sigorta",
+   "dask",
+   "paranindili"
+  ],
+  "category": "EDUCATION",
+  "madeForKids": false,
+  "isAiGeneratedContent": false
+ }
+}

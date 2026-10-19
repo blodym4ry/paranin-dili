@@ -1,0 +1,85 @@
+{
+  "account": "@atamertuysaler",
+  "brand": "Paranın Dili",
+  "metricool": {
+    "blogId": "7491089",
+    "timezone": "Europe/Istanbul",
+    "postTime": "19:45:00",
+    "postDays": [
+      "Mon",
+      "Wed",
+      "Fri",
+      "Sun"
+    ]
+  },
+  "heygen": {
+    "voiceId": "53aac87758ba4784bfb3eb88ff0057df",
+    "looks": {
+      "olive_glasses": {
+        "avatarId": "c34fcfe9a04042ac9c01a11153e0d1ad",
+        "engine": {
+          "type": "avatar_v",
+          "reference_look_id": "f0df07495ccc48c5a90c06390f547b4b"
+        },
+        "note": "Olive-shirted professional with glasses — Ata asked for this look (Oct 19)"
+      },
+      "navy_turtleneck": {
+        "avatarId": "e4ab7fb6f8044cb0a77121037c38a9ed",
+        "engine": {
+          "type": "avatar_v",
+          "reference_look_id": "f0df07495ccc48c5a90c06390f547b4b"
+        },
+        "note": "Person in navy turtleneck glasses — Ata asked for it (Efsane Cuma)"
+      },
+      "hoodie_glasses": {
+        "avatarId": "bca40a0e20344e1aa34c07714a1e7f64",
+        "engine": {
+          "type": "avatar_v",
+          "reference_look_id": "f0df07495ccc48c5a90c06390f547b4b"
+        },
+        "note": "Casual hoodie wearer in glasses"
+      },
+      "street_hoodie_seated": {
+        "avatarId": "1bc300c172bab1a26f5803e26754a687",
+        "engine": {
+          "type": "avatar_v",
+          "reference_look_id": "f0df07495ccc48c5a90c06390f547b4b"
+        },
+        "note": "atamert street hoodie seated"
+      }
+    },
+    "banned_looks": [
+      "Person in grey sweater",
+      "Person in white shirt",
+      "Professional in navy blazer",
+      "Professional in white shirt"
+    ],
+    "aspectRatio": "9:16",
+    "resolution": "1080p",
+    "caption": {
+      "file_format": "srt"
+    },
+    "credits_per_second_estimate": 1.05,
+    "target_seconds": [
+      45,
+      62
+    ],
+    "look_rotation": [
+      "olive_glasses",
+      "navy_turtleneck",
+      "olive_glasses",
+      "hoodie_glasses",
+      "navy_turtleneck",
+      "street_hoodie_seated"
+    ]
+  },
+  "public_media_base": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/",
+  "whisper_model_release": "https://github.com/blodym4ry/paranin-dili/releases/download/models-v1/",
+  "rules": {
+    "ai_label": "OFF on all platforms (instagramData.isAiGenerated=false, tiktokData.isAigc=false, youtubeData.isAiGeneratedContent=false) — Ata's explicit choice",
+    "instagram_type": "finance/para/altın/kripto/vergi/borsa topics -> REEL; anything off-profile -> TRIAL_REEL",
+    "youtube": "type short, category EDUCATION, madeForKids false, privacy public",
+    "tiktok": "PUBLIC_TO_EVERYONE",
+    "metadata": "never strip or alter provenance (C2PA) metadata on files"
+  }
+}
