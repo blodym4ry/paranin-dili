@@ -20,16 +20,39 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 - Profil dışı/deneme konusu ise Instagram tipi TRIAL_REEL, finans konusu ise REEL.
 
 ## 2. Senaryo (45–62 sn, ~150 kelime/dk → 115–150 kelime)
-Yapı: **Hook (ilk 2 cümle) + kaliteli bilgi + tek CTA + hook'u yankılayan döngü cümlesi.**
-- Her cümle ya veri, ya mekanizma, ya aksiyon taşır. Dolgu yok. Selam/giriş yok.
-- 3 farklı hook yaz, `python3 tools/hookscore_tr.py hooks.txt` ile puanla; en yüksek ≥ 70 olmalı (değilse yeniden yaz).
+**İskelet (sırayı bozma; kısa videoda blokları kısalt, bölüm atlama):**
+| Bölüm | Süre | Görevi | Avatar? |
+|---|---|---|---|
+| 1. Kanca | 0–3 sn | Selamsız, ilk kelimeden konuya gir. Tek kişiye, net bir derde seslen. Somut rakam. Cevabı verme, merak boşluğu aç. | EVET |
+| 2. Kilit | 3–8 sn | "Sonuna kadar izlersem ne kazanırım?" sorusunu tek cümleyle cevapla + yol haritası ("iki tuzak var, ikincisini kimse söylemiyor"). Kancayı tekrar etme, ilerlet. | evet (kancayla aynı parça) |
+| 3. Blok 1 | ~10 sn | Tek fikir. Önce söyle, sonra rakam/örnekle göster. | hayır (grafik) |
+| 4. Ara kanca 1 | 1 cümle | Sıradakini büyüt / beklentiyi ters çevir / soru sor / atlarsa kaybını söyle. | vurgu adayı |
+| 5. Blok 2 | ~10 sn | Tek fikir, somut örnek. | hayır |
+| 6. Ara kanca 2 | 1 cümle (isteğe bağlı) | Aynı teknik, farklı cümle. | vurgu adayı |
+| 7. Blok 3 | ~8 sn (isteğe bağlı) | Uygulama: izleyicinin bugün yapacağı şey. | hayır |
+| 8. Kapanış | 1 cümle | Kilitte verilen sözü teslim ettiğini tek cümlede özetle. | EVET |
+| 9. CTA + döngü | son 3–5 sn | Tek eylem, değeri somut (ne kazanacak). Son cümle ilk cümleye bağlansın (döngü). Veda yok. | EVET |
+Avatar parçaları (§3) doğal olarak: [Kanca+Kilit], 1–2 ara kancadan biri, [Kapanış+CTA].
+Ara kancada görüntü de değişsin (yeni sahne düzeni, zoom, SFX) — söz ve görüntü birlikte "yeni bölüm" desin.
+
+**Yazım kuralları:**
+- Her cümle ya veri, ya mekanizma, ya aksiyon taşır. Dolgu ("aslında", "yani", "bu videoda") yok. Aynı fikri iki kez söyleme.
+- Cümleleri "ama" ve "bu yüzden" ile bağla, "ve sonra" ile dizme. Bir cümle bir nefes; sesli okununca takılan cümleyi kısalt.
 - Sayıları **yazıyla** yaz (ör. "yüzde kırk dört", "yüz bin lira") — TTS telaffuzu için şart.
-- Tahmin/garanti yok, yatırım tavsiyesi yok; "yaklaşık", tarih ve kaynak belirt.
+- Tahmin/garanti yok, yatırım tavsiyesi yok; "yaklaşık", tarih ve kaynak belirt. Rakam uydurma.
+- **CTA:** Ata yokken DM'den hediye gönderecek kimse yok → "yoruma KELİME yaz, DM'den göndereyim" türü CTA KULLANMA.
+  Tek eylem seç: **kaydet** (varsayılan; "… öncesi kaydet" gibi bağlamlı) ya da tek soruluk yorum ("senin maaşın hangi dilimde? yaz").
+- 3 farklı kanca yaz (farklı formüller: "X isen Y yapmayı bırak", "herkes X diyor, tersi doğru", "X yaşıyorsan sebebi Y", "N şey var, sonuncusunu kimse söylemiyor", "bunu bilseydim X kaybetmezdim"),
+  `python3 tools/hookscore_tr.py hooks.txt` ile puanla; en yüksek ≥ 70 olmalı (değilse yeniden yaz).
 - `python3 tools/beats.py script.txt --target 55` ile süre kontrolü.
-- **Bağımsız inceleme:** Agent aracıyla taze bir alt-ajan aç; ona sadece senaryoyu + kaynak linklerini ver ve şu rubrikle PASS/FAIL iste:
-  doğruluk (her rakam kaynağıyla tutuyor mu), abartı/garanti iddiası, hukuki risk, hook gücü, dolgu cümle, tek CTA, döngü cümlesi.
-  FAIL ise düzelt, tekrar incelet. PASS olmadan HeyGen'e geçme.
-- Klasör: `videos/<YYYY-MM-DD>-<kisa-slug>/` → `script.txt` (sadece konuşulacak metin), `kaynaklar.md`.
+
+**Bağımsız inceleme:** Agent aracıyla taze bir alt-ajan aç; ona sadece senaryoyu + kaynak linklerini ver, PASS/FAIL ve gerekçe iste. Rubrik:
+1. Doğruluk: her rakam kaynağıyla birebir tutuyor mu; tarih var mı. 2. Abartı/garanti/yatırım tavsiyesi/hukuki risk yok.
+3. İlk cümle selamsız konuya giriyor, kime konuşulduğu belli, merak boşluğu açık. 4. Kilit cümlesi sonunda ne kazanılacağını söylüyor.
+5. Her blok tek fikir + örnek; bloklar arasında ara kanca var. 6. Tekrar eden fikir/dolgu kelime yok.
+7. Kapanış tek cümle; tek CTA; DM/hediye vaadi yok. 8. Son cümle ilk cümleye bağlanıyor. 9. Süre 45–62 sn.
+FAIL ise düzelt, tekrar incelet. PASS olmadan seslendirmeye geçme.
+- Klasör: `videos/<YYYY-MM-DD>-<kisa-slug>/` → `script.txt` (sadece konuşulacak metin), `iskelet.md` (bölüm etiketli hali), `kaynaklar.md`.
 
 ## 3. Ses + avatar (AYRIK YÖNTEM — kredi tasarrufu, Ata'nın kesin kuralı)
 Ata ekranda MÜMKÜN OLDUĞUNCA AZ görünür: giriş (hook), kapanış (CTA + döngü) ve ortada 1–2 kritik vurgu anı.
