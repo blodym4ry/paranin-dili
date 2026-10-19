@@ -102,6 +102,9 @@ Bu yol 3 kat kredi harcar; kullanırsan log'a nedenini yaz.
 - `git add public/<slug>.mp4 videos/<slug> && git commit -m "video: <slug>" && git push` (push başarısızsa `git pull --rebase` sonra tekrar).
 - Medya URL: `https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/<slug>.mp4` — `curl -sI` ile 200 olduğunu doğrula.
 - Paylaşım metni (`videos/<slug>/paylasim.txt`): ilk satır hook + 📌 "kaydet" CTA; 3–5 kısa paragraf veri; "Kaynaklar: ..." ; "Yatırım tavsiyesi değildir."; 3–5 hashtag (#paranindili dahil). İlk yorum: tek soru. YouTube başlığı (#shorts ile), TikTok başlığı.
+- **Kapak (seri görünümü, her videoda zorunlu):** `python3 engine/cover.py <slug> "<başlık, *kırmızı kelimeler* yıldızla>" "<KONU · AY YIL>" $PD_WORK/<slug>/seg_00.mp4 1.0`
+  Başlık = kancanın en kısa hali (≤38 karakter, 2–3 satır), 1–2 kelimesi kırmızı. Çıktıyı Read ile aç: yüz net, göz açık, ağız kapalıya yakın kare seç (gerekirse saniyeyi değiştir).
+  `public/covers/<slug>.jpg` → commit + push; URL `https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/covers/<slug>.jpg`, post bilgisine `"videoThumbnailUrl"` olarak ekle.
 - `createScheduledPost` (blogId `7491089`, date `<YYYY-MM-DD>T19:45:00+03:00`). Şablon `videos/ornek-mevduat/post_info.json`. Kurallar `config.json` → `rules`.
   "Failed to normalize media" gelirse 2 dk bekle ve bir kez tekrar dene.
 - `getScheduledPosts` ile postun oluştuğunu doğrula.
