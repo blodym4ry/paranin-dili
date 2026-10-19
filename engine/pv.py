@@ -79,8 +79,29 @@ def scenes_at(hf):
     return st, at
 
 
+def avatar_guard(w, hf):
+    """split mode: every scene that shows the avatar must sit inside an avatar clip (else black frames show)."""
+    sj = os.path.join(w, 'segments.json')
+    if not os.path.exists(sj): return True
+    segs = json.load(open(sj))['segments']
+    html = open(os.path.join(hf, 'index.html')).read()
+    SC = json.loads(re.search(r'SC=(\[.*?\]), AV=', html).group(1))
+    AV = json.loads(re.search(r'AV=(\{.*?\});', html).group(1))
+    ok, total = True, json.load(open(sj))['total']
+    shown = 0.0
+    for sid, a, b in SC:
+        if not AV.get(sid): continue
+        shown += b - a
+        # window fades in at scene start-0.05s and is gone by scene end-0.05s: the clip must cover that span
+        if not any(s['a'] <= a - .05 + .005 and b - .05 <= s['b'] for s in segs):
+            print(f'AVATAR GUARD FAIL: scene {sid} {a:.2f}-{b:.2f} shows avatar outside every avatar clip'); ok = False
+    print(f'avatar on screen {shown:.1f}s of {total:.1f}s ({shown / total * 100:.0f}%)')
+    return ok
+
+
 def check(slug):
     vd, w, hf = paths(slug)
+    if not avatar_guard(w, hf): sys.exit(1)
     st, at = scenes_at(hf)
     out = sh(f'npx --yes {HF} check --samples=80 --at {",".join(map(str, at))} 2>&1 | tail -25', cwd=hf, capture=True)
     print(out)
