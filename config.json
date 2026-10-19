@@ -81,5 +81,6 @@
     "tiktok": "PUBLIC_TO_EVERYONE",
     "metadata": "never strip or alter provenance (C2PA) metadata on files"
   },
-  "whisper_model": "raw.githubusercontent.com/blodym4ry/paranin-dili/models/whisper-turbo (branch models, 95MB parts)"
+  "whisper_model": "raw.githubusercontent.com/blodym4ry/paranin-dili/models/whisper-turbo (branch models, 95MB parts)",
+  "auto_start_date": "2026-11-13"
 }

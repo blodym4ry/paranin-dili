@@ -13,7 +13,7 @@ if [ ! -f "$M/model.bin.ok" ]; then
   BASE=https://raw.githubusercontent.com/blodym4ry/paranin-dili/models/whisper-turbo
   for f in config.json preprocessor_config.json tokenizer.json vocabulary.json parts.txt model.bin.sha256; do curl -sSLf --retry 3 -o "$M/$f" "$BASE/$f"; done
   # parallel part download (resumable: finished parts are kept), then atomic assemble
-  xargs -P 6 -I{} sh -c '[ -s "'"$M"'/parts/{}.done" ] || { curl -sSLf --retry 3 -o "'"$M"'/parts/{}" "'"$BASE"'/{}" && touch "'"$M"'/parts/{}.done"; }' < "$M/parts.txt"
+  xargs -P 6 -I{} sh -c '[ -f "'"$M"'/parts/{}.done" ] || { curl -sSLf --retry 3 -o "'"$M"'/parts/{}" "'"$BASE"'/{}" && touch "'"$M"'/parts/{}.done"; }' < "$M/parts.txt"
   rm -f "$M/model.bin.tmp"; for p in $(cat "$M/parts.txt"); do cat "$M/parts/$p" >> "$M/model.bin.tmp"; done
   if (cd "$M" && echo "$(cat model.bin.sha256)  model.bin.tmp" | sha256sum -c -); then
     mv "$M/model.bin.tmp" "$M/model.bin" && touch "$M/model.bin.ok" && rm -rf "$M/parts" && echo "model.bin: OK"

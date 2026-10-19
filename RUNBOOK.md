@@ -8,6 +8,7 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 1. `bash setup.sh` → `SETUP_OK` görmelisin.
 2. `git pull --rebase` (repo güncel olsun).
 3. **Hangi slot?** Bugünden itibaren 2 gün sonraki ilk paylaşım günü (Pzt/Çar/Cum/Paz, 19:45 İstanbul).
+   `config.json` → `auto_start_date` öncesindeki slotlar elle yönetilir: hesaplanan slot bu tarihten önceyse hiçbir şey üretme, log yazma, tek cümleyle bitir.
    Metricool `getScheduledPosts` (blogId 7491089, timezone Europe/Istanbul) ile o güne bak.
    O gün zaten bir post varsa sonraki boş paylaşım gününü al. 7 gün içinde boş slot yoksa: log yaz, bitir.
 4. **Kredi kontrolü:** `mcp__heygen__get_current_user`. Gerekli ≈ hedef süre(sn) × 1.05 + 10.
