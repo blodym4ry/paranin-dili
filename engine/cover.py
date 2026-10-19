@@ -38,8 +38,9 @@ body{position:relative;font-family:'Inter Tight';color:#161412}
 <script>
 // place the photo under the real title height; keep it inside the grid-safe zone (bottom <= 1620)
 const t=document.getElementById('t'), p=document.getElementById('p');
-const top=t.offsetTop+t.offsetHeight+60, h=Math.min(674, 1620-top), w=Math.round(h*480/674);
-p.style.top=top+'px'; p.style.height=h+'px'; p.style.width=w+'px'; p.style.left=Math.round((1080-w)/2)+'px';
+function place(){const top=t.offsetTop+t.offsetHeight+60, h=Math.min(674, 1620-top), w=Math.round(h*480/674);
+ p.style.top=top+'px'; p.style.height=h+'px'; p.style.width=w+'px'; p.style.left=Math.round((1080-w)/2)+'px';}
+place(); document.fonts.ready.then(place);
 </script>
 </body></html>'''
 
