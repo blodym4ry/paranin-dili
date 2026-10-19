@@ -74,12 +74,12 @@
     ]
   },
   "public_media_base": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/",
-  "whisper_model_release": "https://github.com/blodym4ry/paranin-dili/releases/download/models-v1/",
   "rules": {
     "ai_label": "OFF on all platforms (instagramData.isAiGenerated=false, tiktokData.isAigc=false, youtubeData.isAiGeneratedContent=false) — Ata's explicit choice",
     "instagram_type": "finance/para/altın/kripto/vergi/borsa topics -> REEL; anything off-profile -> TRIAL_REEL",
     "youtube": "type short, category EDUCATION, madeForKids false, privacy public",
     "tiktok": "PUBLIC_TO_EVERYONE",
     "metadata": "never strip or alter provenance (C2PA) metadata on files"
-  }
+  },
+  "whisper_model": "raw.githubusercontent.com/blodym4ry/paranin-dili/models/whisper-turbo (branch models, 95MB parts)"
 }

@@ -6,11 +6,11 @@ pip install --quiet --break-system-packages faster-whisper num2words scipy numpy
 M=${WHISPER_MODEL:-$HOME/models/whisper-turbo}
 if [ ! -s "$M/model.bin" ]; then
   mkdir -p "$M"
-  BASE=https://github.com/blodym4ry/paranin-dili/releases/download/models-v1
-  for f in config.json preprocessor_config.json tokenizer.json vocabulary.json; do curl -sSLf -o "$M/$f" "$BASE/$f"; done
+  BASE=https://raw.githubusercontent.com/blodym4ry/paranin-dili/models/whisper-turbo
+  for f in config.json preprocessor_config.json tokenizer.json vocabulary.json parts.txt model.bin.sha256; do curl -sSLf -o "$M/$f" "$BASE/$f"; done
   rm -f "$M/model.bin"
-  for p in 00 01; do curl -sSLf "$BASE/model.bin.part$p" >> "$M/model.bin"; done
-  echo "whisper model: $(du -h "$M/model.bin" | cut -f1)"
+  for p in $(cat "$M/parts.txt"); do curl -sSLf --retry 3 "$BASE/$p" >> "$M/model.bin"; done
+  echo "$(cat "$M/model.bin.sha256")  $M/model.bin" | sha256sum -c - || { echo "whisper model checksum FAILED"; rm -f "$M/model.bin"; }
 fi
 # warm the HyperFrames CLI cache
 npx --yes hyperframes@0.8.174 --version >/dev/null 2>&1 || true
