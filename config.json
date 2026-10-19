@@ -75,6 +75,12 @@
       "speech": "~1 credit per 5s (measured Oct 19, 5.1s -> 1)",
       "avatar": "1 credit per second (measured)",
       "per_video_target": "20-30"
+    },
+    "speech": {
+      "engine": "heygen_voice",
+      "language": "tr",
+      "speed": 1,
+      "note": "Ata approved this voice on Oct 19 (split test)"
     }
   },
   "public_media_base": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/",

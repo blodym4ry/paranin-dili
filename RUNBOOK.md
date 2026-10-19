@@ -34,7 +34,7 @@ Yapı: **Hook (ilk 2 cümle) + kaliteli bilgi + tek CTA + hook'u yankılayan dö
 ## 3. Ses + avatar (AYRIK YÖNTEM — kredi tasarrufu, Ata'nın kesin kuralı)
 Ata ekranda MÜMKÜN OLDUĞUNCA AZ görünür: giriş (hook), kapanış (CTA + döngü) ve ortada 1–2 kritik vurgu anı.
 Toplam avatar süresi videonun %35'ini geçmez (hedef 15–20 sn). Geri kalan her şey sadece ses + grafik.
-1. **Tam seslendirme:** `mcp__heygen__create_speech` text = script.txt'nin tamamı, voiceId `53aac87758ba4784bfb3eb88ff0057df`, language `tr`.
+1. **Tam seslendirme:** `mcp__heygen__create_speech` text = script.txt'nin tamamı, voiceId `53aac87758ba4784bfb3eb88ff0057df`, language `tr`, **engine `heygen_voice`** (Ata bu sesi onayladı, 19 Ekim — motoru değiştirme), speed 1.
    Dönen `audio_url`'yi `curl -sSLf -o $PD_WORK/<slug>/speech.wav` ile indir; dönen `word_timestamps` listesini aynen
    `$PD_WORK/<slug>/words.json` olarak kaydet (`PD_WORK` varsayılan `~/pd_work`).
 2. **Telaffuz:** `ffmpeg -y -i speech.wav -ac 2 -ar 48000 voice.wav` (WORK içinde) sonra `python3 engine/pv.py tel <slug>`.
