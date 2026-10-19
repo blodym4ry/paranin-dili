@@ -11,7 +11,7 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
    `config.json` → `auto_start_date` öncesindeki slotlar elle yönetilir: hesaplanan slot bu tarihten önceyse hiçbir şey üretme, log yazma, tek cümleyle bitir.
    Metricool `getScheduledPosts` (blogId 7491089, timezone Europe/Istanbul) ile o güne bak.
    O gün zaten bir post varsa sonraki boş paylaşım gününü al. 7 gün içinde boş slot yoksa: log yaz, bitir.
-4. **Kredi kontrolü:** `mcp__heygen__get_current_user`. Gerekli ≈ hedef süre(sn) × 1.05 + 10.
+4. **Kredi kontrolü:** `mcp__heygen__get_current_user`. Gerekli ≈ 25 (seslendirme ~2–5 + avatar ~15–20; ayrık yöntem, §3).
    Yetmiyorsa: videoyu üretme; `log.md`'ye "KREDİ YETERSİZ" yaz, push et, oturum sonunda bunu net söyle (bildirim gider). Bitir.
 
 ## 1. Konu
@@ -31,26 +31,37 @@ Yapı: **Hook (ilk 2 cümle) + kaliteli bilgi + tek CTA + hook'u yankılayan dö
   FAIL ise düzelt, tekrar incelet. PASS olmadan HeyGen'e geçme.
 - Klasör: `videos/<YYYY-MM-DD>-<kisa-slug>/` → `script.txt` (sadece konuşulacak metin), `kaynaklar.md`.
 
-## 3. HeyGen
-- Look: `config.json` → `look_rotation` sırasından, `log.md`'deki son kullanılan look'tan sonraki. Yasaklı look'ları asla kullanma.
-- `mcp__heygen__create_video_from_avatar`: avatarId, script (tam metin), voiceId `53aac87758ba4784bfb3eb88ff0057df`,
-  engine `{"type":"avatar_v","reference_look_id":"f0df07495ccc48c5a90c06390f547b4b"}`, aspectRatio `9:16`, resolution `1080p`,
-  caption `{"file_format":"srt"}`, title = slug.
-- `get_video` ile 30 sn arayla bekle (asla yeniden oluşturma). Tamamlanınca:
-  `curl -sSLf -o $PD_WORK/<slug>/avatar.mp4 "<video_url>"` ve `curl -sSLf -o $PD_WORK/<slug>/avatar.srt "<subtitle_url>"`
-  (`PD_WORK` varsayılan `~/pd_work`).
+## 3. Ses + avatar (AYRIK YÖNTEM — kredi tasarrufu, Ata'nın kesin kuralı)
+Ata ekranda MÜMKÜN OLDUĞUNCA AZ görünür: giriş (hook), kapanış (CTA + döngü) ve ortada 1–2 kritik vurgu anı.
+Toplam avatar süresi videonun %35'ini geçmez (hedef 15–20 sn). Geri kalan her şey sadece ses + grafik.
+1. **Tam seslendirme:** `mcp__heygen__create_speech` text = script.txt'nin tamamı, voiceId `53aac87758ba4784bfb3eb88ff0057df`, language `tr`.
+   Dönen `audio_url`'yi `curl -sSLf -o $PD_WORK/<slug>/speech.wav` ile indir; dönen `word_timestamps` listesini aynen
+   `$PD_WORK/<slug>/words.json` olarak kaydet (`PD_WORK` varsayılan `~/pd_work`).
+2. **Telaffuz:** `ffmpeg -y -i speech.wav -ac 2 -ar 48000 voice.wav` (WORK içinde) sonra `python3 engine/pv.py tel <slug>`.
+   Çoğu işaret rakam/kesme işareti biçim farkıdır. Anlamı bozan gerçek hata varsa script'i düzelt (yazıyla/farklı kelime) ve sesi yeniden üret (ucuz).
+3. **Cümleleri seç:** `python3 engine/split.py list <slug>` → numaralı cümleler. Avatar cümlelerini seç: ilk 1–2 (hook), son 1–2 (CTA+döngü),
+   ortadan en fazla 2 vurgu cümlesi. `python3 engine/split.py cut <slug> 0,1,7,12,13` → `seg_XX.wav` parçaları, `voice.wav`, altyazı, `segments.json`.
+   %35 uyarısı çıkarsa daha az cümle seç.
+4. **Ses parçalarını yayınla:** `mkdir -p public/audio/<slug> && cp $PD_WORK/<slug>/seg_*.wav public/audio/<slug>/` → commit + push.
+   URL: `https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/audio/<slug>/seg_XX.wav` (`curl -sI` 200 olmalı).
+5. **Kredi kontrolü:** gereken ≈ on-camera saniye + 5. `get_current_user` ile kontrol et; yetmiyorsa DUR (bkz. §0).
+6. **Avatar klipleri:** her parça için `mcp__heygen__create_video_from_avatar`: avatarId (look rotasyonu, `config.json`), `audioUrl` = parça URL'si,
+   engine `{"type":"avatar_v","reference_look_id":"f0df07495ccc48c5a90c06390f547b4b"}`, aspectRatio `9:16`, resolution `1080p`, title `<slug>-seg_XX`.
+   Hepsini gönder, sonra `get_video` ile 30 sn arayla bekle (asla yeniden oluşturma). Bitenleri `curl -sSLf -o $PD_WORK/<slug>/seg_XX.mp4 "<video_url>"`.
+   Look: `config.json` → `look_rotation` sırasından, `log.md`'deki son kullanılan look'tan sonraki; aynı videodaki tüm parçalar AYNI look. Yasaklı look'ları asla kullanma.
+7. `python3 engine/split.py join <slug>` → `avatar_cut.mov` (avatar klipleri doğru saniyelerde). **`pv.py prep` ÇALIŞTIRMA** (ayrık yöntemde gerekmez).
 
-## 4. Hazırla + telaffuz
-- `python3 engine/pv.py prep <slug>`
-- `python3 engine/pv.py tel <slug>` → işaretli yerler. Çoğu rakam/kesme işareti biçim farkıdır, gerçek hata değildir.
-  Gerçek hata şüphesinde o bölümü `--prompt` ile tekrar dinle. Anlamı bozan gerçek bir telaffuz hatası varsa ve kredi yetiyorsa
-  sadece o cümleyi yeniden üretip ffmpeg ile ekle; yetmiyorsa log'a not düş ve devam et.
+## 4. (eski tam-avatar yöntemi — sadece ayrık yöntem çalışmazsa)
+Tam script ile tek `create_video_from_avatar` (script + voiceId + caption srt), `avatar.mp4`/`avatar.srt` indir, `pv.py prep`, `pv.py tel`.
+Bu yol 3 kat kredi harcar; kullanırsan log'a nedenini yaz.
 
 ## 5. Kurgu (spec.py)
 - Örnekler: `videos/ornek-mevduat/spec.py` (Gazete stili), `videos/ornek-indirim/spec.py` (Kinetik stili). Birini kopyala, yeni senaryoya göre yeniden yaz.
 - **Stil rotasyonu:** her videoda farklı: Gazete (`CSS_FILE='gazete.css.html'`) ↔ Kinetik (varsayılan css) ↔ alt-avatar düzeni. Son kullanılanı `log.md`'den bak, aynısını üst üste kullanma. Sahne düzenlerini ve animasyonları her seferinde değiştir.
 - **Avatar kuralları (Ata'nın isteği, kesin):**
   - Ata sadece giriş (hook), 1–2 vurgu anı, CTA ve kapanışta görünür. Diğer sahnelerde `AV['sX'] = None` → sadece grafik.
+  - Avatarlı sahne, bir avatar parçasının (segments.json) zaman aralığı İÇİNDE olmalı; sahne sınırlarını cümle başlarına koy (`A('ilk kelime') - .1`). `pv.py check` bunu denetler (AVATAR GUARD).
+  - İlk sahne avatarsız da olabilir ama varsayılan: hook'ta Ata büyük pencerede.
   - Pencere oranı her zaman ~740:1040 (dikey). Saç ve çene ASLA kesilmez. Geniş/kare pencere yasak.
     Örn. büyük: `[250, 375, 580, 815, 6]`, köşe: `[700, 400, 320, 450, 6]`.
   - Avatarsız sahneler boşluk kalmasın diye içerik `translateY(170px)` ile ortalanabilir (EXTRA_CSS).
