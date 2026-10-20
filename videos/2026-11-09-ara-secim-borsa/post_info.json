@@ -1,0 +1,60 @@
+{
+ "autoPublish": true,
+ "draft": false,
+ "descendants": [],
+ "hasNotReadNotes": false,
+ "firstCommentText": "Sence bu seri 21'de 21 olur mu? Yoruma yaz 👇",
+ "media": [
+  "https://raw.githubusercontent.com/blodym4ry/paranin-dili/1e888b136ec23d1a2b25c7893f486586b389bcda/public/2026-11-09-ara-secim-borsa.mp4"
+ ],
+ "videoThumbnailUrl": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/1e888b136ec23d1a2b25c7893f486586b389bcda/public/covers/2026-11-09-ara-secim-borsa.jpg",
+ "mediaAltText": [],
+ "providers": [
+  {
+   "network": "instagram"
+  },
+  {
+   "network": "tiktok"
+  },
+  {
+   "network": "youtube"
+  }
+ ],
+ "publicationDate": {
+  "dateTime": "2026-11-09T19:45:00",
+  "timezone": "Europe/Istanbul"
+ },
+ "shortener": false,
+ "smartLinkData": {
+  "ids": []
+ },
+ "text": "ABD'de ara seçimden 1 yıl sonra borsa 20'de 20 yaptı. Sebebi kazanan parti değil. Seçim istatistiğine bakmadan önce kaydet 📌\n\n1946'dan beri 20 ara seçim oldu. Carson Group verisine göre S&P 500, her birinde seçim gününden 1 yıl sonra daha yukarıdaydı; ortalama getiri yaklaşık %15. Capital Group'a göre 1950'den beri ara seçim sonrası 1 yıllık ortalama %15,4, diğer yılların aynı döneminin neredeyse 2 katı.\n\nMekanizma: belirsizlik. Seçim yılında piyasa Kongre'nin kime kalacağını bilmez, dalgalanma artar. 1930–2022 arasında ara seçim yıllarında S&P 500'ün ortalama getirisi %4,7, diğer yıllarda %9,5. Sonuç netleşince belirsizlik primi azalır.\n\nTuzak: 20 seçim küçük bir örneklem. Seriyi daha geriye götürünce ara seçim sonrası düşüş yılları da var. Geçmiş performans geleceği garanti etmez; bu video seçim sonucunu ya da tek bir hisseyi yorumlamıyor.\n\nKaynaklar: Carson Group / Ryan Detrick (The Wealth Advisor, 5 Ekim 2026) · Capital Group (26 Ocak 2026) · J.P. Morgan Asset Management · U.S. Bank (28 Eylül 2026)\nYatırım tavsiyesi değildir.\n\n#borsa #sp500 #abdsecim #yatirim #paranindili",
+ "instagramData": {
+  "type": "REEL",
+  "showReelOnFeed": true,
+  "isAiGenerated": false
+ },
+ "tiktokData": {
+  "privacyOption": "PUBLIC_TO_EVERYONE",
+  "title": "Ara seçimden 1 yıl sonra borsa 20'de 20 yaptı, sebebi parti değil",
+  "isAigc": false,
+  "disableComment": false,
+  "disableDuet": false,
+  "disableStitch": false
+ },
+ "youtubeData": {
+  "title": "ABD Ara Seçiminden 1 Yıl Sonra Borsa: 20'de 20 Neden? #shorts",
+  "type": "short",
+  "privacy": "public",
+  "tags": [
+   "borsa",
+   "sp500",
+   "abd",
+   "secim",
+   "paranindili"
+  ],
+  "category": "EDUCATION",
+  "madeForKids": false,
+  "isAiGeneratedContent": false
+ }
+}
