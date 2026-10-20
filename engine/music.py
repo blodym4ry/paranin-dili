@@ -125,7 +125,60 @@ def drive(dur, style='trap', seed=7):
     return mix
 
 
+# ---------- 'gerilim' (documentary tension) — default since Ata found trap/phonk "promotional" (20 Eki) ----------
+# Research-led: under narration keep tempo moderate (~85 bpm), no hats/claps/bright arps, dark minor harmony,
+# low sub pulse + soft clock tick for urgency, sparse piano motif; energy comes from drops/section changes, not density.
+def _saw(f, t, n=10): return sum(np.sin(2 * np.pi * f * k * t) / k for k in range(1, n))
+
+
+def tension(dur, drops=(), seed=11, bpm=86):
+    rng = np.random.default_rng(seed)
+    n = int(dur * SR); t = np.arange(n) / SR; beat = 60 / bpm; bar = 4 * beat
+    prog = [(38, [50, 53, 57]), (34, [50, 53, 58]), (31, [50, 55, 58]), (33, [49, 52, 57])]  # Dm Bb Gm A
+    pad, sub, pno, tick, kik = (np.zeros(n) for _ in range(5))
+    nb = int(dur / bar) + 2
+    for b in range(nb):
+        root, ch = prog[b % 4]; s0 = int(b * bar * SR); L = min(n - s0, int(bar * SR) + int(.4 * SR))
+        if L <= 0: break
+        tt = np.arange(L) / SR; e = np.clip(tt / .6, 0, 1) * np.clip((L / SR - tt) / .5, 0, 1)
+        x = sum(_saw(mtof(m) * (1 + d), tt, 6) for m in ch for d in (-.003, .003)) / 6
+        pad[s0:s0 + L] += x * e
+        # sub pulse on 8ths (heartbeat feel), accent on beat
+        for k in range(8):
+            ps = s0 + int(k * beat / 2 * SR); PL = min(n - ps, int(beat / 2 * SR))
+            if PL <= 0: continue
+            ptt = np.arange(PL) / SR
+            sub[ps:ps + PL] += np.sin(2 * np.pi * mtof(root) * ptt) * np.exp(-ptt * 7) * (1 if k % 2 == 0 else .55)
+            # clock tick
+            TL = min(n - ps, int(.03 * SR)); tick[ps:ps + TL] += _hp(rng.standard_normal(TL), 4000)[:TL] * np.exp(-np.arange(TL) / SR * 220) * (.5 if k % 2 else .8)
+        # soft low thump on 1 and 3 from bar 2
+        if b >= 2:
+            for k in (0, 2):
+                ks = s0 + int(k * beat * SR); KL = min(n - ks, int(.35 * SR))
+                if KL > 0: kt = np.arange(KL) / SR; kik[ks:ks + KL] += np.sin(2 * np.pi * (42 + 50 * np.exp(-kt * 30)) * kt) * np.exp(-kt * 9)
+        # sparse piano motif: 3 notes per bar, every other bar
+        if b % 2 == 0:
+            for j, (off, m) in enumerate([(0, ch[2] + 12), (1.5, ch[1] + 12), (3, ch[0] + 12)]):
+                ns = s0 + int(off * beat * SR); NL = min(n - ns, int(2.5 * SR))
+                if NL <= 0: continue
+                nt = np.arange(NL) / SR; f = mtof(m)
+                pno[ns:ns + NL] += (np.sin(2 * np.pi * f * nt) + .4 * np.sin(4 * np.pi * f * nt) + .15 * np.sin(6 * np.pi * f * nt)) * np.exp(-nt * 2.2) * np.minimum(1, nt / .004)
+    # filter slowly opens across the video -> rising urgency
+    pad = _lp(pad, 700) * .9 + _lp(pad, 1600) * np.clip(t / max(dur, 1), 0, 1) * .5
+    mix = .55 * pad + .9 * _lp(sub, 200) + .25 * tick + .45 * _lp(pno, 3000) + .7 * kik
+    # drops: before each section change (riser time) pull music to near-silence, then re-enter
+    g = np.ones(n)
+    for d in drops:
+        a, b2 = int((d - .9) * SR), int((d + .05) * SR)
+        if 0 < a < n:
+            r = np.arange(max(0, a), min(n, b2)); x = (r - a) / max(1, b2 - a)
+            g[r] = np.minimum(g[r], np.clip(1 - x * 4, .12, 1))
+    g = np.convolve(g, np.ones(int(.06 * SR)) / int(.06 * SR), mode='same')
+    return np.tanh(mix * g * 1.1)
+
+
 def style_for(slug):
+    return 'gerilim'  # Ata 20 Eki: trap/phonk/drive "promotional" -> documentary tension is the default
     names = list(STYLES)
     try: return names[int(slug[8:10]) % len(names)]  # YYYY-MM-DD-...: day of month rotates styles
     except ValueError: return names[zlib.crc32(slug.encode()) % len(names)]

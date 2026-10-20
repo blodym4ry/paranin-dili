@@ -26,11 +26,11 @@ def main(edl_p, voice_p, out_p):
     # energetic beat (Ata 20 Eki: eski pad uyutuyordu). Style rotates per video; MUSIC_STYLE env overrides.
     slug = os.environ.get('PD_SLUG', os.path.basename(os.path.dirname(os.path.abspath(out_p))))
     style = os.environ.get('MUSIC_STYLE') or M.style_for(slug)
-    mus = M.drive(dur, style)[:n]
+    mus = (M.tension(dur, [r[0] for r in edl['risers']]) if style == 'gerilim' else M.drive(dur, style))[:n]
     env = np.convolve(np.abs(voice), np.ones(int(.05 * SR)) / int(.05 * SR), mode='same'); venv = env / env.max()
     vr = np.sqrt(np.mean(voice[np.abs(voice) > .01] ** 2)); mr = np.sqrt(np.mean(mus ** 2))
     duck = np.convolve(np.clip(venv * 3, 0, 1), np.ones(int(.15 * SR)) / int(.15 * SR), mode='same')
-    mus = mus / mr * vr * db(float(os.environ.get('MUSIC_DB', -15))) * (1 - .4 * duck)
+    mus = mus / mr * vr * db(float(os.environ.get('MUSIC_DB', -17 if style == 'gerilim' else -15))) * (1 - .4 * duck)
     mus *= np.clip(np.arange(n) / SR / .3, 0, 1) * np.clip((dur - np.arange(n) / SR) / 1.0, 0, 1)
     print('music', style)
     simple = W.buf * db(BUS['whoosh']) + X.buf * db(BUS['simple'])
