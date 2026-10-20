@@ -132,6 +132,44 @@ function fit(){const L=[...w.querySelectorAll('.l')];L.forEach(l=>{let s=330;l.s
 fit();document.fonts.ready.then(fit);
 </script></body></html>"""
 
+THEMES = {'gold': ('#ffb703', '#3a2600'), 'red': ('#ff3b30', '#3a0603'), 'blue': ('#2f7bff', '#04163a'), 'green': ('#22c55e', '#03260f')}
+TPL_SAHNE = """<!doctype html><html lang="tr"><head><meta charset="utf-8"><style>
+__FONTS__
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:__DARK__}
+body{position:relative}
+.bg{position:absolute;inset:-60px;background:url(face.jpg) center 30%/cover;filter:blur(26px) brightness(.45) saturate(1.4)}
+.glow{position:absolute;left:50%;top:880px;width:1500px;height:1500px;margin:-750px 0 0 -750px;border-radius:50%;
+      background:radial-gradient(circle,__ACC__ 0%,rgba(0,0,0,0) 60%);opacity:.55}
+.rays{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 46%,rgba(255,255,255,.07) 0deg 6deg,rgba(255,255,255,0) 6deg 18deg);
+      -webkit-mask:radial-gradient(circle at 50% 46%,#000 0 30%,transparent 70%);mask:radial-gradient(circle at 50% 46%,#000 0 30%,transparent 70%)}
+.back{position:absolute;left:0;right:0;top:290px;text-align:center;font-family:'Anton';text-transform:uppercase;line-height:.9;color:#fff;
+      -webkit-text-stroke:10px #000;paint-order:stroke fill;text-shadow:0 12px 0 #000}
+.prop{position:absolute;font-family:'Noto Color Emoji';filter:drop-shadow(0 18px 18px rgba(0,0,0,.6))}
+.p1{left:-10px;top:760px;font-size:240px;transform:rotate(-14deg)}
+.p2{right:-10px;top:880px;font-size:210px;transform:rotate(12deg)}
+.who{position:absolute;left:50%;bottom:-40px;width:940px;margin-left:-470px;
+     filter:drop-shadow(0 0 0 #fff) drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shadow(0 6px 0 #fff) drop-shadow(0 -6px 0 #fff) drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.fade{position:absolute;left:0;right:0;bottom:0;height:520px;background:linear-gradient(180deg,rgba(0,0,0,0),__DARK__ 85%)}
+.front{position:absolute;left:30px;right:30px;top:1230px;text-align:center;transform:rotate(-3deg)}
+.front span{display:inline-block;font-family:'Anton';text-transform:uppercase;line-height:.92;color:#ffd21f;-webkit-text-stroke:12px #000;paint-order:stroke fill;
+      text-shadow:0 12px 0 #000,0 22px 40px rgba(0,0,0,.7)}
+.front span.w{color:#fff}
+.tag{position:absolute;left:0;right:0;top:1190px;text-align:center}
+.tag b{display:inline-block;font:400 38px 'Anton';letter-spacing:.06em;color:#000;background:__ACC__;padding:4px 20px 6px;transform:rotate(-3deg);box-shadow:6px 6px 0 #000}
+</style></head><body><div class="bg"></div><div class="glow"></div><div class="rays"></div>
+<div class="back"><span id="b" style="display:inline-block">__BACK__</span></div>
+<img class="who" src="cut.png">
+<div class="fade"></div>
+<div class="prop p1">__P1__</div><div class="prop p2">__P2__</div>
+<div class="front" id="f">__FRONT__</div>
+<script>
+function fitOne(el,maxW,start){let s=start;el.style.fontSize=s+'px';el.style.whiteSpace='nowrap';while(s>70&&el.scrollWidth>maxW){s-=6;el.style.fontSize=s+'px';}}
+function fit(){fitOne(document.getElementById('b'),1000,300);document.querySelectorAll('#f span').forEach(x=>fitOne(x,1000,240));
+ const f=document.getElementById('f');let g=0;while(f.offsetTop+f.offsetHeight>1610&&g<20){g++;f.querySelectorAll('span').forEach(x=>x.style.fontSize=(parseFloat(x.style.fontSize)*.95)+'px');}}
+fit();document.fonts.ready.then(fit);
+</script></body></html>"""
+
 
 def main(slug, title, kick, video, at='1.2'):
     out_dir = os.path.join(REPO, 'public', 'covers'); os.makedirs(out_dir, exist_ok=True)
@@ -142,7 +180,18 @@ def main(slug, title, kick, video, at='1.2'):
     t = re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
     style = os.environ.get('COVER_STYLE', 'gazete')
     fonts = open(os.path.join(KIT, 'fonts.css')).read()
-    if style == 'vurucu':
+    if style == 'sahne':
+        # title 'ARKA / *ÖN SATIR* / ön satır2'  -> first chunk behind the head, the rest in front (*..* yellow, plain white)
+        parts = [x.strip() for x in title.split('/')]
+        front = '<br>'.join(f'<span class="{"" if x.startswith("*") else "w"}">{html.escape(x.strip("*"))}</span>' for x in parts[1:])
+        acc, dark = THEMES.get(os.environ.get('COVER_THEME', 'gold'), THEMES['gold'])
+        props = (os.environ.get('COVER_PROPS', '') + '  ').split(' ')
+        hf = os.environ.get('HYPERFRAMES_BROWSER_PATH', CHROME)
+        subprocess.run(f'npx --yes hyperframes@0.8.174 remove-background {os.path.join(tmp, "face.jpg")} -o {os.path.join(tmp, "cut.png")} >/dev/null 2>&1',
+                       shell=True, check=True, env=dict(os.environ, HYPERFRAMES_BROWSER_PATH=hf))
+        page = TPL_SAHNE.replace('__FONTS__', fonts).replace('__BACK__', html.escape(parts[0].strip('*'))).replace('__FRONT__', front) \
+            .replace('__ACC__', acc).replace('__DARK__', dark).replace('__P1__', props[0]).replace('__P2__', props[1])
+    elif style == 'vurucu':
         # 'satır1 / *satır2* / !satır3!'  -> *..* yellow, !..! red, plain white; one line per '/'
         def line(p):
             c = 'y' if p.startswith('*') else ('r' if p.startswith('!') else '')
