@@ -1,0 +1,60 @@
+{
+ "autoPublish": true,
+ "draft": false,
+ "descendants": [],
+ "firstCommentText": "Market kasasından hiç para çektin mi? Yaz 👇",
+ "hasNotReadNotes": false,
+ "media": [
+  "https://raw.githubusercontent.com/blodym4ry/paranin-dili/e4369f718b09fc20d455effe956a2ec121daefb8/public/2026-11-22-marketler-banka.mp4"
+ ],
+ "videoThumbnailUrl": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/e4369f718b09fc20d455effe956a2ec121daefb8/public/covers/2026-11-22-marketler-banka.jpg",
+ "mediaAltText": [],
+ "providers": [
+  {
+   "network": "instagram"
+  },
+  {
+   "network": "tiktok"
+  },
+  {
+   "network": "youtube"
+  }
+ ],
+ "publicationDate": {
+  "dateTime": "2026-11-22T19:45:00",
+  "timezone": "Europe/Istanbul"
+ },
+ "shortener": false,
+ "smartLinkData": {
+  "ids": []
+ },
+ "text": "Herkes marketin bankasını reklam sanıyor, ama BİM 10 milyar TL sermaye ayırdı. 📌 Kasada kartını uzatmadan önce kaydet.\n\nBDDK, BİM'in Dost Katılım Bankası'na 11 Haziran 2026'da kuruluş izni verdi; banka 16 Eylül'de tescil edildi. Faaliyet izni başvurusu sırada.\n\nBu yolu önce A101'in patronları yürüdü: TOM Bank tam hizmete geçtikten sonra yaklaşık 9 ayda 975 bin müşteriye ulaştı.\n\nMarket bankası 3 kalemi aynı kasada toplar:\n1) Müşteri: grubun şirketleri günde 5,5 milyon fiş kesiyor; genel müdüre göre TOM müşterilerinin %65-70'i A101 kasasından para çekiyor.\n2) Nakit: banka, müşterisinin yatırdığı parayla fonlanır. TOM 2024 sonunda 4,5 milyar TL fon topladı.\n3) Ödeme: kartlı alışverişte işyeri bankaya komisyon öder; banka grubunsa o pay içeride kalır.\n\nKaynaklar: BDDK kararı ve tescil (Foreks, CNBC-e, Bloomberg HT, Haz–Eyl 2026), TOM Bank bağımsız denetim raporu (30.09.2023), Forbes Türkiye (3 Ocak 2025), Para Dergi (17 Şubat 2025).\nYatırım tavsiyesi değildir.\n\n#banka #bim #a101 #finans #paranindili",
+ "instagramData": {
+  "type": "REEL",
+  "showReelOnFeed": true,
+  "isAiGenerated": false
+ },
+ "tiktokData": {
+  "privacyOption": "PUBLIC_TO_EVERYONE",
+  "title": "Marketler neden banka kuruyor? 3 kalem",
+  "isAigc": false,
+  "disableComment": false,
+  "disableDuet": false,
+  "disableStitch": false
+ },
+ "youtubeData": {
+  "title": "Marketler Neden Banka Kuruyor? BİM ve TOM Bank'ın 3 Kalemi #shorts",
+  "type": "short",
+  "privacy": "public",
+  "tags": [
+   "banka",
+   "bim",
+   "a101",
+   "finans",
+   "paranindili"
+  ],
+  "category": "EDUCATION",
+  "madeForKids": false,
+  "isAiGeneratedContent": false
+ }
+}
