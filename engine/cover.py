@@ -198,11 +198,11 @@ def main(slug, title, kick, video, at='1.2'):
                        shell=True, check=True, env=dict(os.environ, HYPERFRAMES_BROWSER_PATH=hf))
         # no white sticker outline (Ata, 21 Eki: it cut the hair badly). Feather the matte edge instead.
         feather(os.path.join(tmp, 'cut.png'))
-        edge = os.environ.get('COVER_EDGE', 'isik')
+        edge = os.environ.get('COVER_EDGE', 'golge')
         edges = {'dogal': 'drop-shadow(0 30px 40px rgba(0,0,0,.65))',
                  'isik': 'drop-shadow(0 0 2px rgba(255,255,255,.35)) drop-shadow(0 0 28px __ACC__) drop-shadow(0 30px 40px rgba(0,0,0,.65))',
                  'golge': 'drop-shadow(0 0 14px rgba(0,0,0,.9)) drop-shadow(0 0 30px rgba(0,0,0,.6)) drop-shadow(0 30px 40px rgba(0,0,0,.6))'}
-        page = TPL_SAHNE.replace('__EDGE__', edges.get(edge, edges['isik'])).replace('__FONTS__', fonts).replace('__BACK__', html.escape(parts[0].strip('*'))).replace('__FRONT__', front) \
+        page = TPL_SAHNE.replace('__EDGE__', edges.get(edge, edges['golge'])).replace('__FONTS__', fonts).replace('__BACK__', html.escape(parts[0].strip('*'))).replace('__FRONT__', front) \
             .replace('__ACC__', acc).replace('__DARK__', dark).replace('__P1__', props[0]).replace('__P2__', props[1])
     elif style == 'vurucu':
         # 'satır1 / *satır2* / !satır3!'  -> *..* yellow, !..! red, plain white; one line per '/'
