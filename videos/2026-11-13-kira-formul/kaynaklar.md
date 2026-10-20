@@ -1,0 +1,6 @@
+- Ekim 2026 kira artış tavanı %31,49 (TÜFE 12 aylık ortalama değişim); Eylül 2026 yıllık TÜFE %29,73, aylık %1,84; TÜİK açıklaması 5 Ekim 2026; 20.000 TL kira örneği → 26.298 TL — Dünya: https://www.dunya.com/ekonomi/ekim-ayi-kira-artis-orani-netlesti-haberi-842593
+- Aynı oran: Türkgün https://www.turkgun.com/ekonomi/ekim-2026-kira-artis-orani-kira-zammi-hesaplama/404524 · Capital https://www.capital.com.tr/haberler/tum-haberler/ekim-2026-kira-artis-orani-aciklandi-iste-konut-ve-is-yerleri-icin-yeni-kira-artis-hesaplamasi
+- Ekim 2025 kira artış tavanı %38,36 — CNN Türk: https://www.cnnturk.com/ekonomi/ekim-ayi-kira-zam-orani-hesaplama-2025-kira-artis-orani-tufe-yuzde-kac-oldu-eylul-ayi-enflasyon-rakamlari-tuik-2341990
+- Eylül 2025 yıllık TÜFE %33,29 (aylık %3,23) — Dünya: https://www.dunya.com/ekonomi/son-dakika-tuik-acikladi-eylul-2025-enflasyonu-belli-oldu-haberi-796747
+- TBK m.344: konut kira artışı bir önceki kira yılının TÜFE 12 aylık ortalamalara göre değişim oranını "geçemez" (üst sınır) — https://kulacoglu.av.tr/kira-artis-orani-nasil-belirlenir/
+- Örnek hesap: 30.000 × %31,49 = 39.447 TL; 30.000 × %29,73 = 38.919 TL; fark 528 TL/ay.
