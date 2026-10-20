@@ -17,6 +17,12 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 ## 1. Konu
 - `queue.md`'deki ilk `[ ]` konu. Konunun güncel verilerini web'den (WebSearch/WebFetch) doğrula: TÜİK, TCMB, resmi kurumlar, ana akım haber.
   Verisi doğrulanamayan konuyu atla (`[~] veri yok` işaretle), sıradakine geç.
+- **KONU KAPISI — "AI slop" YASAK (Ata'nın kesin kuralı, 20 Eki).** Üç soruya da yazılı, net cevap ver (`videos/<slug>/kapi.md`); biri zayıfsa konuyu ATLA (`[~] kapı: <neden>`):
+  1. **Merak kanıtı:** İnsanlar bunu gerçekten merak ediyor mu? Kanıt: rakip hesapta medyanının ≥10 katı izlenen benzer video, ya da güncel arama/gündem verisi. Kanca puanı tek başına kanıt DEĞİLDİR.
+  2. **İzleyicinin cebi:** Bu bilgi izleyicinin parasına somut olarak ne yapıyor (kaybedeceği/kazanacağı/karar vereceği şey, rakamla)? Şirketin/kurumun derdi değil, izleyicinin derdi.
+  3. **Öğrenme anı:** İzleyici sonda bilmediği, tahmin edemeyeceği neyi öğreniyor? Tek cümle.
+  Örnek RET: "Marketler neden banka kuruyor" (20 Eki) — kanıt yoktu, cevap şirketin derdiydi, izleyici hiçbir şey öğrenmedi.
+- **Görsel çeşitlilik:** Ardışık iki paylaşımda aynı kıyafet (look) olmaz — `log.md`'deki son paylaşımın look'una bak. Şablonu da her videoda değiştir; sadece yazı kartı + konuşan kafa yetmez, her sahnede anlatıyı GÖSTEREN bir görsel (grafik, ekran, nesne, karşılaştırma) olmalı.
 - Profil dışı/deneme konusu ise Instagram tipi TRIAL_REEL, finans konusu ise REEL.
 
 ## 2. Senaryo (45–62 sn, ~150 kelime/dk → 115–150 kelime)
