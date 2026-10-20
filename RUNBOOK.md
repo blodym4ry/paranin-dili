@@ -96,6 +96,9 @@ Bu yol 3 kat kredi harcar; kullanırsan log'a nedenini yaz.
   Sorun varsa spec'i düzelt, build+check tekrar.
 
 ## 6. Render + QA
+- **Müzik/ses (Ata 20 Eki):** fon müziği otomatik: 'gerilim' ailesi, 7 varyasyon tarihe göre döner (art arda iki video aynı müziği almaz).
+  Trap/phonk/hızlı davul KULLANMA ("promosyon gibi"). Mikser her render'da rapor basar: `music avg ≈ -19 dB`, `fx max ≤ -6 dB` (sese göre).
+  fx max -6 dB'den yüksekse veya müzik sesi bastırıyorsa spec'teki SFX seviyelerini düşür. Sadece sesi değiştirmek için: `pv.py remix <slug>`.
 - `python3 engine/pv.py render <slug>` (~7–10 dk) → `public/<slug>.mp4`.
 - `qa.jpg`'i Read ile aç, son kez kontrol et. Ses -14 LUFS civarı olmalı.
 

@@ -6,6 +6,7 @@
   python3 engine/pv.py build  <slug>   # spec.py -> HyperFrames project (index.html) + mix.wav
   python3 engine/pv.py check  <slug>   # layout/contrast check at transitions + preview contact sheet
   python3 engine/pv.py render <slug>   # render, mux, loudnorm -14 LUFS, QA sheet -> public/<slug>.mp4
+  python3 engine/pv.py remix  <slug>   # audio only: new music/sfx mix + mux onto the existing render (no re-render)
 
 WORK dir = $PD_WORK/<slug> (default ~/pd_work/<slug>). Heavy files live there, never in git.
 """
@@ -113,10 +114,12 @@ def check(slug):
     if not ok: sys.exit(1)
 
 
-def render(slug):
+def render(slug, video=True):
     vd, w, hf = paths(slug)
     os.makedirs(os.path.join(hf, 'renders'), exist_ok=True)
-    sh(f'timeout 2400 npx --yes {HF} render -o renders/v.mp4 --quiet > render.log 2>&1', cwd=hf)
+    if video: sh(f'timeout 2400 npx --yes {HF} render -o renders/v.mp4 --quiet > render.log 2>&1', cwd=hf)
+    else: sh([sys.executable, os.path.join(ENG, 'audio3.py'), 'edl_audio.json', os.path.join(w, 'voice.wav'), 'mix.wav'], cwd=hf,
+             env={'PYTHONPATH': ENG, 'PD_SLUG': slug})
     final = os.path.join(w, f'{slug}.mp4')
     sh(['ffmpeg', '-v', 'error', '-y', '-i', 'renders/v.mp4', '-i', 'mix.wav', '-map', '0:v', '-map', '1:a', '-c:v', 'libx264',
         '-b:v', '4M', '-maxrate', '5M', '-bufsize', '8M', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-af',
@@ -134,4 +137,4 @@ def render(slug):
 
 if __name__ == '__main__':
     if len(sys.argv) < 3: sys.exit(__doc__)
-    {'prep': prep, 'tel': tel, 'build': build, 'check': check, 'render': render}[sys.argv[1]](sys.argv[2])
+    {'prep': prep, 'tel': tel, 'build': build, 'check': check, 'render': render, 'remix': lambda s: render(s, False)}[sys.argv[1]](sys.argv[2])

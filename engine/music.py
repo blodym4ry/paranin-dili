@@ -2,7 +2,7 @@
 Ata (20 Eki): eski pad müziği uyutuyordu -> hareketli, adrenalinli fon.
 
   drive(dur, bpm, seed)  -> mono float array at SR
-  python3 engine/music.py preview out.wav [style] [seconds]   # listen test
+  python3 engine/music.py preview out.wav [style|gerilim:N] [seconds]   # listen test
 
 Styles (rotated per video by slug hash): 'trap' (124 bpm, 808 + backbeat clap + hat rolls + minor pluck arp),
 'phonk' (132 bpm, cowbell-ish lead, distorted 808), 'drive' (122 bpm, four-on-the-floor + pulsing synth bass).
@@ -125,56 +125,89 @@ def drive(dur, style='trap', seed=7):
     return mix
 
 
-# ---------- 'gerilim' (documentary tension) — default since Ata found trap/phonk "promotional" (20 Eki) ----------
-# Research-led: under narration keep tempo moderate (~85 bpm), no hats/claps/bright arps, dark minor harmony,
-# low sub pulse + soft clock tick for urgency, sparse piano motif; energy comes from drops/section changes, not density.
+# ---------- 'gerilim' family (documentary / calm-tension) — default since Ata found trap/phonk "promotional" (20 Eki) ----------
+# Research-led: under narration keep tempo moderate (78-92 bpm), no hats/claps/bright arps, soft highs, sparse motif;
+# energy comes from drops before section changes + slowly opening filter, not density. 7 variants rotate by date so
+# consecutive videos never share a bed; warm voicings so it suits every age group.
 def _saw(f, t, n=10): return sum(np.sin(2 * np.pi * f * k * t) / k for k in range(1, n))
 
+MINOR = {'i': (0, 'm'), 'iv': (5, 'm'), 'V': (7, 'M'), 'VI': (8, 'M'), 'III': (3, 'M'), 'VII': (10, 'M')}
+MAJOR = {'I': (0, 'M'), 'V': (7, 'M'), 'vi': (9, 'm'), 'IV': (5, 'M')}
+VARIANTS = [
+    dict(name='gece',     key=50, mode='m', prog=['i', 'VI', 'iv', 'V'],   bpm=86, lead='piano',   tick=True,  pulse='8th'),
+    dict(name='ufuk',     key=52, mode='m', prog=['i', 'VI', 'III', 'VII'], bpm=84, lead='mallet',  tick=False, pulse='quarter'),
+    dict(name='nabiz',    key=47, mode='m', prog=['i', 'iv', 'VI', 'V'],   bpm=90, lead='pluck',   tick=False, pulse='heart'),
+    dict(name='aydinlik', key=53, mode='M', prog=['I', 'V', 'vi', 'IV'],   bpm=88, lead='piano',   tick=True,  pulse='8th'),
+    dict(name='derin',    key=55, mode='m', prog=['i', 'VI', 'III', 'VII'], bpm=78, lead='strings', tick=True,  pulse='quarter'),
+    dict(name='sehir',    key=48, mode='m', prog=['i', 'VI', 'iv', 'V'],   bpm=92, lead='keys',    tick=False, pulse='8th'),
+    dict(name='yukselis', key=57, mode='m', prog=['i', 'VI', 'III', 'VII'], bpm=88, lead='mallet',  tick=True,  pulse='8th'),
+]
 
-def tension(dur, drops=(), seed=11, bpm=86):
-    rng = np.random.default_rng(seed)
-    n = int(dur * SR); t = np.arange(n) / SR; beat = 60 / bpm; bar = 4 * beat
-    prog = [(38, [50, 53, 57]), (34, [50, 53, 58]), (31, [50, 55, 58]), (33, [49, 52, 57])]  # Dm Bb Gm A
-    pad, sub, pno, tick, kik = (np.zeros(n) for _ in range(5))
-    nb = int(dur / bar) + 2
-    for b in range(nb):
-        root, ch = prog[b % 4]; s0 = int(b * bar * SR); L = min(n - s0, int(bar * SR) + int(.4 * SR))
+
+def _chord(key, mode, deg):
+    off, q = (MINOR if mode == 'm' else MAJOR)[deg]
+    r = key + off
+    while r > 57: r -= 12
+    tri = [r, r + (3 if q == 'm' else 4), r + 7]
+    return r - 24, tri
+
+
+def _lead(kind, f, L):
+    t = np.arange(L) / SR; a = np.minimum(1, t / .004)
+    if kind == 'piano':   x = (np.sin(2*np.pi*f*t) + .4*np.sin(4*np.pi*f*t) + .15*np.sin(6*np.pi*f*t)) * np.exp(-t * 2.2)
+    elif kind == 'mallet': x = (np.sin(2*np.pi*f*t) + .25*np.sin(2*np.pi*f*4.0*t) * np.exp(-t * 9)) * np.exp(-t * 3.0)
+    elif kind == 'pluck':  x = _lp(_saw(f, t, 6), 1800) * np.exp(-t * 6) * 1.2
+    elif kind == 'keys':   x = (np.sin(2*np.pi*f*t) + .3*np.sin(2*np.pi*f*3*t) * np.exp(-t * 4)) * np.exp(-t * 1.6) * (1 + .15*np.sin(2*np.pi*5*t))
+    else:                  a = np.minimum(1, t / .35); x = _lp(_saw(f, t, 8), 1500) * np.exp(-t * .9) * .8   # strings swell
+    return x * a
+
+
+def tension(dur, drops=(), variant=0, seed=11):
+    V = VARIANTS[variant % len(VARIANTS)]
+    rng = np.random.default_rng(seed + variant)
+    n = int(dur * SR); t = np.arange(n) / SR; beat = 60 / V['bpm']; bar = 4 * beat
+    pad, sub, lead, tick, kik = (np.zeros(n) for _ in range(5))
+    for b in range(int(dur / bar) + 2):
+        root, ch = _chord(V['key'], V['mode'], V['prog'][b % 4]); s0 = int(b * bar * SR)
+        L = min(n - s0, int(bar * SR) + int(.4 * SR))
         if L <= 0: break
         tt = np.arange(L) / SR; e = np.clip(tt / .6, 0, 1) * np.clip((L / SR - tt) / .5, 0, 1)
-        x = sum(_saw(mtof(m) * (1 + d), tt, 6) for m in ch for d in (-.003, .003)) / 6
-        pad[s0:s0 + L] += x * e
-        # sub pulse on 8ths (heartbeat feel), accent on beat
-        for k in range(8):
-            ps = s0 + int(k * beat / 2 * SR); PL = min(n - ps, int(beat / 2 * SR))
+        pad[s0:s0 + L] += sum(_saw(mtof(m) * (1 + d), tt, 6) for m in ch for d in (-.003, .003)) / 6 * e
+        steps = {'8th': [(k * .5, 1 if k % 2 == 0 else .55) for k in range(8)], 'quarter': [(k, 1 if k % 2 == 0 else .7) for k in range(4)],
+                 'heart': [(0, 1), (.35, .7), (2, 1), (2.35, .7)]}[V['pulse']]
+        for off, acc in steps:
+            ps = s0 + int(off * beat * SR); PL = min(n - ps, int(beat / 2 * SR))
             if PL <= 0: continue
             ptt = np.arange(PL) / SR
-            sub[ps:ps + PL] += np.sin(2 * np.pi * mtof(root) * ptt) * np.exp(-ptt * 7) * (1 if k % 2 == 0 else .55)
-            # clock tick
-            TL = min(n - ps, int(.03 * SR)); tick[ps:ps + TL] += _hp(rng.standard_normal(TL), 4000)[:TL] * np.exp(-np.arange(TL) / SR * 220) * (.5 if k % 2 else .8)
-        # soft low thump on 1 and 3 from bar 2
+            sub[ps:ps + PL] += np.sin(2 * np.pi * mtof(root + 12) * ptt) * np.exp(-ptt * 7) * acc
+            if V['tick']:
+                TL = min(n - ps, int(.03 * SR)); tick[ps:ps + TL] += _bp(rng.standard_normal(TL), 2500, 6000)[:TL] * np.exp(-np.arange(TL) / SR * 220) * acc
         if b >= 2:
             for k in (0, 2):
                 ks = s0 + int(k * beat * SR); KL = min(n - ks, int(.35 * SR))
-                if KL > 0: kt = np.arange(KL) / SR; kik[ks:ks + KL] += np.sin(2 * np.pi * (42 + 50 * np.exp(-kt * 30)) * kt) * np.exp(-kt * 9)
-        # sparse piano motif: 3 notes per bar, every other bar
-        if b % 2 == 0:
-            for j, (off, m) in enumerate([(0, ch[2] + 12), (1.5, ch[1] + 12), (3, ch[0] + 12)]):
-                ns = s0 + int(off * beat * SR); NL = min(n - ns, int(2.5 * SR))
-                if NL <= 0: continue
-                nt = np.arange(NL) / SR; f = mtof(m)
-                pno[ns:ns + NL] += (np.sin(2 * np.pi * f * nt) + .4 * np.sin(4 * np.pi * f * nt) + .15 * np.sin(6 * np.pi * f * nt)) * np.exp(-nt * 2.2) * np.minimum(1, nt / .004)
-    # filter slowly opens across the video -> rising urgency
-    pad = _lp(pad, 700) * .9 + _lp(pad, 1600) * np.clip(t / max(dur, 1), 0, 1) * .5
-    mix = .55 * pad + .9 * _lp(sub, 200) + .25 * tick + .45 * _lp(pno, 3000) + .7 * kik
-    # drops: before each section change (riser time) pull music to near-silence, then re-enter
+                if KL > 0: kt = np.arange(KL) / SR; kik[ks:ks + KL] += np.sin(2 * np.pi * (42 + 45 * np.exp(-kt * 30)) * kt) * np.exp(-kt * 9)
+        if b % 2 == 0 or V['lead'] == 'strings':
+            motif = [(0, ch[2] + 12), (1.5, ch[1] + 12), (3, ch[0] + 12)] if V['lead'] != 'strings' else [(0, ch[2] + 12)]
+            for off, m in motif:
+                ns = s0 + int(off * beat * SR); NL = min(n - ns, int((bar if V['lead'] == 'strings' else 2.5) * SR))
+                if NL > 0: lead[ns:ns + NL] += _lead(V['lead'], mtof(m), NL)
+    pad = _lp(pad, 700) * .9 + _lp(pad, 1500) * np.clip(t / max(dur, 1), 0, 1) * .45
+    mix = .55 * pad + .85 * _lp(sub, 180) + .18 * tick + .42 * _lp(lead, 2800) + .6 * kik
     g = np.ones(n)
     for d in drops:
         a, b2 = int((d - .9) * SR), int((d + .05) * SR)
         if 0 < a < n:
-            r = np.arange(max(0, a), min(n, b2)); x = (r - a) / max(1, b2 - a)
+            r = np.arange(a, min(n, b2)); x = (r - a) / max(1, b2 - a)
             g[r] = np.minimum(g[r], np.clip(1 - x * 4, .12, 1))
     g = np.convolve(g, np.ones(int(.06 * SR)) / int(.06 * SR), mode='same')
     return np.tanh(mix * g * 1.1)
+
+
+def variant_for(slug):
+    """Date ordinal mod 7: posting gaps of 1-2 days always land on a different bed; full cycle in ~2 weeks."""
+    import datetime
+    try: return datetime.date.fromisoformat(slug[:10]).toordinal() % len(VARIANTS)
+    except ValueError: return zlib.crc32(slug.encode()) % len(VARIANTS)
 
 
 def style_for(slug):
@@ -187,7 +220,7 @@ def style_for(slug):
 if __name__ == '__main__':
     if len(sys.argv) >= 3 and sys.argv[1] == 'preview':
         st = sys.argv[3] if len(sys.argv) > 3 else 'trap'; sec = float(sys.argv[4]) if len(sys.argv) > 4 else 20
-        x = drive(sec, st); x = x / np.max(np.abs(x)) * .9
+        x = tension(sec, [], int(st.split(':')[1])) if st.startswith('gerilim') else drive(sec, st); x = x / np.max(np.abs(x)) * .9
         wavfile.write(sys.argv[2], SR, (np.stack([x, x], 1) * 32767).astype(np.int16)); print('wrote', sys.argv[2], st)
     else:
         sys.exit(__doc__)
