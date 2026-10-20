@@ -203,6 +203,47 @@ def tension(dur, drops=(), variant=0, seed=11):
     return np.tanh(mix * g * 1.1)
 
 
+# ---------- 'karanlik_hiphop' (Ata 21 Eki seçimi: piyano/yumuşak yok, promosyon yok) ----------
+# Dark minimal hip-hop: boom-bap kick + soft snare, sub/808 bass line, quiet shaker, one dark filtered stab per bar.
+# No piano, no bright plucks, no hi-hat spam. Energy from groove + bass; drops before section changes.
+def _snare_soft(rng):
+    L = int(.25 * SR); t = np.arange(L) / SR
+    return _bp(rng.standard_normal(L), 1200, 5000) * np.exp(-t * 22) * .45 + np.sin(2 * np.pi * 190 * t) * np.exp(-t * 30) * .35
+
+
+def _shaker(rng):
+    L = int(.06 * SR); t = np.arange(L) / SR
+    return _bp(rng.standard_normal(L), 3000, 7000) * np.exp(-t * 60) * .12
+
+
+def dark_hiphop(dur, drops=(), seed=5, bpm=92, key=36):
+    rng = np.random.default_rng(seed)
+    n = int(dur * SR); st = 60 / bpm / 4; bar = 16 * st
+    prog = [[0, 3, 7], [-4, 0, 3], [-2, 2, 5], [-5, -1, 2]]   # i VI VII v
+    D, B, S = np.zeros(n), np.zeros(n), np.zeros(n)
+    K, SN = kick(rng, .9), _snare_soft(rng)
+    for b in range(int(dur / bar) + 2):
+        t0 = b * bar; ch = prog[b % 4]; root = key + ch[0]; intro = b == 0; fill = b % 4 == 3
+        for h in [0, 7, 10] + ([14] if fill else []):
+            if not intro: _put(D, K, int((t0 + h * st) * SR))
+        for h in (4, 12): _put(D, SN * (.5 if intro else 1), int((t0 + h * st) * SR))
+        for h in range(0, 16, 2): _put(D, _shaker(rng) * (1 if h % 4 else .6), int((t0 + h * st) * SR))
+        hits = [0, 7, 10]
+        for i, h in enumerate(hits):
+            L = int(((hits[i + 1] if i + 1 < len(hits) else 16) - h) * st * SR)
+            if not intro: _put(B, bass808(mtof(root), L, 1.6) * .9, int((t0 + h * st) * SR))
+        L = int(bar * SR); tt = np.arange(L) / SR
+        _put(S, sum(_lp(_saw(mtof(key + 24 + c), tt, 6), 900) for c in ch) * np.exp(-tt * 4) * .08, int(t0 * SR))
+    mix = .9 * D + .85 * B + .8 * S
+    g = np.ones(n)
+    for d in drops:
+        a, b2 = int((d - .7) * SR), int((d + .05) * SR)
+        if 0 < a < n:
+            r = np.arange(a, min(n, b2)); x = (r - a) / max(1, b2 - a); g[r] = np.minimum(g[r], np.clip(1 - x * 4, .1, 1))
+    g = np.convolve(g, np.ones(int(.05 * SR)) / int(.05 * SR), mode='same')
+    return np.tanh(mix * g * 1.15) / np.tanh(1.15)
+
+
 def variant_for(slug):
     """Posting-order rotation: count Mon/Wed/Fri/Sun posting days since 2026-10-01 up to the slug's date, mod 7.
     Consecutive posts always get consecutive beds and all 7 cycle (a plain date%7 would pin each weekday to one bed)."""
