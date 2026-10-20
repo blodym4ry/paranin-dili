@@ -68,7 +68,7 @@ def build(slug):
     shutil.copy(os.path.join(vd, 'spec.py'), os.path.join(hf, 'spec.py'))
     sh([sys.executable, os.path.join(KIT, 'assemble.py'), hf], env={'VIDEO_WORK': w})
     sh([sys.executable, os.path.join(ENG, 'audio3.py'), 'edl_audio.json', os.path.join(w, 'voice.wav'), 'mix.wav'], cwd=hf,
-       env={'PYTHONPATH': ENG})
+       env={'PYTHONPATH': ENG, 'PD_SLUG': slug})
 
 
 def scenes_at(hf):
