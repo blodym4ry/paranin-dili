@@ -1,0 +1,6 @@
+# Kaynaklar — Pokemon kartları
+- Pikachu Illustrator PSA 10: Goldin, 16 Şubat 2026, 16.492.000 $ (prim dahil); Logan Paul 2021'de 5.275.000 $'a özel satışla aldı (PSA 9 kopya + 4 milyon $ takas); 1998 çizim yarışması ödülü, 39 adet, tek PSA 10: https://www.guinnessworldrecords.com/news/2026/2/logan-pauls-rare-pokemon-card-becomes-most-expensive-ever-sold-in-record-setting-auction ; https://abc7news.com/post/logan-pauls-pikachu-illustrator-pokmon-card-sells-record-165m-auction/18609638/
+- 2026 başı → Ağustos başı: Pokemon kartları +%27,9, S&P 500 +%12,8, Bitcoin −%28,8 (Dünya, 15 Ağu 2026; kart endeksi kaynağı belirtilmemiş): https://www.dunya.com/ekonomi/pokemon-kartlari-yatirim-araclarina-kafa-tuttu-borsayi-solladi-haberi-836303
+- "Borsayı yendi" hesabının eleştirisi (sadece not almış/başlık kartlar, hayatta kalan yanlılığı, likidite/makas/derecelendirme maliyeti; 10 $'lık paket endekste yok): 247wallst, 18 Tem 2026: https://247wallst.com/investing/2026/07/18/pokemon-cards-beat-the-sp-500-by-2-5x-but-the-math-is-a-lie/
+- Bulbasaur PSA 809.094 $ (Goldin yaz TCG müzayedesi) — görselde kullanılabilir: Dünya (aynı haber), comicsbeat
+- Fransa'da 80 bin €'luk Pokemon kartı soygunu (görsel/yan bilgi): https://www.milliyet.com.tr/7641150
