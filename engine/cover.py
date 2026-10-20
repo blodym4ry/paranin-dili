@@ -44,6 +44,37 @@ place(); document.fonts.ready.then(place);
 </script>
 </body></html>'''
 
+TPL_KOYU = """<!doctype html><html lang="tr"><head><meta charset="utf-8"><style>
+__FONTS__
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0d0c0a}
+body{position:relative;font-family:'Inter Tight';color:#f3efe6}
+.bg{position:absolute;inset:0;background:url(face.jpg) center 30%/cover}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.0) 0%,rgba(13,12,10,.0) 38%,rgba(13,12,10,.82) 60%,rgba(13,12,10,.96) 100%)}
+.top{position:absolute;left:60px;right:60px;top:290px;display:flex;justify-content:space-between;align-items:center}
+.brand{font:900 34px 'Inter Tight';letter-spacing:-.01em;background:#e8b931;color:#0d0c0a;padding:8px 18px;border-radius:8px}
+.kick{font:700 26px 'IBM Plex Mono';letter-spacing:.14em;color:#f3efe6;background:rgba(13,12,10,.6);padding:8px 14px;border-radius:6px}
+.title{position:absolute;left:56px;right:56px;bottom:330px;font:900 132px/0.95 'Inter Tight';letter-spacing:-.045em;text-transform:none}
+.title em{font-style:normal;color:#e8b931}
+</style></head><body><div class="bg"></div><div class="shade"></div>
+<div class="top"><span class="brand">PARANIN DİLİ</span><span class="kick">__KICK__</span></div>
+<div class="title">__TITLE__</div></body></html>"""
+
+TPL_BANT = """<!doctype html><html lang="tr"><head><meta charset="utf-8"><style>
+__FONTS__
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0d0c0a}
+body{position:relative;font-family:'Inter Tight'}
+.bg{position:absolute;inset:0;background:url(face.jpg) center 30%/cover;filter:saturate(1.05) contrast(1.05)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 35%,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%)}
+.wrap{position:absolute;left:50px;right:50px;bottom:360px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.line{font:900 112px/1 'Inter Tight';letter-spacing:-.04em;color:#0d0c0a;background:#f3efe6;padding:10px 26px 16px;transform:rotate(-1.5deg);box-shadow:10px 10px 0 #0d0c0a}
+.line.em{background:#ff4a3d;color:#fff}
+.tag{position:absolute;left:50px;top:290px;font:800 30px 'Inter Tight';letter-spacing:.02em;color:#fff;background:#0d0c0a;padding:10px 18px;border-left:10px solid #ff4a3d}
+</style></head><body><div class="bg"></div><div class="vig"></div>
+<div class="tag">PARANIN DİLİ · __KICK__</div>
+<div class="wrap">__LINES__</div></body></html>"""
+
 
 def main(slug, title, kick, video, at='1.2'):
     out_dir = os.path.join(REPO, 'public', 'covers'); os.makedirs(out_dir, exist_ok=True)
@@ -52,14 +83,23 @@ def main(slug, title, kick, video, at='1.2'):
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(at), '-i', video, '-frames:v', '1', '-q:v', '2', os.path.join(tmp, 'face.jpg')], check=True)
     t = html.escape(title)
     t = re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
-    page = TPL.replace('__FONTS__', open(os.path.join(KIT, 'fonts.css')).read()).replace('__KICK__', html.escape(kick.upper())) \
-              .replace('__TITLE__', t)
+    style = os.environ.get('COVER_STYLE', 'gazete')
+    fonts = open(os.path.join(KIT, 'fonts.css')).read()
+    if style == 'koyu':
+        page = TPL_KOYU.replace('__FONTS__', fonts).replace('__KICK__', html.escape(kick.upper())).replace('__TITLE__', t)
+    elif style == 'bant':
+        # each '/'-separated chunk is one band; a chunk wrapped in *..* becomes the red band
+        parts = [x.strip() for x in title.split('/')]
+        lines = ''.join(f'<div class="line{" em" if p.startswith("*") else ""}">{html.escape(p.strip("*"))}</div>' for p in parts)
+        page = TPL_BANT.replace('__FONTS__', fonts).replace('__KICK__', html.escape(kick.upper())).replace('__LINES__', lines)
+    else:
+        page = TPL.replace('__FONTS__', fonts).replace('__KICK__', html.escape(kick.upper())).replace('__TITLE__', t)
     hp = os.path.join(tmp, 'cover.html'); open(hp, 'w').write(page)
     png = os.path.join(tmp, 'cover.png')
     subprocess.run([CHROME, '--headless=new', '--no-sandbox', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
                     '--window-size=1080,1920', '--virtual-time-budget=4000', f'--screenshot={png}', 'file://' + hp],
                    check=True, capture_output=True)
-    out = os.path.join(out_dir, f'{slug}.jpg')
+    out = os.path.join(out_dir, f'{slug}.jpg' if style == os.environ.get('COVER_DEFAULT', style) else f'{slug}_{style}.jpg')
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', png, '-vf', 'scale=1080:1920', '-q:v', '2', out], check=True)
     shutil.rmtree(tmp)
     print('COVER', out)
