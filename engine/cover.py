@@ -75,6 +75,35 @@ body{position:relative;font-family:'Inter Tight'}
 <div class="tag">PARANIN DİLİ · __KICK__</div>
 <div class="wrap">__LINES__</div></body></html>"""
 
+TPL_LUKS = """<!doctype html><html lang="tr"><head><meta charset="utf-8"><style>
+__FONTS__
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#07070a}
+body{position:relative;font-family:'Inter Tight';color:#f5f1e8}
+.bg{position:absolute;inset:0;background:url(face.jpg) center 28%/cover;filter:brightness(.62) contrast(1.12) saturate(.72)}
+.tone{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,10,.55) 0%,rgba(7,7,10,0) 22%,rgba(7,7,10,0) 42%,rgba(7,7,10,.86) 66%,rgba(7,7,10,.97) 100%)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(0,0,0,0) 40%,rgba(0,0,0,.6) 100%)}
+.grain{position:absolute;inset:0;opacity:.07;background:repeating-radial-gradient(circle at 30% 40%,#fff 0 1px,transparent 1px 3px)}
+.frame{position:absolute;left:44px;right:44px;top:244px;bottom:244px;border:2px solid rgba(212,175,55,.55)}
+.brand{position:absolute;left:0;right:0;top:300px;text-align:center;font:700 30px 'Inter Tight';letter-spacing:.55em;padding-left:.55em;color:#d4af37}
+.rule{position:absolute;left:50%;top:352px;width:90px;height:2px;margin-left:-45px;background:#d4af37}
+.kick{position:absolute;left:0;right:0;top:1160px;text-align:center;font:500 28px 'IBM Plex Mono';letter-spacing:.32em;padding-left:.32em;color:rgba(245,241,232,.75)}
+.title{position:absolute;left:70px;right:70px;top:1215px;text-align:center;font-family:'Playfair Display';font-weight:900;line-height:.92;letter-spacing:-.01em;color:#f5f1e8}
+.title em{font-style:italic;font-weight:700;background:linear-gradient(180deg,#f6e3a1 0%,#d4af37 45%,#a8841f 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .04em}
+.handle{position:absolute;left:0;right:0;bottom:285px;text-align:center;font:600 24px 'Inter Tight';letter-spacing:.4em;padding-left:.4em;color:rgba(212,175,55,.85)}
+</style></head><body><div class="bg"></div><div class="tone"></div><div class="vig"></div><div class="grain"></div><div class="frame"></div>
+<div class="brand">PARANIN DİLİ</div><div class="rule"></div>
+<div class="kick">__KICK__</div>
+<div class="title" id="t">__TITLE__</div>
+<div class="handle">@ATAMERTUYSALER</div>
+<script>
+// fit 2-3 words: largest size where every line fits 940px and the block ends above y=1590
+const t=document.getElementById('t');
+function fit(){let s=250;t.style.fontSize=s+'px';
+ while(s>90&&(t.scrollWidth>t.clientWidth+2||t.offsetTop+t.offsetHeight>1540)){s-=4;t.style.fontSize=s+'px';}}
+fit();document.fonts.ready.then(fit);
+</script></body></html>"""
+
 
 def main(slug, title, kick, video, at='1.2'):
     out_dir = os.path.join(REPO, 'public', 'covers'); os.makedirs(out_dir, exist_ok=True)
@@ -85,7 +114,9 @@ def main(slug, title, kick, video, at='1.2'):
     t = re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
     style = os.environ.get('COVER_STYLE', 'gazete')
     fonts = open(os.path.join(KIT, 'fonts.css')).read()
-    if style == 'koyu':
+    if style == 'luks':
+        page = TPL_LUKS.replace('__FONTS__', fonts).replace('__KICK__', html.escape(kick.upper())).replace('__TITLE__', t.replace(' / ', '<br>'))
+    elif style == 'koyu':
         page = TPL_KOYU.replace('__FONTS__', fonts).replace('__KICK__', html.escape(kick.upper())).replace('__TITLE__', t)
     elif style == 'bant':
         # each '/'-separated chunk is one band; a chunk wrapped in *..* becomes the red band
