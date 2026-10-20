@@ -104,6 +104,34 @@ function fit(){let s=250;t.style.fontSize=s+'px';
 fit();document.fonts.ready.then(fit);
 </script></body></html>"""
 
+TPL_VURUCU = """<!doctype html><html lang="tr"><head><meta charset="utf-8"><style>
+__FONTS__
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+body{position:relative}
+.bg{position:absolute;inset:-40px;background:url(face.jpg) center 26%/cover;transform:scale(1.18);transform-origin:50% 30%;filter:saturate(1.35) contrast(1.18) brightness(1.06)}
+.warm{position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,170,60,.18),rgba(0,0,0,0) 45%,rgba(40,90,255,.16));mix-blend-mode:overlay}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 34%,rgba(0,0,0,0) 38%,rgba(0,0,0,.7) 100%)}
+.low{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 52%,rgba(0,0,0,.55) 78%,rgba(0,0,0,.75) 100%)}
+.wrap{position:absolute;left:40px;right:40px;top:1060px;text-align:center;transform:rotate(-3deg)}
+.l{display:block;font-family:'Anton';text-transform:uppercase;line-height:.92;letter-spacing:.005em;color:#fff;
+   -webkit-text-stroke:10px #000;paint-order:stroke fill;text-shadow:0 10px 0 #000,0 18px 30px rgba(0,0,0,.6)}
+.l.y{color:#ffd21f}
+.l.r{color:#ff3b30}
+.tag{position:absolute;left:0;right:0;top:300px;text-align:center}
+.tag span{display:inline-block;font:400 40px 'Anton';letter-spacing:.06em;color:#000;background:#ffd21f;padding:6px 22px 8px;transform:rotate(-2deg);box-shadow:6px 6px 0 #000}
+</style></head><body><div class="bg"></div><div class="warm"></div><div class="vig"></div><div class="low"></div>
+<div class="tag"><span>__KICK__</span></div>
+<div class="wrap" id="w">__LINES__</div>
+<script>
+// each line auto-sized to fill ~1000px width; whole block ends above y=1600
+const w=document.getElementById('w');
+function fit(){const L=[...w.querySelectorAll('.l')];L.forEach(l=>{let s=330;l.style.fontSize=s+'px';l.style.whiteSpace='nowrap';
+  while(s>80&&l.scrollWidth>1000){s-=6;l.style.fontSize=s+'px';}});
+ let k=1;while(w.offsetTop+w.offsetHeight>1600&&k>.5){k-=.04;L.forEach(l=>l.style.fontSize=(parseFloat(l.style.fontSize)*0.96)+'px');}}
+fit();document.fonts.ready.then(fit);
+</script></body></html>"""
+
 
 def main(slug, title, kick, video, at='1.2'):
     out_dir = os.path.join(REPO, 'public', 'covers'); os.makedirs(out_dir, exist_ok=True)
@@ -114,7 +142,13 @@ def main(slug, title, kick, video, at='1.2'):
     t = re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
     style = os.environ.get('COVER_STYLE', 'gazete')
     fonts = open(os.path.join(KIT, 'fonts.css')).read()
-    if style == 'luks':
+    if style == 'vurucu':
+        # 'satır1 / *satır2* / !satır3!'  -> *..* yellow, !..! red, plain white; one line per '/'
+        def line(p):
+            c = 'y' if p.startswith('*') else ('r' if p.startswith('!') else '')
+            return f'<span class="l {c}">{html.escape(p.strip("*!"))}</span>'
+        page = TPL_VURUCU.replace('__FONTS__', fonts).replace('__KICK__', html.escape(kick.upper())).replace('__LINES__', ''.join(line(x.strip()) for x in title.split('/')))
+    elif style == 'luks':
         page = TPL_LUKS.replace('__FONTS__', fonts).replace('__KICK__', html.escape(kick.upper())).replace('__TITLE__', t.replace(' / ', '<br>'))
     elif style == 'koyu':
         page = TPL_KOYU.replace('__FONTS__', fonts).replace('__KICK__', html.escape(kick.upper())).replace('__TITLE__', t)
