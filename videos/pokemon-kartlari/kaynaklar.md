@@ -4,3 +4,8 @@
 - "Borsayı yendi" hesabının eleştirisi (sadece not almış/başlık kartlar, hayatta kalan yanlılığı, likidite/makas/derecelendirme maliyeti; 10 $'lık paket endekste yok): 247wallst, 18 Tem 2026: https://247wallst.com/investing/2026/07/18/pokemon-cards-beat-the-sp-500-by-2-5x-but-the-math-is-a-lie/
 - Bulbasaur PSA 809.094 $ (Goldin yaz TCG müzayedesi) — görselde kullanılabilir: Dünya (aynı haber), comicsbeat
 - Fransa'da 80 bin €'luk Pokemon kartı soygunu (görsel/yan bilgi): https://www.milliyet.com.tr/7641150
+- 1999 1. baskı Base Set Charizard fiyatları (PriceCharting, Eylül 2026 satışlarına kadar): notsuz ~7.691 $, 9 not ~31.900 $, PSA 10 ~334.421 $: https://www.pricecharting.com/game/pokemon-base-set/charizard-1st-edition-4
+- Aynı kart: PSA'nın notladığı 5.325 kopyanın 124'ü PSA 10; PSA 10 Heritage'ta 550.000 $ (2025): https://cllct.com/sports-collectibles/sports-cards/rare-1st-edition-charizard-pokemon-card-sells-for-record-550k
+- PSA 2025: ~20 milyon ürün; Pokemon gem oranı ~%50 → 2025'te ~6 milyon PSA 10 Pokemon: https://www.si.com/collectibles/pokemon-powers-2025-psa-s-biggest-grading-year-in-company-history
+- PSA en ucuz tarife (Value Bulk) 24,99 $/kart, min 20 kart, üyelik gerekli (18 Şub 2026): https://allvintagecards.com/psa-hikes-grading-costs-and-turnaround-times-2026/
+- Değer kontrolü: ilan fiyatı değil gerçekleşmiş satış (eBay "sold", PriceCharting): https://www.pokemonpricetracker.com/blog/posts/pokemon-cards-price-check-guide
