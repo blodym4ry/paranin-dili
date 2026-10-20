@@ -148,8 +148,7 @@ body{position:relative}
 .prop{position:absolute;font-family:'Noto Color Emoji';filter:drop-shadow(0 18px 18px rgba(0,0,0,.6))}
 .p1{left:-10px;top:760px;font-size:240px;transform:rotate(-14deg)}
 .p2{right:-10px;top:880px;font-size:210px;transform:rotate(12deg)}
-.who{position:absolute;left:50%;bottom:-40px;width:940px;margin-left:-470px;
-     filter:drop-shadow(0 0 0 #fff) drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shadow(0 6px 0 #fff) drop-shadow(0 -6px 0 #fff) drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.who{position:absolute;left:50%;bottom:-40px;width:940px;margin-left:-470px;filter:__EDGE__}
 .fade{position:absolute;left:0;right:0;bottom:0;height:520px;background:linear-gradient(180deg,rgba(0,0,0,0),__DARK__ 85%)}
 .front{position:absolute;left:30px;right:30px;top:1230px;text-align:center;transform:rotate(-3deg)}
 .front span{display:inline-block;font-family:'Anton';text-transform:uppercase;line-height:.92;color:#ffd21f;-webkit-text-stroke:12px #000;paint-order:stroke fill;
@@ -171,6 +170,14 @@ fit();document.fonts.ready.then(fit);
 </script></body></html>"""
 
 
+def feather(path, shrink=2, blur=1.6):
+    """Pull the matte in a hair and soften it so no background fringe / hard cut-out edge is left."""
+    from PIL import Image, ImageFilter
+    im = Image.open(path).convert('RGBA'); a = im.getchannel('A')
+    a = a.filter(ImageFilter.MinFilter(2 * shrink + 1)).filter(ImageFilter.GaussianBlur(blur))
+    im.putalpha(a); im.save(path)
+
+
 def main(slug, title, kick, video, at='1.2'):
     out_dir = os.path.join(REPO, 'public', 'covers'); os.makedirs(out_dir, exist_ok=True)
     tmp = tempfile.mkdtemp()
@@ -189,7 +196,13 @@ def main(slug, title, kick, video, at='1.2'):
         hf = os.environ.get('HYPERFRAMES_BROWSER_PATH', CHROME)
         subprocess.run(f'npx --yes hyperframes@0.8.174 remove-background {os.path.join(tmp, "face.jpg")} -o {os.path.join(tmp, "cut.png")} >/dev/null 2>&1',
                        shell=True, check=True, env=dict(os.environ, HYPERFRAMES_BROWSER_PATH=hf))
-        page = TPL_SAHNE.replace('__FONTS__', fonts).replace('__BACK__', html.escape(parts[0].strip('*'))).replace('__FRONT__', front) \
+        # no white sticker outline (Ata, 21 Eki: it cut the hair badly). Feather the matte edge instead.
+        feather(os.path.join(tmp, 'cut.png'))
+        edge = os.environ.get('COVER_EDGE', 'isik')
+        edges = {'dogal': 'drop-shadow(0 30px 40px rgba(0,0,0,.65))',
+                 'isik': 'drop-shadow(0 0 2px rgba(255,255,255,.35)) drop-shadow(0 0 28px __ACC__) drop-shadow(0 30px 40px rgba(0,0,0,.65))',
+                 'golge': 'drop-shadow(0 0 14px rgba(0,0,0,.9)) drop-shadow(0 0 30px rgba(0,0,0,.6)) drop-shadow(0 30px 40px rgba(0,0,0,.6))'}
+        page = TPL_SAHNE.replace('__EDGE__', edges.get(edge, edges['isik'])).replace('__FONTS__', fonts).replace('__BACK__', html.escape(parts[0].strip('*'))).replace('__FRONT__', front) \
             .replace('__ACC__', acc).replace('__DARK__', dark).replace('__P1__', props[0]).replace('__P2__', props[1])
     elif style == 'vurucu':
         # 'satır1 / *satır2* / !satır3!'  -> *..* yellow, !..! red, plain white; one line per '/'
