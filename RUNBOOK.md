@@ -22,6 +22,12 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
   2. **İzleyicinin cebi:** Bu bilgi izleyicinin parasına somut olarak ne yapıyor (kaybedeceği/kazanacağı/karar vereceği şey, rakamla)? Şirketin/kurumun derdi değil, izleyicinin derdi.
   3. **Öğrenme anı:** İzleyici sonda bilmediği, tahmin edemeyeceği neyi öğreniyor? Tek cümle.
   Örnek RET: "Marketler neden banka kuruyor" (20 Eki) — kanıt yoktu, cevap şirketin derdiydi, izleyici hiçbir şey öğrenmedi.
+- **DOLULUK TESTİ — güçlü olmayan senaryo KULLANILMAZ (Ata, 21 Eki).** Senaryo şu dördünü birden taşımalı, yoksa güçlendir; güçlendirilemiyorsa konuyu atla:
+  1. En az 4 ayrı, kaynaklı bilgi (rakam/olay/mekanizma) — tahmin edilebilir genel laflar sayılmaz ("nadir olan pahalıdır" gibi).
+  2. En az 1 gerçekten şaşırtıcı bilgi (izleyici tahmin edemez).
+  3. İzleyicinin kendi hayatına dönük somut adım: "kendi durumunu nasıl kontrol edersin / ne yaparsın" (ör. değeri nasıl kontrol edilir, hangi belgeye/ekrana bakılır).
+  4. Kilitte verilen söz eksiksiz teslim edilir; hiçbir blok tek cümleyle geçiştirilmez.
+  Bağımsız incelemede "AI slop / içi boş / havada kalıyor" bulgusu çıkarsa FAIL'dir. Ata'ya senaryoyu sunarken bu dört maddeyi işaretle.
 - **Görsel çeşitlilik:** Ardışık iki paylaşımda aynı kıyafet (look) olmaz — `log.md`'deki son paylaşımın look'una bak. Şablonu da her videoda değiştir; sadece yazı kartı + konuşan kafa yetmez, her sahnede anlatıyı GÖSTEREN bir görsel (grafik, ekran, nesne, karşılaştırma) olmalı.
 - Profil dışı/deneme konusu ise Instagram tipi TRIAL_REEL, finans konusu ise REEL.
 
