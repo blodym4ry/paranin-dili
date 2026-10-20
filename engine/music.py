@@ -204,9 +204,13 @@ def tension(dur, drops=(), variant=0, seed=11):
 
 
 def variant_for(slug):
-    """Date ordinal mod 7: posting gaps of 1-2 days always land on a different bed; full cycle in ~2 weeks."""
+    """Posting-order rotation: count Mon/Wed/Fri/Sun posting days since 2026-10-01 up to the slug's date, mod 7.
+    Consecutive posts always get consecutive beds and all 7 cycle (a plain date%7 would pin each weekday to one bed)."""
     import datetime
-    try: return datetime.date.fromisoformat(slug[:10]).toordinal() % len(VARIANTS)
+    try:
+        d = datetime.date.fromisoformat(slug[:10]); e = datetime.date(2026, 10, 1)
+        k = sum(1 for i in range((d - e).days + 1) if (e + datetime.timedelta(i)).weekday() in (0, 2, 4, 6))
+        return k % len(VARIANTS)
     except ValueError: return zlib.crc32(slug.encode()) % len(VARIANTS)
 
 
