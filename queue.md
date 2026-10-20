@@ -2,6 +2,8 @@
 İşaretler: `[ ]` sırada · `[x] tarih slug` yapıldı · `[~] neden` atlandı. Ata dönünce bu listeyi yeniden sıralayabilir.
 Kanıt = rakip reelin kendi hesap medyanına göre kaç kat izlendiği (outlier). Hook = tools/hookscore_tr.py puanı.
 
+- [x] 2026-10-20 2026-10-24-altin-reel-faiz — Altın neden düştü: ABD reel faizi + 2013 (YouTube kaynak analizi, Ata'nın isteği)
+- [x] 2026-10-20 2026-10-26-para-pahalandi — Kredi faizin neden düşmüyor: dünyada para pahalandı, 3 halkalı zincir
 - [ ] Yaşam standardı enflasyonu: zam aldın ama ay sonu gelmiyor (iki kişi aynı maaş, biri zenginleşiyor) — hook 88 — kanıt 575x — REEL
 - [ ] Marketler neden banka kuruyor? (BİM Dost Bank, A101; BDDK onayları, mevduat/kredi/veri) — hook 83 — REEL
 - [ ] Çocuğun için ayda 1.000 TL yatır, 18'de dur: 65 yaşında reel değeri (enflasyondan arındırılmış, kaynaklı varsayım) — hook 82 — kanıt 53x — REEL
