@@ -93,7 +93,7 @@ def avatar_guard(w, hf):
         if not AV.get(sid): continue
         shown += b - a
         # window fades in at scene start-0.05s and is gone by scene end-0.05s: the clip must cover that span
-        if not any(s['a'] <= a - .05 + .005 and b - .05 <= s['b'] for s in segs):
+        if not any(s['a'] <= max(0.0, a - .05) + .005 and b - .05 <= s['b'] for s in segs):
             print(f'AVATAR GUARD FAIL: scene {sid} {a:.2f}-{b:.2f} shows avatar outside every avatar clip'); ok = False
     print(f'avatar on screen {shown:.1f}s of {total:.1f}s ({shown / total * 100:.0f}%)')
     return ok

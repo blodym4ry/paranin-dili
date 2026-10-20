@@ -1,0 +1,8 @@
+- ABD 10 yıllık TIPS reel faizi 5 Ekim 2026 %2,95, Kasım 2008'den beri en yüksek kapanış; 25 Ağu→5 Eki +63 bp; ons altın 25 Ağu zirve 4.657,52 $ → 5 Eki 4.182,86 $ (−%10,2): https://fxmacrodata.com/articles/gold-vs-real-yields-tips-analysis
+- 10 yıllık TIPS 2,653% (17 Eylül, "yaklaşık 18 yılın en yükseği"): https://tipswatch.com/2026/09/17/10-year-tips-reopening-gets-real-yield-of-2-653-highest-in-nearly-18-years/
+- Eylül 2026: ECB 10 Eyl (+25bp, %2,50), Fed 16 Eyl (+25bp, %3,75–4,00), BoJ 18 Eyl (+25bp, %1,25): https://www.vantagemarkets.com/market-analysis/fed-rate-hike-ecb-boj-eight-days/
+- ABD Eylül TÜFE %3,7 (beklenti %3,6), 14 Ekim: https://www.xtb.com/en/market-analysis/us-cpi-above-expectations
+- Altın 2013'te %28 düştü (Reuters): https://www.business-standard.com/amp/article/reuters/gold-holds-near-six-month-low-ends-2013-down-28-percent-114010200047_1.html
+- 2013'te reel ve nominal faizler 100 bp+ arttı, TIPS'te daha fazla: https://tipswatch.com/2021/07/06/lets-take-a-deep-dive-look-at-my-three-favorite-bond-funds-vtip-schp-and-bnd/
+- Ons altın 20 Ekim 2026 ~4.120 $ (Fortune); 25 Ağu zirvesi 4.657 $ → ~−%11,5: https://fortune.com/article/current-price-of-gold-10-20-2026/
+- 10 yıllık TIPS 16 Ekim %2,74; bir yıl önce %1,71 (+103 bp): https://treasuryratewatch.com/daily/tips-real-yields
