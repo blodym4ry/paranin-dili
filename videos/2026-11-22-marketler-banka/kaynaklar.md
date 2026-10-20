@@ -1,0 +1,12 @@
+# Kaynaklar — 2026-11-22 marketler banka (doğrulama 20 Ekim 2026)
+- BİM / Dost Katılım Bankası: BDDK kuruluş izni 11 Haziran 2026 (Resmi Gazete'de ilan, haber 17 Haz 2026); İstanbul Ticaret Sicili tescili 16 Eylül 2026; kuruluş sermayesi 10 milyar TL; BİM doğrudan %99,99996; sermayenin 1/4'ü ödendi, kalan faaliyet izni başvurusuna kadar. Faaliyet izni HENÜZ YOK (başvuru yapılacak).
+  - https://www.foreks.com/haber/detay/6aaaa400be4e21669e8fba85/PICNEWS/tr/bim-in-dost-katilim-bankasi-resmen-kuruldu-sermayesi-10-milyar-tl-16-09-26/
+  - https://www.cnbce.com/haberler/bimden-bankacilik-hamlesi-dost-katilim-bankasi-resmen-kuruldu-h37373
+  - https://www.bloomberght.com/bddk-dan-dost-katilim-bankasi-nin-kurulmasina-izin-3780238 (17 Haz 2026)
+- T.O.M. Katılım Bankası (TOM Bank): BDDK kuruluş izni 4 Ağu 2022 (karar 10282, RG 12 Ağu 2022 / 31921); faaliyet izni RG 31 Mart 2023 (32149); kurucu ortaklar A101 yöneticileri (Ahmet Yaşar Aydın %96,5 — A101 YK Başkanı). Banka şirket olarak A101'e (Yeni Mağazacılık) değil, patronlara/Turgut Aydın Holding'e bağlı → senaryoda "A101'in patronları".
+  - https://www.tombank.com.tr/assets/images/doc/denetim-raporlari/30092023.pdf
+  - https://www.cnnturk.com/ekonomi/sirketler/a101den-dijital-banka-hamlesi-1824722 (12 Ağu 2022)
+- TOM: tam hizmet 24 Mart 2024 → yaklaşık 9 ayda 975 bin müşteri; grup iştirakleri günde 5,5 milyon fiş; A101 ve English Home kasalarından nakit çekme; mevduat eşdeğeri fonlama 2024 sonu 4,5 milyar TL; ~700 bin kişide veresiye limiti — Forbes Türkiye, 3 Ocak 2025: https://www.forbes.com.tr/makale/perakendenin-gucu-tom-katilim-bankasi
+- TOM müşterilerinin ~%65-70'i A101 kasasını küçük nakit çekimi için kullanıyor (CEO beyanı) — Para Dergi, 17 Şubat 2025: https://www.paradergi.com.tr/finans/2025/02/17/turkiyenin-en-buyuk-dijital-bankasi
+- Mekanizma (genel): kartlı ödemede işyeri, işlemi yapan (POS) bankaya üye işyeri komisyonu öder; rakam verilmedi.
+- Not: BİM'in banka kurma gerekçesine dair resmi açıklama yok → senaryo BİM'e niyet atfetmiyor, "market bankası" modelinin mekanizmasını anlatıyor. Marka övme/kötüleme yok.
