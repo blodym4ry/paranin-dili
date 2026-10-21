@@ -34,6 +34,8 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
   - Spec'te: dosyaları `videos/<slug>/media/` içine koy (pv.py build hf/media'ya kopyalar); görsel `<img src="media/..">`, video `BROLL(A)` listesi (assemble.py: id, src, a, b, ms, dim). İngilizce yazı yanmış videoları kullanma ya da kırp.
 - Profil dışı/deneme konusu ise Instagram tipi TRIAL_REEL, finans konusu ise REEL.
 
+> **İMLA = SESLENDİRME (Ata, 21 Eki):** TTS virgül ve noktaya göre duraklar/tonlar. Her senaryoda imlayı ekstra kontrol et: cümle ortasında gereksiz virgül yok, liste/ara söz virgülleri doğru, cümle sonu nokta, soru cümlesi soru işareti. Sayıları yazıyla yaz. Ses üretmeden önce senaryoyu yüksek sesle okunuyormuş gibi tek tek gözden geçir; şüpheli yerde cümleyi böl.
+
 ## 2. Senaryo (45–62 sn, ~150 kelime/dk → 115–150 kelime)
 **İskelet (sırayı bozma; kısa videoda blokları kısalt, bölüm atlama):**
 | Bölüm | Süre | Görevi | Avatar? |

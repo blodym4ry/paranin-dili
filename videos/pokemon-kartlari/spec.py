@@ -72,8 +72,8 @@ def RISERS(A): return [[A('Birinci') - .3, 'sharp', -10], [A('Peki') - .2, 'meta
 SCENE_HTML = r'''
   <section id="s1" class="scene clip">
     <div class="a lot" id="s1l" style="left:0;right:0;top:250px;text-align:center">LOT · AYNI KART</div>
-    <div class="a" id="s1s9" style="left:12px;top:560px;width:210px;height:330px;transform:scale(.8);transform-origin:0 0"><img class="rimg" src="media/pikachu_slab.jpg" width="210" height="349" style="filter:grayscale(.75) brightness(.8)"><div class="nb">NOT 9</div></div>
-    <div class="a" id="s1s10" style="left:900px;top:560px;width:210px;height:330px;transform:scale(.8);transform-origin:0 0"><img class="rimg" src="media/pikachu_slab.jpg" width="210" height="349"><div class="nb">NOT 10</div></div>
+    <div class="a" id="s1s9" style="left:50px;top:560px;width:210px;height:330px;transform:scale(.8);transform-origin:0 0"><img class="rimg" src="media/pikachu_slab.jpg" width="210" height="349" style="filter:grayscale(.75) brightness(.8)"><div class="nb">NOT 9</div></div>
+    <div class="a" id="s1s10" style="left:862px;top:560px;width:210px;height:330px;transform:scale(.8);transform-origin:0 0"><img class="rimg" src="media/pikachu_slab.jpg" width="210" height="349"><div class="nb">NOT 10</div></div>
     <div class="a ser" id="s1d" style="left:0;right:0;top:1190px;text-align:center;font-size:92px;color:#d9b25f">+4.000.000 $</div>
   </section>
   <section id="s2" class="scene clip">
