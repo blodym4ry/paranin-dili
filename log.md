@@ -16,3 +16,4 @@
 | 2026-10-21 | pokemon-kartlari | GERÇEK GÖRSEL: Pikachu/Charizard PSA 10 foto, Logan Paul (IGN), X B-roll (satış konfetisi, teslim) eklendi; kredi harcanmadı; müzik karanlık hip-hop (MUSIC_STYLE=karanlik_hiphop). Onay bekliyor. |
 | 2026-10-21 | KAPAK | 20 kapak gölge kenarla yenilendi; Metricool'da 5 gönderi güncellendi (maaş, altın, kredi faizi, efsane cuma, doğalgaz), kalan 10 onay bekliyor. |
 | 2026-10-21 | pokemon-kartlari | hoodie_glasses | Müzayede salonu + gerçek görsel/B-roll | 62.0s | ~31 kredi | - | 2026-11-11 19:45 REEL | 402421939 | Ata onayladı (21 Eki). NOT 10 etiketi düzeltildi. Karanlık hip-hop. |
+| 2026-10-21 | 2026-10-24-zorlu-holding | street_hoodie_seated (gri kapüşon) | KAP dosya masası | 60.6s | ~13 avatar + ~12 ses | 64.8 kanca | onay bekliyor | - | bağımsız inceleme FAIL→düzeltildi→PASS (1 milyar $ tutarı çıkarıldı, %4 sadece 2035 seçeneğine bağlandı, kapanış 'planlanan'). Gerilim müziği. |
