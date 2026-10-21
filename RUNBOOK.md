@@ -30,6 +30,8 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
   Bağımsız incelemede "AI slop / içi boş / havada kalıyor" bulgusu çıkarsa FAIL'dir. Ata'ya senaryoyu sunarken bu dört maddeyi işaretle.
 - **Görsel çeşitlilik:** Ardışık iki paylaşımda aynı kıyafet (look) olmaz — `log.md`'deki son paylaşımın look'una bak. Şablonu da her videoda değiştir; sadece yazı kartı + konuşan kafa yetmez, her sahnede anlatıyı GÖSTEREN bir görsel (grafik, ekran, nesne, karşılaştırma) olmalı.
 - **Gerçek görsel / B-roll (Ata, 21 Eki):** Konuyla ilgili gerçek görseller, haber fotoğrafları, stok ve B-roll videolar telifli olsa da kullanılabilir (kâr amaçsız kanal; ihtar gelirse Ata videoyu kaldırır). Çizimle taklit etme, gerçek görseli kullan. Kaynak linkini `videos/<slug>/kaynaklar.md`'ye yaz. Not: konteyner internet izni görsel sitelerine kapalıysa Ata'dan izinli alan eklemesini ya da dosyaları göndermesini iste.
+  - **Nasıl indirilir (çalışan yöntem):** Google Görseller'de tam boy görsel URL'sini bul (önizlemeye tıkla → büyük img src). X videoları: `cdn.syndication.twimg.com/tweet-result?id=<tweet>&token=4` JSON'undaki en yüksek bitrate mp4. Her dosya için Chrome'da YENİ sekme aç → dosya URL'sine git → `fetch(location.href)` blob + `a.download='pd_...'` (aynı sekmede ikinci indirme engellenir). Dosyalar Ata'nın İndirilenler klasörüne iner → device_stage_files ile al.
+  - Spec'te: dosyaları `videos/<slug>/media/` içine koy (pv.py build hf/media'ya kopyalar); görsel `<img src="media/..">`, video `BROLL(A)` listesi (assemble.py: id, src, a, b, ms, dim). İngilizce yazı yanmış videoları kullanma ya da kırp.
 - Profil dışı/deneme konusu ise Instagram tipi TRIAL_REEL, finans konusu ise REEL.
 
 ## 2. Senaryo (45–62 sn, ~150 kelime/dk → 115–150 kelime)

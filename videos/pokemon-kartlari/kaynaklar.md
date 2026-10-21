@@ -9,3 +9,10 @@
 - PSA 2025: ~20 milyon ürün; Pokemon gem oranı ~%50 → 2025'te ~6 milyon PSA 10 Pokemon: https://www.si.com/collectibles/pokemon-powers-2025-psa-s-biggest-grading-year-in-company-history
 - PSA en ucuz tarife (Value Bulk) 24,99 $/kart, min 20 kart, üyelik gerekli (18 Şub 2026): https://allvintagecards.com/psa-hikes-grading-costs-and-turnaround-times-2026/
 - Değer kontrolü: ilan fiyatı değil gerçekleşmiş satış (eBay "sold", PriceCharting): https://www.pokemonpricetracker.com/blog/posts/pokemon-cards-price-check-guide
+
+## Görseller / B-roll (gerçek, telifli — Ata onayıyla, kâr amaçsız kullanım; ihtar gelirse kaldırılır)
+- pikachu_slab.jpg: artdependence.com (Pikachu Illustrator PSA 10 fotoğrafı)
+- logan_ring.jpg: IGN (sm.ign.com) — Logan Paul ringde PSA 10 Pikachu Illustrator ile
+- charizard_slab.jpg: PSA CardFacts (i.psacard.com) — 1999 1. baskı Charizard PSA 10
+- parti.mp4: X @nexta_tv/status/2023525296516083807 — Goldin/Ripit satış anı
+- teslim.mp4: X @GuyImprov/status/2023300043906699324 — Logan Paul kartı yeni sahibine teslim ediyor

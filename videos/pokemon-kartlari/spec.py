@@ -1,6 +1,6 @@
 import os
 # Şablon: MÜZAYEDE SALONU (Ata seçimi, 21 Eki). Kinetik tabanı + EXTRA_CSS ile bordo kadife / altın / spot ışığı.
-# Telif: Pokemon karakterleri/kart görselleri ÇİZİLMEZ — sadece genel kart silüeti, not etiketi, fiyat, çekiç.
+# Gerçek görseller (Ata, 21 Eki): media/ altında gerçek kart fotoğrafları + X'ten B-roll (kaynaklar.md). Kart çizimi yok, gerçek foto var.
 # Avatar (kahverengi kapüşon+gözlük): s1 kanca+kilit, s4 "Peki yeni kartlar?", s7 CTA+döngü.
 W = os.environ['VIDEO_WORK']
 SRT = os.path.join(W, 'avatar_cut.srt')
@@ -39,8 +39,16 @@ body,#root{background:#14080b}
 .plinth{position:absolute;width:560px;height:60px;border-radius:50%;background:radial-gradient(ellipse,rgba(217,178,95,.45),transparent 70%)}
 .tag{position:absolute;background:#f3efe6;color:#14080b;border-radius:10px;padding:14px 26px;font:900 66px 'Inter Tight';letter-spacing:-.03em;box-shadow:0 14px 30px rgba(0,0,0,.45)}
 .tag::before{content:'';position:absolute;left:-18px;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;background:#14080b;border:5px solid #f3efe6}
+.rimg{position:absolute;left:0;top:0;display:block;border-radius:12px;box-shadow:0 24px 50px rgba(0,0,0,.6)}
+.nb{position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);background:#f3efe6;color:#14080b;font:900 46px 'Inter Tight';padding:2px 22px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.5);white-space:nowrap}
 .step{font:800 30px 'IBM Plex Mono';letter-spacing:.14em;color:#14080b;background:#d9b25f;padding:8px 18px;border-radius:8px}
 </style>'''
+
+
+def BROLL(A):
+    # gerçek görüntü: Ripit/Goldin satış anı (konfeti) ve teslim (X: @nexta_tv, @GuyImprov — kaynaklar.md)
+    return [{'id': 'br_sat', 'src': 'parti.mp4', 'a': A('Bu', 19.5) - .05, 'b': A('Birinci') - .15, 'ms': 3.55, 'dim': .45},
+            {'id': 'br_tes', 'src': 'teslim.mp4', 'a': A('İkinci') - .1, 'b': A('İkinci') + 5.8, 'ms': 0, 'dim': .8}]
 
 
 def scenes(A):
@@ -64,15 +72,16 @@ def RISERS(A): return [[A('Birinci') - .3, 'sharp', -10], [A('Peki') - .2, 'meta
 SCENE_HTML = r'''
   <section id="s1" class="scene clip">
     <div class="a lot" id="s1l" style="left:0;right:0;top:250px;text-align:center">LOT · AYNI KART</div>
-    <div class="a" id="s1s9" style="left:60px;top:560px;width:210px;height:330px;transform:scale(.8);transform-origin:0 0"><div class="slab" style="left:0;top:0"><div class="lab"><span>NOT</span><b>9</b></div><div class="crd"></div></div></div>
-    <div class="a" id="s1s10" style="left:852px;top:560px;width:210px;height:330px;transform:scale(.8);transform-origin:0 0"><div class="slab" style="left:0;top:0"><div class="lab"><span>NOT</span><b>10</b></div><div class="crd"></div></div></div>
+    <div class="a" id="s1s9" style="left:12px;top:560px;width:210px;height:330px;transform:scale(.8);transform-origin:0 0"><img class="rimg" src="media/pikachu_slab.jpg" width="210" height="349" style="filter:grayscale(.75) brightness(.8)"><div class="nb">NOT 9</div></div>
+    <div class="a" id="s1s10" style="left:900px;top:560px;width:210px;height:330px;transform:scale(.8);transform-origin:0 0"><img class="rimg" src="media/pikachu_slab.jpg" width="210" height="349"><div class="nb">NOT 10</div></div>
     <div class="a ser" id="s1d" style="left:0;right:0;top:1190px;text-align:center;font-size:92px;color:#d9b25f">+4.000.000 $</div>
   </section>
   <section id="s2" class="scene clip">
     <div class="a lot" id="s2l" style="left:60px;top:270px">LOT 1998 · ÇİZİM YARIŞMASI ÖDÜLÜ</div>
     <div class="a ser" id="s2h" style="left:60px;top:320px;font-size:84px;line-height:1">Sadece <span style="color:#d9b25f">39</span> kart</div>
     <div class="a plinth" id="s2p" style="left:260px;top:1040px"></div>
-    <div class="a" id="s2c" style="left:435px;top:640px;width:210px;height:330px;transform:scale(1.25)"><div class="slab" style="left:0;top:0"><div class="lab"><span>NOT</span><b>10</b></div><div class="crd"></div></div></div>
+    <div class="a" id="s2c" style="left:390px;top:500px;width:300px;height:499px"><img class="rimg" src="media/pikachu_slab.jpg" width="300" height="499"></div>
+    <div class="a" id="s2lp" style="left:40px;top:520px;width:1000px;height:563px"><img class="rimg" src="media/logan_ring.jpg" width="1000" height="563" style="border:4px solid #d9b25f"></div>
     <div class="a mono" id="s2a" style="left:60px;top:1140px;font-size:30px;color:rgba(243,239,230,.8)">2021 · 9 notlu kopya + 4 milyon $ ile alındı</div>
     <div class="a tag" id="s2t" style="left:120px;top:1210px">5.275.000 $</div>
     <svg class="a" id="s2g" style="left:760px;top:1180px" width="230" height="190" viewBox="0 0 230 190"><g fill="#d9b25f"><rect x="60" y="20" width="130" height="56" rx="12" transform="rotate(-28 125 48)"/><rect x="40" y="70" width="20" height="120" rx="8" transform="rotate(-28 50 130)"/></g><rect x="0" y="170" width="200" height="16" rx="6" fill="#7a5a2b"/></svg>
@@ -81,12 +90,9 @@ SCENE_HTML = r'''
   <section id="s3" class="scene clip">
     <div class="a step" id="s3st" style="left:60px;top:260px">ADIM 1</div>
     <div class="a ser" id="s3h" style="left:60px;top:330px;font-size:70px">İlk baskı damgasına bak</div>
-    <div class="a" id="s3card" style="left:70px;top:470px;width:300px;height:420px;border-radius:16px;background:#f2d64b;border:10px solid #d9b25f">
-      <div style="position:absolute;left:18px;right:18px;top:40px;height:170px;background:repeating-linear-gradient(45deg,#7a1f2b 0 10px,#5e1621 10px 20px);border:4px solid #8a6a2a"></div>
-      <div id="s3stamp" style="position:absolute;left:14px;top:214px;width:42px;height:42px;border-radius:50%;background:#14080b"></div>
-      <div style="position:absolute;left:18px;right:18px;top:270px;height:10px;background:rgba(20,8,11,.25)"></div><div style="position:absolute;left:18px;right:60px;top:292px;height:10px;background:rgba(20,8,11,.25)"></div></div>
-    <svg class="a" id="s3ring" style="left:50px;top:650px" width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e0503f" stroke-width="8"/></svg>
-    <div class="a lot" id="s3rl" style="left:70px;top:905px;color:#e0503f">↑ DAMGA</div>
+    <div class="a" id="s3card" style="left:70px;top:455px;width:270px;height:452px"><img class="rimg" src="media/charizard_slab.jpg" width="270" height="452"></div>
+    <svg class="a" id="s3ring" style="left:48px;top:658px" width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e0503f" stroke-width="8"/></svg>
+    <div class="a lot" id="s3rl" style="left:70px;top:918px;color:#e0503f">↑ DAMGA</div>
     <div class="a mono" id="s3cap" style="left:430px;top:420px;font-size:26px;color:rgba(243,239,230,.8)">1999 · İLK BASKI · CHARIZARD</div>
     <div class="a" id="s3bars" style="left:430px;top:470px;width:600px;height:460px"></div>
     <div class="a mono" id="s3src" style="left:430px;top:945px;font-size:20px;color:rgba(243,239,230,.55)">PriceCharting · Ekim 2026 · yaklaşık</div>
@@ -132,7 +138,7 @@ tl.to(['#s1s9','#s1s10'],{opacity:.35,duration:.3},at('4 milyon'));
 // S2 müzayede: tek kart vitrinde, fiyat etiketi sayar, çekiç
 const s2=st('s2'); inn('#s2l',s2+.4); inn('#s2h',at('39')-.1); inn('#s2p',s2+.5,{y:0}); inn('#s2c',s2+.55,{y:60,s:.9});
 tl.fromTo('#s2c',{rotationY:-18},{rotationY:12,duration:st('s3')-s2,ease:'sine.inOut'},s2+.5);
-inn('#s2a',at('Logan Paul')); inn('#s2t',at('Logan Paul')+.3,{y:20}); count('#s2t',5275000,16492000,at('16,5')-.4,1.3,v=>fmt(v)+' $');
+tl.to('#s2c',{opacity:0,y:-30,duration:.3},at('Logan Paul')-.2); inn('#s2lp',at('Logan Paul'),{y:40}); tl.to(['#s2lp','#s2p'],{opacity:0,duration:.3},at('Bu',19.5)-.15); inn('#s2a',at('Logan Paul')); inn('#s2t',at('Logan Paul')+.3,{y:20}); count('#s2t',5275000,16492000,at('16,5')-.4,1.3,v=>fmt(v)+' $');
 tl.fromTo('#s2g',{opacity:0,rotation:-25,transformOrigin:'90% 90%'},{opacity:1,rotation:0,duration:.18,ease:'power4.in'},at('sattı')-.12); inn('#s2s',at('sattı')+.1,{y:10});
 // S3 adım 1: damga + fiyat merdiveni + 124/5325
 const s3=st('s3'); inn('#s3st',s3+.4,{y:-10}); inn('#s3h',s3+.5); inn('#s3card',s3+.6,{y:40});
@@ -148,7 +154,7 @@ inn('#s3f',at('Ama',34)); inn('#s3f2',at('Ama',34)+.4,{y:0});
 inn('#s4h',st('s4')+.25,{s:1.1});
 // S5 10 yağmuru
 const s5=st('s5'), d5=st('s6')-s5;
-(function(){const r=$('#s5rain');let h='';for(let i=0;i<26;i++){const x=(i*173)%1000-40,dl=(i*0.37)%2.4,sc=.35+((i*7)%5)/10;h+=`<div id="s5r${i}" style="position:absolute;left:${x}px;top:-420px;width:210px;height:330px;transform:scale(${sc});opacity:.55"><div class="slab" style="left:0;top:0"><div class="lab"><span>NOT</span><b>10</b></div><div class="crd"></div></div></div>`;}
+(function(){const r=$('#s5rain');let h='';for(let i=0;i<26;i++){const x=(i*173)%1000-40,dl=(i*0.37)%2.4,sc=.35+((i*7)%5)/10;h+=`<div id="s5r${i}" style="position:absolute;left:${x}px;top:-420px;width:210px;height:330px;transform:scale(${sc});opacity:.8"><img class="rimg" src="media/${i%2?'charizard_slab.jpg':'pikachu_slab.jpg'}" width="210" height="${i%2?352:349}"></div>`;}
  r.innerHTML=h; for(let i=0;i<26;i++){const dl=(i*0.37)%2.4;tl.fromTo('#s5r'+i,{y:0,rotation:-15+(i%5)*7},{y:2500,rotation:15-(i%4)*8,duration:3.2,ease:'none'},s5+.3+dl);}})();
 inn('#s5l',s5+.4); inn('#s5v',s5+.45); count('#s5v',0,6000000,at('6 milyon')-.5,1.2,v=>fmt(v)); inn('#s5u',at('6 milyon')+.5);
 inn('#s5p',at('Notlananların')); slam('#s5s',at('Kusursuz'));

@@ -36,7 +36,13 @@ for i, ch in enumerate(chunks):
 css = open(os.path.join(KIT, getattr(S, 'CSS_FILE', 'kinetik.css.html'))).read().replace('__FONTS__', open(os.path.join(KIT, 'fonts.css')).read())
 core = open(os.path.join(KIT, 'kinetik_core.js')).read().replace('__CAPS__', json.dumps(caps, ensure_ascii=False)) \
     .replace('__SCENES__', json.dumps(SC)).replace('__AV__', json.dumps(S.AV)).replace('__DUR__', str(S.DUR))
-exitf = "SC.slice(0,-1).forEach(([id,a,b])=>{tl.to(`#${id} > *`,{opacity:0,duration:.22,ease:'power2.in'},b-.45);});\n"
+# optional B-roll: spec.BROLL(A) -> [{'id','src','a','b','ms','style'(css for wrapper),'dim'(0-1 dark overlay)}]
+BR = S.BROLL(A) if hasattr(S, 'BROLL') else []
+broll_html = ''.join(f'<div class="broll" id="{r['id']}" style="position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0;{r.get('style', '')}">'
+    f'<video id="{r['id']}_v" class="clip" src="media/{r['src']}" muted playsinline data-start="{r['a']:.3f}" data-duration="{r['b'] - r['a']:.3f}" data-media-start="{r.get('ms', 0):.3f}" data-track-index="{2 + i}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>'
+    f'<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,4,6,{r.get('dim', .55)}) 0%,rgba(10,4,6,{r.get('dim', .55) * .6}) 45%,rgba(10,4,6,{min(1, r.get('dim', .55) + .3)}) 100%)"></div></div>\n' for i, r in enumerate(BR))
+broll_js = ''.join(f"tl.to('#{r['id']}',{{opacity:1,duration:.3}},{r['a']:.3f});tl.to('#{r['id']}',{{opacity:0,duration:.3}},{r['b'] - .3:.3f});\n" for r in BR)
+exitf = broll_js + "SC.slice(0,-1).forEach(([id,a,b])=>{tl.to(`#${id} > *`,{opacity:0,duration:.22,ease:'power2.in'},b-.45);});\n"
 html = f'''<!doctype html>
 <html lang="tr" data-resolution="portrait">
 <head>
@@ -49,6 +55,7 @@ html = f'''<!doctype html>
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{S.DUR}" data-width="1080" data-height="1920">
   <div class="bg"><div id="glow"></div><div id="grid"></div></div>
+{broll_html}
 {S.SCENE_HTML}
   <div id="avbox"><div id="avw"><div id="avc"><video id="av" class="clip" src="media/av.mp4" muted playsinline data-start="0" data-duration="{S.DUR}" data-media-start="0" data-track-index="1"></video></div></div></div>
   <div id="caps"></div>
