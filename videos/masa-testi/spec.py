@@ -14,7 +14,7 @@ REPL = [(N('yüzde', 'kırk', 'üçü'), "%43'ü")]
 EM = {'tuzağın', 'göstereceğim.'}
 RED = {"%43'ü"}
 SOUND_KIT = 'masa'
-POL = [250, 300, 580, 800, 4]
+POL = [300, 250, 480, 660, 4]
 AV = {'s1': POL, 's2': None, 's3': None}
 
 EXTRA_CSS = r'''<style>
@@ -53,7 +53,7 @@ def scenes(A):
 
 
 # yazdırılmış 10x10 nokta tablosu (kâğıdın üstünde)
-DOTS = ''.join(f'<div class="pdot" id="d{i}" style="left:{70 + (i % 10) * 76}px;top:{150 + (i // 10) * 64}px"></div>' for i in range(100))
+DOTS = ''.join(f'<div class="pdot" id="d{i}" style="left:{70 + (i % 10) * 76}px;top:{130 + (i // 10) * 56}px"></div>' for i in range(100))
 
 
 def ring(id_, w, h, seed):
@@ -72,28 +72,28 @@ def ring(id_, w, h, seed):
 
 SCENE_HTML = r'''
   <section id="s1" class="scene clip">
-    <div class="tape" id="t1" style="left:190px;top:268px;transform:rotate(-32deg)"></div>
-    <div class="tape" id="t2" style="left:690px;top:282px;transform:rotate(30deg)"></div>
-    <div class="kraft" id="n1" style="left:500px;top:1180px;width:480px;height:270px;transform:rotate(4deg);padding:28px 30px">
+    <div class="tape" id="t1" style="left:240px;top:222px;transform:rotate(-32deg)"></div>
+    <div class="tape" id="t2" style="left:650px;top:228px;transform:rotate(30deg)"></div>
+    <div class="kraft" id="n1" style="left:470px;top:935px;width:500px;height:235px;transform:rotate(3deg);padding:28px 30px">
       <div class="hand" style="font-size:44px;color:#5a3a1a">SORU 1</div>
       <div class="hand" style="font-size:58px">Neden okuduğu işi yapmıyor?</div>
     </div>
   </section>
   <section id="s2" class="scene clip">
-    <div class="sheet" id="sh" style="left:70px;top:200px;width:940px;height:1180px;transform:rotate(-1.5deg)">
+    <div class="sheet" id="sh" style="left:70px;top:190px;width:940px;height:980px;transform:rotate(-1.5deg)">
       <div class="print" style="position:absolute;left:70px;top:70px">MAAŞLI ÇALIŞAN 100 LİSANS MEZUNU</div>
       ''' + DOTS + r'''
-      <div class="hand red" id="h43" style="position:absolute;left:80px;top:830px;font-size:230px;clip-path:inset(0 100% 0 0)">%43</div>
-      <div class="hand" id="h43t" style="position:absolute;left:470px;top:900px;font-size:66px;width:420px;clip-path:inset(0 100% 0 0)">alanının dışında</div>
-      <div style="position:absolute;left:40px;top:820px">''' + ring('r43', 420, 250, 3) + r'''</div>
-      <div class="print" style="position:absolute;left:70px;top:1110px;font-size:18px">Kaynak: TÜİK Yükseköğretim İstihdam Göstergeleri 2025</div>
+      <div class="hand red" id="h43" style="position:absolute;left:80px;top:690px;font-size:200px;clip-path:inset(0 100% 0 0)">%43</div>
+      <div class="hand" id="h43t" style="position:absolute;left:430px;top:750px;font-size:64px;width:420px;clip-path:inset(0 100% 0 0)">alanının dışında</div>
+      <div style="position:absolute;left:40px;top:665px">''' + ring('r43', 380, 230, 3) + r'''</div>
+      <div class="print" style="position:absolute;left:70px;top:925px;font-size:18px">Kaynak: TÜİK Yükseköğretim İstihdam Göstergeleri 2025</div>
     </div>
   </section>
   <section id="s3" class="scene clip">
-    <div class="photo" id="ph" style="left:90px;top:260px;width:900px;height:640px;transform:rotate(-3deg)"><img src="media/kep.jpg"></div>
-    <div class="tape" id="t3" style="left:80px;top:230px;transform:rotate(-28deg)"></div>
-    <div class="tape" id="t4" style="left:830px;top:235px;transform:rotate(24deg)"></div>
-    <div class="kraft" id="n3" style="left:140px;top:1000px;width:700px;height:250px;transform:rotate(-2.5deg);padding:30px 36px">
+    <div class="photo" id="ph" style="left:90px;top:240px;width:900px;height:560px;transform:rotate(-3deg)"><img src="media/kep.jpg"></div>
+    <div class="tape" id="t3" style="left:80px;top:212px;transform:rotate(-28deg)"></div>
+    <div class="tape" id="t4" style="left:830px;top:215px;transform:rotate(24deg)"></div>
+    <div class="kraft" id="n3" style="left:140px;top:930px;width:700px;height:240px;transform:rotate(-2.5deg);padding:30px 36px">
       <div class="hand" id="q3" style="font-size:76px;clip-path:inset(0 100% 0 0)">Asıl tuzak bu mu?</div>
       <div class="hand red" id="q3b" style="font-size:56px;clip-path:inset(0 100% 0 0)">→ cevap sonda</div>
     </div>
@@ -114,7 +114,7 @@ const draw=(id,t,d,end)=>{const n=Math.round(d/F);for(let v=0;v<3;v++)tl.fromTo(
 // elde kamera: deterministik yavaş kayma + mikro sarsıntı, 12 fps adımlı
 for(let k=0;k*F<__DUR__;k++){const t=k*F;tl.set('.bg, .scene',{x:Math.sin(t*.41)*14+Math.sin(t*2.3+1)*2.2,y:Math.sin(t*.29+2)*10+Math.cos(t*2.9)*2,rotation:Math.sin(t*.23)*.35},t);}
 // S1 — polaroid bantlanır, kraft not konur
-tape('#t1',.25,-32); tape('#t2',.5,30); put('#n1',1.2,{r:4,y:120,x:60});
+tape('#t1',.25,-32); tape('#t2',.5,30);  // Katman 4: başlık notu ilk karede hazır (animasyonsuz)
 // S2 — kâğıt kayar, 43 nokta kalemle doldurulur, %43 yazılır, daire çizilir
 put('#sh',5.15,{r:-1.5,y:900,dr:-4,n:6});
 for(let i=0;i<43;i++) tl.set('#d'+i,{className:'pdot on'},7.9+Math.floor(i/3)*F);
@@ -126,7 +126,7 @@ put('#n3',11.45,{r:-2.5,y:200}); write('#q3',11.75,.7); write('#q3b',12.5,.5);
 
 
 def SFX(A):
-    return [[.25, 'f:bant', -6, 0, 'bant1'], [.5, 'f:bant', -8, 0, 'bant2'], [1.2, 'f:kagit_kay', -8, 0, 'not'],
+    return [[.25, 'f:bant', -6, 0, 'bant1'], [.5, 'f:bant', -8, 0, 'bant2'],
             [5.15, 'f:kagit_kay', -5, 0, 'kagit'], [7.9, 'f:kalem_yaz', -8, 0, 'noktalar'], [8.25, 'f:kalem_yaz', -6, 1, '43'],
             [9.4, 'f:kalem_daire', -6, 1, 'daire'], [10.05, 'f:kagit_kay', -9, 0, 'kagit_cek'], [10.45, 'f:foto_birak', -5, 0, 'foto'], [10.95, 'f:bant', -7, 0, 'bant3'],
             [11.45, 'f:kagit_kay', -9, 0, 'not3'], [11.75, 'f:kalem_yaz', -8, 0, 'yazi']]

@@ -45,12 +45,17 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 | 3. Blok 1 | ~10 sn | Tek fikir. Önce söyle, sonra rakam/örnekle göster. | hayır (grafik) |
 | 4. Ara kanca 1 | 1 cümle | Sıradakini büyüt / beklentiyi ters çevir / soru sor / atlarsa kaybını söyle. | vurgu adayı |
 | 5. Blok 2 | ~10 sn | Tek fikir, somut örnek. | hayır |
-| 6. Ara kanca 2 | 1 cümle (isteğe bağlı) | Aynı teknik, farklı cümle. | vurgu adayı |
+| 6. Ara kanca 2 | 1 cümle (**ZORUNLU**, Ata 22 Eki) | Son değerin hemen önünde, ilgi düşerken (~%55–65). Kalıp: "çoğu kişi tam burada hata yapıyor" / "asıl önemlisi şu". | vurgu adayı |
 | 7. Blok 3 | ~8 sn (isteğe bağlı) | Uygulama: izleyicinin bugün yapacağı şey. | hayır |
 | 8. Kapanış | 1 cümle | Kilitte verilen sözü teslim ettiğini tek cümlede özetle. | EVET |
 | 9. CTA + döngü | son 3–5 sn | Tek eylem, değeri somut (ne kazanacak). Son cümle ilk cümleye bağlansın (döngü). Veda yok. | EVET |
 Avatar parçaları (§3) doğal olarak: [Kanca+Kilit], 1–2 ara kancadan biri, [Kapanış+CTA].
 Ara kancada görüntü de değişsin (yeni sahne düzeni, zoom, SFX) — söz ve görüntü birlikte "yeni bölüm" desin.
+**Viral formül referansı (peter.visuals reel'i, 142 B izlenme, Ata 22 Eki — refs/viral-formul.md):** Kanca → Söz → Değer 1 → Açık döngü 1 → Değer 2 → Açık döngü 2 → Değer 3 → CTA.
+- Açık döngü 1 ilk değerin bitiminde (~%35), "ama bir şey daha var" türü; açık döngü 2 son değerin önünde (~%60). İzleyici tam gidecekken açılır.
+- **Döngü anı = desen kırılması:** ekran 1–1,5 sn tamamen değişir (ör. karanlık zemin + sadece döngü cümlesi büyük kinetik yazı), sonra eski düzene döner. Masa stilinde: "masa lambası söner" — karanlık masa, sadece cümle.
+- **Kalıcı harita:** videonun tamamı tek bir büyüyen nesne/şema üzerinde ilerler (her bölüm bir düğüm/nesne ekler). Kapanışta kamera geri çekilir, bütün harita tek karede görünür
+  (masa stilinde: masadaki her şeyin üstten tek karesi) → kaydetmelik/ekran görüntülük özet. CTA tek kalır ("gönder"); harita sadece görüntüdür, ayrı bir istek eklenmez.
 
 **Yazım kuralları:**
 - Her cümle ya veri, ya mekanizma, ya aksiyon taşır. Dolgu ("aslında", "yani", "bu videoda") yok. Aynı fikri iki kez söyleme.
@@ -164,6 +169,7 @@ Amaç: "Claude ile kurgulanmış" görünmemek. Altyazı mekaniği AYNI kalır (
    Not: Ata'nın "yavaş tempo" isteği GÖRSEL yoğunluk içindir (öğe sayısı/ekranda kalma); kesme katmanıyla çelişmez — boşluk değil, ekran sakinleşir.
 4. **BAŞLIK** — İlk karede HAZIR (animasyonla gelmeyi beklemez), konuyu 1 sn'de söyler. İki satır: düz kalın satır = konu, italik serif satır = duygu; altında kendini çizen çizgi gözü oraya çeker. Kanca süresince (~ilk 3 sn) ekranda.
 5. **ALTYAZI** — Sesi kapalı izleyen takip eder; konuşmayla kare kare yanar. Yüzü ve Instagram arayüzünü örtmez: alt sınır y≤1440, sağ 230 px boş.
+   **Ata 22 Eki:** stil aynı, konum yukarı → kit varsayılanı `#caps` y=1200–1420, x=70–830. **Grafik güvenli alanı artık y=230–1180** (altyazı bandına grafik koyma).
 6. **GRAFİK** — Söylenen kelime o an ekranda görünür. Cümle dönünce ("ama/ancak/şimdi şaşırtıcı kısım") görüntü de döner (ton/zemin değişir).
 7. **SES** — Konuşma önde, −13 LUFS (pv.py render). Efekt seyrek (≤1 olay/sn), her geçişe whoosh YOK. Müzik konuşmanın ~16 dB altında; çakışırsa söz kazanır.
 **Yayın öncesi:** `python3 tools/katman.py <slug>` (ölçülebilenler) + elle 10 soru:
