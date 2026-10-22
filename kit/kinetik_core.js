@@ -13,7 +13,7 @@ const BW=740,BH=1040,BCX=540,BCY=770;
 function win(v){const [x,y,w,h,r]=v;const s=Math.max(w/BW,h/BH);const cw=w/s,ch=h/s;const ix=(BW-cw)/2;const iy=(BH-ch)*(h<500?0.18:0.5);
  return {tf:{x:x+w/2-BCX,y:y+h/2-BCY,scale:s},cp:`inset(${iy.toFixed(1)}px ${ix.toFixed(1)}px ${(BH-ch-iy).toFixed(1)}px ${ix.toFixed(1)}px round ${(r/s).toFixed(1)}px)`, dy:(BH/2-(iy+ch/2))*s};}
 const AV0=AV[SC[0][0]];
-if(AV0){const w0=win(AV0);tl.fromTo('#avw',{x:w0.tf.x,y:w0.tf.y+w0.dy,scale:w0.tf.scale*.94,opacity:0},{x:w0.tf.x,y:w0.tf.y+w0.dy,scale:w0.tf.scale,opacity:1,duration:.5,ease:'expo.out'},0);
+if(AV0){const w0=win(AV0);tl.fromTo('#avw',{x:w0.tf.x,y:w0.tf.y+w0.dy,scale:w0.tf.scale*.97,opacity:1},{x:w0.tf.x,y:w0.tf.y+w0.dy,scale:w0.tf.scale,opacity:1,duration:.5,ease:'expo.out'},0);
  tl.fromTo('#avc',{clipPath:w0.cp},{clipPath:w0.cp,duration:.01},0);}
 else{tl.set('#avbox',{opacity:0},0);}
 SC.slice(1).forEach(([id,a],k)=>{const v=AV[id],pv=AV[SC[k][0]];

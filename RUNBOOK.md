@@ -155,3 +155,18 @@ Amaç: "Claude ile kurgulanmış" görünmemek. Altyazı mekaniği AYNI kalır (
 - Sahne çıkışı fiziksel: `take()` kâğıdı masadan çeker.
 - Ses: `SOUND_KIT = 'masa'` → sentetik whoosh/riser/pop KAPALI; sadece ekrandaki nesnenin gerçek kaydı (`'f:bant'`, `'f:kagit_kay'`, `'f:kalem_yaz'`, `'f:kalem_daire'`, `'f:foto_birak'`, `'f:damga'`, `'f:sayfa'`, `'f:deklansor'`, `'f:bozuk_para'`, `'f:daktilo'` — kit/foley/lib.json).
 - Gerçek fotoğraf/video her videoda en az 2 kez masada (bantlı baskı) ya da tam ekran B-roll olarak.
+
+## KATMAN KATMAN — 7 katman edit çerçevesi (Batuhan @batuhaneditscom PDF'i, Ata 22 Eki: "analiz et ve öğren")
+İzleyici bir sebeple kaydırır; her katman bir sebebi kaldırır. Tek efekt kurtarmaz, 7'si aynı anda doğru olmalı.
+1. **HAM** — İlk karede yüz + başlık + ses hazır. İlk kelime ≤0.12 sn (`split.py trim <slug>` create_speech'ten hemen sonra). "Merhaba/bugün/bu videoda" yok. Avatar ilk karede görünür (fade yok — kinetik_core).
+2. **RENK** — Siyah gerçekten siyah, cilt doğal, zemin markanın rengiyle aynı ailede (videonun paleti avatar arka planıyla çatışmasın).
+3. **KESME** — Kancada (ilk 3 sn) 0.2 sn üstü boşluk yok; videoda 0.45 sn üstü ölü boşluk yok. Aynı şey iki kez söylenmez. Avatar pencere geçişinde yüz zıplamaz (pencereler arası yüz noktası yakın kalsın).
+   Not: Ata'nın "yavaş tempo" isteği GÖRSEL yoğunluk içindir (öğe sayısı/ekranda kalma); kesme katmanıyla çelişmez — boşluk değil, ekran sakinleşir.
+4. **BAŞLIK** — İlk karede HAZIR (animasyonla gelmeyi beklemez), konuyu 1 sn'de söyler. İki satır: düz kalın satır = konu, italik serif satır = duygu; altında kendini çizen çizgi gözü oraya çeker. Kanca süresince (~ilk 3 sn) ekranda.
+5. **ALTYAZI** — Sesi kapalı izleyen takip eder; konuşmayla kare kare yanar. Yüzü ve Instagram arayüzünü örtmez: alt sınır y≤1440, sağ 230 px boş.
+6. **GRAFİK** — Söylenen kelime o an ekranda görünür. Cümle dönünce ("ama/ancak/şimdi şaşırtıcı kısım") görüntü de döner (ton/zemin değişir).
+7. **SES** — Konuşma önde, −13 LUFS (pv.py render). Efekt seyrek (≤1 olay/sn), her geçişe whoosh YOK. Müzik konuşmanın ~16 dB altında; çakışırsa söz kazanır.
+**Yayın öncesi:** `python3 tools/katman.py <slug>` (ölçülebilenler) + elle 10 soru:
+ilk karede yüz/başlık/ses? · ilk cümle merhaba/tanıtım mı? · renk telefon gibi mi? · kancada nefes/boşluk? · aynı şey iki kez? · sesi kapalı konu anlaşılıyor mu? ·
+altyazı yüzü/arayüzü örtüyor mu? · her grafik o anki kelimeye oturuyor mu? · müzik sözün üstüne çıkıyor mu? · ilk 3 sn'de izleyici neden kalacağını biliyor mu?
+**Kanca testi (inceleme alt-ajanına ekle):** "Bu Reels kancasını ilk 3 saniyede kaydırılma riskine göre değerlendir: konu bir saniyede anlaşılıyor mu, merak açıyor mu, boş bir girişi var mı. Sonra 3 daha güçlü alternatif yaz."

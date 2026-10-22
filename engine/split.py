@@ -92,6 +92,19 @@ def cut(slug, idx):
     if on / total > .35: print('WARN: avatar share above 35% — pick fewer sentences')
 
 
+def trim(slug, lead=.06):
+    """Katman 1 (ilk kelime ilk karede): speech.wav başındaki sessizliği `lead` sn'ye indir, words.json'u kaydır."""
+    w = work(slug); p = os.path.join(w, 'words.json'); A = json.load(open(p))
+    first = next(x['start'] for x in A if not x['word'].startswith('<')); cut = round(max(0.0, first - lead), 3)
+    if cut < .02: print('trim: zaten', first); return
+    sp = os.path.join(w, 'speech.wav'); tmp = sp + '.tmp.wav'
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{cut:.3f}', '-i', sp, tmp], check=True); os.replace(tmp, sp)
+    for x in A:
+        x['start'] = round(max(0.0, x['start'] - cut), 4); x['end'] = round(max(0.0, x['end'] - cut), 4)
+    json.dump(A, open(p, 'w'), ensure_ascii=False)
+    print(f'trim: baştan {cut:.3f} sn kesildi, ilk kelime {first - cut:.3f} sn')
+
+
 def join(slug):
     w = work(slug); J = json.load(open(os.path.join(w, 'segments.json'))); total = J['total']
     parts, t = [], 0.0
@@ -123,6 +136,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 3: sys.exit(__doc__)
     c, slug = sys.argv[1], sys.argv[2]
     if c == 'cut': cut(slug, sys.argv[3])
+    elif c == 'trim': trim(slug)
     elif c == 'list': show(sentences(words(work(slug))))
     elif c == 'join': join(slug)
     else: sys.exit(__doc__)

@@ -5,7 +5,7 @@
   python3 engine/pv.py tel    <slug>   # pronunciation check (Whisper) against videos/<slug>/script.txt
   python3 engine/pv.py build  <slug>   # spec.py -> HyperFrames project (index.html) + mix.wav
   python3 engine/pv.py check  <slug>   # layout/contrast check at transitions + preview contact sheet
-  python3 engine/pv.py render <slug>   # render, mux, loudnorm -14 LUFS, QA sheet -> public/<slug>.mp4
+  python3 engine/pv.py render <slug>   # render, mux, loudnorm -13 LUFS, QA sheet -> public/<slug>.mp4
   python3 engine/pv.py remix  <slug>   # audio only: new music/sfx mix + mux onto the existing render (no re-render)
 
 WORK dir = $PD_WORK/<slug> (default ~/pd_work/<slug>). Heavy files live there, never in git.
@@ -127,7 +127,7 @@ def render(slug, video=True):
     final = os.path.join(w, f'{slug}.mp4')
     sh(['ffmpeg', '-v', 'error', '-y', '-i', 'renders/v.mp4', '-i', 'mix.wav', '-map', '0:v', '-map', '1:a', '-c:v', 'libx264',
         '-b:v', '4M', '-maxrate', '5M', '-bufsize', '8M', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-af',
-        'loudnorm=I=-14:TP=-1.5', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', final], cwd=hf)
+        'loudnorm=I=-13:TP=-1.5', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', final], cwd=hf)
     sh(['ffmpeg', '-v', 'error', '-y', '-i', final, '-vf', 'fps=1/2.6,scale=200:-1,tile=9x3', '-frames:v', '1',
         os.path.join(w, 'qa.jpg')])
     lufs = sh(f'ffmpeg -nostats -i {final} -af ebur128=peak=true -f null - 2>&1 | grep -E "I:|Peak:" | tail -2', capture=True)
