@@ -62,6 +62,7 @@ def build(slug):
     json.dump({'id': slug, 'name': slug}, open(os.path.join(hf, 'meta.json'), 'w'))
     shutil.copytree(os.path.join(KIT, 'fonts'), os.path.join(hf, 'fonts'), dirs_exist_ok=True)
     shutil.copy(os.path.join(KIT, 'gsap.min.js'), os.path.join(hf, 'media'))
+    shutil.copytree(os.path.join(KIT, 'masa'), os.path.join(hf, 'media', 'masa'), dirs_exist_ok=True)  # masa üstü kiti dokuları
     # per-video real images / B-roll (videos/<slug>/media) -> hf/media
     if os.path.isdir(os.path.join(vd, 'media')):
         shutil.copytree(os.path.join(vd, 'media'), os.path.join(hf, 'media'), dirs_exist_ok=True)

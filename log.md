@@ -21,4 +21,4 @@
 | 2026-10-22 | 2026-10-24-zorlu-holding | ZAMANLANDI 2026-10-24 19:45 REEL | 403007587 |
 | 2026-10-22 | dugun-altini | ZAMANLANDI 2026-11-13 19:45 REEL | 403007721 |
 | 2026-10-22 | KAPAK | kalan 10 gönderinin kapağı gölge kenarlı yenisiyle değişti (yeni idler: kredi kartı 403007955, mevduat 403008087, iphone 403008179, avm 403008276, faiz 403008405, sel 403008635, ara seçim 403008730, 10 yıl 403008833, aynı maaş 403008969, market 403009068) |
-| 2026-10-22 | alan-disi | street_hoodie_seated | Optik form | 60.7s | ~15 avatar + ~12 ses | 80.0 kanca | onay bekliyor | - | inceleme FAIL→düzeltildi; drive müzik |
+| 2026-10-22 | alan-disi | street_hoodie_seated | Optik form | 68.4s (v2) | v1 ~27 + v2 ~24 | 80.0 kanca | onay bekliyor | - | v2 (Ata): CTA "alan dışı çalışan arkadaşına gönder", seslendirme 0.93, ~19 giriş (v1 ~40); drive müzik |

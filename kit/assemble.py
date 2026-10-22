@@ -73,5 +73,5 @@ for sid, a, b in SC:
 open(os.path.join(vd, 'index.html'), 'w').write(html)
 L = [{'t': 0, 's': 'K'}] + [{'t': a - .3, 's': 'K'} for _, a, _ in SC[1:]]
 json.dump({'dur': S.DUR, 'bpm': 96, 'layout': L, 'layouts': {'K': {'av': {'o': 1}}}, 'emph': [], 'sfx': S.SFX(A) if callable(S.SFX) else S.SFX,
-           'risers': S.RISERS(A) if callable(S.RISERS) else S.RISERS}, open(os.path.join(vd, 'edl_audio.json'), 'w'))
+           'risers': S.RISERS(A) if callable(S.RISERS) else S.RISERS, 'sound_kit': getattr(S, 'SOUND_KIT', 'synth')}, open(os.path.join(vd, 'edl_audio.json'), 'w'))
 print(len(caps), 'caps;', ' '.join(f'{s}:{a:.2f}-{b:.2f}' for s, a, b in SC))

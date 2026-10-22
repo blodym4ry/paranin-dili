@@ -59,7 +59,12 @@ Ara kancada görüntü de değişsin (yeni sahne düzeni, zoom, SFX) — söz ve
 - Sayıları **yazıyla** yaz (ör. "yüzde kırk dört", "yüz bin lira") — TTS telaffuzu için şart.
 - Tahmin/garanti yok, yatırım tavsiyesi yok; "yaklaşık", tarih ve kaynak belirt. Rakam uydurma.
 - **CTA:** Ata yokken DM'den hediye gönderecek kimse yok → "yoruma KELİME yaz, DM'den göndereyim" türü CTA KULLANMA.
-  Tek eylem seç: **kaydet** (varsayılan; "… öncesi kaydet" gibi bağlamlı) ya da tek soruluk yorum ("senin maaşın hangi dilimde? yaz").
+  **Varsayılan CTA = "GÖNDER" (Ata, 22 Eki):** konuya özel kişiyi tarif eden tek cümle: "Bunu, <konunun kişisi> bir arkadaşına gönder."
+  (ör. alan dışı → "okuduğu bölümün dışında çalışan bir arkadaşına gönder"; düğün → "düğünü yaklaşan arkadaşına gönder").
+  Genel "kaydet" ya da "bir arkadaşına gönder" YAZMA; kişi tarifi şart. Hemen ardından döngü/kilit cümlesi gelir.
+- **TEMPO (Ata, 22 Eki — "çok hızlı, full focus gerekiyor"):** seslendirme `speed 0.93`. Kurguda her ekranda TEK fikir, en fazla 2–3 öğe;
+  aynı fikrin öğeleri tek grup halinde birlikte gelir; her giriş en az 1,5 sn ekranda kalır; 60 sn'de en fazla ~20 giriş (öğe girişi).
+  Girişler yumuşak: `d:.6, ease power3.out`. Süre hedefi 55–70 sn. Örnek: videos/alan-disi/spec.py (v2).
 - 3 farklı kanca yaz (farklı formüller: "X isen Y yapmayı bırak", "herkes X diyor, tersi doğru", "X yaşıyorsan sebebi Y", "N şey var, sonuncusunu kimse söylemiyor", "bunu bilseydim X kaybetmezdim"),
   `python3 tools/hookscore_tr.py hooks.txt` ile puanla; en yüksek ≥ 70 olmalı (değilse yeniden yaz).
 - `python3 tools/beats.py script.txt --target 55` ile süre kontrolü.
@@ -68,14 +73,14 @@ Ara kancada görüntü de değişsin (yeni sahne düzeni, zoom, SFX) — söz ve
 1. Doğruluk: her rakam kaynağıyla birebir tutuyor mu; tarih var mı. 2. Abartı/garanti/yatırım tavsiyesi/hukuki risk yok.
 3. İlk cümle selamsız konuya giriyor, kime konuşulduğu belli, merak boşluğu açık. 4. Kilit cümlesi sonunda ne kazanılacağını söylüyor.
 5. Her blok tek fikir + örnek; bloklar arasında ara kanca var. 6. Tekrar eden fikir/dolgu kelime yok.
-7. Kapanış tek cümle; tek CTA; DM/hediye vaadi yok. 8. Son cümle ilk cümleye bağlanıyor. 9. Süre 45–62 sn.
+7. Kapanış tek cümle; tek CTA; DM/hediye vaadi yok. 8. Son cümle ilk cümleye bağlanıyor. 9. Süre 55–70 sn.
 FAIL ise düzelt, tekrar incelet. PASS olmadan seslendirmeye geçme.
 - Klasör: `videos/<YYYY-MM-DD>-<kisa-slug>/` → `script.txt` (sadece konuşulacak metin), `iskelet.md` (bölüm etiketli hali), `kaynaklar.md`.
 
 ## 3. Ses + avatar (AYRIK YÖNTEM — kredi tasarrufu, Ata'nın kesin kuralı)
 Ata ekranda MÜMKÜN OLDUĞUNCA AZ görünür: giriş (hook), kapanış (CTA + döngü) ve ortada 1–2 kritik vurgu anı.
 Toplam avatar süresi videonun %35'ini geçmez (hedef 15–20 sn). Geri kalan her şey sadece ses + grafik.
-1. **Tam seslendirme:** `mcp__heygen__create_speech` text = script.txt'nin tamamı, voiceId `53aac87758ba4784bfb3eb88ff0057df`, language `tr`, **engine `heygen_voice`** (Ata bu sesi onayladı, 19 Ekim — motoru değiştirme), speed 1.
+1. **Tam seslendirme:** `mcp__heygen__create_speech` text = script.txt'nin tamamı, voiceId `53aac87758ba4784bfb3eb88ff0057df`, language `tr`, **engine `heygen_voice`** (Ata bu sesi onayladı, 19 Ekim — motoru değiştirme), **speed 0.93** (Ata, 22 Eki: tempo yavaşlasın).
    Dönen `audio_url`'yi `curl -sSLf -o $PD_WORK/<slug>/speech.wav` ile indir; dönen `word_timestamps` listesini aynen
    `$PD_WORK/<slug>/words.json` olarak kaydet (`PD_WORK` varsayılan `~/pd_work`).
 2. **Telaffuz:** `ffmpeg -y -i speech.wav -ac 2 -ar 48000 voice.wav` (WORK içinde) sonra `python3 engine/pv.py tel <slug>`.

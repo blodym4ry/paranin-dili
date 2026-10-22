@@ -35,6 +35,19 @@ def report(voice, fx, mus, vr):
     mm = 20 * np.log10(np.sqrt(np.mean(mus[np.abs(mus) > 1e-5] ** 2)) + 1e-9)
     return f"voice 0 dB | music avg {mm - ref:+.1f} dB | music max {mom(mus) - ref:+.1f} | fx max {mom(fx) - ref:+.1f}"
 
+FOLEY = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'kit', 'foley')
+_fl, _fn = None, {}
+def foley(name):
+    """Masa üstü kiti: gerçek kayıt one-shot (kit/foley/lib.json). Aynı türden çağrılar dosyalar arasında dönüşümlü."""
+    global _fl
+    if _fl is None: _fl = json.load(open(os.path.join(FOLEY, 'lib.json')))
+    files = _fl[name]; i = _fn.get(name, 0); _fn[name] = i + 1
+    sr, x = wavfile.read(os.path.join(FOLEY, 'oneshot', files[i % len(files)] + '.wav'))
+    x = x.astype(float); x = x.mean(1) if x.ndim == 2 else x
+    if sr != SR: x = np.interp(np.arange(int(len(x) * SR / sr)) * sr / SR, np.arange(len(x)), x)
+    return x / (np.max(np.abs(x)) + 1e-9), .02
+def snd(s): return foley(s[2:]) if s.startswith('f:') else SND[s]()
+
 BUS = {'whoosh': -9, 'simple': -9, 'accent': -2, 'riser': -4, 'hit': -3}
 def main(edl_p, voice_p, out_p):
     edl = json.load(open(edl_p))
@@ -43,11 +56,13 @@ def main(edl_p, voice_p, out_p):
     voice = np.zeros(n); voice[:len(v)] = v; voice = voice / np.max(np.abs(voice)) * db(-1)
     W, X, XA, R, H = Track(n), Track(n), Track(n), Track(n), Track(n)
     cues = []
-    for L in edl['layout'][1:]: W.place(whoosh(.9, kind='deep'), L['t'] + .425, -10); cues.append((L['t'] + .425, 'WHOOSH', 'layout', -10))
-    for e in edl['emph']: W.place(whoosh(.6, kind='wind'), e['t0'] + .5, -16)
+    masa = edl.get('sound_kit') == 'masa'      # masa üstü: sentetik whoosh yok, sadece sahnede olan nesnenin gerçek sesi
+    if not masa:
+        for L in edl['layout'][1:]: W.place(whoosh(.9, kind='deep'), L['t'] + .425, -10); cues.append((L['t'] + .425, 'WHOOSH', 'layout', -10))
+        for e in edl['emph']: W.place(whoosh(.6, kind='wind'), e['t0'] + .5, -16)
     for t, s, lvl, acc, why in edl['sfx']:
-        (XA if acc else X).place(SND[s](), t, lvl); cues.append((t, 'ACCENT' if acc else 'SFX', why, lvl))
-    for t, kind, lvl in edl['risers']:
+        (XA if acc else X).place(snd(s), t, lvl); cues.append((t, 'ACCENT' if acc else 'SFX', why, lvl))
+    for t, kind, lvl in ([] if masa else edl['risers']):
         R.place_end(sharp_bass_riser(1.8) if kind == 'sharp' else metallic_riser(1.5), t, lvl); H.place(hit(), t, lvl - 4); cues.append((t, 'RISER', kind, lvl))
     # ---- music bed: 'gerilim' family, variant rotates by date (Ata 20 Eki: vary it, suit all ages, ear-friendly)
     slug = os.environ.get('PD_SLUG', os.path.basename(os.path.dirname(os.path.abspath(out_p))))
