@@ -1,0 +1,4 @@
+# Ata'nın konu olarak verdiği kaynak videolar (23 Eki)
+- u8tRCB5b-g0 — Yatırım 101 "Bir Sonraki Zengin Olma Fırsatı Ne Zaman?" (23 Eyl 2025, 659 B). Özet: seçim öncesi faiz düşürülür/kredi açılır, seçim sonrası faiz-kur şoku ("seçim öncesi doping, seçim sonrası detoks"); 2007, 2011, 2018, 2023 örnekleri; ABD başkanlık döngüsü; sonraki seçim "7 Mayıs 2028", 2027'den itibaren refah hissi.
+- dLpER7ZRxYg — Yatırım 101 "Türkiye'de Beyaz Yakalı Çağı Sona Erdi" (17 Tem 2026, 237 B). Özet: maaş artık zenginleştirmiyor (zam %30, market %60), esnaf fiyat ayarlama esnekliğiyle sınıf atladı (2018 sonrası), diploma değer kaybetti (mühendis kurye), YZ beyaz yakayı siliyor; öneri: varlığa dönüştür, YZ öğren, beceriye yatırım.
+Kural: içerik bizim tarzımızla, sadece doğrulanmış veriyle anlatılır; kaynağın rakamları kopyalanmaz, tek tek doğrulanır.
