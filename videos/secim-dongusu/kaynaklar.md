@@ -11,3 +11,8 @@
 - Not: 2018 Ağustos krizinde ABD yaptırımları/Brunson krizi de etkili (tek neden seçim değil).
 
 - Bağımsız inceleme (23 Eki): ilk taslak FAIL (184 kelime, 2018 nedensellik abartısı, geç rehook, kilit teslimi) → revize PASS metni alındı; 2018 bloğu çıkarıldı.
+## Görseller (Wikimedia Commons)
+- sandik.jpg: "2023 Turkish presidential elections abroad ballot boxes (round 2)"
+- doviz2018.jpg: "Istanbul currency exchange office, August 13, 2018" (doların 7,24'ü gördüğü gün)
+- nordhaus.jpg: "William Nordhaus D81 2565"
+- tcmb.jpg: TCMB İdare Merkezi (Kültür Envanteri)
