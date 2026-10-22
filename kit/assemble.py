@@ -42,7 +42,7 @@ broll_html = ''.join(f'<div class="broll" id="{r['id']}" style="position:absolut
     f'<video id="{r['id']}_v" class="clip" src="media/{r['src']}" muted playsinline data-start="{r['a']:.3f}" data-duration="{r['b'] - r['a']:.3f}" data-media-start="{r.get('ms', 0):.3f}" data-track-index="{2 + i}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>'
     f'<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,4,6,{r.get('dim', .55)}) 0%,rgba(10,4,6,{r.get('dim', .55) * .6}) 45%,rgba(10,4,6,{min(1, r.get('dim', .55) + .3)}) 100%)"></div></div>\n' for i, r in enumerate(BR))
 broll_js = ''.join(f"tl.to('#{r['id']}',{{opacity:1,duration:.3}},{r['a']:.3f});tl.to('#{r['id']}',{{opacity:0,duration:.3}},{r['b'] - .3:.3f});\n" for r in BR)
-exitf = broll_js + "SC.slice(0,-1).forEach(([id,a,b])=>{tl.to(`#${id} > *`,{opacity:0,duration:.22,ease:'power2.in'},b-.45);});\n"
+exitf = broll_js + ("SC.slice(0,-1).forEach(([id,a,b])=>{tl.to(`#${id} > *`,{opacity:0,duration:.22,ease:'power2.in'},b-.45);});\n" if getattr(S, 'EXIT_FADE', True) else '')
 html = f'''<!doctype html>
 <html lang="tr" data-resolution="portrait">
 <head>

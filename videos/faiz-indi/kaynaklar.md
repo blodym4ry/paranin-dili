@@ -9,3 +9,7 @@
 - Fark: %33,0 − %29,73 ≈ 3,3 puan; mevduat %38 olursa 38 × 0,825 = %31,35 → fark 1,6 puan (≈ yarı)
 
 - Revize: 1 puan daha düşüş → 39 × 0,825 = %32,18 → fark ≈ 2,45 puan (enflasyon sabit varsayımı). Bağımsız inceleme (23 Eki): ilk taslak FAIL → öneriler uygulandı.
+## Görseller
+- tl200.jpg: 200 Türk Lirası ön yüz (Wikimedia Commons) https://upload.wikimedia.org/wikipedia/commons/d/df/200_T%C3%BCrk_Liras%C4%B1_front.jpg
+- tcmb.jpg: TCMB İdare Merkezi, Ankara (Kültür Envanteri) https://cdn.kulturenvanteri.com/wp-content/uploads/2020/04/IMG_9927.jpeg
+- Manşet kupürleri (metin alıntı + kaynak adı): Habertürk "Merkez Bankası'ndan faiz indirimi"; Endeks24 "TCMB, ocaktan bu yana ilk indirimle politika faizini yüzde 36'ya çekti"; Gazete Vatan "Merkez Bankası faiz kararını açıkladı!"; Netinternet "Politika Faizi Yüzde 36'ya İndi" (22.10.2026)
