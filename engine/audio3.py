@@ -67,6 +67,7 @@ def main(edl_p, voice_p, out_p):
     # ---- music bed: 'gerilim' family, variant rotates by date (Ata 20 Eki: vary it, suit all ages, ear-friendly)
     slug = os.environ.get('PD_SLUG', os.path.basename(os.path.dirname(os.path.abspath(out_p))))
     style = os.environ.get('MUSIC_STYLE') or M.style_for(slug)
+    if style.startswith('gerilim'): raise SystemExit("MUSIC_STYLE=gerilim YASAK (Ata 23 Eki): 'o arkaplan müziği çok kötü, bir daha asla'")
     var = int(os.environ.get('MUSIC_VARIANT', M.variant_for(slug)))
     drops = [r[0] for r in edl['risers']]
     mus = (M.tension(dur, drops, var) if style == 'gerilim' else M.dark_hiphop(dur, drops) if style == 'karanlik_hiphop' else M.oriental(dur, drops) if style == 'modern_oryantal' else M.drive(dur, style))[:n]

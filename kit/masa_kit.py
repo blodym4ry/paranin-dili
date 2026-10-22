@@ -1,3 +1,4 @@
+raise ImportError("MASA ÜSTÜ DOSYA stili YASAK (Ata 23 Eki 02:36): 'basit ve çocukça… bir daha asla kullanmayalım'. Arşiv amaçlı duruyor.")
 """MASA ÜSTÜ DOSYA — imza stil kiti (Ata 23 Eki seçimi). Spec'ler `from masa_kit import *` ile kullanır.
 İmza öğeleri: gerçek masa zemini + 12 fps elde kamera; nesneler masaya konur (put/take, adımlı); kırmızı keçeli kalem (write/draw, kaynayan çizgi);
 FİŞ (makbuz yazıcısı satır satır basar — kişisel hesap); gazete KUPÜRÜ (gerçek manşet, kaynak+tarih); LAMBA (anlama göre renk; 'söner' = desen kırılması);

@@ -308,7 +308,7 @@ def variant_for(slug):
 
 
 def style_for(slug):
-    return 'gerilim'  # Ata 20 Eki: trap/phonk/drive "promotional" -> documentary tension is the default
+    return 'karanlik_hiphop'  # Ata 23 Eki: 'gerilim' YASAK. (eski: Ata 20 Eki: trap/phonk/drive "promotional" -> documentary tension is the default
     names = list(STYLES)
     try: return names[int(slug[8:10]) % len(names)]  # YYYY-MM-DD-...: day of month rotates styles
     except ValueError: return names[zlib.crc32(slug.encode()) % len(names)]

@@ -5,6 +5,10 @@ Her oturum hafızasız başlar: sadece bu repo, `config.json`, `queue.md` ve `lo
 Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz. Geri alınamaz bir risk varsa durdur.
 
 ## ÇALIŞMA KURALLARI — Ata ile 19–23 Ekim sohbetinin özeti (Code'a geçiş, 23 Eki). Çelişkide bu bölüm geçerlidir.
+**YASAK (Ata, 23 Eki 02:36 — kesin, bir daha asla):** "faiz indi videosundaki arkaplanı hiç beğenmedim… premium dedikçe basit ve çocukça bir görüntü çıkıyor… o arkaplan müziği de çok kötü. bunları bir daha asla kullanmayalım."
+- MASA ÜSTÜ DOSYA stili (ahşap masa zemini, kraft kâğıt notlar, bant, el yazısı Caveat, fiş/kupür/lamba kiti — `kit/masa_kit.py`) KULLANILMAZ. `masa_kit` import edilince hata verir.
+- `MUSIC_STYLE=gerilim` (faiz-indi'deki fon müziği) KULLANILMAZ; `engine/music.py` reddeder. Sentetik (kodla üretilen) müzik premium durmuyor: yeni videolarda gerçek, lisanslı/kütüphane müziği tercih et ve Ata'ya dinletip onaylat.
+- Hedef görünüm PREMIUM: sinematik, yetişkin, sade; çocukça/oyuncak/el yapımı estetik yok. Yeni stil Ata'nın onayladığı örnek karelerle belirlenir.
 **Kim / ne:** @atamertuysaler · "Paranın Dili" · sadece finans (para, kripto, borsa, hisse, ekonomi); finans dışı konu yok.
 **Anlatım referansı: Abdulkadir Genç (@abdulkadrgenc)** — merak sorusu başlık ("X neden Y?"), hikâye + mekanizma, cevabı sona saklayan anlatım. Kanıt videoları (izlenme): Japonlar neden böyle giyiniyor 20,4 Mn; Faizler neden bu kadar yüksek 17 Mn; Sabancı neden şirket satıyor 6,7 Mn; Fenerbahçe kazanınca ekonomi 3,8 Mn; Bir çakmak Çin mucizesi 3,7 Mn; Mezunlar neden mesleğini yapmıyor 3,3 Mn (medyan ~2 Mn). Formül alınır, içerik kopyalanmaz. Diğer referanslar: Emre Bayır (TR rakip, refs/stil-arastirmasi.md); Kallaway yalnızca strateji öğretmeni, tarzı kopyalanmaz (refs/kallaway.md).
 **Onay ve üretim akışı (kesin):**
@@ -15,7 +19,7 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 - Ata yokken soru sorma; en makul kararı ver, log.md'ye yaz; geri alınamaz/iki yöne gidebilir kararda hazırlığı yap ve dur.
 **İçerik:** konu güncel olmalı (Google Trends TR "İş Dünyası ve Finans", son 48 sa; bir ay önce zirve yapmış konu bayattır); güncel konu takvimde öne alınabilir, kalıcı konu ileri itilir. AI slop yok (§1 kapı + doluluk testi + bağımsız inceleme PASS olmadan TTS yok). Yatırım tavsiyesi yok.
 **Görsel:** gerçek görsel/B-roll telifli olsa da kullanılır (kâr amaçsız; ihtarda Ata kaldırır); özel kişilerin yüzleri kırpılır; tanınmış karakter/marka figürü (ör. Pokémon) asla çizilmez, gerçek görseli kullanılır; ekranda İngilizce yanmış yazı olmaz. Ardışık iki paylaşımda aynı kıyafet yok; şablon/stil ve müzik her videoda değişir.
-**Ses/müzik:** müzik enerjik ama ne piyano/yumuşak/uykulu ne trap/phonk "reklam" havası. Stiller: `MUSIC_STYLE=gerilim | karanlik_hiphop | modern_oryantal | drive`; ardışık videoda aynısı olmaz. Masa üstü stilinde sentetik whoosh/pop yok, sadece gerçek foley (kit/foley).
+**Ses/müzik:** müzik enerjik ama ne piyano/yumuşak/uykulu ne trap/phonk "reklam" havası. Stiller: `MUSIC_STYLE=karanlik_hiphop | modern_oryantal | drive` (gerilim YASAK, 23 Eki); ardışık videoda aynısı olmaz. Masa üstü stilinde sentetik whoosh/pop yok, sadece gerçek foley (kit/foley).
 **İmla = seslendirme temposu:** TTS her virgülde durur, noktada cümleyi bitirir. Özne ile yüklem arasına virgül KOYMA ("Merkez Bankası, faizi…" ✗); "X, Y, Z ile" gibi kesik virgül dizisinden kaçın; vurgu duraksaması istenen yerde virgül/nokta kullan; sayıları yazıyla yaz; seslendirme hızı 0.93. Seslendirmeden sonra `pv.py tel` ile dinleme-kontrolü; Whisper'ın "param/paran" gibi ses benzeşmeleri hata değildir.
 **Kapak stili: `sahne` + Gölge kenar.** `cover.py` varsayılanı `COVER_EDGE=golge` (beyaz sticker şerit YOK — Ata saçın kötü kırpıldığını söyledi). Seçenekler: golge (varsayılan) | dogal | isik. Tüm kapaklar bu stile göre yenilendi (22 Eki).
 **Altyazı:** stil aynı (kelime kelime), konum y=1200–1420 (Instagram arayüzünün üstü); grafik alanı y=230–1180.
@@ -147,7 +151,7 @@ Bu yol 3 kat kredi harcar; kullanırsan log'a nedenini yaz.
 
 ## 5. Kurgu (spec.py)
 - Örnekler: `videos/ornek-mevduat/spec.py` (Gazete stili), `videos/ornek-indirim/spec.py` (Kinetik stili). Birini kopyala, yeni senaryoya göre yeniden yaz.
-- **İmza stil (23 Eki): MASA ÜSTÜ DOSYA** — `from masa_kit import *` (kit/masa_kit.py: put/take/tape/write/draw/prt(fiş)/slide(foto)/lamp/dark/cam, fis(), kup(), ring(), line(); `SOUND_KIT='masa'`, `EXIT_FADE=False`). Örnek: videos/faiz-indi/spec.py. Her videoda bir FİŞ (kişisel hesap) + gerçek manşet/kupür + tek somut metafor + lamba söner desen kırılması.
+- ~~**İmza stil (23 Eki): MASA ÜSTÜ DOSYA**~~ **YASAK (Ata 23 Eki 02:36) — kullanma, sadece arşiv.** — `from masa_kit import *` (kit/masa_kit.py: put/take/tape/write/draw/prt(fiş)/slide(foto)/lamp/dark/cam, fis(), kup(), ring(), line(); `SOUND_KIT='masa'`, `EXIT_FADE=False`). Örnek: videos/faiz-indi/spec.py. Her videoda bir FİŞ (kişisel hesap) + gerçek manşet/kupür + tek somut metafor + lamba söner desen kırılması.
 - **Eski stil rotasyonu (masa üstü dışı denemeler):** Gazete (`CSS_FILE='gazete.css.html'`) ↔ Kinetik (varsayılan css) ↔ alt-avatar düzeni. Son kullanılanı `log.md`'den bak, aynısını üst üste kullanma. Sahne düzenlerini ve animasyonları her seferinde değiştir.
 - **Avatar kuralları (Ata'nın isteği, kesin):**
   - Ata sadece giriş (hook), 1–2 vurgu anı, CTA ve kapanışta görünür. Diğer sahnelerde `AV['sX'] = None` → sadece grafik.
@@ -163,7 +167,7 @@ Bu yol 3 kat kredi harcar; kullanırsan log'a nedenini yaz.
   Sorun varsa spec'i düzelt, build+check tekrar.
 
 ## 6. Render + QA
-- **Müzik/ses (Ata 20 Eki):** fon müziği otomatik: 'gerilim' ailesi, 7 varyasyon tarihe göre döner (art arda iki video aynı müziği almaz).
+- **Müzik/ses (Ata 20 Eki):** (ESKİ — 'gerilim' 23 Eki'de YASAKLANDI; varsayılan karanlik_hiphop) fon müziği otomatik: 'gerilim' ailesi, 7 varyasyon tarihe göre döner (art arda iki video aynı müziği almaz).
   Trap/phonk/hızlı davul KULLANMA ("promosyon gibi"). Mikser her render'da rapor basar: `music avg ≈ -19 dB`, `fx max ≤ -6 dB` (sese göre).
   fx max -6 dB'den yüksekse veya müzik sesi bastırıyorsa spec'teki SFX seviyelerini düşür. Sadece sesi değiştirmek için: `pv.py remix <slug>`.
 - `python3 engine/pv.py render <slug>` (~15–20 dk; `run_in_background`, `flock /tmp/pd_render.lock`) → `public/<slug>.mp4`.
