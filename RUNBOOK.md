@@ -79,6 +79,18 @@ Ara kancada görüntü de değişsin (yeni sahne düzeni, zoom, SFX) — söz ve
 3. İlk cümle selamsız konuya giriyor, kime konuşulduğu belli, merak boşluğu açık. 4. Kilit cümlesi sonunda ne kazanılacağını söylüyor.
 5. Her blok tek fikir + örnek; bloklar arasında ara kanca var. 6. Tekrar eden fikir/dolgu kelime yok.
 7. Kapanış tek cümle; tek CTA; DM/hediye vaadi yok. 8. Son cümle ilk cümleye bağlanıyor. 9. Süre 55–70 sn.
+**Kallaway dersleri (refs/kallaway.md) — inceleme rubriğine EK maddeler, hepsi geçmeli:**
+10. 70/100'den başlıyor mu (izleyici hikâyenin/sorunun ortasına bırakılıyor, ısınma yok)? İlk zirve (şok rakam / aykırı görüş / zıtlık) ilk 10 sn içinde mi?
+11. **Yoğunlaştırıcı döngü** 5–15 sn arasında var mı (kancanın merakını büyüten 2. cümle: risk büyütür, soruyu keskinleştirir — kancayı tekrarlamaz)?
+12. Mini zirve her 10–15 sn'de bir mi; **ilk yeniden kanca en geç 25. saniyede** mi (kum saati)? Yeniden kanca = izleyicinin şu an düşündüğü ilginç şeyden ikinciye yumuşak geçiş.
+13. Dopamin döngüsü: risk (kim, neyi kaybediyor, neden şimdi) + büyük soru + **ters köşe** (izleyiciyi A'ya inandırıp B'yi göstermek) var mı?
+14. Hikâye ipi: her cümle ana konuya bağlı ve bir öncekinin üstüne kuruluyor mu; ana konudan 2+ adım sapan cümle var mı (varsa FAIL)?
+15. Uygulama/hikâye mi, yoksa içgörüsüz bilgi listesi mi? İzleyicinin kendi parası/kararına bağlanıyor mu (arzu çapası)?
+16. Kanca dili geniş kitleye açık mı (TAM): sonuç çerçevesi geniş, kitle tanımı dar değil, terimler sade ("maaşlı lisans mezunlarının" yerine "üniversite bitirenlerin" gibi)?
+**Üçlü kanca uyumu (kurgu kontrolü):** sözlü kanca + ilk kare başlığı + ilk görsel AYNI şeyi söyler. `katman.py` sonrası iki test: sesi kapalı ilk 3 sn → konu tahmin edilebiliyor mu; gözler kapalı ilk 3 sn → aynı konu mu.
+**Konu seçimi (Kallaway piramidi):** geniş farkındalık + izleyicinin büyük derdi; açı = "son 6 ayda ne değişti" (durum değişikliği/ifşa); zıtlık çerçevesi (eski yol vs yeni gerçek); A vs B başlıkları.
+**Format & veri:** 3-3-1 (3 konu × 3 format, 10. video en iyi kombinasyonun tekrarı). Kazanan videolar 6–10 hafta sonra yeniden kurguyla tekrar yayınlanır (deneme reels 2. yöntem).
+**Kavram adı + metafor:** her videoda anlatılan mekanizmaya akılda kalan bir isim ver ("maaş erimesi", "diploma tuzağı") ve tek somut metafora bağla — Kallaway'in en çok izlenenleri bu yapıda.
 FAIL ise düzelt, tekrar incelet. PASS olmadan seslendirmeye geçme.
 - Klasör: `videos/<YYYY-MM-DD>-<kisa-slug>/` → `script.txt` (sadece konuşulacak metin), `iskelet.md` (bölüm etiketli hali), `kaynaklar.md`.
 
