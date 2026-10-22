@@ -18,3 +18,6 @@
 | 2026-10-21 | pokemon-kartlari | hoodie_glasses | Müzayede salonu + gerçek görsel/B-roll | 62.0s | ~31 kredi | - | 2026-11-11 19:45 REEL | 402421939 | Ata onayladı (21 Eki). NOT 10 etiketi düzeltildi. Karanlık hip-hop. |
 | 2026-10-21 | 2026-10-24-zorlu-holding | street_hoodie_seated (gri kapüşon) | KAP dosya masası | 60.6s | ~13 avatar + ~12 ses | 64.8 kanca | onay bekliyor | - | bağımsız inceleme FAIL→düzeltildi→PASS (1 milyar $ tutarı çıkarıldı, %4 sadece 2035 seçeneğine bağlandı, kapanış 'planlanan'). Gerilim müziği. |
 | 2026-10-22 | dugun-altini | navy_turtleneck | Kuyumcu vitrini | 60.1s | ~12 avatar + ~12 ses | 81.6 kanca | onay bekliyor | - | Konu kanıtı: rakip 'X neden Y' outlier'ları (17-20M). Bağımsız inceleme FAIL→düzeltildi (4.000 ton = toplam stok tahmini, 'kadına özgü/erkeğe özgü'). Yeni müzik: modern_oryantal. Takı fotoğrafında yüzler kırpıldı. |
+| 2026-10-22 | 2026-10-24-zorlu-holding | ZAMANLANDI 2026-10-24 19:45 REEL | 403007587 |
+| 2026-10-22 | dugun-altini | ZAMANLANDI 2026-11-13 19:45 REEL | 403007721 |
+| 2026-10-22 | KAPAK | kalan 10 gönderinin kapağı gölge kenarlı yenisiyle değişti (yeni idler: kredi kartı 403007955, mevduat 403008087, iphone 403008179, avm 403008276, faiz 403008405, sel 403008635, ara seçim 403008730, 10 yıl 403008833, aynı maaş 403008969, market 403009068) |
