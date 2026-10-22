@@ -182,8 +182,10 @@ Her zamanki onay kuralları geçerli: kredi harcamak ve zamanlamak için Ata'nı
 1. **Kanca varyasyonu (her yeni video):** Gövde aynı, sadece kanca (ilk 1–2 cümle) değişir → 3 versiyon (A/B/C), farklı kanca formülleri (hookscore_tr ≥70).
    Maliyet: sadece kanca avatar parçası yeniden (~5 kredi/versiyon) + render. Klasör: videos/<slug>/ (A) ve videos/<slug>-b, -c (spec aynı, script/ses kancası farklı).
    Metricool: `instagramData.type = "TRIAL_REEL"`, aynı gün 2–3 sa arayla. TikTok/YouTube'a sadece kazanan, 48 sa sonra.
-   48 sa sonra karşılaştır (izlenme, paylaşım, yorum, beğeni; öncelik paylaşım/izlenme) → kazananı log.md'ye yaz, Ata uygulamada "herkesle paylaş"a dokunur.
+   **Paylaşım OTOMATİK (Ata 22 Eki: "herkesle paylaşa ben dokunmayayım"):** her deneme reels "otomatik paylaş" = Meta `graduationStrategy: SS_PERFORMANCE` ile çıkar;
+   ilk ~72 sa'te iyi giden versiyonu Instagram kendisi profile/takipçilere açar. Meta API'de sonradan elle "paylaş" uç noktası YOK; bu yüzden ayar yayın anında verilmeli.
+   48–72 sa sonra sonuçları log.md'ye yaz (hangi kanca kazandı) → sonraki kanca seçimlerini besler.
 2. **Tutan videoyu çoğalt (kredi yok):** Profilde ortalamanın üstüne çıkan videoya 2–3 yeniden kurgu: farklı müzik, açılış görüntüsü/ilk kare, kapak, altyazı rengi. Değişiklik GÖZLE GÖRÜLÜR olmalı (IG kopya içeriğin erişimini kısar). Deneme olarak, otomatik paylaşım KAPALI.
 3. **Format denemesi:** Tutan konuyu başka şablonla (ör. masa üstü ↔ optik form ↔ yüzsüz) yeniden kur, deneme olarak çık.
-**Ata yokken (29 Eki'den ~30 gün):** asıl videolar normal Reels; ek olarak sadece 2. yöntem (eski kazananların versiyonları) deneme + otomatik paylaşım kapalı. Kazanan seçimi ve "herkesle paylaş" dönüşte.
-**Açık doğrulama:** Metricool MCP'de "otomatik paylaş" alanı yok → ilk deneme reels'te IG'deki varsayılanı kontrol et, sonucu buraya yaz.
+**Ata yokken (29 Eki'den ~30 gün):** asıl videolar normal Reels; ek olarak 2. yöntem (eski kazananların versiyonları) deneme + otomatik paylaşım AÇIK (Ata dokunmuyor).
+**Açık doğrulama:** Metricool MCP şemasında "otomatik paylaş" alanı yok (getScheduledPosts'ta da trial alanı görünmüyor). Önce yayınlanmayan bir TASLAK ile alanın Metricool'a geçtiğini doğrula (web'de "Share automatically with everyone" işaretli mi); geçmiyorsa ayar Metricool web arayüzünden verilir. Sonucu buraya yaz.
