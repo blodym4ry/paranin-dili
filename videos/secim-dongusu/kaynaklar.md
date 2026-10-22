@@ -9,3 +9,5 @@
 - 13.08.2018 USD/TRY zirve 7,24 — Capital https://www.capital.com.tr/haberler/tum-haberler/dolartl-725-ile-tarihi-zirveyi-gordu ; 13.09.2018 politika faizi %24 — Mynet https://finans.mynet.com/haber/detay/finans/merkez-bankasi-politika-faizini-625-puan-artisla-yuzde-24e-yukseltti/206938/ (seçim öncesi zaten %17,75 — Bloomberg HT)
 - 2015 BIST100 −%16,33 (seçim yılı) — araştırma notu [V]; 2018 BIST −%20,86 — Yeni Akit
 - Not: 2018 Ağustos krizinde ABD yaptırımları/Brunson krizi de etkili (tek neden seçim değil).
+
+- Bağımsız inceleme (23 Eki): ilk taslak FAIL (184 kelime, 2018 nedensellik abartısı, geç rehook, kilit teslimi) → revize PASS metni alındı; 2018 bloğu çıkarıldı.
