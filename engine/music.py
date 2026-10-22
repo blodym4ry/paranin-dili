@@ -244,6 +244,58 @@ def dark_hiphop(dur, drops=(), seed=5, bpm=92, key=36):
     return np.tanh(mix * g * 1.15) / np.tanh(1.15)
 
 
+# ---------- 'modern_oryantal' (Ata 22 Eki seçimi: düğün altını) darbuka + derin bas + ud benzeri pluck, hicaz dizisi ----------
+HIJAZ = [0, 1, 4, 5, 7, 8, 10]
+def _doum(rng):
+    L = int(.35 * SR); t = np.arange(L) / SR
+    f = 95 * (1 + .6 * np.exp(-t * 30))
+    return np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 9) * .95
+def _tek(rng, acc=1.0):
+    L = int(.12 * SR); t = np.arange(L) / SR
+    nz = _bp(rng.standard_normal(L), 1800, 6500) * np.exp(-t * 45)
+    ring = np.sin(2 * np.pi * 420 * t) * np.exp(-t * 35) * .4
+    return (nz * .55 + ring) * acc
+def _ks(f, L, rng, damp=.996):   # karplus-strong: ud/saz benzeri telli
+    N = max(2, int(SR / f)); buf = rng.uniform(-1, 1, N); out = np.zeros(L)
+    for i in range(L):
+        out[i] = buf[i % N]; buf[i % N] = damp * .5 * (buf[i % N] + buf[(i + 1) % N])
+    return _lp(out, 4200) * .6
+def oriental(dur, drops=(), seed=9, bpm=100, key=38):
+    rng = np.random.default_rng(seed)
+    n = int(dur * SR); st = 60 / bpm / 4; bar = 16 * st
+    D, B, L1, P = np.zeros(n), np.zeros(n), np.zeros(n), np.zeros(n)
+    DO = _doum(rng)
+    maqsum = [(0, 'D'), (2, 'T'), (6, 'T'), (8, 'D'), (12, 'T')]
+    phrase = [(0, 7), (2, 8), (3, 7), (4, 5), (6, 4), (8, 5), (10, 4), (11, 1), (12, 0)]
+    for b in range(int(dur / bar) + 2):
+        t0 = b * bar; intro = b == 0; fill = b % 4 == 3
+        for h, k in maqsum:
+            x = DO if k == 'D' else _tek(rng)
+            _put(D, x * (.6 if intro else 1), int((t0 + h * st) * SR))
+        for h in range(1, 16, 2):
+            if not intro: _put(D, _tek(rng, .28 + .1 * (h % 4 == 3)), int((t0 + h * st) * SR))
+        if fill:
+            for h in (13, 14, 15): _put(D, _tek(rng, .7), int((t0 + h * st) * SR))
+        root = key + (0 if b % 4 < 2 else (-2 if b % 4 == 2 else -4))
+        for h, L in ((0, 6), (6, 2), (8, 6), (14, 2)):
+            if not intro: _put(B, bass808(mtof(root), int(L * st * SR), 1.4) * .8, int((t0 + h * st) * SR))
+        if b % 2 == 1 and not intro:
+            for h, deg in phrase:
+                f = mtof(key + 24 + deg)
+                _put(L1, _ks(f, int(3 * st * SR), rng) * .35, int((t0 + h * st) * SR))
+        Lb = int(bar * SR); tt = np.arange(Lb) / SR
+        pad = sum(np.sin(2 * np.pi * mtof(key + 12 + d) * tt + .3 * np.sin(2 * np.pi * 5 * tt)) for d in (0, 7)) * .04
+        _put(P, _lp(pad, 1500) * np.minimum(1, tt * 2), int(t0 * SR))
+    mix = .95 * D + .8 * B + .9 * L1 + .7 * P
+    g = np.ones(n)
+    for d in drops:
+        a, b2 = int((d - .7) * SR), int((d + .05) * SR)
+        if 0 < a < n:
+            r = np.arange(a, min(n, b2)); x = (r - a) / max(1, b2 - a); g[r] = np.minimum(g[r], np.clip(1 - x * 4, .1, 1))
+    g = np.convolve(g, np.ones(int(.05 * SR)) / int(.05 * SR), mode='same')
+    return np.tanh(mix * g * 1.1) / np.tanh(1.1)
+
+
 def variant_for(slug):
     """Posting-order rotation: count Mon/Wed/Fri/Sun posting days since 2026-10-01 up to the slug's date, mod 7.
     Consecutive posts always get consecutive beds and all 7 cycle (a plain date%7 would pin each weekday to one bed)."""

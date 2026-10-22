@@ -54,7 +54,7 @@ def main(edl_p, voice_p, out_p):
     style = os.environ.get('MUSIC_STYLE') or M.style_for(slug)
     var = int(os.environ.get('MUSIC_VARIANT', M.variant_for(slug)))
     drops = [r[0] for r in edl['risers']]
-    mus = (M.tension(dur, drops, var) if style == 'gerilim' else M.dark_hiphop(dur, drops) if style == 'karanlik_hiphop' else M.drive(dur, style))[:n]
+    mus = (M.tension(dur, drops, var) if style == 'gerilim' else M.dark_hiphop(dur, drops) if style == 'karanlik_hiphop' else M.oriental(dur, drops) if style == 'modern_oryantal' else M.drive(dur, style))[:n]
     env = np.convolve(np.abs(voice), np.ones(int(.05 * SR)) / int(.05 * SR), mode='same'); venv = env / env.max()
     vr = np.sqrt(np.mean(voice[np.abs(voice) > .01] ** 2)); mr = np.sqrt(np.mean(mus[np.abs(mus) > 1e-4] ** 2))
     duck = np.convolve(np.clip(venv * 3, 0, 1), np.ones(int(.15 * SR)) / int(.15 * SR), mode='same')
