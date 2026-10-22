@@ -176,3 +176,14 @@ Amaç: "Claude ile kurgulanmış" görünmemek. Altyazı mekaniği AYNI kalır (
 ilk karede yüz/başlık/ses? · ilk cümle merhaba/tanıtım mı? · renk telefon gibi mi? · kancada nefes/boşluk? · aynı şey iki kez? · sesi kapalı konu anlaşılıyor mu? ·
 altyazı yüzü/arayüzü örtüyor mu? · her grafik o anki kelimeye oturuyor mu? · müzik sözün üstüne çıkıyor mu? · ilk 3 sn'de izleyici neden kalacağını biliyor mu?
 **Kanca testi (inceleme alt-ajanına ekle):** "Bu Reels kancasını ilk 3 saniyede kaydırılma riskine göre değerlendir: konu bir saniyede anlaşılıyor mu, merak açıyor mu, boş bir girişi var mı. Sonra 3 daha güçlü alternatif yaz."
+
+## DENEME REELS SİSTEMİ (Ata 22 Eki: "işimize yarar bir sistem" — benimsendi; ayrıntı: refs/deneme-reels.md)
+Her zamanki onay kuralları geçerli: kredi harcamak ve zamanlamak için Ata'nın açık onayı şart. Varyasyon seti TEK video sayılır (Ata seti birlikte izler, onaylar).
+1. **Kanca varyasyonu (her yeni video):** Gövde aynı, sadece kanca (ilk 1–2 cümle) değişir → 3 versiyon (A/B/C), farklı kanca formülleri (hookscore_tr ≥70).
+   Maliyet: sadece kanca avatar parçası yeniden (~5 kredi/versiyon) + render. Klasör: videos/<slug>/ (A) ve videos/<slug>-b, -c (spec aynı, script/ses kancası farklı).
+   Metricool: `instagramData.type = "TRIAL_REEL"`, aynı gün 2–3 sa arayla. TikTok/YouTube'a sadece kazanan, 48 sa sonra.
+   48 sa sonra karşılaştır (izlenme, paylaşım, yorum, beğeni; öncelik paylaşım/izlenme) → kazananı log.md'ye yaz, Ata uygulamada "herkesle paylaş"a dokunur.
+2. **Tutan videoyu çoğalt (kredi yok):** Profilde ortalamanın üstüne çıkan videoya 2–3 yeniden kurgu: farklı müzik, açılış görüntüsü/ilk kare, kapak, altyazı rengi. Değişiklik GÖZLE GÖRÜLÜR olmalı (IG kopya içeriğin erişimini kısar). Deneme olarak, otomatik paylaşım KAPALI.
+3. **Format denemesi:** Tutan konuyu başka şablonla (ör. masa üstü ↔ optik form ↔ yüzsüz) yeniden kur, deneme olarak çık.
+**Ata yokken (29 Eki'den ~30 gün):** asıl videolar normal Reels; ek olarak sadece 2. yöntem (eski kazananların versiyonları) deneme + otomatik paylaşım kapalı. Kazanan seçimi ve "herkesle paylaş" dönüşte.
+**Açık doğrulama:** Metricool MCP'de "otomatik paylaş" alanı yok → ilk deneme reels'te IG'deki varsayılanı kontrol et, sonucu buraya yaz.
