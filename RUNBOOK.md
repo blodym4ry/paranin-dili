@@ -146,3 +146,12 @@ Bu yol 3 kat kredi harcar; kullanırsan log'a nedenini yaz.
 - Videonun metadata'sını (C2PA dahil) silme/değiştirme. Ata'nın Instagram'ına giriş yapma, şifre isteme.
 - Doğrulanmamış rakam kullanma. Rakip videolarını kopyalama (sadece formül).
 - Aynı slota iki post. Kredi yetmiyorsa yarım video.
+
+## İmza stil: MASA ÜSTÜ + GERÇEK GÖRÜNTÜ (Ata seçimi, 22 Eki — test onayı bekliyor: videos/masa-testi)
+Amaç: "Claude ile kurgulanmış" görünmemek. Altyazı mekaniği AYNI kalır (Ata). Örnek: videos/masa-testi/spec.py.
+- Zemin gerçek masa fotoğrafı (kit/masa), hafif elde kamera kayması 12 fps adımlı. Düz renk/ızgara zemin yok.
+- Bilgi masaya konan NESNE olarak gelir: krem kâğıt, kraft not, bantlı polaroid/fotoğraf. Girişler `put()` — 12 fps adımlı (stop-motion), yumuşak kayma/belirme YOK.
+- Vurgu kırmızı keçeli kalemle elle: `write()` (Caveat el yazısı soldan açılır), `draw()` (elle daire, 3 varyant "kaynar"). Daktilo-etiket + sayaç klişesi az.
+- Sahne çıkışı fiziksel: `take()` kâğıdı masadan çeker.
+- Ses: `SOUND_KIT = 'masa'` → sentetik whoosh/riser/pop KAPALI; sadece ekrandaki nesnenin gerçek kaydı (`'f:bant'`, `'f:kagit_kay'`, `'f:kalem_yaz'`, `'f:kalem_daire'`, `'f:foto_birak'`, `'f:damga'`, `'f:sayfa'`, `'f:deklansor'`, `'f:bozuk_para'`, `'f:daktilo'` — kit/foley/lib.json).
+- Gerçek fotoğraf/video her videoda en az 2 kez masada (bantlı baskı) ya da tam ekran B-roll olarak.

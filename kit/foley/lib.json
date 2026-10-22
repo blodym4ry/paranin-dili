@@ -1,0 +1,17 @@
+{
+ "_not": "Masa üstü stil gerçek foley (freesound önizlemeleri, kaynaklar.tsv). Ad → oneshot dosyaları; aynı türde sırayla dönüşümlü kullan.",
+ "kagit_kay": ["paper_slide_0", "paper_slide_2"],
+ "foto_birak": ["paper_slide_2", "clip_0"],
+ "bant": ["tape_0", "tape_1"],
+ "kalem_yaz": ["marker_1", "marker2_0"],
+ "kalem_daire": ["marker2_2"],
+ "kalem_kapak": ["marker_2"],
+ "damga": ["stamp_1"],
+ "sayfa": ["page_0", "page_2"],
+ "deklansor": ["shutter_1"],
+ "bozuk_para": ["coin_1"],
+ "daktilo": ["typewriter_1"],
+ "tukenmez_tik": ["pen_click_1"],
+ "yirt": ["tear_2"],
+ "ataç": ["clip_0"]
+}
