@@ -34,7 +34,7 @@ def bag(id_, x, y, loud=False, red=False, s=1.0):
 
 
 HOUSE = '<svg width="200" height="170" viewBox="0 0 200 170" style="fill:none;stroke:#fff;stroke-width:7;stroke-linejoin:round;filter:drop-shadow(0 0 10px rgba(255,255,255,.5))"><path d="M20,80 L100,15 L180,80 M40,65 V160 H160 V65 M85,160 V110 H115 V160"/></svg>'
-UP = 'M180,1010 C320,990 420,930 520,880 C640,820 760,700 900,560'
+UP = 'M150,1120 C330,1110 470,1080 600,1030 C740,975 850,920 960,880'
 
 EXTRA_CSS = r'''<style>
 .chip{position:absolute;padding:14px 26px;border-radius:14px;font:800 40px 'Inter Tight';white-space:nowrap}
@@ -42,9 +42,9 @@ EXTRA_CSS = r'''<style>
 .strk{position:absolute;height:6px;background:#ff3b30;box-shadow:0 0 14px #ff3b30;transform:scaleX(0);transform-origin:0 50%}
 .bar{position:absolute;left:150px;height:96px;border-radius:0 14px 14px 0;transform-origin:0 50%}
 .row{position:absolute;left:90px;right:90px;height:150px;display:flex;align-items:center;gap:30px;border-bottom:1.5px solid rgba(255,255,255,.12)}
-.row .who{flex:1;font:800 46px/1.1 'Inter Tight';color:#fff}
+.row .who{flex:1;font:800 56px/1.05 'Inter Tight';color:#fff}
 .row .who small{display:block;font:500 26px 'IBM Plex Mono';color:var(--mut);letter-spacing:.1em;margin-top:8px}
-.row .what{font:800 40px 'Inter Tight';padding:12px 24px;border-radius:12px;white-space:nowrap}
+.row .what{font:800 46px 'Inter Tight';padding:12px 24px;border-radius:12px;white-space:nowrap}
 </style>'''
 
 SCENE_HTML = r'''
@@ -76,10 +76,10 @@ SCENE_HTML = r'''
   </section>
   <section id="s4" class="scene clip">
     ''' + title('t4', 'Peki Kim', '<i>Hangisini</i> Alıyor?') + r'''
-    <div class="row" id="r1" style="top:430px;opacity:0"><div class="who">Parası var, gösterişe ihtiyacı yok<small id="r1s" style="opacity:0">SİNYAL: SADECE KENDİ ÇEVRESİNE</small></div><div class="what" style="border:1.5px solid rgba(255,255,255,.5)">SESSİZ</div></div>
+    <div class="row" id="r1" style="top:430px;opacity:0"><div class="who">Parası var, gösteriş yok<small id="r1s" style="opacity:0">SİNYAL: SADECE KENDİ ÇEVRESİNE</small></div><div class="what" style="border:1.5px solid rgba(255,255,255,.5)">SESSİZ</div></div>
     <div class="row" id="r2" style="top:600px;opacity:0"><div class="who">Yeni zenginler</div><div class="what" style="background:linear-gradient(90deg,#7a0a0a,#b01212)">BÜYÜK LOGO</div></div>
     <div class="row" id="r3" style="top:770px;opacity:0"><div class="who">Zengin görünmek isteyenler</div><div class="what" style="border:2px dashed #ff3b30;color:#ff3b30">SAHTESİ</div></div>
-    <div class="rbox" id="sk" style="left:90px;top:960px;width:900px;height:110px;border-radius:16px;font-size:42px;opacity:0">SAHTECİLER ÇOĞUNLUKLA BÜYÜK LOGOYU KOPYALIYOR</div>
+    <div class="rbox" id="sk" style="left:90px;top:960px;width:900px;height:110px;border-radius:16px;font-size:35px;opacity:0">SAHTECİ ÇOĞUNLUKLA BÜYÜK LOGOYU KOPYALAR</div>
   </section>
   <section id="s5" class="scene clip">
     <div class="a" id="dk" style="left:60px;right:60px;top:600px;text-align:center;opacity:0">
@@ -101,7 +101,7 @@ SCENE_HTML = r'''
       ''' + HOUSE + r'''<div class="lab" style="margin-top:14px">BUFFETT · OMAHA · 1958</div>
       <div class="num glowt" id="hp" style="font-size:110px;opacity:0">31.500 $</div></div>
     <svg class="gl" style="left:0;top:0" width="1080" height="1200">''' + glow_path('up', UP) + r'''</svg>
-    <div class="lab" id="upl" style="position:absolute;left:560px;top:1040px;opacity:0;color:#fff">PARA ÇALIŞIYOR</div>
+    <div class="lab" id="upl" style="position:absolute;left:620px;top:1080px;opacity:0;color:#fff">PARA ÇALIŞIYOR</div>
   </section>
   <section id="s8" class="scene clip">
     ''' + title('t8', 'İşte O', 'Tek <i>Soru</i>') + r'''
