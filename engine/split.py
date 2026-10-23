@@ -132,11 +132,59 @@ def join(slug):
     print(f'avatar_cut.mov {dur(out):.2f}s (voice {total:.2f}s)')
 
 
+def lead(slug, keep=.06):
+    """Baş sessizliğini ses dosyasından ölçerek kes (words.json'a bakmadan; align.py'den ÖNCE)."""
+    w = work(slug); sp = os.path.join(w, 'speech.wav')
+    o = subprocess.run(['ffmpeg', '-i', sp, '-af', 'silencedetect=n=-40dB:d=0.05', '-f', 'null', '-'], capture_output=True, text=True).stderr
+    m = re.search(r'silence_start: (-?[\d.]+)\s.*?silence_end: ([\d.]+)', o, re.S)
+    if not m or float(m.group(1)) > .01: print('lead: baş sessizliği yok'); return
+    cut = max(0.0, float(m.group(2)) - keep); tmp = sp + '.tmp.wav'
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{cut:.3f}', '-i', sp, tmp], check=True); os.replace(tmp, sp)
+    print(f'lead: baştan {cut:.3f} sn kesildi')
+
+
+def pause(slug, gap=.3):
+    """Ata 23 Eki 16:17: 0.93 hız sesi robotikleştirdi → TTS 1.0 hızda üretilir, tempo cümle aralarına `gap` sn sessizlik
+    eklenerek yavaşlatılır (ses esnetilmez). speech.wav ve words.json güncellenir. trim'den SONRA, cut'tan ÖNCE çalıştır."""
+    w = work(slug); p = os.path.join(w, 'words.json'); A = json.load(open(p))
+    S = sentences([x for x in A if not x['word'].startswith('<')])
+    sp = os.path.join(w, 'speech.wav')
+    import numpy as np
+    pcm = subprocess.run(['ffmpeg', '-v', 'error', '-i', sp, '-ac', '1', '-ar', '16000', '-f', 's16le', '-'], capture_output=True, check=True).stdout
+    au = np.frombuffer(pcm, np.int16).astype(float); win = 320
+    def quiet(t0, t1):   # en sessiz 20 ms penceresinin ortası (Whisper sınırları kelimeye taşabilir; kesim sessizlikte olmalı)
+        a, b = int(max(0, t0) * 16000), int(t1 * 16000); best, bt = 1e18, (t0 + t1) / 2
+        for k in range(a, max(a + 1, b - win), 80):
+            e = float(np.mean(au[k:k + win] ** 2))
+            if e < best: best, bt = e, (k + win / 2) / 16000
+        return round(bt, 4)
+    cuts = [quiet(min(S[i][-1]['end'], S[i + 1][0]['start']) - .3, max(S[i][-1]['end'], S[i + 1][0]['start']) + .15) for i in range(len(S) - 1)]
+    sr = subprocess.check_output(['ffprobe', '-v', 'error', '-select_streams', 'a:0', '-show_entries',
+          'stream=sample_rate,channels', '-of', 'csv=p=0', sp]).decode().strip().split(',')
+    edges = [0.0] + cuts + [None]; parts, f = [], []
+    for k in range(len(edges) - 1):
+        a, b = edges[k], edges[k + 1]
+        f.append(f"[0]atrim=start={a}" + (f":end={b}" if b is not None else '') + f",asetpts=PTS-STARTPTS[p{k}]")
+        parts.append(f'[p{k}]')
+        if b is not None:
+            f.append(f"aevalsrc=0:d={gap}:s={sr[0]}:c={'stereo' if sr[1] == '2' else 'mono'}[z{k}]"); parts.append(f'[z{k}]')
+    f.append(''.join(parts) + f'concat=n={len(parts)}:v=0:a=1[o]')
+    tmp = sp + '.tmp.wav'
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', sp, '-filter_complex', ';'.join(f), '-map', '[o]', tmp], check=True); os.replace(tmp, sp)
+    for x in A:
+        n = sum(1 for c in cuts if x['start'] > c)
+        x['start'] = round(x['start'] + n * gap, 4); x['end'] = round(x['end'] + n * gap, 4)
+    json.dump(A, open(p, 'w'), ensure_ascii=False)
+    print(f'pause: {len(cuts)} cümle arasına {gap} sn eklendi; süre {dur(sp):.2f} sn')
+
+
 if __name__ == '__main__':
     if len(sys.argv) < 3: sys.exit(__doc__)
     c, slug = sys.argv[1], sys.argv[2]
     if c == 'cut': cut(slug, sys.argv[3])
     elif c == 'trim': trim(slug)
+    elif c == 'lead': lead(slug)
+    elif c == 'pause': pause(slug, float(sys.argv[3]) if len(sys.argv) > 3 else .3)
     elif c == 'list': show(sentences(words(work(slug))))
     elif c == 'join': join(slug)
     else: sys.exit(__doc__)
