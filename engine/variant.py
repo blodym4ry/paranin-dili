@@ -21,11 +21,11 @@ import split as SP
 def dur(p): return float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', p]))
 
 
-def old_cut(slug):
+def old_cut(slug, k=1):
     """Eski ilk avatar parçasının (kanca+kilit) sonu = gövdenin başladığı yer; ve kanca dışındaki cümlelerin metni/başlangıcı."""
     w = os.path.join(PDW, slug); seg = json.load(open(os.path.join(w, 'segments.json')))['segments'][0]
     S = SP.sentences(SP.words(w)); idx = seg['sentences']
-    rest = [S[i] for i in idx[1:]]
+    rest = [S[i] for i in idx[int(k):]]
     return seg['b'], rest
 
 
@@ -53,10 +53,10 @@ def RISERS(A): return []
 '''
 
 
-def prep(slug, v, hook, l1, l2, mode):
+def prep(slug, v, hook, l1, l2, mode, k=1):
     w0 = os.path.join(PDW, slug); w = os.path.join(PDW, f'{slug}__{v}'); vd = os.path.join(REPO, 'videos', f'{slug}__{v}')
     os.makedirs(vd, exist_ok=True)
-    cut, rest = old_cut(slug)
+    cut, rest = old_cut(slug, k)
     hw = os.path.join(w, 'hook.wav'); assert os.path.exists(hw), 'önce hook.wav'
     # kanca: baş sessizliği → 0.06 sn; ardından 0.3 sn; sonra eski kilit cümle(ler)i (kesmeye kadar)
     tmp = os.path.join(w, 'hook_t.wav')
@@ -123,6 +123,6 @@ def final(slug, v):
 
 if __name__ == '__main__':
     c = sys.argv[1]
-    if c == 'prep': prep(*sys.argv[2:8])
+    if c == 'prep': prep(*sys.argv[2:9])
     elif c == 'final': final(sys.argv[2], sys.argv[3])
     else: sys.exit(__doc__)
