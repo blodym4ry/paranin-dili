@@ -184,3 +184,28 @@ def SFX(A):
 
 
 def RISERS(A): return []
+
+
+# ---- v3 (Ata 23 Eki 16:17): ses 1.0 hız + cümle arası duraklama; avatar SADECE giriş/vurgu/çıkışta BÜYÜK kartta (HERO).
+# Eski (0.93) zamanlamayla yazılmış her şey kelime eşlemesiyle yeni sese taşınır (kit/retime.py).
+import json as _json
+from retime import remap as _remap, retime_js as _retime_js, scene_bounds as _scene_bounds
+from panel_kit import HERO as _HERO
+_RT = _remap(os.path.join(W, 'v093', 'words.json'), os.path.join(W, 'words.json'))
+_SEGS = _json.load(open(os.path.join(W, 'segments.json')))['segments']
+_AVS = {'s1', 's5', 's7', 's8', 's9'}
+_scenes_old = scenes
+
+
+def scenes(A):
+    old = _scenes_old(A)
+    return _scene_bounds([(k, _RT(a), (DUR if i == len(old) - 1 else _RT(b)), k in _AVS) for i, (k, a, b) in enumerate(old)], _SEGS, DUR)
+
+
+AV = {k: (_HERO if k in _AVS else None) for k in AV}
+SCENE_JS = _retime_js(SCENE_JS, _RT)
+_sfx_old = SFX
+
+
+def SFX(A):
+    return [[_RT(x[0])] + list(x[1:]) for x in _sfx_old(A)]
