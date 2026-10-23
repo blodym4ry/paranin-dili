@@ -3,9 +3,15 @@ Spec'te: CSS_FILE='panel.css.html', SOUND_KIT='panel', EXIT_FADE=False, AV her s
 Dil: siyah noktalı zemin · üstte 2 satır başlık (2. satır kırmızı kutu, bir kelime italik serif) · ortada TEK parlayan grafik
 · tek kelime altyazı (--cap-mode:word) · altta yuvarlak köşeli avatar kartı. Grafik alanı y=380–1150. İngilizce yazı yok.
 Hareket: yumuşak (power3/expo), bulanıktan netleşme, parlayan çizgi çizimi; her giriş ≥1,5 sn ekranda (TEMPO kuralı)."""
-CARD = [62, 1320, 956, 700, 44, .26]
+# Güvenli alan (Ata 23 Eki 03:17: "çok aşağıda kalmışım… safe zone'da değilim"): Instagram alt arayüzü y>1450, sağ aksiyon
+# butonları x>950 / y>1100. Kart artık y=1065–1460, x=90–990; grafikler 'stage' ile y=410–965'e ölçeklenir (STAGE_S).
+CARD = [90, 1065, 900, 395, 36, .28]
+STAGE_S = .72
 
 JS = r'''
+// ---- güvenli alan: başlık dışındaki her sahne öğesi .stage içine alınır, y=380'den başlayıp STAGE_S oranında küçülür
+document.querySelectorAll('section.scene').forEach(sc=>{const st=document.createElement('div');st.className='stage';
+ [...sc.children].filter(e=>!e.classList.contains('ttl')).forEach(e=>st.appendChild(e));sc.appendChild(st);});
 // ---- PANEL hareket dili
 const ttl=(s,t)=>tl.fromTo(s,{opacity:0,y:-18,filter:'blur(14px)'},{opacity:1,y:0,filter:'blur(0px)',duration:.55,ease:'power3.out'},t);
 const pop=(s,t,o={})=>tl.fromTo(s,{opacity:0,scale:o.s??.86,y:o.y??0},{opacity:1,scale:1,y:0,duration:o.d??.5,ease:'back.out(1.6)'},t);
