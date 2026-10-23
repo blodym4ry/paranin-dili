@@ -8,7 +8,8 @@ Hareket: yumuşak (power3/expo), bulanıktan netleşme, parlayan çizgi çizimi;
 CARD = [90, 1065, 900, 395, 36, .28]   # ESKİ (kullanma): Ata 16:17 "çenem ve saçlarım gözükmüyor"
 # Ata 23 Eki 16:17: avatar SADECE giriş + vurgu + çıkışta, o sahnelerde BÜYÜK kartta (saç ve çene dahil tüm baş görünür).
 # Diğer sahnelerde avatar yok, grafikler tam boy (y=380–1150), altyazı y=1215.
-HERO = [140, 470, 800, 980, 40, .10]
+HERO = [140, 490, 800, 940, 40, .10]   # Ata 24 Eki 01:32: avatar ≤ ekranın yarısı (yükseklik ≤960), tam ekran YASAK, tüm yüz görünür
+HALF = [0, 110, 1080, 880, 0, .10]      # üst yarı layout (tam genişlik, y=110–990); başlık altına (y≈1010) alınır. Alt yarı OLMAZ: IG arayüzü y>1450 çeneyi keser
 STAGE_S = 1
 
 JS = r'''
