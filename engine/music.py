@@ -308,7 +308,7 @@ def variant_for(slug):
 
 
 def style_for(slug):
-    return 'karanlik_hiphop'  # Ata 23 Eki: 'gerilim' YASAK. (eski: Ata 20 Eki: trap/phonk/drive "promotional" -> documentary tension is the default
+    return ['dosya:onayli_1.m4a', 'dosya:onayli_3.m4a'][zlib.crc32(slug.encode()) % 2]  # Ata 23 Eki: onaylı gerçek müzik; sentetik varsayılan değil. 'gerilim' YASAK. (eski: Ata 20 Eki: trap/phonk/drive "promotional" -> documentary tension is the default
     names = list(STYLES)
     try: return names[int(slug[8:10]) % len(names)]  # YYYY-MM-DD-...: day of month rotates styles
     except ValueError: return names[zlib.crc32(slug.encode()) % len(names)]

@@ -1,6 +1,6 @@
 """Generic sound design from EDL 'sfx' + 'risers' cue lists (synth library from audio2).
 usage: python3 audio3.py edl.json voice.wav out.wav"""
-import json, sys, os
+import subprocess, json, sys, os
 import music as M
 import numpy as np
 from scipy.io import wavfile
@@ -56,7 +56,7 @@ def main(edl_p, voice_p, out_p):
     voice = np.zeros(n); voice[:len(v)] = v; voice = voice / np.max(np.abs(voice)) * db(-1)
     W, X, XA, R, H = Track(n), Track(n), Track(n), Track(n), Track(n)
     cues = []
-    masa = edl.get('sound_kit') == 'masa'      # masa üstü: sentetik whoosh yok, sadece sahnede olan nesnenin gerçek sesi
+    masa = edl.get('sound_kit') in ('masa', 'panel')      # masa/panel: sentetik whoosh yok, sadece sahnede olan nesnenin gerçek sesi
     if not masa:
         for L in edl['layout'][1:]: W.place(whoosh(.9, kind='deep'), L['t'] + .425, -10); cues.append((L['t'] + .425, 'WHOOSH', 'layout', -10))
         for e in edl['emph']: W.place(whoosh(.6, kind='wind'), e['t0'] + .5, -16)
@@ -70,7 +70,15 @@ def main(edl_p, voice_p, out_p):
     if style.startswith('gerilim'): raise SystemExit("MUSIC_STYLE=gerilim YASAK (Ata 23 Eki): 'o arkaplan müziği çok kötü, bir daha asla'")
     var = int(os.environ.get('MUSIC_VARIANT', M.variant_for(slug)))
     drops = [r[0] for r in edl['risers']]
-    mus = (M.tension(dur, drops, var) if style == 'gerilim' else M.dark_hiphop(dur, drops) if style == 'karanlik_hiphop' else M.oriental(dur, drops) if style == 'modern_oryantal' else M.drive(dur, style))[:n]
+    if style.startswith('dosya:'):   # onaylı gerçek müzik (kit/muzik, Ata 23 Eki)
+        fp = style[6:]; fp = fp if os.path.isabs(fp) else os.path.join(os.path.dirname(FOLEY), 'muzik', fp)
+        raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', fp, '-ac', '1', '-ar', str(SR), '-f', 's16le', '-'], capture_output=True, check=True).stdout
+        mus = np.frombuffer(raw, np.int16).astype(float) / 32768
+        off = int(float(os.environ.get('MUSIC_OFFSET', 0)) * SR); mus = mus[off:]
+        while len(mus) < n: mus = np.concatenate([mus, mus])
+        mus = mus[:n]
+    else:
+     mus = (M.tension(dur, drops, var) if style == 'gerilim' else M.dark_hiphop(dur, drops) if style == 'karanlik_hiphop' else M.oriental(dur, drops) if style == 'modern_oryantal' else M.drive(dur, style))[:n]
     env = np.convolve(np.abs(voice), np.ones(int(.05 * SR)) / int(.05 * SR), mode='same'); venv = env / env.max()
     vr = np.sqrt(np.mean(voice[np.abs(voice) > .01] ** 2)); mr = np.sqrt(np.mean(mus[np.abs(mus) > 1e-4] ** 2))
     duck = np.convolve(np.clip(venv * 3, 0, 1), np.ones(int(.15 * SR)) / int(.15 * SR), mode='same')
@@ -85,7 +93,7 @@ def main(edl_p, voice_p, out_p):
     mix = voice + fx + mus
     mix = np.tanh(mix / .95) * .95 if np.max(np.abs(mix)) > .95 else mix
     rep = report(voice, fx, mus, vr)
-    print(f"music {style}:{M.VARIANTS[var]['name'] if style == 'gerilim' else ''} | " + rep + f" | fx limiter max {fx_red:.1f} dB")
+    print(f"music {style} | " + rep + f" | fx limiter max {fx_red:.1f} dB")
     os.makedirs('stems', exist_ok=True)
     with open('stems/cue_sheet.txt', 'w') as f:
         for c in sorted(cues): f.write(f'{c[0]:7.2f}s  {c[1]:7s} {c[2]:<26s} {c[3]:>4} dB\n')

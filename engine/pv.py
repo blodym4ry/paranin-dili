@@ -98,7 +98,12 @@ def avatar_guard(w, hf):
         if not AV.get(sid): continue
         shown += b - a
         # window fades in at scene start-0.05s and is gone by scene end-0.05s: the clip must cover that span
-        if not any(s['a'] <= max(0.0, a - .05) + .005 and b - .05 <= s['b'] for s in segs):
+        # bitişik parçalar (aralık ≤0,05 sn) tek kapsama sayılır — panel stilinde avatar video boyunca ekranda
+        cov = []
+        for sg in sorted(segs, key=lambda x: x['a']):
+            if cov and sg['a'] - cov[-1][1] <= .05: cov[-1][1] = max(cov[-1][1], sg['b'])
+            else: cov.append([sg['a'], sg['b']])
+        if not any(c0 <= max(0.0, a - .05) + .005 and b - .05 <= c1 for c0, c1 in cov):
             print(f'AVATAR GUARD FAIL: scene {sid} {a:.2f}-{b:.2f} shows avatar outside every avatar clip'); ok = False
     print(f'avatar on screen {shown:.1f}s of {total:.1f}s ({shown / total * 100:.0f}%)')
     return ok

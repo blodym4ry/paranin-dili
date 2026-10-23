@@ -10,7 +10,7 @@ function count(sel,a,b,t,d,f=fmt,pre='',suf=''){const o={v:a};tl.fromTo(o,{v:a},
 function slam(sel,t){tl.fromTo(sel,{opacity:0,scale:1.4,transformOrigin:'0% 50%'},{opacity:1,scale:1,duration:.28,ease:'power4.in'},t);}
 // ---- avatar window moves
 const BW=740,BH=1040,BCX=540,BCY=770;
-function win(v){const [x,y,w,h,r]=v;const s=Math.max(w/BW,h/BH);const cw=w/s,ch=h/s;const ix=(BW-cw)/2;const iy=(BH-ch)*(h<500?0.18:0.5);
+function win(v){const [x,y,w,h,r]=v;const s=Math.max(w/BW,h/BH);const cw=w/s,ch=h/s;const ix=(BW-cw)/2;const iy=(BH-ch)*(v[5]??(h<500?0.18:0.5));
  return {tf:{x:x+w/2-BCX,y:y+h/2-BCY,scale:s},cp:`inset(${iy.toFixed(1)}px ${ix.toFixed(1)}px ${(BH-ch-iy).toFixed(1)}px ${ix.toFixed(1)}px round ${(r/s).toFixed(1)}px)`, dy:(BH/2-(iy+ch/2))*s};}
 const AV0=AV[SC[0][0]];
 if(AV0){const w0=win(AV0);tl.fromTo('#avw',{x:w0.tf.x,y:w0.tf.y+w0.dy,scale:w0.tf.scale*.97,opacity:1},{x:w0.tf.x,y:w0.tf.y+w0.dy,scale:w0.tf.scale,opacity:1,duration:.5,ease:'expo.out'},0);
@@ -26,7 +26,13 @@ SC.slice(1).forEach(([id,a],k)=>{const v=AV[id],pv=AV[SC[k][0]];
 tl.fromTo('#glow',{x:0,y:0},{x:520,y:900,duration:__DUR__,ease:'sine.inOut'},0);
 // ---- captions
 const host=$('#caps');
-CAPS.forEach((c,i)=>{const d=document.createElement('div');d.className='cl';d.id='c'+i;
+const CAPMODE=getComputedStyle(document.documentElement).getPropertyValue('--cap-mode').trim();
+// tek kelime modu: caption-news 'slam' (lemo-opuscar, MIT)
+if(CAPMODE==='word'){const WS=CAPS.flatMap(c=>c.w.map(w=>({w:w[0],t:w[1],k:w[2],b:c.b})));
+ WS.forEach((w,i)=>{const d=document.createElement('div');d.className='cl';d.id='cw'+i;d.innerHTML=`<span class="cw k${w.k}">${w.w}</span>`;host.appendChild(d);
+  const end=WS[i+1]&&WS[i+1].t-w.t<.9?WS[i+1].t:Math.min(w.b,w.t+.9);
+  tl.fromTo(d,{opacity:0},{opacity:1,duration:.04},w.t);tl.fromTo(d,{scale:1.3},{scale:1,duration:.13,ease:'back.out(1.6)',immediateRender:false},w.t);tl.set(d,{opacity:0},end);});}
+else CAPS.forEach((c,i)=>{const d=document.createElement('div');d.className='cl';d.id='c'+i;
   d.innerHTML=c.w.map((w,j)=>`<span class="cw" id="c${i}w${j}">${w[0]}</span>`).join('');host.appendChild(d);
   const nx=CAPS[i+1]?CAPS[i+1].a:1e9; const end=Math.min(c.b,nx);
   tl.fromTo(d,{opacity:0,y:24},{opacity:1,y:0,duration:.16,ease:'power3.out'},c.a);
