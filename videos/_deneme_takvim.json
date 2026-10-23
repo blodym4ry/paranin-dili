@@ -1,0 +1,148 @@
+{
+ "_not": "Deneme reels takvimi (Ata 24 Eki: 5 Kas sonrası her video 3 deneme reels). A=D 19:45, v2=D 21:45, v3=D 23:45 (IG TRIAL_REEL, shareTrialAutomatically:false). Kazanan=D+2 17:45 REEL+TikTok+YouTube; önce A medyasıyla zamanlanır, değerlendirme görevi kazanan farklıysa medyayı değiştirir. post id her güncellemede değişir → uuid ile bul.",
+ "videolar": [
+  {
+   "tarih": "2026-11-06",
+   "slug": "2026-11-06-faiz-1-kurus",
+   "A": {
+    "uuid": "7968877491464850593",
+    "eski_id": "403008405",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-2013350361788723251.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-2603521162471941992.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-08",
+   "slug": "2026-11-08-sel-ayazaga",
+   "A": {
+    "uuid": "6937876606803723842",
+    "eski_id": "403008635",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-16448878751246098576.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-5416005796816464404.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-09",
+   "slug": "2026-11-09-ara-secim-borsa",
+   "A": {
+    "uuid": "615886833884480399",
+    "eski_id": "403008730",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-11242807881278176389.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-11829933411901894263.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-11",
+   "slug": "pokemon-kartlari",
+   "A": {
+    "uuid": "-8116571487858700670",
+    "eski_id": "402421939",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-218683612147000588.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-9907746143236860381.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-13",
+   "slug": "dugun-altini",
+   "A": {
+    "uuid": "-2257503276056689216",
+    "eski_id": "403007721",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-10248773806611815950.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-2562805585977342218.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-15",
+   "slug": "secim-dongusu",
+   "A": {
+    "uuid": "-6638290439110508332",
+    "eski_id": "404220009",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-13966806449478933307.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-15328217424510331277.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-16",
+   "slug": "2026-11-16-on-yil-yuz-bin",
+   "A": {
+    "uuid": "1116178573285148195",
+    "eski_id": "403008833",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-4932830948610126757.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-493343549885993056.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-18",
+   "slug": "2026-11-18-ayni-maas",
+   "A": {
+    "uuid": "-8692380339474906397",
+    "eski_id": "403008969",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-3611252443683650579.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-14996093651212591374.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-20",
+   "slug": "yz-beyaz-yaka",
+   "A": {
+    "uuid": "-1935696520585785951",
+    "eski_id": "404220142",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-9064254063813233720.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-7956142215852805455.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-22",
+   "slug": "2026-11-22-marketler-banka",
+   "A": {
+    "uuid": "-6812178356100314104",
+    "eski_id": "403009068",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-11072309843149745055.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-18334557897399242528.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  },
+  {
+   "tarih": "2026-11-23",
+   "slug": "logo-kimin-icin",
+   "A": {
+    "uuid": "-5863658240487766434",
+    "eski_id": "404220188",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-9469959215073980644.mp4",
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-11391357957500166560.jpeg"
+   },
+   "v2": null,
+   "v3": null,
+   "kazanan": null
+  }
+ ]
+}
