@@ -5,7 +5,7 @@ from spec_util import load, FRAME_CSS
 U = load(); T = U.T; W = U.W; DUR = U.DUR
 SRT = os.path.join(W, 'avatar_cut.srt')
 N = lambda *w: list(w)
-REPL = [(N("Daysın'lar"), "Dyson'lar"), (N('Daysın,'), 'Dyson,'), (N("Daysın'ı"), "Dyson'ı"), (N("Daysın'ın"), "Dyson'ın"), (N('Daysın'), 'Dyson'),
+REPL = [(N('Dai', "sın'lar"), "Dyson'lar"), (N('Dai', 'sın'), 'Dyson'), (N('Dai', "sın'ı"), "Dyson'ı"), (N('Dai', "sın'ın"), "Dyson'ın"),
         (N('Ve', 'on', 'beş', 'Ditekt,'), 'V15 Detect,'), (N('Gen', 'beş', 'Ditekt,'), 'Gen5detect,'), (N('Ve', 'on', 'bir,'), 'V11,'),
         (N("Çoys'un"), "CHOICE'un"), (N('on', 'iki,'), '12,'), (N('on', 'iki;'), '12;'), (N('on', 'dört'), '14'),
         (N('otuz', 'altı', 'bin', 'liraya'), '36.000 TL\'ye'), (N('beş', 'bin', 'dört', 'yüz', 'lira.'), '5.400 TL.'), (N('"altmış'), '"60'), (N('altmış'), '60')]
@@ -97,7 +97,7 @@ tl.set('#t1',{{opacity:1}},0);
 ttl('#t2',{b1 + .1}); pop('#b2',{b1 + .3}); {{const o={{v:0}};tl.to(o,{{v:36000,duration:1.1,ease:'power2.out',onUpdate:()=>{{$('#n2').textContent=(Math.round(o.v/100)*100).toLocaleString('tr-TR');}}}},{T('otuz', 11)});}}
 ttl('#t3',{tP}); pop('#c31',{T('Uzun', 15)}); pop('#c32',{T('düşük', 17)}); pop('#r3',{T('motorsuz', 18)});
 ttl('#t4',{tAv}); pop('#c4',{T('Çoys', 22)}); {_bars}
-ttl('#t5',{tAma}); pop('#k1',{T('kuruluş', 29.5)}); pop('#k2',{T('Daysın', 30)}); pop('#c5',{T('markası', 32)});
+ttl('#t5',{tAma}); pop('#k1',{T('kuruluş', 29.5)}); pop('#k2',{T('Dai', 29.5)}); pop('#c5',{T('markası', 32)});
 ttl('#t6',{a6 + .1});
 ttl('#t7',{b6 + .1}); pop('#b7',{T('beş', 40)}); pop('#d7',{T('Çoys', 42)});
 ttl('#t8',{tK}); pop('#d81',{T('halılıysa', 49)}); pop('#d82',{T('parkeyse', 55)}); pop('#d83',{T('Sadece', 60.5)});
@@ -108,7 +108,7 @@ ttl('#t9',{a9 + .1});
 def SFX(A):
     return [[b1 + .05, 'f:p_whoosh', -13, 0, 'fiyat'], [T('otuz', 11) - .1, 'f:p_klik', -11, 0, '36bin'], [tP - .1, 'f:p_whoosh', -13, 0, 'nereden'],
             [T('motorsuz', 18) - .1, 'f:p_whoosh_bas', -11, 1, 'kutudaki'], [tAv - .1, 'f:p_whoosh', -13, 0, 'test'], [T('Gen', 24) + .3, 'f:p_boom', -10, 1, '12'],
-            [T('Ve', 26.3) + .3, 'f:p_klik', -11, 0, '14'], [tAma - .05, 'f:p_whoosh', -13, 0, 'ikinci'], [T('Daysın', 30) - .1, 'f:p_klik', -11, 0, 'dyson2'],
+            [T('Ve', 26.3) + .3, 'f:p_klik', -11, 0, '14'], [tAma - .05, 'f:p_whoosh', -13, 0, 'ikinci'], [T('Dai', 29.5) - .1, 'f:p_klik', -11, 0, 'dyson2'],
             [a6, 'f:p_boom', -10, 1, 'fark'], [b6 + .05, 'f:p_whoosh', -13, 0, 'batarya'], [T('beş', 40) - .1, 'f:p_klik', -11, 0, '5400'],
             [tK - .1, 'f:p_whoosh_bas', -11, 1, 'karar'], [T('Sadece', 60.5) - .1, 'f:p_klik', -11, 0, 'sadece'], [a9, 'f:p_whoosh', -13, 0, 'cta']]
 

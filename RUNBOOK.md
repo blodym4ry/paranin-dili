@@ -111,7 +111,7 @@ Ara kancada görüntü de değişsin (yeni sahne düzeni, zoom, SFX) — söz ve
 **Yazım kuralları:**
 - Her cümle ya veri, ya mekanizma, ya aksiyon taşır. Dolgu ("aslında", "yani", "bu videoda") yok. Aynı fikri iki kez söyleme.
 - Cümleleri "ama" ve "bu yüzden" ile bağla, "ve sonra" ile dizme. Bir cümle bir nefes; sesli okununca takılan cümleyi kısalt.
-- **MARKA / ÖZEL İSİM TELAFFUZU (Ata 24 Eki 16:58 — kesin):** her marka/özel ismin Türkiye'de nasıl okunduğu senaryo yazılırken SEARCH edilir ve `kit/telaffuz_sozlugu.md`'ye işlenir; emin değilsen Ata'ya sor. Yanlış telaffuzlu video paylaşılmaz (Dyson "Daysın"dır).
+- **MARKA / ÖZEL İSİM TELAFFUZU (Ata 24 Eki 16:58 — kesin):** her marka/özel ismin Türkiye'de nasıl okunduğu senaryo yazılırken SEARCH edilir ve `kit/telaffuz_sozlugu.md`'ye işlenir; emin değilsen Ata'ya sor. Yanlış telaffuzlu video paylaşılmaz (Dyson TTS metninde "Dai sın" yazılır). Emin olmadığın isimde 3-5 yazım varyantıyla kısa TTS örneği üret, Ata dinleyip seçsin.
 - Telaffuz tuzakları (TTS İngilizce okuyor): "reel" → TTS metninde **"reyel"** yaz, spec.py'de `REPL` ile ekranda "reel" göster (bkz. videos/2026-10-24-altin-reel-faiz/spec.py).
 - Sayıları **yazıyla** yaz (ör. "yüzde kırk dört", "yüz bin lira") — TTS telaffuzu için şart.
 - Tahmin/garanti yok, yatırım tavsiyesi yok; "yaklaşık", tarih ve kaynak belirt. Rakam uydurma.

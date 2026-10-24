@@ -2,7 +2,7 @@
 Kural (Ata 24 Eki 16:58): marka ve özel isimlerin Türkiye'de nasıl okunduğu SEARCH edilip bulunur; emin değilsen Ata'ya sor. Tahminle seslendirme YOK.
 | Yazılış | TTS'e yaz | Kaynak |
 |---|---|---|
-| Dyson | Daysın | Ata 24 Eki |
+| Dyson | Dai sın (iki kelime! "Daysın" TTS'te "deysın" çıkıyor) | Ata 24 Eki 19:40, örnek dinleyip seçti |
 | V15 / V11 (Dyson model) | Ve on beş / Ve on bir | Ata 24 Eki |
 | Detect | Ditekt | - |
 | MacBook Air | Mekbuk Eyır | Ata 24 Eki |
