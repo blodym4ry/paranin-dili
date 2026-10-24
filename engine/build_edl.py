@@ -58,13 +58,13 @@ def merge(words):
         hit = None
         for seq, rep in REPL:
             n = len(seq)
-            if [norm(w['w']) for w in words[i:i + n]] == seq:
+            if [norm(w['w']) for w in words[i:i + n]] == [norm(x) for x in seq]:
                 hit = (n, rep)
                 break
         if hit:
             n, rep = hit
-            tail = re.findall(r'[.,?!]+$', words[i + n - 1]['w'])
-            out.append({'w': rep + (tail[0] if tail else ''), 't0': words[i]['t0'], 't1': words[i + n - 1]['t1']})
+            tail = re.findall(r'[.,?!;:…]+$', words[i + n - 1]['w'])
+            out.append({'w': rep.rstrip('.,?!;:…') + (tail[0] if tail else ''), 't0': words[i]['t0'], 't1': words[i + n - 1]['t1']})
             i += n
         else:
             out.append(dict(words[i]))
