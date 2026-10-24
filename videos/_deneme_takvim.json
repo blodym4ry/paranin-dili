@@ -1,5 +1,5 @@
 {
- "_not": "Deneme reels takvimi (Ata 24 Eki: 5 Kas sonrası her video 3 deneme reels). A=D 19:45, v2=D 21:45, v3=D 23:45 (IG TRIAL_REEL, shareTrialAutomatically:false). Kazanan=D+2 17:45 REEL+TikTok+YouTube; önce A medyasıyla zamanlanır, değerlendirme görevi kazanan farklıysa medyayı değiştirir. post id her güncellemede değişir → uuid ile bul.",
+ "_not": "Deneme reels takvimi (Ata 24 Eki). A=D 19:45, v2=D 21:45 (HERO kart kanca + onaylı müzik 1), v3=D 23:45 (üst-yarı kanca + onaylı müzik 3); üçü de IG TRIAL_REEL, shareTrialAutomatically:false. K=kazanan gönderisi D+2 17:45 REEL+TikTok+YouTube, A medyasıyla zamanlandı; değerlendirme görevi (D+2 ~16:13) kazanan farklıysa K'nın medyasını kazananın 'media' adresiyle değiştirir. Metricool post id her güncellemede değişir → uuid ile bul.",
  "videolar": [
   {
    "tarih": "2026-11-06",
@@ -8,11 +8,25 @@
     "uuid": "7968877491464850593",
     "eski_id": "403008405",
     "media": "https://static.metricool.com/planner/202610/7491089-file-2013350361788723251.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-2603521162471941992.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-2603521162471941992.jpeg",
+    "zaman": "2026-11-06T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "346995205443633943",
+    "zaman": "2026-11-06T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-270217826491344851.mp4",
+    "kanca": "Bir kuruş… iki bin yılda, yüz elli milyon altın küreye dönüşebilir mi? Bunu bir matematikçi hesapladı!"
+   },
+   "v3": {
+    "uuid": "7881983270998592086",
+    "zaman": "2026-11-06T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-8960416656096504659.mp4",
+    "kanca": "Faizin faizi ne kadar güçlü? Tek bir kuruş… bugün dünya büyüklüğünde, yüz elli milyon altın küre ederdi!"
+   },
+   "kazanan": {
+    "uuid": "-7095054490061551574",
+    "zaman": "2026-11-08T17:45"
+   }
   },
   {
    "tarih": "2026-11-08",
@@ -21,11 +35,25 @@
     "uuid": "6937876606803723842",
     "eski_id": "403008635",
     "media": "https://static.metricool.com/planner/202610/7491089-file-16448878751246098576.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-5416005796816464404.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-5416005796816464404.jpeg",
+    "zaman": "2026-11-08T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "291791160785980589",
+    "zaman": "2026-11-08T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-4900587793084197322.mp4",
+    "kanca": "Kirası iki yüz bin lira olan evleri sel bastı. İlanlarda tek kelime yoktu… sel!"
+   },
+   "v3": {
+    "uuid": "-3293044379627993517",
+    "zaman": "2026-11-08T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-12947472054168477026.mp4",
+    "kanca": "Ev tutarken ilanda asla göremeyeceğin bir risk var… sel!"
+   },
+   "kazanan": {
+    "uuid": "8578286290229873707",
+    "zaman": "2026-11-10T17:45"
+   }
   },
   {
    "tarih": "2026-11-09",
@@ -34,11 +62,25 @@
     "uuid": "615886833884480399",
     "eski_id": "403008730",
     "media": "https://static.metricool.com/planner/202610/7491089-file-11242807881278176389.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-11829933411901894263.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-11829933411901894263.jpeg",
+    "zaman": "2026-11-09T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "1328289948298397736",
+    "zaman": "2026-11-09T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-12176038583627479076.mp4",
+    "kanca": "Seçim korkusuyla borsadan kaçıyorsan şu rakamı bil: Amerika'da ara seçimden sonra borsa yirmide yirmi yaptı. Sebebi senin sandığın gibi kazanan parti değil."
+   },
+   "v3": {
+    "uuid": "-6478894753021081976",
+    "zaman": "2026-11-09T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-7323858740335609457.mp4",
+    "kanca": "Herkes seçimden korkuyor ama Amerika'da tersi oldu: ara seçimden bir yıl sonra borsa yirmide yirmi yukarıdaydı. Sebebi senin sandığın gibi kazanan parti değil."
+   },
+   "kazanan": {
+    "uuid": "-1245062648871695128",
+    "zaman": "2026-11-11T17:45"
+   }
   },
   {
    "tarih": "2026-11-11",
@@ -47,11 +89,25 @@
     "uuid": "-8116571487858700670",
     "eski_id": "402421939",
     "media": "https://static.metricool.com/planner/202610/7491089-file-218683612147000588.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-9907746143236860381.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-9907746143236860381.jpeg",
+    "zaman": "2026-11-11T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "-858107663728228618",
+    "zaman": "2026-11-11T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-5396163109403851185.mp4",
+    "kanca": "Eski Pokemon kartların mı var? Tek bir not farkı… dört milyon dolar ediyor!"
+   },
+   "v3": {
+    "uuid": "-1473853183433814066",
+    "zaman": "2026-11-11T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-14481888504744330663.mp4",
+    "kanca": "Bir kartın üstündeki tek bir rakam, dört milyon dolar fark yarattı!"
+   },
+   "kazanan": {
+    "uuid": "6519009051756088635",
+    "zaman": "2026-11-13T17:45"
+   }
   },
   {
    "tarih": "2026-11-13",
@@ -60,11 +116,25 @@
     "uuid": "-2257503276056689216",
     "eski_id": "403007721",
     "media": "https://static.metricool.com/planner/202610/7491089-file-10248773806611815950.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-2562805585977342218.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-2562805585977342218.jpeg",
+    "zaman": "2026-11-13T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "6289033467842350229",
+    "zaman": "2026-11-13T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-5082444835489871110.mp4",
+    "kanca": "Düğünde takılan çeyrek neden bu kadar değerli?"
+   },
+   "v3": {
+    "uuid": "2703328085898708466",
+    "zaman": "2026-11-13T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-11818225646139079995.mp4",
+    "kanca": "Annenin düğününde takılan altınlar… neden hâlâ bu kadar değerli?"
+   },
+   "kazanan": {
+    "uuid": "2332673014285682682",
+    "zaman": "2026-11-15T17:45"
+   }
   },
   {
    "tarih": "2026-11-15",
@@ -73,11 +143,25 @@
     "uuid": "-6638290439110508332",
     "eski_id": "404220009",
     "media": "https://static.metricool.com/planner/202610/7491089-file-13966806449478933307.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-15328217424510331277.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-15328217424510331277.jpeg",
+    "zaman": "2026-11-15T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "703798312487045345",
+    "zaman": "2026-11-15T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-9085951822077903608.mp4",
+    "kanca": "Türkiye'de zengin olma fırsatı neden hep seçim zamanı geliyor?"
+   },
+   "v3": {
+    "uuid": "7262774143319559971",
+    "zaman": "2026-11-15T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-16587701635713861978.mp4",
+    "kanca": "Bir sonraki seçim… cüzdanını nasıl etkileyecek?"
+   },
+   "kazanan": {
+    "uuid": "507571722491743630",
+    "zaman": "2026-11-17T17:45"
+   }
   },
   {
    "tarih": "2026-11-16",
@@ -86,11 +170,25 @@
     "uuid": "1116178573285148195",
     "eski_id": "403008833",
     "media": "https://static.metricool.com/planner/202610/7491089-file-4932830948610126757.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-493343549885993056.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-493343549885993056.jpeg",
+    "zaman": "2026-11-16T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "-3672181531053044598",
+    "zaman": "2026-11-16T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-8976431594611958698.mp4",
+    "kanca": "Yüz bin lirası on yılda bir buçuk milyon olan birini düşün."
+   },
+   "v3": {
+    "uuid": "6461991007015356025",
+    "zaman": "2026-11-16T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-11286112378561698290.mp4",
+    "kanca": "Borsada parasını on beşe katlayan biri var!"
+   },
+   "kazanan": {
+    "uuid": "-6222229121760540747",
+    "zaman": "2026-11-18T17:45"
+   }
   },
   {
    "tarih": "2026-11-18",
@@ -99,11 +197,25 @@
     "uuid": "-8692380339474906397",
     "eski_id": "403008969",
     "media": "https://static.metricool.com/planner/202610/7491089-file-3611252443683650579.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-14996093651212591374.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-14996093651212591374.jpeg",
+    "zaman": "2026-11-18T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "-3552619394836510759",
+    "zaman": "2026-11-18T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-2594313792238250506.mp4",
+    "kanca": "Maaşına zam geldi ama yine ay sonunu getiremiyor musun?"
+   },
+   "v3": {
+    "uuid": "1196095715270084758",
+    "zaman": "2026-11-18T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-3933275644359426750.mp4",
+    "kanca": "Zamdan sonraki ilk ay… bütün yılını belirliyor!"
+   },
+   "kazanan": {
+    "uuid": "4179071607794976169",
+    "zaman": "2026-11-20T17:45"
+   }
   },
   {
    "tarih": "2026-11-20",
@@ -112,11 +224,25 @@
     "uuid": "-1935696520585785951",
     "eski_id": "404220142",
     "media": "https://static.metricool.com/planner/202610/7491089-file-9064254063813233720.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-7956142215852805455.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-7956142215852805455.jpeg",
+    "zaman": "2026-11-20T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "-791695554343318010",
+    "zaman": "2026-11-20T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-1905850417899809642.mp4",
+    "kanca": "Yapay zekâ işini elinden alacak mı?"
+   },
+   "v3": {
+    "uuid": "-3224653291068570342",
+    "zaman": "2026-11-20T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-17640981192289704249.mp4",
+    "kanca": "Yapay zekâ yüzünden ilk kim işsiz kalıyor?"
+   },
+   "kazanan": {
+    "uuid": "1656888064309808063",
+    "zaman": "2026-11-22T17:45"
+   }
   },
   {
    "tarih": "2026-11-22",
@@ -125,11 +251,25 @@
     "uuid": "-6812178356100314104",
     "eski_id": "403009068",
     "media": "https://static.metricool.com/planner/202610/7491089-file-11072309843149745055.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-18334557897399242528.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-18334557897399242528.jpeg",
+    "zaman": "2026-11-22T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "-7599203786865029391",
+    "zaman": "2026-11-22T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-12372422756507438056.mp4",
+    "kanca": "Market kasasından para çekiyorsan bunu bil: BİM, on milyar lira sermayeyle banka kuruyor!"
+   },
+   "v3": {
+    "uuid": "-5704936911593059342",
+    "zaman": "2026-11-22T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-4693128234617430538.mp4",
+    "kanca": "Marketler neden banka kuruyor? BİM bunun için on milyar lira ayırdı!"
+   },
+   "kazanan": {
+    "uuid": "-2026856126866305068",
+    "zaman": "2026-11-24T17:45"
+   }
   },
   {
    "tarih": "2026-11-23",
@@ -138,11 +278,25 @@
     "uuid": "-5863658240487766434",
     "eski_id": "404220188",
     "media": "https://static.metricool.com/planner/202610/7491089-file-9469959215073980644.mp4",
-    "kapak": "https://static.metricool.com/planner/202610/7491089-file-11391357957500166560.jpeg"
+    "kapak": "https://static.metricool.com/planner/202610/7491089-file-11391357957500166560.jpeg",
+    "zaman": "2026-11-23T19:45"
    },
-   "v2": null,
-   "v3": null,
-   "kazanan": null
+   "v2": {
+    "uuid": "-2135777814098504",
+    "zaman": "2026-11-23T21:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-4453540149977696721.mp4",
+    "kanca": "Zenginler neden logosuz giyinir?"
+   },
+   "v3": {
+    "uuid": "2957247796837174522",
+    "zaman": "2026-11-23T23:45",
+    "media": "https://static.metricool.com/planner/202610/7491089-file-3289536431770385807.mp4",
+    "kanca": "Gerçek zenginler… neden logoyu saklar?"
+   },
+   "kazanan": {
+    "uuid": "1501311371385260549",
+    "zaman": "2026-11-25T17:45"
+   }
   }
  ]
 }
