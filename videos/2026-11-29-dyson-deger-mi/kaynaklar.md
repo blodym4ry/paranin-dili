@@ -1,0 +1,11 @@
+# Kaynaklar (24 Eki 2026 kontrol)
+- Fiyat V15 Detect Absolute, en ucuz 35.949 TL — Akakçe (24 Eki 2026, Chrome'da bakıldı). Fiyat değişir; videoda "otuz altı bin liraya yakın".
+- "Maksimum 60 dakika kesintisiz kullanım" — MediaMarkt TR V15 Detect Absolute ürün sayfası: https://www.mediamarkt.com.tr/tr/product/_dyson-v15-detect-kablosuz-sarjli-dikey-supurge-sari-nikel-1232522.html
+- Uzun pil süreleri düşük/eco mod ve motorsuz başlık içindir — CHOICE alım rehberi ("may refer to non-motorised tools … or low/eco power modes"): https://www.choice.com.au/home-and-living/laundry-and-cleaning/vacuum-cleaners/buying-guides/stick-and-handheld (son güncelleme 9 Tem 2026). Senaryoda "genelde" diye yumuşatıldı.
+- Test: Gen5detect Absolute 12 dk, V11 Advanced 14 dk (max/en güçlü mod); LG en iyi marka, Dyson ikinci — CHOICE "Dyson vs LG stick vacuums" (26 May 2026): https://www.choice.com.au/home-and-living/laundry-and-cleaning/vacuum-cleaners/articles/dyson-vs-lg-stick-vacuums . Not: makale testin hangi modda olduğunu tam yazmıyor; rehberdeki özet "Running time on max" ölçüyor. Hook'taki "on iki dakika" Gen5detect'e aittir, V15'e değil — senaryo bunu 4. cümlede açıkça söylüyor.
+- Yedek batarya V15/V11: 5.399 TL — dyson.com.tr yedek batarya sayfası (24 Eki 2026).
+- Dreame Z10 Station: 12.599,10 TL — Akakçe (24 Eki 2026). 3 × 12.599 = 37.797 TL ≈ 35.949 → "neredeyse üç tane".
+- Kullanılmadı: Consumer Reports 2019 güvenilirlik verisi (eski).
+- Dyson resmi: "Up to 60 minutes of run time*" — https://www.dyson.com/vacuum-cleaners/cordless/v15/detect-plus/gold (dipnot: süre güç moduna, zemine, başlığa göre değişir).
+- CHOICE uzmanı: "Your money is likely to go further if you buy an LG" (LG yedek bataryayı kutuya koyuyor) — Dyson vs LG makalesi.
+- 24 Eki bağımsız inceleme FAIL → düzeltildi: hook (Gen5/V11 açıkça "Dyson'lar"), "en güçlü modda" iddiası çıkarıldı, Z10 hesabı çıkarıldı, "logo" yargısı yerine CHOICE alıntısı, "Ekim sonunda" fiyat tarihi.
