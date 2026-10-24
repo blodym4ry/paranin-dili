@@ -46,13 +46,13 @@ SCENE_HTML = r'''
   <section id="s1" class="scene clip">''' + title('t1', 'Monster vs MacBook', '<i>Girişimciye</i> Hangisi?') + r'''</section>
   <section id="s2" class="scene clip">
     ''' + title('t2', 'Resmi Site', '<i>Fiyatları</i>') + r'''
-    <div class="pc" id="p2" style="top:470px;opacity:0"><div class="lab">APPLE TR · MACBOOK AIR M5 · 16 GB / 512 GB</div><div class="num glowt">84.999 TL</div></div>
+    <div class="pc" id="p2" style="top:470px;opacity:0"><div class="lab">APPLE · AIR M5 · 16 GB / 512 GB</div><div class="num glowt">84.999 TL</div></div>
     <div class="lab" id="l2" style="position:absolute;left:0;right:0;top:800px;text-align:center;opacity:0">EKİM SONU</div>
   </section>
   <section id="s3" class="scene clip">
     ''' + title('t3', 'Resmi Site', '<i>Fiyatları</i>') + r'''
     <div class="pc" style="top:470px;height:220px;padding-top:24px;opacity:.55"><div class="lab">MACBOOK AIR M5 · 16 / 512</div><div class="num" style="font-size:90px">84.999 TL</div></div>
-    <div class="pc" id="p3" style="top:730px;height:260px;padding-top:24px;opacity:0;border-color:#e8b931"><div class="lab">MONSTER HUMA H4 · ULTRA 7 · 16 / 500 · WINDOWS</div><div class="num gold" style="font-size:110px">89.999 TL</div></div>
+    <div class="pc" id="p3" style="top:730px;height:260px;padding-top:24px;opacity:0;border-color:#e8b931"><div class="lab">HUMA H4 · 16 / 500 · WINDOWS</div><div class="num gold" style="font-size:110px">89.999 TL</div></div>
     <div class="rbox" id="r3" style="left:330px;top:1030px;width:420px;height:110px;border-radius:18px;font-size:58px;opacity:0">+5.000 TL</div>
   </section>
   <section id="s4" class="scene clip">''' + title('t4', 'Monster\'ın', '<i>Artısı?</i>') + r'''</section>
