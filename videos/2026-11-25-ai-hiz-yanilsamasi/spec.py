@@ -28,7 +28,7 @@ def T(w, after=0.0):
 
 
 SEGS = json.load(open(os.path.join(W, 'segments.json')))['segments']
-s1b = SEGS[0]['b']; s5a, s5b = SEGS[1]['a'], SEGS[1]['b']; s9a = SEGS[2]['a']
+s1b = SEGS[0]['b']; s5a, s5b = SEGS[1]['a'] + .06, SEGS[1]['b']; s9a = SEGS[2]['a'] + .06
 t_tuhaf = T('Ama', 18); t_gecen = T('Geçen', 19)
 
 
@@ -38,10 +38,10 @@ def scenes(A):
 
 
 AV = {'s1': HERO, 's2': None, 's3': None, 's4': None, 's5': HERO, 's6': None, 's7': None, 's9': HERO}
-GF = '<div class="gf"></div>'   # altın çerçeve (kartın 6 px dışında)
+GF = ''   # altın çerçeve JS ile #avbox'ın ÜSTÜNE eklenir (avatar katmanı sahnelerin üstünde)
 
 EXTRA_CSS = r'''<style>
-.gf{position:absolute;left:132px;top:482px;width:816px;height:956px;border-radius:46px;border:5px solid #e8b931;
+.gf{position:absolute;opacity:0;left:132px;top:482px;width:816px;height:956px;border-radius:46px;border:5px solid #e8b931;
   box-shadow:0 0 26px rgba(232,185,49,.45),inset 0 0 18px rgba(232,185,49,.25);pointer-events:none;z-index:6}
 .gold{color:#e8b931}
 .chip{position:absolute;padding:14px 26px;border-radius:14px;font:800 40px 'Inter Tight';white-space:nowrap}
@@ -109,7 +109,8 @@ SCENE_HTML = r'''
 '''
 
 _js = JS + f'''
-tl.set('#t1',{{opacity:1}},0); tl.fromTo('.gf',{{opacity:0}},{{opacity:1,duration:.5}},0);
+{{const g=document.createElement('div');g.className='gf';g.id='gfr';document.getElementById('avbox').after(g);}}
+tl.set('#t1',{{opacity:1}},0); tl.set('#gfr',{{opacity:1}},0); tl.set('#gfr',{{opacity:0}},{s1b - .05});
 // S2 — anket: saat + 2 saat + 4+ saat
 ttl('#t2',{s1b + .1}); pop('#ck',{s1b + .4}); tl.fromTo('#hd',{{rotation:0}},{{rotation:720,duration:2.4,ease:'power2.inOut'}},{s1b + .6});
 pop('#n2',{T('iki', 12) - .1}); fin('#l2',{T('kazandığını', 12)}); pop('#c2',{T('üçte', 15) - .1});
@@ -120,15 +121,15 @@ ttl('#t4',{t_gecen + .1}); pop('#c4',{T('altı', 20) - .2});
 tl.fromTo('#b4a',{{scaleY:0}},{{scaleY:1,duration:.8,ease:'power3.out'}},{T('bitirince', 27)}); pop('#v4a',{T('hızlandıklarını', 28)});
 tl.fromTo('#b4b',{{scaleY:0}},{{scaleY:1,duration:.8,ease:'power3.out'}},{T('yüzde', 25)}); pop('#v4b',{T('yavaşladılar', 25)});
 // S5 — vurgu (avatar)
-ttl('#t5',{s5a + .1}); tl.fromTo('.gf',{{opacity:0}},{{opacity:1,duration:.4}},{s5a});
+ttl('#t5',{s5a + .1}); tl.fromTo('#gfr',{{opacity:0}},{{opacity:1,duration:.35}},{s5a}); tl.set('#gfr',{{opacity:0}},{s5b - .05});
 // S6 — Harvard/BCG
 ttl('#t6',{s5b + .1}); pop('#b61',{T('uygun', 36) - .1}); pop('#q40',{T('Kalite', 40)}); fin('#q40l',{T('Kalite', 40) + .2}); pop('#b62',{T('olmayan', 42) - .1});
 // S7 — test
 ttl('#t7',{T('Kendine', 46)}); pop('#b7',{T('sonucu', 47)});
-fin('#k1',{T('Toplantı', 50)},{{y:10}}); fin('#k2',{T('posta', 50) - .2},{{y:10}}); fin('#k3',{T('tablo', 50)},{{y:10}});
+fin('#k1',{T('Toplantı', 50)},{{y:10}}); fin('#k2',{T('e-posta', 50) - .2},{{y:10}}); fin('#k3',{T('tablo', 50)},{{y:10}});
 tl.set('#m1, #m2, #m3',{{textContent:'✓'}},{T('evet', 54)}); pop('#c71',{T('zaman', 55) - .1}); pop('#c72',{T('Kontrol', 56)});
 // S9 — kapanış + CTA
-ttl('#t9',{s9a + .1}); tl.fromTo('.gf',{{opacity:0}},{{opacity:1,duration:.4}},{s9a});
+ttl('#t9',{s9a + .1}); tl.fromTo('#gfr',{{opacity:0}},{{opacity:1,duration:.35}},{s9a});
 '''
 SCENE_JS = _js
 
