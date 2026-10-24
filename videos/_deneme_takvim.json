@@ -362,7 +362,7 @@
    "A": {
     "uuid": "1799846499330639566",
     "id": 405110400,
-    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/0d7d0c23f6af5856e6e13b2c8e25780c389e28b3/public/2026-11-29-dyson-deger-mi.mp4",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/880333fbe877f8afb9a3cf50a1f1a11744ac57d6/public/2026-11-29-dyson-deger-mi.mp4",
     "zaman": "2026-11-29T19:45",
     "paylas_otomatik": true
    },
@@ -370,7 +370,7 @@
     "uuid": "6151174392091067780",
     "id": 405111022,
     "zaman": "2026-11-29T21:45",
-    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/0d7d0c23f6af5856e6e13b2c8e25780c389e28b3/public/2026-11-29-dyson-deger-mi__v2.mp4",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/880333fbe877f8afb9a3cf50a1f1a11744ac57d6/public/2026-11-29-dyson-deger-mi__v2.mp4",
     "kanca": "Dyson'lar, bağımsız testte en fazla on dört dakika dayandı… ama kutuda altmış yazıyor!",
     "paylas_otomatik": true
    },
@@ -378,15 +378,16 @@
     "uuid": "7727498756492707621",
     "id": 405111222,
     "zaman": "2026-11-29T23:45",
-    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/0d7d0c23f6af5856e6e13b2c8e25780c389e28b3/public/2026-11-29-dyson-deger-mi__v3.mp4",
-    "kanca": "Dyson alacaksan, önce şu üç rakama bak: altmış, on dört… ve beş bin dört yüz.",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/880333fbe877f8afb9a3cf50a1f1a11744ac57d6/public/2026-11-29-dyson-deger-mi__v3.mp4",
+    "kanca": "Dyson'lar, bağımsız testte en fazla on dört dakika dayandı… ama kutuda altmış yazıyor! (v3 = aynı kanca, üst-yarı düzen + farklı müzik; kredi bitti)",
     "paylas_otomatik": true
    },
    "kazanan": {
     "uuid": "-8477913138560810635",
     "id": 405109575,
     "zaman": "2026-12-01T17:45"
-   }
+   },
+   "not": "Telaffuz Dai sın (Ata 24 Eki 20:50 onay); medya 24 Eki 21:15 güncellendi, paylaş otomatik yeniden açıldı"
   },
   {
    "tarih": "2026-11-30",
@@ -418,6 +419,35 @@
     "uuid": "3270328823319906776",
     "id": 405110000,
     "zaman": "2026-12-02T17:45"
+   }
+  },
+  {
+   "tarih": "2026-12-02",
+   "slug": "2026-12-02-monster-macbook",
+   "A": {
+    "uuid": "-3410396554326424634",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/880333fbe877f8afb9a3cf50a1f1a11744ac57d6/public/2026-12-02-monster-macbook.mp4",
+    "zaman": "2026-12-02T19:45",
+    "paylas_otomatik": true
+   },
+   "v2": {
+    "uuid": "3484330103321546623",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/880333fbe877f8afb9a3cf50a1f1a11744ac57d6/public/2026-12-02-monster-macbook__v2.mp4",
+    "zaman": "2026-12-02T21:45",
+    "kanca": "Monster mı, MacBook mu? Resmi sitelerde fark beş bin lira… ama beklediğin yönde değil!",
+    "paylas_otomatik": true
+   },
+   "v3": {
+    "uuid": "-1061097490965772250",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/880333fbe877f8afb9a3cf50a1f1a11744ac57d6/public/2026-12-02-monster-macbook__v3.mp4",
+    "zaman": "2026-12-02T23:45",
+    "kanca": "Şirketine bilgisayar alacaksan, doksan bin lira vermeden önce şu üç soruya bak.",
+    "paylas_otomatik": true
+   },
+   "kazanan": {
+    "uuid": "-5702112978684326976",
+    "id": 405175683,
+    "zaman": "2026-12-04T17:45"
    }
   }
  ]
