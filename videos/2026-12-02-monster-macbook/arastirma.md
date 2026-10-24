@@ -14,3 +14,8 @@
 - Hook adayı: "Türk markası Monster, aynı sınıfta MacBook Air'den pahalı çıkabiliyor." (H4 V6.1.3 89.999 vs Air M5 84.999 — resmi siteler; özellikler tam eş değil: Monster 14" QHD + Windows, Air 13,6" 16/512)
 - Girişimci açısı: VUK'a göre bilgisayar faydalı ömrü 4 yıl, %25 amortisman (parasut.com blog); 2026 amortisman alt sınırı 12.000 TL — iki laptop için de aynı, ayırt edici değil.
 - Eksik: pil süresi (Apple iddiası, Monster iddiası), ikinci el değer koruma verisi, garanti/servis.
+## Ek (24 Eki akşam)
+- Monster Huma H4 V6.1.3 ürün sayfası: Windows 11 Home SL dahil; 4 yıl garanti (2 yasal + 2 uzatılmış; 90 gün içinde kayıt şart; BATARYA uzatılmış garantiye dahil DEĞİL); ömür boyu ücretsiz bakım; 80 Wh batarya, "10.5 saat" (sayfada "bekleme süresi*" diye yazıyor — belirsiz, videoda kullanma ya da açıkça "üretici iddiası" de); 1,4 kg; 15 gün koşulsuz iade.
+- Apple TR MacBook Air M5 teknik özellikler: 18 saate kadar video, 15 saate kadar web; 1,23 kg; testler Ocak 2026, 16 GB / 512 GB yapılandırma (taban model 16/512).
+- Apple TR yasal garanti 2 yıl (Türkiye mevzuatı) — AppleCare ayrı; doğrulanmadı.
+- Fikir (doğrulanmalı): TR muhasebe/ERP masaüstü yazılımları (Logo, Mikro, Netsis) Windows → girişimci için belirleyici olabilir.
