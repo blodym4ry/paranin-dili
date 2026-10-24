@@ -43,7 +43,7 @@ EXTRA_CSS = '<style>' + FRAME_CSS + r'''
 .bar{position:absolute;border-radius:12px 12px 0 0;transform-origin:50% 100%}
 .chip{position:absolute;padding:14px 26px;border-radius:14px;font:800 40px 'Inter Tight';white-space:nowrap}
 .chip.g{border:1.5px solid rgba(255,255,255,.45);background:rgba(255,255,255,.04);color:#fff}
-.mo{position:absolute;top:620px;width:150px;height:150px;border-radius:50%;border:4px solid #e8b931;display:flex;align-items:center;justify-content:center;font:800 40px 'Inter Tight';box-shadow:0 0 24px rgba(232,185,49,.4)}
+.mo{position:absolute;top:620px;width:150px;height:150px;border-radius:50%;border:4px solid #e8b931;display:flex;align-items:center;justify-content:center;font:800 32px 'Inter Tight';box-shadow:0 0 24px rgba(232,185,49,.4)}
 .leg{position:absolute;font:800 34px 'Inter Tight'}
 </style>'''
 
@@ -55,7 +55,7 @@ SCENE_HTML = r'''
     <div class="chip g" id="c2" style="left:300px;top:440px;opacity:0">SSK · BAĞ-KUR</div>
     <div class="mo" id="mo1" style="left:220px;opacity:0">OCAK</div><div class="mo" id="mo2" style="left:710px;opacity:0">TEMMUZ</div>
     <div class="lab" id="l2" style="position:absolute;left:0;right:0;top:820px;text-align:center;opacity:0">ZAM = ÖNCEKİ 6 AYIN ENFLASYONU</div>
-    <div class="rbox" id="r2" style="left:190px;top:900px;width:700px;height:110px;border-radius:16px;font-size:50px;opacity:0">OCAK ZAMMI = GEÇEN YILIN FATURASI</div>
+    <div class="rbox" id="r2" style="left:190px;top:900px;width:700px;height:110px;border-radius:16px;font-size:38px;opacity:0">OCAK ZAMMI = GEÇEN YILIN FATURASI</div>
   </section>
   <section id="s3" class="scene clip">
     ''' + title('t3', 'Yıl Sonunda', 'Kim <i>Önde?</i>') + r'''
@@ -73,7 +73,7 @@ SCENE_HTML = r'''
     <svg class="gl" style="left:0;top:0" width="1080" height="1200">''' + glow_path('pr', PRICE, '#ff3b30', 7) + glow_path('pn', PENS, '#e8b931', 6) + r'''</svg>
     <div class="leg" style="left:150px;top:470px;color:#ff3b30">— FİYATLAR</div><div class="leg gold" style="left:150px;top:520px">— EMEKLİ AYLIĞI</div>
     <div class="lab" style="position:absolute;left:130px;top:980px">OCAK</div><div class="lab" style="position:absolute;left:880px;top:980px">HAZİRAN</div>
-    <div class="chip g" id="c5" style="left:150px;top:1050px;opacity:0">20.000 TL → HAZİRAN'DA <span style="color:#ff3b30">~17.000 TL</span> ALIM GÜCÜ</div>
+    <div class="chip g" id="c5" style="left:110px;top:1050px;opacity:0;font-size:32px">20.000 TL → HAZİRAN'DA <span style="color:#ff3b30">~17.000 TL</span> ALIM GÜCÜ</div>
   </section>
   <section id="s6" class="scene clip">''' + title('t6', '6 Ay', '<i>Gecikmesi</i>') + r'''</section>
   <section id="s7" class="scene clip">
