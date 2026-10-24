@@ -80,7 +80,7 @@ SCENE_HTML = r'''
     ''' + title('t8', 'Karar', '<i>Kuralı</i>') + r'''
     <div class="dc" id="d81" style="top:440px;opacity:0"><div class="q">PROGRAMIN SADECE WINDOWS'TA MI?</div><div class="r">→ <span class="gold">Monster</span></div></div>
     <div class="dc" id="d82" style="top:640px;opacity:0"><div class="q">GÜN BOYU PRİZDEN UZAK MISIN?</div><div class="r">→ <span class="gold">Air</span></div></div>
-    <div class="dc" id="d83" style="top:840px;opacity:0"><div class="q">TARAYICI + OFİS</div><div class="r">→ İkisi de fazla: <span class="gold">MacBook Neo 45.999 TL</span></div></div>
+    <div class="dc" id="d83" style="top:840px;opacity:0"><div class="q">TARAYICI + OFİS</div><div class="r">→ İkisi de fazla: <span class="gold">Neo 45.999 TL</span></div></div>
   </section>
   <section id="s9" class="scene clip">''' + title('t9', 'Bilgisayar Alacak', 'Arkadaşına <i>Gönder</i>') + r'''</section>
 '''
