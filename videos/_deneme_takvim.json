@@ -361,6 +361,35 @@
     "id": 405110000,
     "zaman": "2026-12-02T17:45"
    }
+  },
+  {
+   "tarih": "2026-11-25",
+   "slug": "2026-11-25-ai-hiz-yanilsamasi",
+   "A": {
+    "uuid": "7161857277461808314",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/08e752113795b18150234b39eeced67a33f8db94/public/2026-11-25-ai-hiz-yanilsamasi.mp4",
+    "zaman": "2026-11-25T19:45",
+    "paylas_otomatik": true
+   },
+   "v2": {
+    "uuid": "-2492337986158375285",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/08e752113795b18150234b39eeced67a33f8db94/public/2026-11-25-ai-hiz-yanilsamasi__v2.mp4",
+    "zaman": "2026-11-25T21:45",
+    "kanca": "Yapay zekâ seni hızlandırıyor mu? Bir deneyde kullananlar yavaşladı, ama hızlandıklarını sandılar!",
+    "paylas_otomatik": true
+   },
+   "v3": {
+    "uuid": "2828461981300248510",
+    "media": "https://raw.githubusercontent.com/blodym4ry/paranin-dili/08e752113795b18150234b39eeced67a33f8db94/public/2026-11-25-ai-hiz-yanilsamasi__v3.mp4",
+    "zaman": "2026-11-25T23:45",
+    "kanca": "Her işi yapay zekâya veriyorsan dur: bir deneyde kullananlar yüzde on dokuz yavaşladı!",
+    "paylas_otomatik": true
+   },
+   "kazanan": {
+    "uuid": "1920406089202811915",
+    "id": 405136344,
+    "zaman": "2026-11-27T17:45"
+   }
   }
  ]
 }
