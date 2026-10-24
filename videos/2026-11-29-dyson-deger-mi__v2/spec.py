@@ -3,7 +3,7 @@ from panel_kit import JS, HERO
 W = os.environ['VIDEO_WORK']
 SRT = os.path.join(W, 'avatar_cut.srt')
 DUR = round(float(open(os.path.join(W, 'dur.txt')).read()) - .02, 2)
-REPL = [(["Daysın'lar"], "Dyson'lar"), (['Daysın,'], 'Dyson,'), (['Daysın'], 'Dyson'), (['on','dört'], '14'), (['altmış'], '60'), (['beş','bin','dört','yüz'], '5.400 TL')]
+REPL = [(["Daysın'lar"], "Dyson'lar"), (['Daysın'], 'Dyson'), (['on','dört'], '14'), (['altmış'], '60'), (['beş','bin','dört','yüz'], '5.400 TL')]
 EM = set(); RED = set()
 CSS_FILE = 'panel.css.html'
 SOUND_KIT = 'panel'
