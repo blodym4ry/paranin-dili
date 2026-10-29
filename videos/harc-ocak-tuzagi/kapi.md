@@ -1,0 +1,5 @@
+# Konu kapısı — Ocak harç zammı / pasaport tuzağı
+1. Merak kanıtı: Doğalgaz "faturadaki tuzak" videosu (28 Eki) kendi hesabımızda 65 paylaşım, diğerlerinin ~6 katı paylaşım oranı; her Kasım–Aralık "harç zammı / pasaport ücreti 2027" haberleri ana akımda (milligazete, gazetevatan, secretcv, finansopia Eyl–Eki 2026); Kasım 2024'te pasaport başvuruları %40 arttı (NVİ/İHA).
+2. İzleyicinin cebi: 10 yıllık pasaport harcı 13.410 TL; Ocak'ta %19–28 zam → kişi başı ~2.500–4.100 TL, 4 kişilik aile 10–16 bin TL. Harcı Aralık'ta ödeyip Ocak'ta başvuran fark riskiyle karşı karşıya.
+3. Öğrenme anı: Harcı yatırmak yetmez; belirleyici olan başvuru günü — 2023'te Aralık'ta ödeyenlerden fark istendi.
+Doluluk: (1) 2026 harç tutarı, 2023 tutarı/4 kat, YDO mekanizması+Eylül %27,81, 2026 %18,95 indirimi, 2023 fark emsali = 5 kaynaklı bilgi (2) şaşırtıcı: ödediğin harç seni korumayabilir; 3 yılda 4 kat (3) adım: başvuruyu Aralık'ta tamamla, randevuyu şimdi al (4) kilit (Aralık'ta yatırsa bile) teslim edildi.
