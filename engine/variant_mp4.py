@@ -50,7 +50,7 @@ def final(slug, v, src, cut):
           f'[1:a]atrim=start={float(cut) - X:.3f},asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo[a1];'
           f'[a0][a1]acrossfade=d={X}:c1=tri:c2=tri,loudnorm=I=-13:TP=-1.5[a]')
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', a, '-i', src, '-filter_complex', fc, '-map', '[v]', '-map', '[a]',
-                    '-c:v', 'libx264', '-b:v', '4M', '-maxrate', '5M', '-bufsize', '8M', '-preset', 'medium', '-c:a', 'aac', '-b:a', '192k',
+                    '-c:v', 'libx264', '-b:v', '9M', '-maxrate', '14M', '-g', '15', '-bf', '2', '-profile:v', 'high', '-bufsize', '20M', '-preset', 'medium', '-c:a', 'aac', '-b:a', '192k',
                     '-ar', '48000', '-movflags', '+faststart', fin], check=True)
     shutil.copy(fin, hook)
     print(f'FINAL {fin} {dur(fin):.1f}s (kanca {H:.2f}s, kaynak kesme {float(cut):.2f}s)')

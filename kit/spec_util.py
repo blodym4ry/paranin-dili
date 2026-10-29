@@ -4,9 +4,10 @@ Kullanım (spec.py):  from spec_util import load; U = load(); T = U.T; SEGS = U.
   Avatar sahnesi sınırı: parça başlangıcı + .06 (pv.py AVATAR GUARD)."""
 import os, json, re
 
-FRAME_CSS = '''.gf{position:absolute;left:132px;top:482px;width:816px;height:956px;border-radius:46px;border:5px solid #e8b931;opacity:0;
-  box-shadow:0 0 26px rgba(232,185,49,.45),inset 0 0 18px rgba(232,185,49,.25);pointer-events:none;z-index:6}
-.gold{color:#e8b931}'''
+from panel_kit import HERO as _H
+FRAME_CSS = f'''.gf{{position:absolute;left:{_H[0]-8}px;top:{_H[1]-8}px;width:{_H[2]+16}px;height:{_H[3]+16}px;border-radius:46px;border:5px solid #e8b931;opacity:0;
+  box-shadow:0 0 26px rgba(232,185,49,.45),inset 0 0 18px rgba(232,185,49,.25);pointer-events:none;z-index:6}}
+.gold{{color:#e8b931}}'''
 
 
 class load:

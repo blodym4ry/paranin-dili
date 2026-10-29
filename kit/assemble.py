@@ -35,7 +35,7 @@ for i, ch in enumerate(chunks):
                  'w': [[re.sub(r'[.,:!…"]+$', '', x['w']).replace('"', ''), round(x['t0'], 3), 2 if clean(x['w']) in S.RED else (1 if isem(x['w']) else 0)] for x in ch]})
 css = open(os.path.join(KIT, getattr(S, 'CSS_FILE', 'kinetik.css.html'))).read().replace('__FONTS__', open(os.path.join(KIT, 'fonts.css')).read())
 core = open(os.path.join(KIT, 'kinetik_core.js')).read().replace('__CAPS__', json.dumps(caps, ensure_ascii=False)) \
-    .replace('__SCENES__', json.dumps(SC)).replace('__AV__', json.dumps(S.AV)).replace('__DUR__', str(S.DUR))
+    .replace('__SCENES__', json.dumps(SC)).replace('__AV__', json.dumps(S.AV)).replace('__DUR__', str(S.DUR)).replace('__FULLOPEN__', str(getattr(S, 'FULLOPEN', 0)))
 # optional B-roll: spec.BROLL(A) -> [{'id','src','a','b','ms','style'(css for wrapper),'dim'(0-1 dark overlay)}]
 BR = S.BROLL(A) if hasattr(S, 'BROLL') else []
 broll_html = ''.join(f'<div class="broll" id="{r['id']}" style="position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0;{r.get('style', '')}">'

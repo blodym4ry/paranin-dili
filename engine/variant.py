@@ -93,7 +93,7 @@ def final(slug, v):
     out = os.path.join(w, 'final'); os.makedirs(out, exist_ok=True)
     # video: kanca klibi (sessiz render) + eski gövde (kesmeden sonrası)
     a = os.path.join(out, 'a.mp4'); b = os.path.join(out, 'b.mp4')
-    enc = ['-c:v', 'libx264', '-crf', '16', '-preset', 'fast', '-pix_fmt', 'yuv420p', '-r', '30', '-an']
+    enc = ['-c:v', 'libx264', '-crf', '12', '-preset', 'fast', '-pix_fmt', 'yuv420p', '-r', '30', '-an']
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(hf, 'renders', 'v.mp4'), '-t', f'{H:.3f}'] + enc + [a], check=True)
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{cut:.3f}', '-i', os.path.join(hf0, 'renders', 'v.mp4')] + enc + [b], check=True)
     lst = os.path.join(out, 'v.txt'); open(lst, 'w').write(f"file '{a}'\nfile '{b}'\n")
@@ -115,8 +115,8 @@ def final(slug, v):
     mix = os.path.join(out, 'mix.wav')
     subprocess.run([sys.executable, os.path.join(ENG, 'audio3.py'), ej, vo, mix], check=True, cwd=out, env=dict(os.environ, PYTHONPATH=ENG, PD_SLUG=f'{slug}__{v}'))
     fin = os.path.join(w, f'{slug}__{v}.mp4')
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', vid, '-i', mix, '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-b:v', '4M', '-maxrate', '5M',
-                    '-bufsize', '8M', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-af', 'loudnorm=I=-13:TP=-1.5', '-c:a', 'aac', '-b:a', '192k',
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', vid, '-i', mix, '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-b:v', '9M', '-maxrate', '14M', '-g', '15', '-bf', '2', '-profile:v', 'high',
+                    '-bufsize', '20M', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-af', 'loudnorm=I=-13:TP=-1.5', '-c:a', 'aac', '-b:a', '192k',
                     '-shortest', '-movflags', '+faststart', fin], check=True)
     shutil.copy(fin, os.path.join(REPO, 'public', f'{slug}__{v}.mp4'))
     print(f'FINAL {fin} {dur(fin):.1f}s (kanca {H:.2f}s, eski kesme {cut:.2f}s, kayma {delta:+.2f}s)')

@@ -119,6 +119,9 @@ def check(slug):
     shutil.rmtree(os.path.join(hf, 'snap'), ignore_errors=True)
     sh(f'npx --yes {HF} snapshot -o snap --no-end --at {",".join(map(str, mids))} 2>&1 | tail -3', cwd=hf, check=False)
     ok = 'Check passed' in out
+    sz = subprocess.run([sys.executable, os.path.join(REPO, 'tools', 'safezone.py'), hf], capture_output=True, text=True)
+    print(sz.stdout[-3000:] + sz.stderr[-800:])
+    ok = ok and sz.returncode == 0
     print('CHECK', 'PASS' if ok else 'FAIL', '| preview sheets:', [os.path.join(hf, 'snap', f) for f in sorted(os.listdir(os.path.join(hf, 'snap'))) if f.startswith('contact')] if os.path.isdir(os.path.join(hf, 'snap')) else [])
     if not ok: sys.exit(1)
 
@@ -126,12 +129,13 @@ def check(slug):
 def render(slug, video=True):
     vd, w, hf = paths(slug)
     os.makedirs(os.path.join(hf, 'renders'), exist_ok=True)
-    if video: sh(f'timeout 2400 npx --yes {HF} render -o renders/v.mp4 --quiet > render.log 2>&1', cwd=hf)
+    if video: sh(f'timeout 2400 npx --yes {HF} render -o renders/v.mp4 --crf 12 --quiet > render.log 2>&1', cwd=hf)
     else: sh([sys.executable, os.path.join(ENG, 'audio3.py'), 'edl_audio.json', os.path.join(w, 'voice.wav'), 'mix.wav'], cwd=hf,
              env={'PYTHONPATH': ENG, 'PD_SLUG': slug})
     final = os.path.join(w, f'{slug}.mp4')
     sh(['ffmpeg', '-v', 'error', '-y', '-i', 'renders/v.mp4', '-i', 'mix.wav', '-map', '0:v', '-map', '1:a', '-c:v', 'libx264',
-        '-b:v', '4M', '-maxrate', '5M', '-bufsize', '8M', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-af',
+        '-b:v', '9M', '-maxrate', '14M', '-bufsize', '20M', '-profile:v', 'high', '-g', '15', '-bf', '2', '-preset', 'slow',
+        '-pix_fmt', 'yuv420p', '-af',
         'loudnorm=I=-13:TP=-1.5', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', final], cwd=hf)
     sh(['ffmpeg', '-v', 'error', '-y', '-i', final, '-vf', 'fps=1/2.6,scale=200:-1,tile=9x3', '-frames:v', '1',
         os.path.join(w, 'qa.jpg')])
