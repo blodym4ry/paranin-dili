@@ -79,3 +79,8 @@ Not: nvi.gov.tr, gib.gov.tr ve resmigazete.gov.tr bu ortamdan açılamadı (prox
 8. Yurt dışı çıkış harcının neden %76 arttığı (hangi yetkiyle) bulunamadı.
 9. Pasaport tablosundaki 2026 tutarlarının resmî kaynağı (Tebliğ 98 ekindeki tablo) doğrudan okunamadı. Tutarlar Forbes ve e-yasamrehberi'nden alındı ve 2025 × 1,1895 hesabıyla birebir tutuyor.
 10. MTV'nin "Ocak başında tahakkuk" kuralının kanun maddesi doğrudan doğrulanmadı.
+
+## İnceleme eklemeleri (29 Eki)
+- Temmuz 2023 %50 ara zam: 10 yıllık harç 3.295,5 → 4.943 TL — BloombergHT 07.07.2023 https://www.bloomberght.com/10-yillik-pasaport-5-bin-444-lira-oldu-2334184 (4 katın bir kısmı Ocak otomatik zammı değil → senaryoda "Üstelik" ile ayrıldı)
+- 25 yaş altı öğrenciler harçtan muaf, yalnız defter bedeli — sigortam.net, enuygun → kancada "dört kişilik aile" yerine "dört yetişkin"
+- 2023 fark emsali: CNN Türk https://www.cnnturk.com/ekonomi/pasaportta-2023-soku-cimere-sikayet-yagdi-1878525
