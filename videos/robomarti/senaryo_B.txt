@@ -1,0 +1,12 @@
+# AÇI B — "Sürücü çıktı, fiyat düşmedi" (kavram adı: sürücü indirimi yanılgısı)
+# Ekran kancası (93,8 STRONG): Sürücü yolculuğun %60'ı ama sürücüsüz Waymo %13 daha pahalı. Neden?
+# Alternatif (83,0): Robotaksi gelince taksin %60 ucuzlar mı? Amerika'da tersi oldu.
+# --- SESLENDİRME METNİ ---
+[KANCA] Amerika'da sürücü, yolculuk ücretinin ortalama yüzde altmışını alıyor. Ama sürücüsüz Waymo, Uber'den yüzde on üç daha pahalı.
+[KİLİT] Martı da sürücüsüz aracını gösterdi. Sonunda taksi ücretini asıl neyin belirleyeceğini göreceksin.
+[BLOK 1] İstanbul'da on kilometrelik taksi şu an yaklaşık beş yüz elli lira. Mantık basit, sürücü çıkarsa fatura yarıya iner.
+[ARA KANCA 1] Ama San Francisco verisi tersini söylüyor.
+[BLOK 2] Kasımla ocak arasında Waymo yolculuğu ortalama on dokuz buçuk dolar, Uber ise on yedi buçuk dolardı. Sürücünün parası araca, sensöre ve sigortaya gitti. Lidar denen lazer sensör on bir yıl önce yetmiş beş bin dolardı. Bugün iki yüz dolar civarına indi, yine de bilet ucuzlamadı.
+[ARA KANCA 2] Asıl önemlisi şu.
+[BLOK 3] Aynı şehirde Tesla'nın robotaksisi ortalama sekiz dolar istiyor. Yani fiyatı maliyet değil, rekabet belirliyor. RoboMartı gelince kilometre ücretini taksinin kırk yedi lira doksan iki kuruşuyla karşılaştır.
+[KAPANIŞ+CTA] Bunu, her gün taksiye para veren arkadaşına gönder. Çünkü sürücü çıkınca ilk ucuzlayan şey senin biletin değil, şirketin maliyeti.

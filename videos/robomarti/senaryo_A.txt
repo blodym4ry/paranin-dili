@@ -1,0 +1,12 @@
+# AÇI A — "Plaka kıtlığı" (kavram adı: izin kıtlığı)
+# Ekran kancası (82,3 STRONG): İstanbul'da taksi plakası 10 milyon TL. Robotaksi gelince değeri düşer mi, sakın emin olma.
+# Alternatif (81,6): 10 milyon TL'lik taksi plakası robotaksiyle çöker mi? Sana söylenmeyen bir şart var.
+# --- SESLENDİRME METNİ ---
+[KANCA] İstanbul'da bir taksi plakası yaklaşık on milyon lira. Martı sürücüsüz aracını gösterdi, peki bu plakanın değeri çöker mi?
+[KİLİT] Sonunda bir plakanın fiyatını asıl neyin belirlediğini öğreneceksin, ve bu robot değil.
+[BLOK 1] Şubatta bir plaka on bir milyon liraya satılıyordu. Martta on milyonun altına indi. Sebep mali cihaz oldu, çünkü vergi yükü kazancın yaklaşık yüzde kırk beşine çıktı.
+[ARA KANCA 1] Ama asıl darbe başka yerden geldi.
+[BLOK 2] İBB temmuzda yirmi dokuz yıllık yeni plakaları altı milyon liraya sattı. Yani plakanın değeri arabadan değil, kıtlıktan geliyor.
+[ARA KANCA 2] Çoğu kişi tam burada yanılıyor.
+[BLOK 3] Şubattaki kanun taslağına göre her sürücüsüz araç, yola çıkmak için İçişleri Bakanlığı'ndan izin alacak. Bu yüzden robotaksi plakayı kendi başına bitirmez. İzni kimin dağıttığı belirler. Plaka düşünüyorsan önce kirasını hesapla. Aylık altmış bin lira kira, on bir milyonluk plakada yılda yüzde yedi bile etmiyor.
+[KAPANIŞ+CTA] Bunu, taksi plakası almayı düşünen arkadaşına gönder. Çünkü on milyon liralık o soru aslında bir izin sorusu.

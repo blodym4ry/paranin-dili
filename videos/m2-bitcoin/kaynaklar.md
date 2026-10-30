@@ -10,3 +10,4 @@
 - 29 Eki düşüş <80.000 $, 356 milyon $ tasfiye, Binance cüzdanı ~2 milyar $ transfer — "doğrulanmadı": https://www.fool.com/coverage/stock-market-today/2026/10/29/crypto-market-today-oct-29-bitcoin-slides-below-usd80k-as-big-tech-earnings-uncertainty-and-market-volatility-intensify/
 - TÜFE Eylül 2026 yıllık %29,73, aylık %1,84 (5 Eki 2026): https://www.timeturk.com/2026-eylul-enflasyonu-aciklandi-yillik-yuzde-2973
 - TL M2 Eylül 2026 ≈ 29,49 trilyon TL: https://tradingeconomics.com/turkey/money-supply-m2
+- 30 Eki 05:05: BTC 76.515 $ (Yahoo) → 2025 zirvesi 126.198 $'ın %39 altında → 'yaklaşık yüzde kırk'

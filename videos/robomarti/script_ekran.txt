@@ -1,0 +1,9 @@
+Bu yıl bir taksi plakası on milyon liranın altına düştü. Şimdi Martı sürücüsüz aracını gösterdi. Peki plaka çöker mi, taksi ucuzlar mı?
+Önce bilet. İstanbul'da on kilometre taksi şu an yaklaşık beş yüz elli lira. Sürücü çıkarsa fatura ciddi düşer, değil mi?
+Ama San Francisco'da tersi oldu. Bir araştırmaya göre uygulamalar ücretin ortalama yüzde kırkını alıyor, kalanı sürücünün. Buna rağmen sürücüsüz Waymo yolculuğu ortalama on dokuz buçuk dolar. Uber ise on yedi buçuk dolar. Sürücüsüz araç, yüzde on üç daha pahalı!
+Sürücünün payı kalktı, ama yerine araç, sensör, sigorta ve uzaktan izleme maliyeti geldi. Lidar denen lazer sensörün fiyatı on bir yılda yetmiş beş bin dolardan iki yüz dolar civarına indi. Yine de bilet ucuzlamadı.
+Aynı şehirde Tesla, araçta hâlâ bir güvenlik görevlisi varken, yolculuk başına ortalama sekiz dolar istiyor. Fiyatı yalnızca maliyet değil, rekabet de belirliyor.
+Şimdi plaka. Şubatta on bir milyon liraydı. Mali cihaz ve vergi yüküyle sert düştü, martta on milyonun altına indi. İstanbul Büyükşehir Belediyesi de sadece uygulamadan müşteri alan yeni plakaları, vergi hariç altı milyon liraya sattı. Plakanın değerini araba değil, ne kadar plaka verildiği belirliyor.
+Şubattaki kanun taslağına göre her sürücüsüz araç, İçişleri Bakanlığı'ndan izin alacak. Bu yüzden robotaksi plakayı tek başına bitirmez. İzni kimin dağıttığı belirler.
+RoboMartı'nın ne zaman ve hangi şehirde yola çıkacağı henüz açıklanmadı. Geldiğinde kilometre ve açılış ücretini, taksiyle karşılaştır.
+Bunu, her gün taksiye para veren arkadaşına gönder. Çünkü sürücü çıksa bile, ilk ucuzlayan senin biletin olmayabilir.
