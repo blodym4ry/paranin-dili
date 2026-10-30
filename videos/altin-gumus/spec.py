@@ -17,7 +17,7 @@ SOUND_KIT = 'panel'
 EXIT_FADE = False
 FULLOPEN = 1.2
 
-t2 = T('Ocakta', 9) - .1; t3 = T('Bir', T('düştü', t2 + 6)) - .1; t3b = T('Ama', t3) - .1; t4 = T('Kapalıçarşı', t3b) - .1; t5 = T('Yüz', t4) - .1
+t2 = T('Ocakta', 9) - .1; t3 = T('Bir', T('düştü', t2 + 6)) - .1; t3b = T('Ama', t3) - .1; t4 = T('Kapalıçarşı', t3b) - .1; t5 = T('Yüz', T('çıkabiliyor', t4)) - .1
 t5b = T('Çoğu', t5) - .1; t6 = T('Almadan', t5b) - .1; t7 = T('Yani', t6) - .1; t8 = T('Bunu,', t7) - .1
 TS = [0, t2, t3, t3b, t4, t5, t5b, t6, t7, t8, DUR]
 IDS = ['s1', 's2', 's3', 's3b', 's4', 's5', 's5b', 's6', 's7', 's8']
