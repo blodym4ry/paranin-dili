@@ -17,6 +17,12 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 - **GÜVENLİ ALAN (Ata 23 Eki 03:17: "çok aşağıda kalmışım… yüzüm gözükmeyebilir"):** Instagram alt arayüzü y>1450 ve sağ butonlar x>990 kapalı alan. Başlık y=225; grafikler tasarımda y=380–1150 çizilir, `.stage` otomatik olarak %72'ye küçültüp y=410–965'e taşır; altyazı y=962; avatar kartı `CARD=[90,1065,900,395]` (alt kenar 1460). Kontrol: snapshot üstüne y=1450 çizgisi çiz, yüz çizginin üstünde olmalı.
 - Desen kırılması: zemin kararır, ortada tek cümle (büyük sans + kırmızı italik serif). Kapanış: başlık + kanca nesnesi geri gelir (döngü).
 - Hareket kuralları (dış repo incelemesi, 23 Eki): ekranda aynı anda TEK 'okuma'; her giriş ≥ max(1,8 sn, cümle+0,6 sn) kalır; her değişime geçiş; çizgi grafik parça parça çizilir, kilit noktada büyüyen halka; sayılar sabit genişlikte sayar.
+**GERÇEK GÖRSEL + HAREKET (Ata 30 Eki 14:35, kesin):** "robomartı dediğimiz zaman ekrana robomartı fotoğrafı gelmiyor… hiç gerçek video ve görsel kullanmıyoruz. bunu kullanmak zorundayız. ayrıca hiç animated şeyler yok."
+- Her sahnede konuyla ilgili GERÇEK fotoğraf/video: söz edilen ürün/şirket/yerin kendi fotoğrafı (haber sitesi og:image), Pexels stok foto/video, X/haber ekran görüntüsü.
+- `kit/visual_kit.py`: tam ekran arka plan fotoğrafı + Ken Burns (bg_html/bg_js; HERO sahnelerinde de görünür), perde açılışlı + ışık süpürmeli foto kart (card/card_js), B-roll `BROLL(A)`.
+- İndirme: Chrome'da pexels.com sekmesinde `fetch('https://images.pexels.com/photos/ID/pexels-photo-ID.jpeg?w=1400')` → hepsini base64 JSON paketine koy → TEK indirme (`pd_pack_<slug>.json`; aynı sekmede 2. indirme engellenir, her paket yeni sekme). Video: pexels sekmesinde `fetch('/download/video/ID/')` (4K ise büyük; konteynerde ffmpeg ile 1080p'ye indir). Haber görseli: görselin kendi URL'sine git, `fetch(location.href)`. JS çıktısında URL döndürme (engelleniyor) — ID/sayı döndür. device_stage_files ile al.
+- Ekranda İngilizce yazılı görsel kullanma (ör. "FIRST AID KIT").
+
 **HEP VARIM — PIP + VURGU KARTI (Ata 30 Eki 12:23, kesin):** "Videonun aralarında, vurgulu yerlerde gözükmüyorum… Ekranda ufacık da olsa bir yuvarlağın içerisinde… Ara ara olmalıyım. Burası sana sürekli anlatmıştım ama hala yanlış yapıyorsun."
 - Avatar TÜM video boyunca ekranda: tek parça avatar klibi (`split.py cut <slug> 0,1,...,N` → tek seg_00; ~1 kredi/sn).
 - Vurgu cümlelerinde (kanca, rakam/şok, desen kırılması, "dürüst olalım", CTA) altın çerçeveli `HERO`; aralarında en fazla ~15 sn. Çerçeve: `U.frame_js(HERO aralıkları)`.
