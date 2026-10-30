@@ -169,7 +169,7 @@ Toplam avatar süresi videonun %35'ini geçmez (hedef 15–20 sn). Geri kalan he
 2. **Baş sessizliği + telaffuz:** önce `python3 engine/split.py trim <slug>` (ilk kelime ≤0.06 sn — Katman 1), sonra `ffmpeg -y -i speech.wav -ac 2 -ar 48000 voice.wav` (WORK içinde) ve `python3 engine/pv.py tel <slug>`.
    Çoğu işaret rakam/kesme işareti biçim farkıdır. Anlamı bozan gerçek hata varsa script'i düzelt (yazıyla/farklı kelime) ve sesi yeniden üret (ucuz).
 3. **Cümleleri seç:** `python3 engine/split.py list <slug>` → numaralı cümleler. Avatar cümlelerini seç: ilk 1–2 (hook), son 1–2 (CTA+döngü),
-   ortadan en fazla 2 vurgu cümlesi. `python3 engine/split.py cut <slug> 0,1,7,12,13` → `seg_XX.wav` parçaları, `voice.wav`, altyazı, `segments.json`.
+   ~~ortadan en fazla 2 vurgu cümlesi~~ → 30 Eki'den beri TÜM cümleler (HEP VARIM). `python3 engine/split.py cut <slug> 0,1,7,12,13` → `seg_XX.wav` parçaları, `voice.wav`, altyazı, `segments.json`.
    %35 uyarısı çıkarsa daha az cümle seç.
 4. **Ses parçalarını yayınla:** `mkdir -p public/audio/<slug> && cp $PD_WORK/<slug>/seg_*.wav public/audio/<slug>/` → commit + push.
    URL: `https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/audio/<slug>/seg_XX.wav` (`curl -sI` 200 olmalı).
@@ -189,7 +189,7 @@ Bu yol 3 kat kredi harcar; kullanırsan log'a nedenini yaz.
 - **İmza stil (23 Eki 02:39'dan itibaren): PANEL** — bkz. ÇALIŞMA KURALLARI. ~~**MASA ÜSTÜ DOSYA**~~ **YASAK (Ata 23 Eki 02:36) — kullanma, sadece arşiv.** — `from masa_kit import *` (kit/masa_kit.py: put/take/tape/write/draw/prt(fiş)/slide(foto)/lamp/dark/cam, fis(), kup(), ring(), line(); `SOUND_KIT='masa'`, `EXIT_FADE=False`). Örnek: videos/faiz-indi/spec.py. Her videoda bir FİŞ (kişisel hesap) + gerçek manşet/kupür + tek somut metafor + lamba söner desen kırılması.
 - **Eski stil rotasyonu (masa üstü dışı denemeler):** Gazete (`CSS_FILE='gazete.css.html'`) ↔ Kinetik (varsayılan css) ↔ alt-avatar düzeni. Son kullanılanı `log.md`'den bak, aynısını üst üste kullanma. Sahne düzenlerini ve animasyonları her seferinde değiştir.
 - **Avatar kuralları (Ata'nın isteği, kesin):**
-  - Ata sadece giriş (hook), 1–2 vurgu anı, CTA ve kapanışta görünür. Diğer sahnelerde `AV['sX'] = None` → sadece grafik.
+  - ~~Ata sadece giriş (hook), 1–2 vurgu anı, CTA ve kapanışta görünür; diğer sahnelerde `AV=None`~~ → İPTAL (Ata 30 Eki 12:23). Yeni kural: HEP VARIM (üstte) — HERO vurgu kartları + grafik sahnelerinde PIP; tüm cümleleri kapsayan avatar klibi (`split.py cut <slug> 0,1,…,N`).
   - Avatarlı sahne, bir avatar parçasının (segments.json) zaman aralığı İÇİNDE olmalı; sahne sınırlarını cümle başlarına koy (`A('ilk kelime') - .1`). `pv.py check` bunu denetler (AVATAR GUARD).
   - İlk sahne avatarsız da olabilir ama varsayılan: hook'ta Ata büyük pencerede.
   - Pencere oranı her zaman ~740:1040 (dikey). Saç ve çene ASLA kesilmez. Geniş/kare pencere yasak.
