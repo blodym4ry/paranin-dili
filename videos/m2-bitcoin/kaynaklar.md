@@ -1,0 +1,12 @@
+# Kaynaklar (erişim 30 Eki 2026)
+- M2 tanımı (nakit + vadesiz/likit mevduat + küçük vadeli mevduat + bireysel para piyasası fonları): Fed H.6 — https://www.federalreserve.gov/releases/h6/20260324/
+- Küresel M2 103,66 trilyon $ (MacroMicro; ABD+Euro Bölgesi+Çin+Japonya, Ağustos verisi); başka hesapla >113 trilyon $; gecikme: Colin 107 gün (1 yıllık korelasyon %81,5), TradingView göstergesi varsayılan 12 hafta ≈ 84 gün, genel aralık 10–15 hafta; karşı argümanlar: aşırı uydurma (Sina, 21st Capital), kur etkisi (dolar bazında ~%8, sabit kurla ~%4,5 büyüme), ters nedensellik, 2026'da Fed/getiri/petrol, Ocak 2026 ETF çıkışı >3 milyar $ — Bitrue (BeInCrypto kaynaklı), 19 Eki 2026: https://www.bitrue.com/blog/bitcoin-vs-global-m2-price-prediction-2026
+- %83 (12 aylık dönemlerde aynı yön), Sam Callahan / Lyn Alden: https://benzinga.com/z/41030248
+- Gecikme ~60 gün (30–90), R² düşüşü, Ç4 2025: M2 +%12, BTC −%12; ETF/RWA/petrol nedenleri — BIT, 16 Ağu 2026: https://www.bit.com/knowledge-hub/global-m2-decoupling
+- 103 trilyon $ (streetstats), Howell 195 trilyon $, mevduat/para piyasası fonunda bekleyen para argümanı — Bitcoin.com, 26 Ağu 2026: https://news.bitcoin.com/market-updates/bitcoin-price-left-behind-record-global-m2-could-put-btc-on-a-launchpad/
+- 135 trilyon $ (Haziran, kaynak belirtilmemiş), 2018/2022 ayrışmaları 6–18 ayda kapandı: https://www.fxstreet.com/cryptocurrencies/news/bitcoin-lags-global-liquidity-at-record-highs-will-it-catch-up-202606161300 · https://crypticmedia.co/bitcoin-trades-below-peak-as-m2-liquidity-hits-135-trillion-record/
+- 50 günlük gecikme (MartyParty), Fidelity, kuantum riski (Charles Edwards): https://www.fxstreet.com/cryptocurrencies/news/bitcoin-continues-to-decouple-from-global-m2-in-early-2026-as-analysts-remain-divided-202601131356
+- BTC 80.036,60 $ (29 Eki 08:45 ET), zirve 126.198,07 $ (6 Eki 2025): https://fortune.com/article/price-of-bitcoin-10-29-2026/
+- 29 Eki düşüş <80.000 $, 356 milyon $ tasfiye, Binance cüzdanı ~2 milyar $ transfer — "doğrulanmadı": https://www.fool.com/coverage/stock-market-today/2026/10/29/crypto-market-today-oct-29-bitcoin-slides-below-usd80k-as-big-tech-earnings-uncertainty-and-market-volatility-intensify/
+- TÜFE Eylül 2026 yıllık %29,73, aylık %1,84 (5 Eki 2026): https://www.timeturk.com/2026-eylul-enflasyonu-aciklandi-yillik-yuzde-2973
+- TL M2 Eylül 2026 ≈ 29,49 trilyon TL: https://tradingeconomics.com/turkey/money-supply-m2

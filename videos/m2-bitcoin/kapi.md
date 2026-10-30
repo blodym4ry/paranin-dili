@@ -1,0 +1,5 @@
+# Konu kapısı — Küresel M2 ve Bitcoin
+1. **Merak kanıtı:** @piovincenzo_ 29 Eki 2026 tweeti 36,6 B görüntülenme (koordinatör verisi, tarafımca doğrulanmadı). Konu 2026 boyunca ana akım kripto medyasında tekrar tekrar gündem: Bitcoin.com (26 Ağu), Bitrue/BeInCrypto (19 Eki), FXStreet (Oca + Haz), BIT (16 Ağu, Türkçe sayfası da var). ZAYIF NOKTA: TR rakip hesapta "medyanın ≥10 katı" video kanıtı ve Google Trends TR verisi bakılmadı → Ata/koordinatör kontrol etmeli.
+2. **İzleyicinin cebi:** Kripto alan izleyici, viral "M2 makası" grafiğini alım sinyali sanıp karar veriyor; grafik ayara (gecikme günü, kur çevirisi) bağlı. Bitcoin zirveden ~%36,6 aşağıda (126.198 $ → ~80.036 $): yanlış sinyalle girmenin bedeli somut. Zayıf yan: TL'ye doğrudan rakamsal bağ senaryoda yok (yalnız caption önerisi).
+3. **Öğrenme anı:** Aynı M2 grafiği seçilen gecikme gününe göre (84 mü 107 mi) farklı hikâye anlatır; bu yüzden makas bir pusuladır, takvim değil.
+Karar: GEÇER (madde 1 rakip kanıtıyla güçlendirilmeli).
