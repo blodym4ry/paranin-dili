@@ -164,7 +164,7 @@ tl.set('#t1',{{opacity:1}},0);
 ttl('#t2',{b1 + .1}); fin('#l2',{b1 + .4}); pop('#w21',{T('sıcak', b1)}); tl.fromTo('#a2',{{scaleX:0}},{{scaleX:1,duration:.5,ease:'power3.out'}},{T('imzası', b1)});
 pop('#w22',{T('imzası', b1) + .4}); pop('#d2',{T('Saldırgan', b1)});
 ttl('#t3',{tBG}); pop('#w31',{T('karıştırma', tBG)}); tl.fromTo('#a3',{{scaleX:0}},{{scaleX:1,duration:.5,ease:'power3.out'}},{T('küçük', tBG)}); pop('#w32',{T('miktar', tBG)}); pop('#c3',{T('gelmişti', tBG)});
-ttl('#t4',{tSD}); pop('#r41',{t24}); pop('#k4',{t24 + .2}); {_cnt(0, 2.0, T('gitti', t24) - .3)}
+ttl('#t4',{tSD}); pop('#r41',{t24}); pop('#k4',{T('gitti', t24) - .5}); {_cnt(0, 2.0, T('gitti', t24) - .3)}
 pop('#r42',{t26}); {_cnt(2.0, 2.07, T('daha', t26))} pop('#r43',{t39}); pop('#r44',{t41}); {_cnt(2.07, 2.85, T('çıktı', t41) - .3)}
 ttl('#t5',{tZA + .1}); pop('#i51',{T('şirketi', tZA)}); pop('#i52',{T('İçinde', tZA)}); pop('#c5',{T('Tron', tZA)});
 ttl('#t6',{tRR}); tl.fromTo('#h61',{{scaleX:0}},{{scaleX:1,duration:.7,ease:'power3.out'}},{T('Tahminler', tRR)}); tl.fromTo('#h62',{{scaleX:0}},{{scaleX:1,duration:.6,ease:'power3.out'}},{T('altı', tRR)});
