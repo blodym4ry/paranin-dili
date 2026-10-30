@@ -1,6 +1,7 @@
 import os
 from panel_kit import JS, HERO, PIP, title, SVG_DEFS
 from spec_util import load, FRAME_CSS
+from visual_kit import VIS_CSS, bg_html, bg_js
 # ALTIN/GÜMÜŞ RASYOSU — 2000'den beri 80/50 kuralı (Ata 30 Eki). İLK "HEP VARIM" VİDEOSU (Ata 30 Eki 12:23):
 # vurgulu cümlelerde altın çerçeveli HERO kart (~10–15 sn'de bir), grafik sahnelerinde sol altta yuvarlak PIP. Tek parça avatar (seg_00, tüm video).
 U = load(); T = U.T; W = U.W; DUR = U.DUR
@@ -82,7 +83,7 @@ def hold(sfx, idxs):
     return ''.join(f'<div class="hold" id="{sfx}h{k}" style="opacity:0"><span class="lab">ELİNDE</span><b>{HOLD[k]}</b></div>' for k in idxs)
 
 
-EXTRA_CSS = '<style>' + FRAME_CSS + r'''
+EXTRA_CSS = '<style>' + FRAME_CSS + VIS_CSS + r'''
 .chip{position:absolute;padding:14px 24px;border-radius:14px;font:800 34px 'Inter Tight';white-space:nowrap}
 .chip.g{border:1.5px solid rgba(255,255,255,.45);background:rgba(255,255,255,.04);color:#fff}
 .dc{position:absolute;left:150px;width:730px;box-sizing:border-box;border-radius:18px;padding:18px 26px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.03)}
@@ -105,7 +106,12 @@ EXTRA_CSS = '<style>' + FRAME_CSS + r'''
 
 coins = ''.join(f'<div class="coin ag" id="ag{k}" style="left:{560 + (k % 5) * 62}px;top:{820 - (k // 5) * 62}px;width:56px;height:56px;opacity:0"></div>' for k in range(15))
 
-SCENE_HTML = r'''
+# Ata 30 Eki 14:35: gerçek görsel — HERO sahnelerinde altın/gümüş/kuyumcu fotoğrafları (Ken Burns), grafik sahnelerinde bulanık zemin
+BGS = [('bg1', 'jewel1.jpg', 0), ('bg2', 'gold1.jpg', 0), ('bg3', 'silver2.jpg', 1), ('bg4', 'gold2.jpg', 1), ('bg5', 'silver1.jpg', 0),
+       ('bg7', 'gold3.jpg', 0), ('bg9', 'silver2.jpg', 0), ('bg11', 'jewel2.jpg', 0), ('bg12', 'gold1.jpg', 1), ('bg13', 'silver1.jpg', 0),
+       ('bg14', 'jewel2.jpg', 1), ('bg15', 'jewel1.jpg', 0)]
+BGMAP = {'s' + b[0][2:]: b[0] for b in BGS}
+SCENE_HTML = bg_html(BGS) + r'''
   <svg style="position:absolute;width:0;height:0">''' + SVG_DEFS + r'''</svg>
   <section id="s1" class="scene clip">''' + title('t1', '1 Ons Altın', '180 TL → <i>200 Bin</i>') + r'''</section>
   <section id="s2" class="scene clip">''' + title('t2', 'Tek Kuralla', '<i>880 Bin</i> TL') + r'''</section>
@@ -182,7 +188,7 @@ def holds(sfx, seq):
 
 
 tg = T('gider', t6); tg2 = T('gider', tg + 2)
-SCENE_JS = JS + U.frame_js(mr) + f'''
+SCENE_JS = JS + U.frame_js(mr) + bg_js(BGMAP, scenes(None)) + f'''
 tl.set('#t1',{{opacity:1}},0); ttl('#t2',{t2 + .1});
 ttl('#t3',{t3 + .1}); pop('#au',{T('altınla', t3) - .2}); pop('#eq',{T('kaç', t3) - .1});
 {''.join(f"pop('#ag{k}',{T('gümüş', T('kaç', t3)) - .3 + k * .04:.2f},{{s:.4}});" for k in range(15))} pop('#d31',{T('alabildiğin', t3)});
