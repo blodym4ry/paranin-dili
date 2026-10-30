@@ -62,7 +62,7 @@ SCENE_HTML = bg_html(BGS) + r'''
     <div class="wf" id="wf" style="top:910px;opacity:0"><i id="wfi" style="width:100%"></i></div>
     <div class="big" id="k2" style="top:975px;opacity:0;font-size:84px"><span id="n2">1.000</span> TL<small>RESTORANA KALAN</small></div>
   </section>
-  <section id="s3" class="scene clip">''' + title('t3', 'Kesinti', 'Menü Fiyatına <i>Yansıyor</i>') + r'''</section>
+  <section id="s3" class="scene clip">''' + title('t3', 'Kesinti Menüye', '<i>Yansıyor</i>') + r'''</section>
   <section id="s4" class="scene clip">
     ''' + title('t4', 'Aynı Yemek', '<i>İki Fiyat</i>') + r'''
     ''' + card('p4', 'media/kitchen2.jpg', 450, 300, 'TAVUK GÜVEÇ') + r'''
@@ -79,7 +79,7 @@ SCENE_HTML = bg_html(BGS) + r'''
     <div class="chip g" id="c7" style="left:155px;top:750px;opacity:0;font-size:30px;border-color:#e8b931;color:#e8b931">TÜRES · DOĞRUDAN SİPARİŞE %20 ÇAĞRISI</div>
     <div class="chip g" id="c7b" style="left:155px;top:845px;opacity:0;font-size:30px">HER YERDE GEÇERLİ DEĞİL · SORMAK BEDAVA</div>
   </section>
-  <section id="s8" class="scene clip">''' + title('t8', 'Hep Uygulamadan Söyleyen', 'Arkadaşına <i>Gönder</i>') + r'''</section>
+  <section id="s8" class="scene clip">''' + title('t8', 'Hep Uygulamacı', 'Arkadaşına <i>Gönder</i>') + r'''</section>
 '''
 
 hr = []
