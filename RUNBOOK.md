@@ -219,7 +219,9 @@ Bu yol 3 kat kredi harcar; kullanırsan log'a nedenini yaz.
 - Medya URL: `https://raw.githubusercontent.com/blodym4ry/paranin-dili/main/public/<slug>.mp4` — `curl -sI` ile 200 olduğunu doğrula.
 - Paylaşım metni (`videos/<slug>/paylasim.txt`): ilk satır hook + 📌 konuya özel "… arkadaşına gönder" CTA; 3–5 kısa paragraf veri; "Kaynaklar: ..." ; "Yatırım tavsiyesi değildir."; 3–5 hashtag (#paranindili dahil). İlk yorum: tek soru. YouTube başlığı (#shorts ile), TikTok başlığı.
 - **Kapak (seri görünümü, her videoda zorunlu — 'sahne' stili + Gölge kenar, Ata onayı 20/22 Ekim):**
-  `COVER_STYLE=sahne COVER_THEME=<gold|red|blue|green> COVER_PROPS="<emoji1> <emoji2>" python3 engine/cover.py <slug> "<ARKA KELİME> / *<ön satır sarı>* / <ön satır beyaz (isteğe bağlı)>" "-" $PD_WORK/<slug>/seg_00.mp4 1.0`
+  `COVER_STYLE=sahne COVER_THEME=<gold|red|blue|green> COVER_PROPS="<emoji1> <emoji2>" python3 engine/cover.py <slug> "<ARKA KELİME> / *<ön satır sarı>* / <ön satır beyaz (isteğe bağlı)>" "-" kit/cover_looks/<look>.mp4 0.5`
+  **FOTOĞRAF = avatar look'unun stüdyo fotoğrafı** (`kit/cover_looks/`: olive, navy, hoodie_glasses, street) — videodan kare KULLANMA (Ata 30 Eki 19:24: "fotoğrafım çok kötü"; 4 varyasyondan B seçildi). Look'u videonun look'una göre seç.
+  **Her video kapaklı olmak zorunda** (Ata 30 Eki 19:23). videoCoverMilliseconds YASAK; her post (trial varyantları dahil) videoThumbnailUrl taşır.
   Toplam 2–4 kelime, clickbait ama doğru (videoda karşılığı olmalı). İlk parça başın arkasına dev harflerle yazılır, gerisi önde.
   Tema: para kaybı/uyarı=red, altın/servet=gold, banka/teknoloji/fatura=blue, birikim/kazanç=green. Emojiler konunun nesneleri (ör. 🪙 📉, 💳 🏦, 🧾 📉).
   Çıktıyı Read ile aç: yüz net ve gözler açık, emoji yüzü kapatmıyor, yazılar okunuyor; değilse saniyeyi/emojiyi değiştir (yakın çekim kaynakta tek emoji kullan: `COVER_PROPS=" 💤"`).
