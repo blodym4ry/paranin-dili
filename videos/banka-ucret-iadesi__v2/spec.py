@@ -33,7 +33,7 @@ def scenes(A):
 AV = {k: (HERO if k in HEROS else PIP) for k in IDS}
 AV['s1'] = None   # VARYASYON: kanca avatarsız (Ata 30 Eki)
 
-EXTRA_CSS = '<style>' + "\n.ttl .l2{background:linear-gradient(90deg,#0b3a8f,#1d5fe0)!important}\n.cl{font:italic 400 84px/1.1 'DM Serif Display'!important;letter-spacing:0!important}\n.cw{color:#ffe14d!important}\n.cw.k1{background:linear-gradient(90deg,#0b3a8f,#1d5fe0)!important;color:#fff!important}\n#t1{top:560px!important;left:150px!important;right:150px!important;font-size:74px!important;line-height:1.06}\n#t1 i{font-size:80px!important}\n#t1 .l2{margin-top:14px}\n" + FRAME_CSS + VIS_CSS + r'''
+EXTRA_CSS = '<style>' + "\n.ttl .l2{background:linear-gradient(90deg,#0b3a8f,#1d5fe0)!important}\n.cl{font:italic 400 84px/1.1 'DM Serif Display'!important;letter-spacing:0!important}\n.cw{color:#ffe14d!important}\n.cw.k1{background:linear-gradient(90deg,#0b3a8f,#1d5fe0)!important;color:#fff!important}\n#t1{top:560px!important;left:110px!important;right:210px!important;font-size:66px!important;line-height:1.06}\n#t1 i{font-size:72px!important}\n#t1 .l2{margin-top:14px}\n" + FRAME_CSS + VIS_CSS + r'''
 .chip{position:absolute;padding:14px 24px;border-radius:14px;font:800 34px 'Inter Tight';white-space:nowrap}
 .chip.g{border:1.5px solid rgba(255,255,255,.45);background:rgba(0,0,0,.5);color:#fff}
 .row{position:absolute;left:155px;width:715px;height:92px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 26px;

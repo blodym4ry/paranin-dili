@@ -33,7 +33,7 @@ def scenes(A):
 AV = {k: (HERO if k in HEROS else PIP) for k in IDS}
 AV['s1'] = None   # VARYASYON: kanca avatarsız (Ata 30 Eki)
 
-EXTRA_CSS = '<style>' + '\n.ttl .l2{background:#f4f1ea!important;color:#0d0c0a!important;border-left:14px solid #d81e1e}\n.ttl .l2 i{color:#b01212}\n#t1{top:520px!important;left:110px!important;right:110px!important;padding:34px 30px 40px;background:rgba(244,241,234,.97);color:#0d0c0a!important;\n  border-top:16px solid #d81e1e;border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.7);text-shadow:none!important;font-size:74px!important}\n#t1 .l2{background:#d81e1e!important;color:#fff!important;border-left:0}\n' + FRAME_CSS + VIS_CSS + r'''
+EXTRA_CSS = '<style>' + '\n.ttl .l2{background:#f4f1ea!important;color:#0d0c0a!important;border-left:14px solid #d81e1e}\n.ttl .l2 i{color:#b01212}\n#t1{top:520px!important;left:120px!important;right:220px!important;padding:30px 24px 36px;background:rgba(244,241,234,.97);color:#0d0c0a!important;\n  border-top:16px solid #d81e1e;border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.7);text-shadow:none!important;font-size:60px!important}\n#t1 i{font-size:66px!important;color:#fff!important}\n#t1 .l2{background:#d81e1e!important;color:#fff!important;border-left:0}\n' + FRAME_CSS + VIS_CSS + r'''
 .chip{position:absolute;padding:14px 24px;border-radius:14px;font:800 34px 'Inter Tight';white-space:nowrap}
 .chip.g{border:1.5px solid rgba(255,255,255,.45);background:rgba(0,0,0,.5);color:#fff}
 .row{position:absolute;left:155px;width:715px;height:92px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 26px;
