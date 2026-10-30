@@ -43,6 +43,8 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 - **Ata 29 Eki 22:06:** "doğalgaz videosunda full screen geliyorum, AI olduğum çok belli oluyor. Full screen gelebilirim ama çok kısa, sonra hemen küçülmem gerek." → Tam ekran avatar YALNIZCA kancanın ilk ≤1,5 sn'sinde (punch-in), ardından ≤0,4 sn'de yarım ekran karta küçülür; videonun geri kalanında ve CTA'da tam ekran YASAK. Doğalgazdaki sürekli sol-yarı tam boy düzen de kullanılmaz.
 - Avatar (kanca açılışı hariç) ASLA tam ekran değil (FULL layout YASAK). Avatar penceresi ekranın en fazla YARISI (yükseklik ≤ 960 px, alan ≤ %50); farklı layoutlar serbest (büyük kart, yan panel, alt yarı, köşe kartı), ama saç + çene dahil TÜM YÜZ her karede görünür.
 - Senaryo = seslendirme partisyonu: vurgulanacak kelimeden önce kısa cümle/nokta; şaşırtıcı bilgide ünlem (!), merak anında üç nokta (…), sorularda soru işareti; uzun cümle yok (tek nefes); rakamlar yazıyla ve telaffuzu kontrol (`pv.py tel`). Seslendirmeden önce senaryo 'vurgu turu'ndan geçer: her cümlede vurgulanan kelime ve tonu (merak / ciddi / heyecan) işaretlenir.
+**Biten her video (ana + varyasyon) Ata'ya SendUserFile ile gönderilir** (Ata 30 Eki 21:07: "her videoyu bana da at, hata var mı bakayım").
+
 **DENEME VARYASYONU v2 — 30 Eki 19:50 (Kasım yeni videolarından itibaren; eski "3 deneme, kazananı seç" kuralının yerine):**
 Ata: "Her video hem Reels hem deneme Reels… asıl olay varyasyon: hook, animasyon tarzı, video tarzı farklı; script aynı."
 - Her video = **ana REEL** (19:45, IG REEL + TikTok + YouTube + Facebook, kapaklı) + **2 deneme** (aynı gün 21:45 v2 ve 23:45 v3; IG TRIAL_REEL, `shareTrialAutomatically:false` — takipçiye zaten ana Reel gidiyor; API bu alanı zaten false yazar).
