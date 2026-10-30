@@ -33,15 +33,16 @@ STYLE_CSS = {
 .cl{font:italic 400 84px/1.1 'DM Serif Display'!important;letter-spacing:0!important}
 .cw{color:#ffe14d!important}
 .cw.k1{background:linear-gradient(90deg,#0b3a8f,#1d5fe0)!important;color:#fff!important}
-#t1{top:560px!important;left:150px!important;right:150px!important;font-size:74px!important;line-height:1.06}
-#t1 i{font-size:80px!important}
+#t1{top:560px!important;left:110px!important;right:210px!important;font-size:66px!important;line-height:1.06}
+#t1 i{font-size:72px!important}
 #t1 .l2{margin-top:14px}
 """,
     'manset': r"""
 .ttl .l2{background:#f4f1ea!important;color:#0d0c0a!important;border-left:14px solid #d81e1e}
 .ttl .l2 i{color:#b01212}
-#t1{top:520px!important;left:110px!important;right:110px!important;padding:34px 30px 40px;background:rgba(244,241,234,.97);color:#0d0c0a!important;
-  border-top:16px solid #d81e1e;border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.7);text-shadow:none!important;font-size:74px!important}
+#t1{top:520px!important;left:120px!important;right:220px!important;padding:30px 24px 36px;background:rgba(244,241,234,.97);color:#0d0c0a!important;
+  border-top:16px solid #d81e1e;border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.7);text-shadow:none!important;font-size:60px!important}
+#t1 i{font-size:66px!important;color:#fff!important}
 #t1 .l2{background:#d81e1e!important;color:#fff!important;border-left:0}
 """,
 }
