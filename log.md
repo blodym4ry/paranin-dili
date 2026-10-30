@@ -48,3 +48,4 @@
 | 2026-10-30 | kredi-notu-sifir | hoodie_glasses | Panel + HEP VARIM + GERÇEK GÖRSEL + kapak B | 86.7s | ~87 avatar | — | 2026-11-26 19:45 REEL+TT+YT+FB | 411605362 (uuid -3446670147132371976) | @uzmanfinance De7B89SINIk geliştirmesi. Bağımsız inceleme düzeltmeleri. Findeks (Ata). |
 | 2026-10-30 | altin-gumus | street_hoodie_seated | Panel + HEP VARIM + GERÇEK GÖRSEL + kapak B | 68.6s | ~69 avatar | — | 2026-11-28 19:45 REEL+TT+YT+FB | 411605428 (uuid 8571854535484719687) | Gümüş makası. |
 | 2026-10-31 | asgari-ucret-2027__v2 | olive (kanca avatarsız) | kinetik varyasyon | 104.8s | 0 | — | 2026-11-12 21:45 IG TRIAL_REEL | 411732140 | Kanca: %30 zam gelse bile… |
+| 2026-10-31 | asgari-ucret-2027__v3 | olive (kanca avatarsız) | manşet varyasyon | 104.8s | 0 | — | 2026-11-12 23:45 IG TRIAL_REEL | 411746261 | Kanca: Asgari ücretli misin?… |
