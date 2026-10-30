@@ -24,3 +24,4 @@ Kural (Ata 24 Eki 16:58): marka ve özel isimlerin Türkiye'de nasıl okunduğu 
 - TÜİK → "Tüik" · ATM → "ateme" (ekranda ATM) (Ata, 30 Eki 14:28)
 - TMSF → "Temesefe" · BTK → "Beteka" · e-Devlet → "e devlet" (Ata, 30 Eki 17:02)
 - TÜRES → "Türes" · KDV → "katma değer vergisi" (açık hali; Ata 30 Eki 17:15)
+- Findeks → "Findeks" (yazıldığı gibi; Ata 30 Eki) · KMH → "kredili mevduat hesabı" (açık hali)
