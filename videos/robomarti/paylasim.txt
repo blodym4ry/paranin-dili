@@ -1,0 +1,23 @@
+Martı sürücüsüz aracını gösterdi. Peki taksi ucuzlar mı, plaka çöker mi? 🚕🤖
+
+Bilet tarafı:
+• İstanbul'da 10 km taksi ≈ 550 TL (açılış 71,94 + km 47,92 TL).
+• San Francisco'da uygulamalar ücretin ortalama ~%40'ını alıyor. Buna rağmen sürücüsüz Waymo yolculuğu ortalama 19,7 $, Uber 17,5 $. Sürücüsüz araç ~%13 daha pahalı.
+• Şoför gitti; yerine araç, sensör, sigorta ve uzaktan izleme maliyeti geldi. Lidar sensörü 2015'te 75.000 $, bugün ~200 $. Yine de bilet ucuzlamadı.
+• Aynı şehirde Tesla (araçta hâlâ güvenlik görevlisi var) ortalama 8,2 $. Fiyatı yalnızca maliyet değil, rekabet belirliyor.
+
+Plaka tarafı:
+• Şubat 2026'da İstanbul'da taksi plakası ~11 milyon TL idi; mali cihaz ve vergi yüküyle sert düştü, martta 10 milyonun altına indi.
+• İBB, sadece uygulamadan müşteri alan yeni plakaları KDV hariç 6 milyon TL'ye sattı.
+• Şubat 2026 kanun taslağına göre (henüz yürürlükte değil) her sürücüsüz araç İçişleri Bakanlığı'ndan izin alacak. Plakanın değerini araba değil, izni kimin dağıttığı belirler.
+
+RoboMartı'nın tarihi, şehri ve fiyatı henüz açıklanmadı. Geldiğinde açılış ve km ücretini taksiyle karşılaştır.
+
+Kaynaklar: Webrazzi & CNBC-e (28 Eki 2026) · Obi araştırması (SingularityHub, Şubat 2026) · NELP (2025) · FleetOwner (2025) · Habertürk (taksimetre, Temmuz 2026) · NTV & TGRT (plaka, Şubat 2026) · Mynet/Türkiye (kanun taslağı, Şubat 2026)
+Yatırım tavsiyesi değildir.
+
+#robotaksi #martı #taksi #ekonomi #paranindili
+---
+İLK YORUM: Sürücüsüz taksiye biner miydin? Fiyatı ne olursa binersin? 👇
+YOUTUBE: Martı Sürücüsüz Araç Gösterdi: Taksi Ucuzlar mı, Plaka Çöker mi? #shorts
+TIKTOK: Sürücüsüz taksi gelince bilet ucuzlar mı? San Francisco'da tersi oldu

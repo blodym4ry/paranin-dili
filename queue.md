@@ -44,5 +44,6 @@ Kanıt = rakip reelin kendi hesap medyanına göre kaç kat izlendiği (outlier)
 - [>] 30 Eki (Ata 30 Eki 03:39): Binance hack (29 Eki) — videos/binance-hack — 30.10 19:45 (kredi kartı ileri)
 - [ ] 31 Eki: Altın ve gümüş yatırımı — ilginç bilgiler (Ata)
 - [ ] 1 Kas: Küresel M2 para arzı ve Bitcoin makası — basit anlatım (Ata; @piovincenzo_ grafiği) — mevduat ileri
+- [ ] Asgari ücret 2027 ters köşe (Ata 30 Eki 13:41): senaryolar %20/25/30 → işveren maliyeti → fiyatlar → alım gücü. videos/asgari-ucret-2027 (script inceleme PASS, Ata onayı bekleniyor; öneri 12 Kas)
 - [ ] 3 Kas: Ocak harç zammı / pasaport tuzağı — videos/harc-ocak-tuzagi (senaryo hazır, 2 inceleme)
 - [ ] Ara günler (Sal/Per/Cmt) 2 Ara'ya kadar doldurulacak (Ata 30 Eki) — kredi kartı ve mevduat buralara
