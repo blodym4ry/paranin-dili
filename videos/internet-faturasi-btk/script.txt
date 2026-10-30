@@ -1,8 +1,8 @@
-Evdeki internet söz verilen hızda gelmiyorsa taahhüdü cezasız bozma hakkın olabilir. Ama operatör bunu sana söylemez.
-Bir. Hızı resmi araçla ölç. Beteka'nın kendi uygulaması var. Adı Beteka Hız Testi. Farklı günlerde ölç ve her sonucun ekran görüntüsünü al.
-İki. Ölçüm Beteka'nın adrese dayalı hız kriterlerini sağlamıyorsa taahhüdü bozabilirsin. Cayma bedeli yok! Sadece modemin kalan bedelini ödersin.
-Üç. Hız sorunu olmasa da cayma bedelinin bir tavanı var. Operatör sana yaptığı indirimin ödenmemiş kısmından fazlasını isteyemez. Kalan ayların toplamından da fazlasını isteyemez. Hangisi düşükse o!
+Evdeki internet söz verilen hızda gelmiyorsa taahhüdü cezasız bozma hakkın olabilir. Ama bunu pek bilen yok.
+Bir. Hızı resmi araçla ölç. Beteka'nın kendi uygulaması var. Adı Beteka Hız Testi. Kabloyla bağlan, farklı gün ve saatlerde ölç ve her sonucun ekran görüntüsünü al.
+İki. Ölçüm, Beteka'nın adrese dayalı kriterlerinin altında kalırsa taahhüdü bozabilirsin. Cayma bedeli yok! Sadece modemin kalan bedelini ödersin.
+Üç. Hız sorunu olmasa da cayma bedelinin bir tavanı var. O güne kadar yaptığı indirimden fazlasını isteyemez. Kalan ayların toplamından da fazlasını isteyemez. Hangisi düşükse o!
 Peki operatör yanaşmazsa? Önce yazılı şikâyet et. Operatör on iş günü içinde çözmek zorunda. Çözmezse e-Devlet'ten tüketici hakem heyetine başvur. Bu yıl sınır, yüz seksen altı bin lira. Ücret yok.
-Bu yaz İzmir'de bir abone sürekli kopan internet için ödediği cayma bedelini bu yolla geri aldı. Tam dört bin iki yüz on bir lira!
-Dürüst olayım. Tarifende en düşük hız taahhüdü yoksa yavaşlık tek başına yetmeyebilir. Bedelden indirim de isteyebilirsin… ama oranı hakem heyeti belirler.
+Bu yaz İzmir'de bir abonenin interneti sürekli koptu. Ödediği cayma bedelini hakem heyetinden geri aldı. Tam dört bin iki yüz on bir lira!
+Dürüst olayım. Ama sadece tarifedeki hızın altında kalmak tek başına yetmeyebilir. Bedelden indirim de isteyebilirsin… ama oranı hakem heyeti belirler.
 Bunu, internet her akşam donunca modemi kapatıp açan arkadaşına gönder.
