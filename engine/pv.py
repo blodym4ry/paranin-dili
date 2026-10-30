@@ -134,7 +134,7 @@ def render(slug, video=True):
              env={'PYTHONPATH': ENG, 'PD_SLUG': slug})
     final = os.path.join(w, f'{slug}.mp4')
     # GitHub 100 MB sınırı: uzun videoda bitrate süreye göre düşer (≤ ~88 MB); kısa videoda 9 Mbps
-    br = min(9.0, 690 / max(dur(os.path.join(w, 'voice.wav')), 1)); mx = min(14.0, br * 1.5)
+    br = min(9.0, 620 / max(dur(os.path.join(w, 'voice.wav')), 1)); mx = min(14.0, br * 1.5)
     sh(['ffmpeg', '-v', 'error', '-y', '-i', 'renders/v.mp4', '-i', 'mix.wav', '-map', '0:v', '-map', '1:a', '-c:v', 'libx264',
         '-b:v', f'{br:.1f}M', '-maxrate', f'{mx:.1f}M', '-bufsize', f'{mx * 1.5:.1f}M', '-profile:v', 'high', '-g', '15', '-bf', '2', '-preset', 'slow',
         '-pix_fmt', 'yuv420p', '-af',
