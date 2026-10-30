@@ -14,3 +14,6 @@ Kural (Ata 24 Eki 16:58): marka ve özel isimlerin Türkiye'de nasıl okunduğu 
 | CHOICE (Avustralya) | Çoys | - |
 | SSK | Se Se Ke | - |
 | reel (faiz) | reyel | RUNBOOK |
+- Binance → "Baynens" (Ata seçti, 30 Eki) · Binance'te → "Baynens'te"
+- Ethereum / Ether → "Eteryum" (Ata: coin adı yerine Ethereum de, 30 Eki)
+- Tether → "Teter" (30 Eki) · Circle → "Sörkıl" · Ripple → "Ripıl" (30 Eki)

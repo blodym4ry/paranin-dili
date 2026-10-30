@@ -1,0 +1,9 @@
+# Binance hack (29 Eki 2026) — kaynaklar (30 Eki 03:00 TSİ itibarıyla; yayından önce yeniden doğrula)
+- Decrypt 29.10 21:36 UTC https://decrypt.co/382191/binance-suspected-hack-5-billion-tether-circle-freeze-crypto — 20:21 UTC EIP-7702 delegasyonu, 20:24 ilk işlem 167.464 ETH + 63 token (1,615 mlr USDT), 3 dk 24 sn; toplam ≥5,57 mlr $ (ETH 3,51 · BTC 1,44 · Tron 0,63); önceki rekor Bybit ~1,5 mlr (Şub 2025)
+- CryptoTicker 29.10 21:38 UTC https://cryptoticker.io/en/binance-hack-hot-wallet-drained/ — 28 Eki Tornado Cash'ten 0,1 ETH; 50 delegasyon; ücret 0,93 $; Ethereum tarafı ~2,8 mlr; 195.470 ETH (~442 mln $) 20:39'da başka adrese; ETH dondurulamaz
+- CoinDesk 29.10 21:12 / 30.10 00:36 UTC https://www.coindesk.com/business/2026/10/29/potential-multi-billion-binance-hack-hitting-crypto-markets — Arkham >5,7 mlr, Chainalysis ~5,9 mlr; çekimler durduruldu; Yi He "tüm kayıpları karşılayacağız"; CZ "kullanıcı fonları güvende"; SAFU ~1 mlr $ BTC; BTC ~78.800, BNB -%6,7
+- Reuters / Investing 29.10 https://www.investing.com/news/stock-market-news/tether-circle-freeze-238-billion-after-binance-reports-security-incident-4985511 — Tether ~1,57 mlr, Circle >800 mln, Ripple ~200 mln (Yi He); Binance.US etkilenmedi
+- FinanceFeeds 30.10 https://financefeeds.com/binance-hack-update-tether-circle-and-ripple-freeze-over-2-5-billion/ — üçünün toplamı >2,56 mlr (çift sayım olabilir); resmi kayıp rakamı yok
+- FinanceFeeds https://financefeeds.com/binance-hack-statement-edited-user-funds-safe/ — Binance açıklaması 2 kez düzenlendi; "hack" kelimesini kullanmadı
+- Cointelegraph 30.10 00:11 UTC https://cointelegraph.com/news/binance-hack-may-involve-private-key-misuse-not-theft-blockaid-ceo — Blockaid: anahtar sızmamış olabilir, imza altyapısı; Kuzey Kore'ye benziyor (kesin değil)
+Çelişkiler: toplam 2,5–5,9 mlr $ arası (BTC/Tron çıkışlarının saldırıya ait olup olmadığı belirsiz) → senaryoda aralık verildi.
