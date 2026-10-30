@@ -21,7 +21,7 @@ document.querySelectorAll('section.scene').forEach(sc=>{const st=document.create
  if(AV[sc.id]&&!(AV[sc.id][1]>1100)) st.style.display='none';});   // HERO sahnesinde sadece başlık + büyük kart; PIP (yuvarlak) sahnede grafikler görünür
 // altyazı konumu: avatarlı sahnede kartın göğüs hizası, grafik sahnesinde grafiklerin altı
 const isPip=v=>!!v&&v[1]>1100;
-SC.forEach(([id,a])=>tl.set('#caps',{top:isPip(AV[id])?1262:(AV[id]?1290:1215),left:isPip(AV[id])?352:60,right:isPip(AV[id])?200:60},Math.max(0,a-.01)));
+SC.forEach(([id,a])=>tl.set('#caps',{top:isPip(AV[id])?1262:(AV[id]?1290:1215),left:isPip(AV[id])?352:60,right:isPip(AV[id])?200:60,scale:isPip(AV[id])?.8:1,transformOrigin:'50% 50%'},Math.max(0,a-.01)));
 // yuvarlak avatar (PIP) için altın halka
 {const P=Object.values(AV).find(isPip);if(P){const r=document.createElement('div');r.id='pipr';
  Object.assign(r.style,{position:'absolute',left:(P[0]-5)+'px',top:(P[1]-5)+'px',width:(P[2]+10)+'px',height:(P[3]+10)+'px',borderRadius:'50%',
