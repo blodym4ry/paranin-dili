@@ -21,8 +21,9 @@ FULLOPEN = 1.2
 t2 = T('Önce') - .1; t3 = T('Ama', t2) - .1; t4 = T('Bir', t3 + 1) - .1; t5 = T('Sürücüsüz', T('Uber', t4)) - .1
 t6 = T('Sürücünün', t5) - .1; t6h = T('Yine', t6) - .1; t7 = T('Aynı', t6h) - .1; t8 = T('Şimdi', t7) - .1
 t9 = T('Mali', t8) - .1; t10 = T('Şubattaki', t9) - .1; t11 = T('Bu', t10 + 3) - .1; t12 = T('Robo', T('belirler', t11)) - .1; t13 = T('Bunu,', t12) - .1
-TS = [0, t2, t3, t4, t5, t6, t6h, t7, t8, t9, t10, t11, t12, t13, DUR]
-IDS = ['s1', 's2', 's3', 's4', 's5', 's6', 's6h', 's7', 's8', 's9', 's10', 's11', 's12', 's13']
+t1b = T('Şimdi') - .1
+TS = [0, t1b, t2, t3, t4, t5, t6, t6h, t7, t8, t9, t10, t11, t12, t13, DUR]
+IDS = ['s1', 's1b', 's2', 's3', 's4', 's5', 's6', 's6h', 's7', 's8', 's9', 's10', 's11', 's12', 's13']
 
 
 def scenes(A):
@@ -47,11 +48,38 @@ EXTRA_CSS = '<style>' + FRAME_CSS + r'''
 .cnt{position:absolute;left:150px;width:730px;text-align:center}
 .vb{position:absolute;bottom:0;border-radius:14px 14px 0 0;transform-origin:50% 100%}
 .gold{color:#e8b931}
+/* Ata 30 Eki 14:35: gerçek görsel + B-roll + animasyon */
+.bgp{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0;pointer-events:none}
+.bgp img{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;transform-origin:50% 45%}
+.bgp .sh{position:absolute;left:0;top:0;width:1080px;height:1920px;background:linear-gradient(180deg,rgba(8,6,8,.72) 0%,rgba(8,6,8,.45) 35%,rgba(8,6,8,.62) 70%,rgba(8,6,8,.92) 100%)}
+.pc{position:absolute;left:155px;width:715px;border-radius:22px;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.35),0 26px 60px rgba(0,0,0,.75);--sx:-120%}
+.pc img{display:block;width:100%;height:100%;object-fit:cover}
+.pc::after{content:'';position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(var(--sx)) skewX(-12deg)}
+.pc .cap{position:absolute;left:18px;bottom:16px;padding:8px 16px;border-radius:10px;background:rgba(0,0,0,.66);font:700 24px 'IBM Plex Mono';color:#fff;letter-spacing:.06em}
 </style>'''
 
 SCENE_HTML = r'''
+  <div class="bgp" id="bg1"><img src="media/taxi_1.jpg" style=""><div class="sh"></div></div>
+  <div class="bgp" id="bg1b"><img src="media/robomarti.png" style="filter:blur(18px) brightness(.8)"><div class="sh"></div></div>
+  <div class="bgp" id="bg2"><img src="media/taxi_3.jpg" style=""><div class="sh"></div></div>
+  <div class="bgp" id="bg3"><img src="media/sf_city.jpg" style=""><div class="sh"></div></div>
+  <div class="bgp" id="bg4"><img src="media/waymo_sf.jpg" style="filter:blur(18px) brightness(.8)"><div class="sh"></div></div>
+  <div class="bgp" id="bg5"><img src="media/waymo_res.jpg" style=""><div class="sh"></div></div>
+  <div class="bgp" id="bg6"><img src="media/waymo_sensor.jpg" style="filter:blur(18px) brightness(.8)"><div class="sh"></div></div>
+  <div class="bgp" id="bg8"><img src="media/taxi_2.jpg" style=""><div class="sh"></div></div>
+  <div class="bgp" id="bg9"><img src="media/taxi_1.jpg" style="filter:blur(18px) brightness(.8)"><div class="sh"></div></div>
+  <div class="bgp" id="bg10"><img src="media/waymo_res.jpg" style="filter:blur(18px) brightness(.8)"><div class="sh"></div></div>
+  <div class="bgp" id="bg11"><img src="media/taxi_3.jpg" style=""><div class="sh"></div></div>
+  <div class="bgp" id="bg12"><img src="media/robomarti.png" style="filter:blur(18px) brightness(.8)"><div class="sh"></div></div>
+  <div class="bgp" id="bg13"><img src="media/taxi_2.jpg" style=""><div class="sh"></div></div>
   <svg style="position:absolute;width:0;height:0">''' + SVG_DEFS + r'''</svg>
   <section id="s1" class="scene clip">''' + title('t1', 'Taksi Plakası', '<i>10 Milyonun</i> Altında') + r'''</section>
+  <section id="s1b" class="scene clip">
+    ''' + title('t1b', 'Martı', '<i>Sürücüsüz</i> Araç') + r'''
+    <div class="pc" id="p1b" style="top:450px;height:402px"><img src="media/robomarti.png"><div class="cap">ROBOMARTI · 28 EKİM 2026</div></div>
+    <div class="chip g" id="c1b1" style="left:155px;top:890px;opacity:0;font-size:30px">KAMERA + LİDAR + RADAR</div>
+    <div class="chip g" id="c1b2" style="left:155px;top:985px;opacity:0;font-size:30px;border-color:#e8b931;color:#e8b931">PLAKA ÇÖKER Mİ? BİLET UCUZLAR MI?</div>
+  </section>
   <section id="s2" class="scene clip">
     ''' + title('t2', 'Önce', '<i>Bilet</i>') + r'''
     <div class="row" id="r21" style="top:460px;opacity:0"><span class="k">AÇILIŞ</span>71,94 TL</div>
@@ -64,9 +92,10 @@ SCENE_HTML = r'''
     ''' + title('t4', 'Uygulama', '<i>%40</i> Alıyor') + r'''
     <div class="hb" id="h41" style="top:470px;width:400px;background:#c9ccd3">SÜRÜCÜYE %60</div>
     <div class="hb" id="h42" style="top:470px;left:556px;width:324px;background:#e8b931;border-radius:0 14px 14px 0">UYGULAMA %40</div>
-    <div class="lab" id="l4" style="position:absolute;left:150px;top:600px;opacity:0">ORTALAMA YOLCULUK · SAN FRANCISCO</div>
-    <div class="hb" id="h43" style="top:660px;width:480px;background:#c9ccd3">UBER</div><div class="hv" id="v43" style="left:650px;top:672px;opacity:0">17,5 $</div>
-    <div class="hb" id="h44" style="top:770px;width:541px;background:#ff3b30;color:#fff">SÜRÜCÜSÜZ</div><div class="hv" id="v44" style="left:711px;top:782px;opacity:0">19,7 $</div>
+    <div class="pc" id="p4" style="top:580px;height:300px"><img src="media/waymo_sf.jpg" style="object-position:50% 60%"><div class="cap">WAYMO · SAN FRANCISCO</div></div>
+    <div class="lab" id="l4" style="position:absolute;left:150px;top:905px;opacity:0">ORTALAMA YOLCULUK</div>
+    <div class="hb" id="h43" style="top:950px;width:480px;background:#c9ccd3">UBER</div><div class="hv" id="v43" style="left:650px;top:962px;opacity:0">17,5 $</div>
+    <div class="hb" id="h44" style="top:1050px;width:541px;background:#ff3b30;color:#fff">SÜRÜCÜSÜZ</div><div class="hv" id="v44" style="left:711px;top:1062px;opacity:0">19,7 $</div>
   </section>
   <section id="s5" class="scene clip">''' + title('t5', 'Sürücüsüz', '<i>%13</i> Daha Pahalı') + r'''</section>
   <section id="s6" class="scene clip">
@@ -75,7 +104,8 @@ SCENE_HTML = r'''
     <div class="chip g" id="c62" style="left:330px;top:460px;opacity:0">SENSÖR</div>
     <div class="chip g" id="c63" style="left:150px;top:560px;opacity:0">SİGORTA</div>
     <div class="chip g" id="c64" style="left:390px;top:560px;opacity:0">UZAKTAN İZLEME</div>
-    <div class="cnt" id="k6" style="top:700px;opacity:0"><div class="lab">LİDAR SENSÖR FİYATI</div><div class="num glowt" style="font-size:110px"><span id="n6">75.000</span> $</div>
+    <div class="pc" id="p6" style="top:650px;height:300px"><img src="media/waymo_sensor.jpg"><div class="cap">ARAÇ ÜSTÜ SENSÖRLER</div></div>
+    <div class="cnt" id="k6" style="top:975px;opacity:0"><div class="lab">LİDAR SENSÖR FİYATI</div><div class="num glowt" style="font-size:96px"><span id="n6">75.000</span> $</div>
       <div class="lab" id="l6" style="margin-top:8px">2015 → <span class="gold">2025</span></div></div>
   </section>
   <section id="s6h" class="scene clip">''' + title('t6h', 'Yine de Bilet', '<i>Ucuzlamadı</i>') + r'''</section>
@@ -113,7 +143,8 @@ SCENE_HTML = r'''
     ''' + title('t12', 'RoboMartı', '<i>Ne Zaman?</i>') + r'''
     <div class="row" id="r121" style="top:460px;opacity:0"><span class="k">TARİH</span><span class="redt">açıklanmadı</span></div>
     <div class="row" id="r122" style="top:572px;opacity:0"><span class="k">ŞEHİR</span><span class="redt">açıklanmadı</span></div>
-    <div class="dc" id="d121" style="top:700px;opacity:0;border-color:rgba(232,185,49,.7)"><div class="q">GELİNCE KARŞILAŞTIR</div><div class="r">Açılış + km ücreti <span class="gold">vs taksi</span></div></div>
+    <div class="pc" id="p12" style="top:690px;height:300px"><img src="media/robomarti.png"></div>
+    <div class="dc" id="d121" style="top:1015px;opacity:0;border-color:rgba(232,185,49,.7)"><div class="q">GELİNCE KARŞILAŞTIR</div><div class="r">Açılış + km ücreti <span class="gold">vs taksi</span></div></div>
   </section>
   <section id="s13" class="scene clip">''' + title('t13', 'Taksiye Para Veren', 'Arkadaşına <i>Gönder</i>') + r'''</section>
 '''
@@ -147,6 +178,31 @@ ttl('#t11',{t11 + .1});
 ttl('#t12',{t12 + .1}); pop('#r121',{T('zaman', t12)}); pop('#r122',{T('şehirde', t12)}); pop('#d121',{T('Geldiğinde', t12)});
 ttl('#t13',{t13 + .1});
 '''
+
+
+# ---- gerçek görsel katmanı (Ata 30 Eki 14:35): sahne arka plan fotoğrafları Ken Burns ile, foto kartlar perde+ışık süpürmesiyle
+BGMAP = {'s1': 'bg1', 's1b': 'bg1b', 's2': 'bg2', 's3': 'bg3', 's4': 'bg4', 's5': 'bg5', 's6': 'bg6', 's8': 'bg8', 's9': 'bg9',
+         's10': 'bg10', 's11': 'bg11', 's12': 'bg12', 's13': 'bg13'}
+_SC = {k: (a, b) for k, a, b in scenes(None)}
+VIS_JS = ''
+for k, (sid, bid) in enumerate(BGMAP.items()):
+    a, b = _SC[sid]
+    dx = (-40, 40)[k % 2]
+    VIS_JS += (f"tl.fromTo('#{bid}',{{opacity:0}},{{opacity:1,duration:.45,ease:'power2.out'}},{max(0, a - .05):.2f});"
+               f"tl.fromTo('#{bid} img',{{scale:1.04,x:0}},{{scale:1.16,x:{dx},duration:{b - a + .4:.2f},ease:'none'}},{max(0, a - .05):.2f});"
+               f"tl.to('#{bid}',{{opacity:0,duration:.35}},{b - .1:.2f});\n")
+def card(cid, t):
+    return (f"tl.fromTo('#{cid}',{{clipPath:'inset(0% 100% 0% 0% round 22px)',y:30,opacity:1}},{{clipPath:'inset(0% 0% 0% 0% round 22px)',y:0,duration:.7,ease:'power3.out'}},{t:.2f});"
+            f"tl.fromTo('#{cid} img',{{scale:1.18}},{{scale:1.02,duration:3.5,ease:'power2.out'}},{t:.2f});"
+            f"tl.fromTo('#{cid}',{{'--sx':'-120%'}},{{'--sx':'260%',duration:.9,ease:'power2.inOut'}},{t + .6:.2f});\n")
+VIS_JS += card('p1b', t1b + .15) + card('p4', T('Buna', t4) - .5) + card('p6', T('Lidar', t6) - .3) + card('p12', t12 + .3)
+VIS_JS += f"ttl('#t1b',{t1b + .05}); pop('#c1b1',{T('gösterdi', t1b)}); pop('#c1b2',{T('Peki', t1b)});\n"
+SCENE_JS += VIS_JS
+
+
+def BROLL(A):
+    # gerçek sürücüsüz araç görüntüsü (Pexels 32000333, Las Vegas) — "yine de ucuzlamadı" + Tesla/Uber/Waymo karşılaştırması altında
+    return [{'id': 'br_lv', 'src': 'robotaksi_lv.mp4', 'a': t6h - .05, 'b': min(t8 - .05, t6h + 11.8), 'ms': 0, 'dim': .55}]
 
 
 def SFX(A):
