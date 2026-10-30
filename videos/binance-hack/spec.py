@@ -51,7 +51,7 @@ EXTRA_CSS = '<style>' + FRAME_CSS + r'''
 
 SCENE_HTML = r'''
   <svg style="position:absolute;width:0;height:0">''' + SVG_DEFS + r'''</svg>
-  <section id="s1" class="scene clip">''' + title('t1', 'Binance\'ten', 'Tek İşlemde <i>2 Milyar $</i>') + r'''</section>
+  <section id="s1" class="scene clip">''' + title('t1', 'Tek İşlemde', '<i>2 Milyar $</i> Çıktı') + r'''</section>
   <section id="s2" class="scene clip">
     ''' + title('t2', 'Tek Bir', '<i>İmza</i>') + r'''
     <div class="lab" id="l2" style="position:absolute;left:0;right:0;top:470px;text-align:center;opacity:0">29 EKİM · 23:20:59 (TSİ)</div>

@@ -41,3 +41,8 @@ Kanıt = rakip reelin kendi hesap medyanına göre kaç kat izlendiği (outlier)
 - [ ] Türkiye Euro'ya geçse maaşın ne olur — kanıt 2.7x (büyük hesap) — REEL
 - [ ] Zenginler parasını ne yapıyor? — REEL
 - [ ] Hikâye: Marlboro'nun stratejisi (deneme) — TRIAL_REEL
+- [>] 30 Eki (Ata 30 Eki 03:39): Binance hack (29 Eki) — videos/binance-hack — 30.10 19:45 (kredi kartı ileri)
+- [ ] 31 Eki: Altın ve gümüş yatırımı — ilginç bilgiler (Ata)
+- [ ] 1 Kas: Küresel M2 para arzı ve Bitcoin makası — basit anlatım (Ata; @piovincenzo_ grafiği) — mevduat ileri
+- [ ] 3 Kas: Ocak harç zammı / pasaport tuzağı — videos/harc-ocak-tuzagi (senaryo hazır, 2 inceleme)
+- [ ] Ara günler (Sal/Per/Cmt) 2 Ara'ya kadar doldurulacak (Ata 30 Eki) — kredi kartı ve mevduat buralara
