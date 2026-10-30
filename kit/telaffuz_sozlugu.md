@@ -21,3 +21,4 @@ Kural (Ata 24 Eki 16:58): marka ve özel isimlerin Türkiye'de nasıl okunduğu 
 - M2 → "em iki" · TradingView → "Treyding Viuv" (Ata, 30 Eki)
 - Waymo → "Veymo" · Lidar → "Lidar" · Uber / Tesla → olduğu gibi (Ata, 30 Eki)
 - Kişi adı telaffuzu belirsizse adı çıkar, unvanı söyle (Yi He → "ortak yöneticisi", Ata 30 Eki)
+- TÜİK → "Tüik" · ATM → "ateme" (ekranda ATM) (Ata, 30 Eki 14:28)

@@ -20,7 +20,7 @@ FULLOPEN = 1.2
 
 t2 = T('Önce') - .1; t3 = T('Ama', t2) - .1; t4 = T('Bir', t3 + 1) - .1; t5 = T('Sürücüsüz', T('Uber', t4)) - .1
 t6 = T('Sürücünün', t5) - .1; t6h = T('Yine', t6) - .1; t7 = T('Aynı', t6h) - .1; t8 = T('Şimdi', t7) - .1
-t9 = T('Mali', t8) - .1; t10 = T('Şubattaki', t9) - .1; t11 = T('Bu', t10 + 3) - .1; t12 = T('Robo', t11) - .1; t13 = T('Bunu,', t12) - .1
+t9 = T('Mali', t8) - .1; t10 = T('Şubattaki', t9) - .1; t11 = T('Bu', t10 + 3) - .1; t12 = T('Robo', T('belirler', t11)) - .1; t13 = T('Bunu,', t12) - .1
 TS = [0, t2, t3, t4, t5, t6, t6h, t7, t8, t9, t10, t11, t12, t13, DUR]
 IDS = ['s1', 's2', 's3', 's4', 's5', 's6', 's6h', 's7', 's8', 's9', 's10', 's11', 's12', 's13']
 
@@ -35,10 +35,10 @@ AV = {k: (HERO if k in HEROS else PIP) for k in IDS}
 EXTRA_CSS = '<style>' + FRAME_CSS + r'''
 .chip{position:absolute;padding:14px 24px;border-radius:14px;font:800 34px 'Inter Tight';white-space:nowrap}
 .chip.g{border:1.5px solid rgba(255,255,255,.45);background:rgba(255,255,255,.04);color:#fff}
-.dc{position:absolute;left:150px;width:730px;box-sizing:border-box;border-radius:18px;padding:18px 26px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.03)}
+.dc{position:absolute;left:155px;width:715px;box-sizing:border-box;border-radius:18px;padding:18px 26px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.03)}
 .dc .q{font:700 28px 'Inter Tight';color:rgba(255,255,255,.7);letter-spacing:.04em}
 .dc .r{font:800 42px 'Inter Tight';margin-top:6px;color:#fff}
-.row{position:absolute;left:150px;width:730px;height:96px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 26px;
+.row{position:absolute;left:155px;width:715px;height:96px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 26px;
   border-radius:16px;border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.03);font:800 38px 'Inter Tight';color:#fff}
 .row span.k{font:600 28px 'IBM Plex Mono';color:rgba(255,255,255,.7);letter-spacing:.06em}
 .hb{position:absolute;left:150px;height:84px;border-radius:0 14px 14px 0;transform-origin:0 50%;display:flex;align-items:center;padding-left:22px;
@@ -62,8 +62,8 @@ SCENE_HTML = r'''
   <section id="s3" class="scene clip">''' + title('t3', 'San Francisco', '<i>Tersi Oldu</i>') + r'''</section>
   <section id="s4" class="scene clip">
     ''' + title('t4', 'Uygulama', '<i>%40</i> Alıyor') + r'''
-    <div class="hb" id="h41" style="top:470px;width:438px;background:#c9ccd3">SÜRÜCÜYE %60</div>
-    <div class="hb" id="h42" style="top:470px;left:588px;width:292px;background:#e8b931;border-radius:0 14px 14px 0">UYGULAMA %40</div>
+    <div class="hb" id="h41" style="top:470px;width:400px;background:#c9ccd3">SÜRÜCÜYE %60</div>
+    <div class="hb" id="h42" style="top:470px;left:556px;width:324px;background:#e8b931;border-radius:0 14px 14px 0">UYGULAMA %40</div>
     <div class="lab" id="l4" style="position:absolute;left:150px;top:600px;opacity:0">ORTALAMA YOLCULUK · SAN FRANCISCO</div>
     <div class="hb" id="h43" style="top:660px;width:480px;background:#c9ccd3">UBER</div><div class="hv" id="v43" style="left:650px;top:672px;opacity:0">17,5 $</div>
     <div class="hb" id="h44" style="top:770px;width:541px;background:#ff3b30;color:#fff">SÜRÜCÜSÜZ</div><div class="hv" id="v44" style="left:711px;top:782px;opacity:0">19,7 $</div>
@@ -98,7 +98,7 @@ SCENE_HTML = r'''
   <section id="s9" class="scene clip">
     ''' + title('t9', 'Plaka', '<i>Neden Düştü?</i>') + r'''
     <div class="row" id="r91" style="top:460px;opacity:0"><span class="k">ŞUBAT 2026</span>~11 milyon TL</div>
-    <div class="dc" id="d91" style="top:575px;opacity:0"><div class="q">SEBEP</div><div class="r">Mali cihaz + <span class="redt">vergi yükü</span></div></div>
+    <div class="dc" id="d91" style="top:575px;opacity:0"><div class="q">SEBEP</div><div class="r" style="font-size:38px">Mali cihaz + <span class="redt">vergi yükü</span></div></div>
     <div class="row" id="r92" style="top:740px;opacity:0;border-color:rgba(255,59,48,.7)"><span class="k">MART 2026</span><span class="redt">&lt; 10 milyon TL</span></div>
     <div class="row" id="r93" style="top:850px;opacity:0;border-color:rgba(232,185,49,.7)"><span class="k">İBB YENİ PLAKA</span><span class="gold">6 milyon TL</span></div>
     <div class="chip g" id="c91" style="left:150px;top:965px;opacity:0;font-size:28px">DEĞERİ: KAÇ PLAKA VERİLDİĞİ</div>

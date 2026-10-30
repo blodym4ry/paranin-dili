@@ -41,3 +41,6 @@
 5. TÜİK %25,1 → "fertler" bazında; "1 aylık birikimi yok" demek YANLIŞ olur (TÜİK sorusu tutar eşiğini haberde vermiyor). Senaryoda "beklenmedik bir masrafı karşılayamıyor" diye kullanıldı.
 6. Türkiye'ye özgü "hanelerin %X'inin 1 aylık birikimi yok" anket verisi bulunamadı.
 7. Pentagon "90 gün": halka yönelik bir tavsiye değil; Fox News iç belge haberi, Pentagon resmî maliyet/takvim yok.
+
+## 3. Çağrı sonrası satışlar (eklendi 30 Eki 14:30, Ata'nın gönderdiği Habertürk reel'i: 'İngiltere'de acil durum alışverişi')
+- Iceland konserve satışı +%40; Maplin el feneri ~4 kat (3 günde), radyo ~2 kat; Ocado'da fasulye, çorba, şişe su tükendi — The National/Reuters 27.10.2026 https://www.thenationalnews.com/news/uk/2026/10/27/beans-water-and-radios-sell-out-after-uks-stockpile-warning/ · CNBC-e 28.10.2026 (Guardian'dan) https://www.cnbce.com/haberler/72-saatlik-acil-durum-malzemeleri-cagrisi-stoklari-tuketti-7-urunde-satislar-patladi-h40504
