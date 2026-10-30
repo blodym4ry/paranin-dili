@@ -1,9 +1,13 @@
 Binance'ten tek işlemle iki milyar dolar çıktı. Hırsızın ödediği ücret ise… sadece bir doların altında!
-Perşembe gecesi, analistlere göre Binance'in sıcak cüzdanından tek bir yetki imzası çıktı ve cüzdanın kontrolünü saldırganın koduna verdi.
-Üç dakika sonra tek işlemle, bir virgül altı milyar dolarlık dijital dolar ve yüz altmış yedi bin Ethereum boşaltıldı.
-Resmi rakam yok ama tahminler iki buçuk ile altı milyar dolar arasında. En düşüğü bile, kripto tarihinin en büyük soygunu.
-Tether, Circle ve Ripple, çalınan dijital dolarlardan iki buçuk milyarı saatler içinde dondurdu! Çünkü o paranın düğmesi şirketlerin elinde. Aynı düğme, senin dijital dolarında da var.
-Ethereum ise dondurulamıyor. Saldırgan parayı hızla Ethereum'a çeviriyor; yarım milyar dolardan fazlası hâlâ onda.
-Binance, fonların güvende olduğunu ve kaybı karşılayacağını söyledi. Ama para çekme şu an kapalı.
-İki ders: "fonunu geri al" mesajlarına tıklama. Uzun vadeli birikimini de, anahtarı sende olan bir cüzdanda tut.
+Perşembe gecesi saat on biri yirmi geçe, analistlere göre Binance'in sıcak cüzdanından tek bir yetki imzası çıktı. Saldırgan elli farklı yetkiyi önceden hazırlamıştı. Biri tuttu ve cüzdanın kontrolü saldırganın koduna geçti. Bir gün önce bu adrese, izleri gizleyen bir karıştırma servisinden küçük bir miktar Ethereum gelmişti.
+Şimdi dakika dakika. Yirmi üç yirmi dört. Tek işlemle bir virgül altı milyar dolarlık dijital dolar ve yüz altmış yedi bin Ethereum gitti. İki dakika sonra, ikinci cüzdandan yirmi sekiz bin Ethereum daha. Yirmi üç otuz dokuz. Yüz doksan beş bin Ethereum başka bir adrese taşındı. Yirmi üç kırk bir. Yedi yüz seksen milyon dolarlık dijital dolar daha çıktı.
+Bir zincir analiz şirketi, saldırganın cüzdanında beş virgül altı milyar dolar gösterdi. İçinde dijital dolar, Ethereum, Bitcoin ve onlarca token var. Ama bazı analistlere göre Tron'daki çıkışlar, Binance'in kendi transferleri. Resmi rakam yok. Tahminler iki buçuk ile altı milyar dolar arasında. En düşüğü bile, kripto tarihinin en büyük soygunu. Önceki rekor, Bybit'in bir buçuk milyarıydı.
+Tether, Circle ve Ripple, çalınan dijital dolarlardan iki buçuk milyarı saatler içinde dondurdu!
+Çünkü o paranın düğmesi şirketlerin elinde. Aynı düğme, senin dijital dolarında da var.
+Ethereum ise dondurulamıyor. Saldırgan, dondurulmayan dijital dolarları hızla Ethereum'a çevirdi. Bir kredi platformundan da yaklaşık yirmi bin Ethereum borç aldı. Platform, bazı piyasalarını dondurdu. Yarım milyar dolardan fazlası hâlâ onda.
+İlk izler, Kuzey Kore'nin Lazarus grubunu işaret ediyor. Ama resmi bir doğrulama yok.
+Binance'in ortak yöneticisi açıkladı: kullanıcı fonları güvende ve tüm kaybı Binance karşılayacak. Para yatırma ve çekme şimdilik kapalı. Soruşturma bitince, tam rapor yayınlanacak.
+Piyasa da sarsıldı. Bitcoin seksen bin doların altına indi. Binance'in kendi coini, yüzde yedi düştü.
+Bundan sonra üç şeye bak. Çekimler ne zaman açılacak? Dondurulan paralar geri dönecek mi? Ve saldırgan, kalan Ethereum'u nereye taşıyacak?
+İki ders. "Fonunu geri al" mesajlarına tıklama. Uzun vadeli birikimini de, anahtarı sende olan bir cüzdanda tut.
 Bunu, kriptosunu borsada tutan arkadaşına gönder. Çünkü borsadaki kripto aslında senin değil… anahtarı kimdeyse, onun.
