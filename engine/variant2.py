@@ -33,8 +33,8 @@ STYLE_CSS = {
 .cl{font:italic 400 84px/1.1 'DM Serif Display'!important;letter-spacing:0!important}
 .cw{color:#ffe14d!important}
 .cw.k1{background:linear-gradient(90deg,#0b3a8f,#1d5fe0)!important;color:#fff!important}
-#t1{top:560px!important;left:100px!important;right:100px!important;font-size:84px!important;line-height:1.04}
-#t1 i{font-size:90px!important}
+#t1{top:560px!important;left:150px!important;right:150px!important;font-size:74px!important;line-height:1.06}
+#t1 i{font-size:80px!important}
 #t1 .l2{margin-top:14px}
 """,
     'manset': r"""
@@ -66,7 +66,9 @@ def make(slug, v, k, hook, l1, l2, style, repl=''):
     # 2) script + hizalama
     rest = [' '.join(x['word'] for x in s) for s in S[k:]]
     open(os.path.join(vd, 'script.txt'), 'w').write(hook.strip() + '\n' + '\n'.join(rest) + '\n')
-    sh([sys.executable, os.path.join(REPO, 'engine', 'align.py'), f'{slug}__{v}'], env={**os.environ, 'PD_WORK': PDW, 'WHISPER_MODEL': os.environ.get('WHISPER_MODEL', '/root/models/whisper-turbo')})
+    wj = os.path.join(w, 'words.json')
+    if not (os.path.exists(wj) and os.path.getmtime(wj) > os.path.getmtime(hk) and os.path.getmtime(wj) > os.path.getmtime(os.path.join(vd, 'script.txt')) - 1e9 and os.environ.get('REALIGN') != '1' and open(os.path.join(vd, 'script.txt')).read().split('\n')[0] == hook.strip()):
+      sh([sys.executable, os.path.join(REPO, 'engine', 'align.py'), f'{slug}__{v}'], env={**os.environ, 'PD_WORK': PDW, 'WHISPER_MODEL': os.environ.get('WHISPER_MODEL', '/root/models/whisper-turbo')})
     # 3) avatar: kanca süresince siyah (sahnede gizli), sonra orijinal avatar c'den
     av0 = os.path.join(w0, 'avatar_cut.mov')
     sh(['ffmpeg', '-v', 'error', '-y', '-f', 'lavfi', '-i', f'color=c=black:s=1080x1920:r=30:d={off}', '-i', av0, '-filter_complex',
@@ -85,6 +87,8 @@ def make(slug, v, k, hook, l1, l2, style, repl=''):
     open(os.path.join(w, 'dur.txt'), 'w').write(f'{total:.3f}')
     # 5) spec
     src = open(os.path.join(vd0, 'spec.py')).read()
+    sft = off - c   # T('kelime', <sabit>) aramalarını kaydır
+    src = re.sub(r"T\(('[^']+'), (\d+(?:\.\d+)?)\)", lambda m: f"T({m.group(1)}, {max(0, float(m.group(2)) + sft):.2f})", src)
     src = re.sub(r"FULLOPEN = [\d.]+", "FULLOPEN = 0", src)
     src = re.sub(r"title\('t1', '(?:[^'\\]|\\.)*', '(?:[^'\\]|\\.)*'\)", lambda m: f"title('t1', {l1!r}, {l2!r})", src, count=1)
     hm = re.search(r"HEROS = \[([^\]]*)\]", src)
