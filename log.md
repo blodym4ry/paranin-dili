@@ -52,3 +52,4 @@
 | 2026-10-31 | banka-ucret-iadesi__v2 | hoodie_glasses (kanca avatarsız) | kinetik varyasyon | 78s | 0 | — | 2026-11-17 21:45 IG TRIAL_REEL | 411756547 | Kanca: Hiç kullanmadığın karttan… |
 | 2026-10-31 | banka-ucret-iadesi__v3 | hoodie_glasses (kanca avatarsız) | manşet varyasyon | 78s | 0 | — | 2026-11-17 23:45 IG TRIAL_REEL | 411766823 | Kanca: Kart aidatını sessizce… |
 | 2026-10-31 | edevlet-bekleyen-para__v2 | street (kanca avatarsız) | kinetik varyasyon | 78.1s | 0 | — | 2026-11-19 21:45 IG TRIAL_REEL | 411777576 | Kanca: e-Devlet'te 3 sorgu… |
+| 2026-10-31 | edevlet-bekleyen-para__v3 | street (kanca avatarsız) | manşet varyasyon | 78s | 0 | — | 2026-11-19 23:45 IG TRIAL_REEL | 411787201 | Kanca: Dedenin borsada unuttuğu hisse… |
