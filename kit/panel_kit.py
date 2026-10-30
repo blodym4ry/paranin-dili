@@ -11,15 +11,23 @@ CARD = [90, 1065, 900, 395, 36, .28]   # ESKİ (kullanma): Ata 16:17 "çenem ve 
 HERO = [184, 470, 688, 946, 40, .10]   # Ata 29 Eki güvenli alan: kart+altın çerçeve x 176–880 (sağ ray x>880), y 462–1424
 # ESKİ HERO [140,490,800,940] sağ kenarı 948'e taşıyordu (beğen/yorum rayı altı)   # Ata 24 Eki 01:32: avatar ≤ ekranın yarısı (yükseklik ≤960), tam ekran YASAK, tüm yüz görünür
 HALF = [100, 240, 780, 700, 30, .10]    # Ata 29 Eki: kenardan kenara değil; x 100–880, y 240–940 (üst çubuk altı)      # üst yarı layout (tam genişlik, y=110–990); başlık altına (y≈1010) alınır. Alt yarı OLMAZ: IG arayüzü y>1450 çeneyi keser
+PIP = [118, 1212, 212, 212, 106, .14]   # Ata 30 Eki 12:23: "ara ara olmalıyım… ufacık da olsa bir yuvarlağın içinde" → grafik sahnelerinde sol altta, altyazının solunda yuvarlak avatar (altın halka). x 118–330, y 1212–1424 (güvenli alan içi)
 STAGE_S = 1
 
 JS = r'''
 // ---- güvenli alan: başlık dışındaki her sahne öğesi .stage içine alınır, y=380'den başlayıp STAGE_S oranında küçülür
 document.querySelectorAll('section.scene').forEach(sc=>{const st=document.createElement('div');st.className='stage';
  [...sc.children].filter(e=>!e.classList.contains('ttl')).forEach(e=>st.appendChild(e));sc.appendChild(st);
- if(AV[sc.id]) st.style.display='none';});   // avatarlı sahnede sadece başlık + büyük kart
+ if(AV[sc.id]&&!(AV[sc.id][1]>1100)) st.style.display='none';});   // HERO sahnesinde sadece başlık + büyük kart; PIP (yuvarlak) sahnede grafikler görünür
 // altyazı konumu: avatarlı sahnede kartın göğüs hizası, grafik sahnesinde grafiklerin altı
-SC.forEach(([id,a])=>tl.set('#caps',{top:AV[id]?1290:1215},Math.max(0,a-.01)));
+const isPip=v=>!!v&&v[1]>1100;
+SC.forEach(([id,a])=>tl.set('#caps',{top:isPip(AV[id])?1262:(AV[id]?1290:1215),left:isPip(AV[id])?352:60,right:isPip(AV[id])?200:60},Math.max(0,a-.01)));
+// yuvarlak avatar (PIP) için altın halka
+{const P=Object.values(AV).find(isPip);if(P){const r=document.createElement('div');r.id='pipr';
+ Object.assign(r.style,{position:'absolute',left:(P[0]-5)+'px',top:(P[1]-5)+'px',width:(P[2]+10)+'px',height:(P[3]+10)+'px',borderRadius:'50%',
+  border:'5px solid #e8b931',boxShadow:'0 0 22px rgba(232,185,49,.5)',boxSizing:'border-box',opacity:0,zIndex:6,pointerEvents:'none'});
+ document.getElementById('avbox').after(r);
+ SC.forEach(([id,a,b])=>{if(isPip(AV[id])){tl.fromTo('#pipr',{opacity:0},{opacity:1,duration:.35},a);tl.set('#pipr',{opacity:0},Math.max(a+.1,b-.05));}});}}
 // ---- PANEL hareket dili
 const ttl=(s,t)=>tl.fromTo(s,{opacity:0,y:-18,filter:'blur(14px)'},{opacity:1,y:0,filter:'blur(0px)',duration:.55,ease:'power3.out'},t);
 const pop=(s,t,o={})=>tl.fromTo(s,{opacity:0,scale:o.s??.86,y:o.y??0},{opacity:1,scale:1,y:0,duration:o.d??.5,ease:'back.out(1.6)'},t);

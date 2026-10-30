@@ -1,5 +1,5 @@
 import os
-from panel_kit import JS, HERO, title, SVG_DEFS
+from panel_kit import JS, HERO, PIP, title, SVG_DEFS
 from spec_util import load, FRAME_CSS
 # M2 ve BITCOIN — basit anlatım (Ata 30 Eki; @piovincenzo_ BTC–küresel M2 grafiği). PANEL + FULLOPEN + gerçek ekran görüntüleri.
 U = load(); T = U.T; W = U.W; DUR = U.DUR
@@ -16,17 +16,18 @@ SOUND_KIT = 'panel'
 EXIT_FADE = False
 FULLOPEN = 1.2
 
-a1, b1 = U.seg(0); a4, b4 = U.seg(1); a8, _ = U.seg(2)
-tTe = T('Teori', 19); tBY = T('Ama', tTe); tKD = T('Kendin', b4); tYa = T('Yani', tKD + 5)
+a1, b1 = U.seg(0); a4, b4 = U.seg(2); a8, _ = U.seg(4)   # 5 parça: 0,[ara],1,[ara],2
+tTe = T('Teori', 19); tAr = T('Bir', tTe) - .1; tBY = T('Ama', tTe); tKD = T('Kendin', b4); tTV = T('Treyding', tKD) - .3; tYa = T('Yani', tKD + 5)
 
 
 def scenes(A):
-    return [('s1', 0, b1), ('s2', b1, tTe - .1), ('s3', tTe - .1, tBY - .1), ('s4', tBY - .1, a4), ('s5', a4, b4),
-            ('s6', b4, tKD - .1), ('s7', tKD - .1, tYa - .1), ('s8', tYa - .1, a8), ('s9', a8, DUR)]
+    return [('s1', 0, b1), ('s2', b1, tTe - .1), ('s3h', tTe - .1, tAr), ('s3', tAr, tBY - .1), ('s4', tBY - .1, a4), ('s5', a4, b4),
+            ('s6', b4, tKD - .1), ('s7h', tKD - .1, tTV), ('s7', tTV, tYa - .1), ('s8', tYa - .1, a8), ('s9', a8, DUR)]
 
 
-AV = {f's{k}': None for k in range(1, 10)}
-AV.update({'s1': HERO, 's5': HERO, 's9': HERO})
+# Ata 30 Eki 12:23 "ara ara olmalıyım": HERO vurgu kartları (≤~13 sn arayla) + grafik sahnelerinde yuvarlak PIP; avatar tüm videoda
+AV = {k: PIP for k in ('s2', 's3', 's4', 's6', 's7', 's8')}
+AV.update({k: HERO for k in ('s1', 's3h', 's5', 's7h', 's9')})
 
 BTC_PATH = ('M165,948 L181,948 L196,926 L212,923 L227,931 L243,918 L258,923 L274,936 L289,932 L305,901 L321,889 L336,871 L352,870 L367,795 '
             'L383,755 L398,798 L414,770 L429,789 L445,782 L461,804 L476,787 L492,759 L507,654 L523,666 L538,630 L554,702 L569,710 L585,663 '
@@ -61,8 +62,9 @@ SCENE_HTML = r'''
     <div class="cnt" id="k2" style="top:860px;opacity:0"><div class="lab">KÜRESEL M2 · BİR HESABA GÖRE</div><div class="num glowt gold" style="font-size:100px"><span id="n2">0</span> TRİLYON $</div></div>
     <div class="shot" id="i2" style="left:190px;top:1040px;width:650px;opacity:0"><img src="media/kobeissi.png"></div>
   </section>
+  <section id="s3h" class="scene clip">''' + title('t3h', 'Teori', '<i>Basit</i>') + r'''</section>
   <section id="s3" class="scene clip">
-    ''' + title('t3', 'Teori', '<i>Basit</i>') + r'''
+    ''' + title('t3', 'Havuzla', '<i>Aynı Yön?</i>') + r'''
     <div class="dc" id="d31" style="top:450px;opacity:0"><div class="q">HAVUZ BÜYÜYÜNCE</div><div class="r">Para → <span class="gold">riskli varlıklara</span></div></div>
     <div class="cnt" id="k3" style="top:640px;opacity:0"><div class="lab">12 AYLIK DÖNEMLERİN</div><div class="num glowt gold" style="font-size:150px">%83</div><div class="lab" style="margin-top:8px">BITCOIN HAVUZLA AYNI YÖNDE</div></div>
   </section>
@@ -82,6 +84,7 @@ SCENE_HTML = r'''
     <div class="chip g" id="c62" style="left:350px;top:1010px;opacity:0">107 GÜN</div>
     <div class="chip g" id="c63" style="left:580px;top:1010px;opacity:0">84 GÜN</div>
   </section>
+  <section id="s7h" class="scene clip">''' + title('t7h', 'Kendin', '<i>Dene</i>') + r'''</section>
   <section id="s7" class="scene clip">
     ''' + title('t7', 'Kendin', '<i>Dene</i>') + r'''
     <div class="qs" id="q1" style="top:450px;opacity:0"><b>1</b>TradingView'da küresel M2 göstergesi</div>
@@ -96,16 +99,16 @@ SCENE_HTML = r'''
   <section id="s9" class="scene clip">''' + title('t9', 'Grafiğe Güvenen', 'Arkadaşına <i>Gönder</i>') + r'''</section>
 '''
 
-SCENE_JS = JS + U.frame_js([(FULLOPEN + .35, b1), (a4, b4), (a8, DUR)]) + f'''
+SCENE_JS = JS + U.frame_js([(FULLOPEN + .35, b1), (tTe + .25, tAr), (a4 + .35, b4), (tKD + .25, tTV), (a8 + .35, DUR)]) + f'''
 tl.set('#t1',{{opacity:1}},0);
 ttl('#t2',{b1 + .1}); pop('#y1',{T('nakit', b1)}); pop('#y2',{T('vadesiz', b1)}); pop('#y3',{T('vadeli', b1)}); pop('#c21',{T('Amerika', b1)});
 pop('#k2',{T('hesaba', b1)}); {{const o={{v:0}};tl.to(o,{{v:103,duration:1.2,ease:'power2.out',onUpdate:()=>{{$('#n2').textContent=Math.round(o.v);}}}},{T('yüz', b1)});}}
 pop('#i2',{T('havuzu', b1)});
-ttl('#t3',{tTe}); pop('#d31',{T('büyüyünce', tTe)}); pop('#k3',{T('yüzde', tTe)}); 
+ttl('#t3h',{tTe}); ttl('#t3',{tAr + .05}); pop('#d31',{tAr + .2}); pop('#k3',{T('yüzde', tTe)}); 
 ttl('#t4',{tBY}); pop('#c3',{tBY + .2}); dr('#p4',{tBY + .4},3.2,'power1.inOut'); pop('#c41',{tBY + 2.6}); pop('#c42',{T('düştü', tBY)});
 ttl('#t5',{a4 + .1});
 ttl('#t6',{b4 + .1}); pop('#i6',{b4 + .2}); pop('#c61',{b4 + .5}); pop('#c62',{T('yüz', b4)}); pop('#c63',{T('seksen', b4)});
-ttl('#t7',{tKD}); pop('#q1',{T('göstergesini', tKD) - .4}); pop('#q2',{T('gecikmeyi', tKD)}); pop('#d71',{T('Çizgiler', tKD)}); pop('#d72',{T('Sadece', tKD)});
+ttl('#t7h',{tKD}); ttl('#t7',{tTV + .05}); pop('#q1',{T('göstergesini', tKD) - .4}); pop('#q2',{T('gecikmeyi', tKD)}); pop('#d71',{T('Çizgiler', tKD)}); pop('#d72',{T('Sadece', tKD)});
 ttl('#t8',{tYa}); pop('#b8',{T('pusula', tYa)});
 ttl('#t9',{a8 + .1});
 '''

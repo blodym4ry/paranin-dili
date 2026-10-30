@@ -17,3 +17,7 @@ Kural (Ata 24 Eki 16:58): marka ve özel isimlerin Türkiye'de nasıl okunduğu 
 - Binance → "Baynens" (Ata seçti, 30 Eki) · Binance'te → "Baynens'te"
 - Ethereum / Ether → "Eteryum" (Ata: coin adı yerine Ethereum de, 30 Eki)
 - Tether → "Teter" (30 Eki) · Circle → "Sörkıl" · Ripple → "Ripıl" (30 Eki)
+- Bybit → "Baybit" · Bitcoin → "Bitkoin" · Tron → "Tron" · Lazarus → "Lazarus" (Ata, 30 Eki)
+- M2 → "em iki" · TradingView → "Treyding Viuv" (Ata, 30 Eki)
+- Waymo → "Veymo" · Lidar → "Lidar" · Uber / Tesla → olduğu gibi (Ata, 30 Eki)
+- Kişi adı telaffuzu belirsizse adı çıkar, unvanı söyle (Yi He → "ortak yöneticisi", Ata 30 Eki)

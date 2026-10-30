@@ -27,6 +27,14 @@ JS = r'''([t, box, tol]) => {
     for (const n of el.childNodes) if (n.nodeType === 3 && n.textContent.trim()) {
       const rg = document.createRange(); rg.selectNodeContents(n); for (const q of rg.getClientRects()) rects.push(q); }
     if (!rects.length) continue;
+    // clip-path: inset(...) olan atada (avatar penceresi) görünür alan kırpılmış kutudur
+    for (let e = el; e && e !== document.body; e = e.parentElement) {
+      const cp = getComputedStyle(e).clipPath; const m = cp && cp.match(/^inset\(([^)]*?)(?: round[^)]*)?\)$/);
+      if (!m) continue; const v = m[1].trim().split(/\s+/).map(parseFloat); const [t, r, b, l] = [v[0], v[1] ?? v[0], v[2] ?? v[0], v[3] ?? v[1] ?? v[0]];
+      const bb = e.getBoundingClientRect(), k = bb.width / (e.offsetWidth || bb.width);
+      const c = {left: bb.left + l * k, right: bb.right - r * k, top: bb.top + t * k, bottom: bb.bottom - b * k};
+      for (const q of rects.splice(0)) rects.push({left: Math.max(q.left, c.left), right: Math.min(q.right, c.right), top: Math.max(q.top, c.top), bottom: Math.min(q.bottom, c.bottom)});
+      break; }
     if (eff(el) < .05) continue;
     const r = {left: Math.min(...rects.map(q => q.left)), right: Math.max(...rects.map(q => q.right)),
                top: Math.min(...rects.map(q => q.top)), bottom: Math.max(...rects.map(q => q.bottom))};
@@ -52,7 +60,7 @@ def run(hf):
     if fullopen > 1.95: print(f'SAFEZONE FAIL: tam ekran açılış {fullopen - .45:.2f} sn (en fazla 1,5)'); return False
     m = re.search(r'SC=(\[\[.*?\]\])', html)
     sc = json.loads(m.group(1)) if m else []
-    times = sorted({round(t, 2) for _, a, b in sc for t in (a + .6, (a + b) / 2, b - .12) if t > fullopen})
+    times = sorted({round(t, 2) for _, a, b in sc for t in (a + .8, (a + b) / 2, b - .12) if t > fullopen})   # a+.8: avatar geçişi 0,7 sn; tween sırasında video kutusu clip-path dışına taşar (görünmez)
     bad = {}
     with sync_playwright() as p:
         b = p.chromium.launch()
