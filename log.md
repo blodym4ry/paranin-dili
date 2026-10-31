@@ -54,3 +54,4 @@
 | 2026-10-31 | edevlet-bekleyen-para__v2 | street (kanca avatarsız) | kinetik varyasyon | 78.1s | 0 | — | 2026-11-19 21:45 IG TRIAL_REEL | 411777576 | Kanca: e-Devlet'te 3 sorgu… |
 | 2026-10-31 | edevlet-bekleyen-para__v3 | street (kanca avatarsız) | manşet varyasyon | 78s | 0 | — | 2026-11-19 23:45 IG TRIAL_REEL | 411787201 | Kanca: Dedenin borsada unuttuğu hisse… |
 | 2026-10-31 | internet-faturasi-btk__v2 | navy (kanca avatarsız) | kinetik varyasyon | 83s | 0 | — | 2026-11-21 21:45 IG TRIAL_REEL | 411799510 | Kanca: İnternetin yavaşsa… |
+| 2026-10-31 | internet-faturasi-btk__v3 | navy (kanca avatarsız) | manşet varyasyon | 83s | 0 | — | 2026-11-21 23:45 IG TRIAL_REEL | 411807787 | Kanca: İzmir'de bir abone… |
