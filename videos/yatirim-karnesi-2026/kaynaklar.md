@@ -27,7 +27,7 @@ TCMB PPK özetleri (haftalık oran):
 - 4 Eyl %44,4 (24 Tem %46,95) — DUY2026-42, 17.09.2026 https://www.tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Duyurular/Basin/2026/DUY2026-42
 - 9 Eki %42,94 · 16 Eki %42,88 — Endeks24 22.10.2026 https://www.endeks24.com/tl-mevduat-faizi-yuzde-4288e-indi-dusus-12-haftaya-uzandi
 - Stopaj: 6 aya kadar vadeli TL mevduat %17,5 (9 Tem 2025 kararı) — NTV 29.07.2025 https://www.ntv.com.tr/ntvpara/bankada-parasi-ve-yatirimi-olanlari-ilgilendiriyor-1-agustosta-degisebilir,vBljduFOlEGyThrIt0_20A ; Ekim 2026'da hâlâ %17,5 — Finans Gündem (link yukarıda)
-- Hesap: aylık ortalama varsayımı Oca 45,0 · Şub 44,2 · Mar 44,5 · Nis 46,5 · May 47,4 · Haz 47,4 · Tem 46,8 · Ağu 45,5 · Eyl 44,0 · Eki 43,0 (Şub, May, Ağu ara değerleri enterpolasyon). 1 Oca–30 Eki, 32 günlük vadelerle yenileme, basit faiz × gün/365 × (1−0,175), bileşik: net **+%35,8** (brüt +%44,8) → "yaklaşık yüzde otuz beş". ±1 puan faiz farkı ≈ ±0,7 puan getiri; ağırlıklı ortalama büyük mevduatları da içerdiğinden küçük tasarruf sahibi daha düşük almış olabilir → "yaklaşık".
+- Hesap: aylık ortalama varsayımı Oca 45,0 · Şub 44,2 · Mar 44,5 · Nis 46,5 · May 47,4 · Haz 47,4 · Tem 46,8 · Ağu 45,5 · Eyl 44,0 · Eki 43,0 (Şub, May, Ağu ara değerleri enterpolasyon). 1 Oca–30 Eki, 32 günlük vadelerle yenileme, basit faiz × gün/365 × (1−0,175), bileşik: net **+%35,8** (brüt +%44,8) → ilk taslak "yüzde otuz beş". **Bağımsız inceleme (31 Eki): bu hesap aylık ortalamayı fazla yüksek aldı; gerçekçi net ≈ +%29, reel ≈ +%4 → script "yaklaşık yüzde yirmi dokuz" ve "Ama fark ince."** ±1 puan faiz farkı ≈ ±0,7 puan getiri; ağırlıklı ortalama büyük mevduatları da içerdiğinden küçük tasarruf sahibi daha düşük almış olabilir → "yaklaşık".
 - "Faizler de ekimde düşmeye başladı": TCMB 22 Ekim 2026'da politika faizini %37 → %36 indirdi — https://tr.tradingeconomics.com/turkey/interest-rate ; mevduat faizi 24 Tem'den beri 12 hafta üst üste düştü (Endeks24 22.10.2026).
 
 ## Reel getiriler (eylül sonu 9 aylık TÜFE %24,32'ye göre; (1+r)/1,2432 − 1) — ekran için
@@ -37,3 +37,6 @@ Mevduat ≈ +%9,3 · Dolar −%6,4 · Euro −%11,2 · Gram altın −%15,4 · B
 - EVDS'ye doğrudan erişilemedi (proxy 403); mevduat oranları PPK özetlerindeki haftalık değerlerden, ara aylar enterpolasyon.
 - Bitcoin TL değeri 30 Eki 19:29 anlık; yayın tarihinde çok farklı olabilir.
 - Yayın 5 Ara: Ekim TÜFE (3 Kas) ve Kasım TÜFE (3 Ara) açıklanmış olacak → çıtayı güncellemek ya da "ekim sonu" kesimini ekranda net yazmak gerekir.
+
+- İnceleme düzeltmesi (31 Eki): "Faizler ekimde düşmeye başladı" yanlıştı. Mevduat faizi temmuzdan beri düşüyor; TCMB 22 Eki'de %37→%36 indirdi.
+- RİSK: Ekim TÜFE 3 Kas. Oca–Eki kümülatif ≳%29 olursa "mevduat geçti" iddiası çöker → 3 Kas sonrası yeniden kontrol, gerekirse yeniden yaz.
