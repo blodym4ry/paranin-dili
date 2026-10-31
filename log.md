@@ -59,3 +59,4 @@
 | 2026-10-31 | siparis-komisyon__v3 | olive (kanca avatarsız) | manşet varyasyon | 69s | 0 | — | 2026-11-24 23:45 IG TRIAL_REEL | 411821461 | Kanca: Mutfağa hiç ulaşmıyor… |
 | 2026-10-31 | kredi-notu-sifir__v2 | hoodie_glasses (kanca avatarsız) | kinetik varyasyon | 87s | 0 | — | 2026-11-26 21:45 IG TRIAL_REEL | 411829948 | Kanca: Hiç borcun yok ama… |
 | 2026-10-31 | kredi-notu-sifir__v3 | hoodie_glasses (kanca avatarsız) | manşet varyasyon | 87s | 0 | — | 2026-11-26 23:45 IG TRIAL_REEL | 411839109 | Kanca: Hiç kredi çekmedin diye… |
+| 2026-10-31 | altin-gumus__v2 | street (kanca avatarsız) | kinetik varyasyon | 65.7s | 0 | — | 2026-11-28 21:45 IG TRIAL_REEL | 411846853 | Kanca: Gümüş aldıysan iki kez… (ilk 2 cümle yerine) |
