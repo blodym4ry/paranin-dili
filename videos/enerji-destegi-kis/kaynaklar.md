@@ -1,0 +1,17 @@
+# Kışın enerji desteği — kaynaklar (31 Eki 2026; yayın 7 Ara 2026; model: @uzmanfinance DfFVT3CoN8D, 29 Eki 2026)
+Model reel "e-Devlet'ten enerji desteği kontrol et" diyordu; bu versiyon elektrik ve doğalgaz desteğini ayırıyor, doğru e-Devlet hizmet adını veriyor, BOTAŞ kademe limitini ekliyor.
+
+- Elektrik Tüketim Desteği (Aile ve Sosyal Hizmetler Bakanlığı SSS, resmi, 31 Eki 2026'da erişildi; sayfada güncelleme tarihi yok): 3294 ve 2022 sayılı kanunlar kapsamında düzenli sosyal yardım / aylık alan haneler; başvuru gerekmez; ayda 1-2 kişi 75, 3 kişi 100, 4 kişi 125, 5+ kişi 150 kWh (cihaza bağlı kronik hasta: hasta başı 150 kWh); abonelik bilgisi e-Devlet ile e-ailem.aile.gov.tr'ye kaydedilir; ödeme e-ailem fatura ödeme, Aile Kartı, Halkbank/TAM ATM. https://aile.gov.tr/sss/sosyal-yardimlar-genel-mudurlugu/elektirik-tuketim-destegi/
+- Düzenli Doğal Gaz Tüketim Desteği (ASHB haberi, 28 Tem 2026): T.C. vatandaşı, e-Devlet'ten başvuru, doğalgaz verilen yerleşim, SYDV hak sahipliği; ekim–mayıs 8 ay, iki ayda bir ödeme; tutar il sıcaklığına göre değişir; bir kez başvuru yeter. Temmuz 2026: 504.638 hak sahibine 158,8 milyon TL. https://aile.gov.tr/haberler/duzenli-dogal-gaz-desteginde-temmuz-doneminde-504-bin-hak-sahibine-odeme/
+- Bakan Göktaş açıklaması (ASHB, 27 Oca 2026): 2025'te aylık 188–438 TL; ödeme dönemleri. https://www.aile.gov.tr/haberler/bakanimiz-mahinur-ozdemir-goktas-tan-dogal-gaz-tuketim-destegi-aciklamasi/
+- e-Devlet hizmet adı "Sosyal Yardım Başvuru Hizmeti" (ikincil): Milli Gazete 27 Eyl 2026 https://www.milligazete.com.tr/dogal-gaz-destegi-2026-kac-tl-iki-aylik-odeme-ne-kadar-gelir-siniri-kac-tl-basvuru-nereden-yapilir ; Biroku 31 Tem 2026 https://www.biroku.com.tr/dar-gelirliye-dogalgaz-ve-elektrik-tuketim-destegi-basvuru-ekrani/
+- Doğalgaz kademeli tarife (4 Nis 2026'dan itibaren, sadece mesken; il bazlı aylık Kademe-1 limiti BOTAŞ listesi): İstanbul Kasım 101,71 / Aralık 198,12 / Ocak 260,54 sm³. Hisse.net 4 Nis 2026 https://www.hisse.net/haber/botas-tan-yeni-liste-tum-illerin-12-aylik-tuketim-limitleri-yayimlandi-72286 ; Ekonomi Gazetesi 4 Nis 2026 (Kademe-1 10,625 TL, Kademe-2 18,00 TL/sm³, gün bazlı hesap) https://www.ekonomigazetesi.com/sektor-haberleri/dogalgazda-kademeli-tarife-uygulamasinin-ayrintilari-76249 ; Paratic 4 Nis 2026 https://paratic.com/dogal-gazda-yeni-donem-il-bazli-kademeli-tarife-basladi/
+- Elektrik 2026 yıllık 4.000 kWh limiti (senaryoda yok, yedek bilgi): Habertürk 18 Oca 2026 https://www.haberturk.com/devlet-destekli-elektrik-faturasinda-yeni-limit-donemi-basladi-kimler-devlet-destegi-almaya-devam-edecek-aylik-yillik-fatura-siniri-kac-tl-3854309
+
+## Bilerek kullanılmayanlar / doğrulanamayanlar
+- Doğalgaz desteği gelir sınırı (kişi başı net asgari ücretin 1/3'ü, 9.358,50 TL): sadece ikincil kaynakta; resmi sayfada yok → senaryoda "gelir şartı" diye genel geçildi.
+- Limit aşılınca tüm ay mı yoksa sadece aşan kısım mı Kademe-2: kaynaklar çelişiyor (Karar 4 Nis, Hisse.net 18 Eyl: tamamı; Hisse.net 4 Nis: aşan kısım) → senaryoda "pahalı kademeye geçiyorsun" denildi.
+- 2026–27 kışı için doğalgaz desteği TL tutarı ve başvuru son tarihi: resmi kaynakta yok (son tarih yok, sürekli başvuru).
+- Nisan listesinin Aralık 2026'da hâlâ geçerli olup olmadığı ve Nisan sonrası fiyat değişikliği: doğrulanamadı → yayından önce BOTAŞ tarifesini kontrol et.
+- Kömür yardımı 2026: bakılmadı / senaryoda yok.
+- Biroku'nun "PTT'den ödeme" bilgisi resmi sayfayla çelişiyor (resmi: e-ailem, Aile Kartı, Halkbank/TAM) → resmi esas alındı.
