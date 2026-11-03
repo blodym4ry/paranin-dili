@@ -45,6 +45,11 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 - Senaryo = seslendirme partisyonu: vurgulanacak kelimeden önce kısa cümle/nokta; şaşırtıcı bilgide ünlem (!), merak anında üç nokta (…), sorularda soru işareti; uzun cümle yok (tek nefes); rakamlar yazıyla ve telaffuzu kontrol (`pv.py tel`). Seslendirmeden önce senaryo 'vurgu turu'ndan geçer: her cümlede vurgulanan kelime ve tonu (merak / ciddi / heyecan) işaretlenir.
 **Biten her video (ana + varyasyon) Ata'ya SendUserFile ile gönderilir** (Ata 30 Eki 21:07: "her videoyu bana da at, hata var mı bakayım").
 
+**HER VİDEO = 1 REELS + EN AZ 1 DENEME REELS — Ata 4 Kas 00:15 ("her reelsi bi reels bi deneme reels olarak paylaşalım"):**
+- 19:45: IG REEL + TikTok + YouTube Shorts + Facebook Reel (tek gönderi, aynı gün, aynı saat).
+- 21:45: IG TRIAL_REEL (varyasyon varsa v2; yoksa aynı video). 23:45: v3 varsa.
+- Deneme Reels'te otomatik paylaşım KAPALI (shareTrialAutomatically:false) — ana Reel zaten takipçilere gidiyor, kopya olmasın.
+
 **DENEME VARYASYONU v2 — 30 Eki 19:50 (Kasım yeni videolarından itibaren; eski "3 deneme, kazananı seç" kuralının yerine):**
 Ata: "Her video hem Reels hem deneme Reels… asıl olay varyasyon: hook, animasyon tarzı, video tarzı farklı; script aynı."
 - Her video = **ana REEL** (19:45, IG REEL + TikTok + YouTube + Facebook, kapaklı) + **2 deneme** (aynı gün 21:45 v2 ve 23:45 v3; IG TRIAL_REEL, `shareTrialAutomatically:false` — takipçiye zaten ana Reel gidiyor; API bu alanı zaten false yazar).
