@@ -45,6 +45,16 @@ Ata'ya sorulacak kimse yok; karar gerekirse en makul yolu seç, `log.md`'ye yaz.
 - Senaryo = seslendirme partisyonu: vurgulanacak kelimeden önce kısa cümle/nokta; şaşırtıcı bilgide ünlem (!), merak anında üç nokta (…), sorularda soru işareti; uzun cümle yok (tek nefes); rakamlar yazıyla ve telaffuzu kontrol (`pv.py tel`). Seslendirmeden önce senaryo 'vurgu turu'ndan geçer: her cümlede vurgulanan kelime ve tonu (merak / ciddi / heyecan) işaretlenir.
 **Biten her video (ana + varyasyon) Ata'ya SendUserFile ile gönderilir** (Ata 30 Eki 21:07: "her videoyu bana da at, hata var mı bakayım").
 
+**İLK 4 SANİYE KURALI — Ata 4 Kas 15:12 ("ilk saniye çok önemli… kusursuz ilk 4 saniye"):**
+Instagram artık "atlama oranı"nı (ilk 3 sn'de geçenler) gösteriyor; 3 sn'de kaybedilen izleyici = düşük erişim. Her videoda:
+1. Kare 0'da HAREKET + DEV YAZI: ilk karede ≤6 kelimelik kanca başlığı ekranda (logo, selam, boş kare, yavaş giriş YOK).
+2. Ses t=0'da: konuşma ilk 0,1 sn'de başlar (LEAD ≤0,06); t=0'da vuruş SFX (boom/whoosh) + müzik yatağı.
+3. En ilginç kareyle aç: rakam/görsel/yüz — ilk çekilen kare değil.
+4. 1,5–2 sn'de desen kırıcı: zoom vuruşu, kesme veya görsel değişim.
+5. 3–4 sn'ye kadar açık döngü: "ama…/asıl mesele…" gibi cevabı sona saklayan cümle; anahtar mesaj ilk 3 sn'de söylenmiş olur.
+6. Konuşan yüz ilk saniyelerde görünür (FULLOPEN ≤1,5 sn) — yüz + doğrudan kameraya hitap kancayı güçlendiriyor.
+Araç: tools/hizli.py --baslik "SATIR1|SATIR2" --stil meme|haber|rakam|sinema (mevcut videoya ilk 4 sn + kurgu stili uygular).
+
 **HER VİDEO = 1 REELS + EN AZ 1 DENEME REELS — Ata 4 Kas 00:15 ("her reelsi bi reels bi deneme reels olarak paylaşalım"):**
 - 19:45: IG REEL + TikTok + YouTube Shorts + Facebook Reel (tek gönderi, aynı gün, aynı saat).
 - 21:45: IG TRIAL_REEL (varyasyon varsa v2; yoksa aynı video). 23:45: v3 varsa.
