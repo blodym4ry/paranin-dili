@@ -178,7 +178,7 @@ def main(src, out, seed=7, baslik=None, stil='meme'):
             if a <= x <= b: return n + (x - a)
         return None
     # 3) emojiler
-    tmp = tempfile.mkdtemp(prefix='hizli_')
+    tmp = tempfile.mkdtemp(prefix='hizli_', dir=os.environ.get('PD_WORK', '/home/claude/pd_work'))
     pops, last, pi = [], -9, 0
     for w, s, e in W:
         k = tl(w); ns = remap(s)
@@ -210,7 +210,7 @@ def main(src, out, seed=7, baslik=None, stil='meme'):
         af += f',afade=t=out:st={max(0, nf / 30 - .01):.3f}:d=0.01' if fout else ''
         sh(['ffmpeg', '-v', 'error', '-y', '-ss', f'{t0:.4f}', '-i', src, '-t', f'{nf / 30:.4f}',
             '-vf', vx, '-af', f'{af},apad', '-frames:v', str(nf),
-            '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', '-c:a', 'pcm_s16le', '-ar', '48000', '-ac', '2', '-shortest', o])
+            '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '17', '-c:a', 'pcm_s16le', '-ar', '48000', '-ac', '2', '-shortest', o])
         segs.append(o)
     for i, (a, b) in enumerate(iv):
         z = (Z[i % len(Z)] if i else 1.0) if ST['zoom'] else 1.0
@@ -272,6 +272,7 @@ def main(src, out, seed=7, baslik=None, stil='meme'):
         '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', '-t', f'{total:.3f}', out])
     meta = {'stil': stil, 'baslik': baslik, 'kaynak': src, 'sure_once': round(D, 2), 'sure_sonra': round(total, 2), 'kesim': n - 1, 'emoji': len(pops), 'whoosh': len(wh)}
     json.dump(meta, open(out + '.json', 'w'), ensure_ascii=False)
+    import shutil; shutil.rmtree(tmp, ignore_errors=True)
     print('HIZLI', json.dumps(meta, ensure_ascii=False))
 
 
