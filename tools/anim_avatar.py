@@ -67,13 +67,29 @@ def main(anim, slug, wtrim, out):
     b = b.filter(ImageFilter.GaussianBlur(12)); d = ImageDraw.Draw(b)
     d.rounded_rectangle([30, 30, 30 + CW + 2 * BW, 30 + CH + 2 * BW], R + BW, fill=(255, 255, 255, 255))
     b.save(os.path.join(tmp, 'frame.png'))
+    g = Image.new('L', (1080, 1240), 255); gd = ImageDraw.Draw(g)
+    for y in range(1150, 1240): gd.line([(0, y), (1079, y)], fill=int(255 * (1240 - y) / 90))
+    g.save(os.path.join(tmp, 'grad.png'))
     inp = ['-i', anim, '-loop', '1', '-i', os.path.join(tmp, 'mask.png'), '-loop', '1', '-i', os.path.join(tmp, 'frame.png')]
     f = [f'[1:v]format=gray,split={len(slots)}' + ''.join(f'[m{k}]' for k in range(len(slots))),
          f'[2:v]format=rgba,split={len(slots)}' + ''.join(f'[fr{k}]' for k in range(len(slots)))]
-    cur = '0:v'
+    # Ata konuşurken animasyon "geri çekilir": üst bölge (altyazı bandı hariç) bulanık + karartılmış zemine geçer (0.25 sn geçiş);
+    # böylece kart, hareket eden bir animasyonun üstüne binmez (Ata 5 Kas 21:29).
+    # bulanık zemin: her slot için animasyonu ayrı girdi olarak aç (split+trim tüm videoyu RAM'de tutuyor → OOM)
+    prev = '0:v'
     for k, (a, bb) in enumerate(slots):
-        fp, lt = src(a + T); dd = bb - a; n = 3 + k
-        inp += ['-ss', f'{max(0, lt):.3f}', '-t', f'{dd:.3f}', '-i', fp]
+        a0, b0 = max(0, a - .25), min(D, bb + .25); dd0 = b0 - a0
+        n = len(inp) // 2 if False else None
+        inp += ['-ss', f'{a0:.3f}', '-t', f'{dd0:.3f}', '-i', anim, '-loop', '1', '-t', f'{dd0:.3f}', '-i', os.path.join(tmp, 'grad.png')]
+        idx = sum(1 for x in inp if x == '-i') - 2
+        f.append(f"[{idx}:v]setpts=PTS-STARTPTS,crop=1080:1240:0:0,boxblur=28:3,eq=brightness=-0.22:saturation=0.75,format=rgba[bz{k}];[{idx + 1}:v]format=gray,setpts=PTS-STARTPTS[gm{k}];[bz{k}][gm{k}]alphamerge,"
+                 f"fade=t=in:st=0:d=0.25:alpha=1,fade=t=out:st={dd0 - .25:.3f}:d=0.25:alpha=1,setpts=PTS-STARTPTS+{a0:.3f}/TB[bl{k}];"
+                 f"[{prev}][bl{k}]overlay=0:0:eof_action=pass[bg{k}]")
+        prev = f'bg{k}'
+    cur = prev
+    for k, (a, bb) in enumerate(slots):
+        fp, lt = src(a + T); dd = bb - a
+        inp += ['-ss', f'{max(0, lt):.3f}', '-t', f'{dd:.3f}', '-i', fp]; n = sum(1 for x in inp if x == '-i') - 1
         fade = f'fade=t=in:st=0:d=0.15:alpha=1,fade=t=out:st={max(0, dd - .15):.3f}:d=0.15:alpha=1'
         f.append(f'[{n}:v]fps=24,crop=1080:1358:0:150,scale={CW}:{CH},format=rgba[c{k}];[m{k}]trim=duration={dd:.3f},setpts=PTS-STARTPTS[mk{k}];[c{k}][mk{k}]alphamerge,{fade},setpts=PTS-STARTPTS+{a:.3f}/TB[av{k}]')
         f.append(f'[fr{k}]trim=duration={dd:.3f},{fade},setpts=PTS-STARTPTS+{a:.3f}/TB[fb{k}]')
