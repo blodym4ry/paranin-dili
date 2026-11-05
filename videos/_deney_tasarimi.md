@@ -19,3 +19,6 @@ meme (sessizlik kesme + zoom + emoji + whoosh) · haber (DİKKAT kartı + beyaz 
 - İlk 4 saniye: 22:45 videolarının atlama oranı vs diğerleri.
 - Konu kümesi: ana Reel'ler arası (kart/borç · haklar · yatırım · tüketici · kripto).
 Uyarı: 30 video eğilim gösterir, kesin kural değil; aynı gün farklı saatler de etkiler.
+
+## Güncelleme 5 Kas — animasyon stilleri (animation-studio)
+13 comicart · 14 flatvector · 17 chalkboard · 21 glowsketch · 24 pixelart · 29 dankoe · 2 Ara ps2 → 22:45 deneme Reels (public/anim/). Aynı seslendirme; Ata girişte (0,9–3,8 sn), ortadaki vurgulu cümlede ve kapanışta HERO kartta; o anlarda animasyon bulanık+karartılmış zemine çekilir (tools/anim_avatar.py). Diğer 22:45'ler hizli.py stilleri (meme/haber/rakam/sinema).
