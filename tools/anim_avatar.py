@@ -14,6 +14,10 @@ INTRO_FROM, INTRO_MAX, MID_MAX = 0.9, 3.8, 5.0
 def dur(p): return float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', p]))
 
 
+def norm(L):
+    return [{'word': w.get('word', w.get('w', '')), 'start': w.get('start', w.get('s')), 'end': w.get('end', w.get('e'))} for w in L]
+
+
 def sentences(W):
     S, cur = [], []
     for w in W:
@@ -26,8 +30,8 @@ def sentences(W):
 
 def main(anim, slug, wtrim, out):
     wd = os.path.join(PDW, slug)
-    Wo = [w for w in json.load(open(os.path.join(wd, 'words.json'))) if not w['word'].startswith('<')]
-    Wt = [w for w in json.load(open(wtrim)) if not w['word'].startswith('<')]
+    Wo = [w for w in norm(json.load(open(os.path.join(wd, 'words.json')))) if not w['word'].startswith('<')]
+    Wt = [w for w in norm(json.load(open(wtrim))) if not w['word'].startswith('<')]
     T = round(Wo[0]['start'] - Wt[0]['start'], 4)          # kırpma kayması (orijinal = anim + T)
     D = dur(anim)
     seg = json.load(open(os.path.join(wd, 'segments.json')))['segments']
