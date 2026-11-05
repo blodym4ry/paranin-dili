@@ -33,7 +33,10 @@ def main(anim, slug, wtrim, out):
     seg = json.load(open(os.path.join(wd, 'segments.json')))['segments']
     S = sentences(Wt)
     slots = []
-    if len(seg) >= 3 and all(os.path.exists(os.path.join(wd, f'seg_{s["i"]:02d}.mp4')) for s in seg):
+    segf = lambda s: os.path.join(wd, f'seg_{s["i"]:02d}.mp4')
+    have = [s for s in seg if os.path.exists(segf(s)) and dur(segf(s)) < (s['b'] - s['a']) + 1.5]
+    if len(seg) >= 3 and seg[0] in have and seg[-1] in have:
+        seg = have   # eksik orta bölüm varsa atla
         src = lambda t: next((os.path.join(wd, f'seg_{s["i"]:02d}.mp4'), t - s['a']) for s in seg if s['a'] - .01 <= t <= s['b'] + .01)
         a0, b0 = seg[0]['a'] - T, seg[0]['b'] - T
         e1 = S[0][-1]['end'] + .15
@@ -79,7 +82,6 @@ def main(anim, slug, wtrim, out):
     prev = '0:v'
     for k, (a, bb) in enumerate(slots):
         a0, b0 = max(0, a - .25), min(D, bb + .25); dd0 = b0 - a0
-        n = len(inp) // 2 if False else None
         inp += ['-ss', f'{a0:.3f}', '-t', f'{dd0:.3f}', '-i', anim, '-loop', '1', '-t', f'{dd0:.3f}', '-i', os.path.join(tmp, 'grad.png')]
         idx = sum(1 for x in inp if x == '-i') - 2
         f.append(f"[{idx}:v]setpts=PTS-STARTPTS,crop=1080:1240:0:0,boxblur=28:3,eq=brightness=-0.22:saturation=0.75,format=rgba[bz{k}];[{idx + 1}:v]format=gray,setpts=PTS-STARTPTS[gm{k}];[bz{k}][gm{k}]alphamerge,"
