@@ -38,7 +38,7 @@ def main(anim, slug, wtrim, out):
     S = sentences(Wt)
     slots = []
     segf = lambda s: os.path.join(wd, f'seg_{s["i"]:02d}.mp4')
-    have = [s for s in seg if os.path.exists(segf(s)) and dur(segf(s)) < (s['b'] - s['a']) + 1.5]
+    have = [s for s in seg if os.path.exists(segf(s)) and (s['b'] - s['a']) - .3 <= dur(segf(s)) < (s['b'] - s['a']) + 4]  # HeyGen sona sessizlik ekleyebiliyor
     if len(seg) >= 3 and seg[0] in have and seg[-1] in have:
         seg = have   # eksik orta bölüm varsa atla
         src = lambda t: next((os.path.join(wd, f'seg_{s["i"]:02d}.mp4'), t - s['a']) for s in seg if s['a'] - .01 <= t <= s['b'] + .01)
@@ -51,6 +51,7 @@ def main(anim, slug, wtrim, out):
     else:
         full = os.path.join(wd, 'avatar_cut.mov')
         if not os.path.exists(full): full = os.path.join(wd, 'seg_00.mp4')
+        assert dur(full) > .8 * D, f'tam avatar kaynağı kısa: {full}'
         src = lambda t: (full, t)
         e1 = next((s[-1]['end'] + .15 for s in S if s[-1]['end'] >= 2.5), INTRO_MAX)
         slots.append((INTRO_FROM, min(e1, INTRO_MAX)))
