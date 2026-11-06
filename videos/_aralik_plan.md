@@ -29,3 +29,7 @@ Ana post yapısı: IG REEL ayrı post + FB/TT/YT tek post, 19:45; AI etiketleri 
 - Bitirme: tools/aralik_bitir.sh <tarih> <slug> <hızlı_stil>; post payload: scratchpad mk_aralik.all4 mantığı (IG REEL + FB/TT/YT + 21:45 v2 [ilk paragraf = v2 kancası] + 22:45 hz).
 - Avatar: split.py cut <slug> <intro,orta,son cümleler> → public/audio/<slug>/seg_XX.wav → create_video_from_avatar (look tablodaki) → pd_work/<slug>/seg_XX.mp4.
 - Animasyon: pd_work/anim/BRIEF.md + animation-studio skill; stil sütunu boş olanlar için: 3 Ara comicart, 4 Ara flatvector, 8 Ara dankoe, 9 Ara ps2, 10 Ara zackdfilms.
+
+## Ata dönünce (~7 Ara)
+- İzleyici tutma eğrileri: IG/TT uygulama ekran görüntüleri (Doğalgaz, Binance, Altın/gümüş vs Sahte indirim, Kredi kartı, Kredi faizi) + YouTube Studio → kopma cümlesi kuralları RUNBOOK'a.
+- Kafa arkası yazı denemesi; 15 Kas yeniden render teklifi.
