@@ -8,14 +8,14 @@ Denemeler (Ata): 21:45 farklı kanca (tools/v2kanca.py, kanca sesi pd_work/arali
 | Tarih | Slug | Stil | Look | Ses | Avatar | Video | Zamanlama |
 |---|---|---|---|---|---|---|---|
 | 1 Ara | 2026-12-01-senin-enflasyonun | chalkboard | olive | ✓ | ✓ | ✓ | ✓ main+v2+hz |
-| 3 Ara | 2026-12-03-kira-formulu | (17 Kas) | navy | ✓ | ✗ kredi | — | — |
-| 4 Ara | 2026-12-04-taksit-siniri | (17 Kas) | hoodie_glasses | ✓ | ✗ kredi | — | — |
+| 3 Ara | 2026-12-03-kira-formulu | anim (render) | — AVATARSIZ (Ata 6 Kas: sadece ses) | ✓ | yok | — | — |
+| 4 Ara | 2026-12-04-taksit-siniri | anim (render) | — AVATARSIZ (Ata 6 Kas: sadece ses) | ✓ | yok | — | — |
 | 5 Ara | yatirim-karnesi-2026 | cgimotion | street | ✓ | ✓ | ✓ | ✓ main+v2+hz |
 | 6 Ara | 2026-12-06-emekli-promosyon | glowsketch | olive | ✓ | ✓ | ✓ public/aralik/2026-12-06*.mp4 | ✓ main+v2+hz (pd_work/aralik/metricool_ids.txt) |
 | 7 Ara | enerji-destegi-kis | pixelart | navy | ✓ | ✓ | ✓ | ✓ main+v2+hz |
-| 8 Ara | 2026-12-08-bes-devlet-katkisi | (17 Kas) | hoodie_glasses | ✓ | ✗ kredi | — | — |
-| 9 Ara | 2026-12-09-faiz-makasi | (17 Kas) | street | ✓ | ✗ kredi | — | — |
-| 10 Ara | 2026-12-10-taksit-psikolojisi | (17 Kas) | olive | ✓ | ✗ kredi | — | — |
+| 8 Ara | 2026-12-08-bes-devlet-katkisi | anim (render) | — AVATARSIZ (Ata 6 Kas: sadece ses) | ✓ | yok | — | — |
+| 9 Ara | 2026-12-09-faiz-makasi | ps2 | street | ✓ | ✓ HeyGen 6 Kas (seg 0,1 + 22,23) | — | — |
+| 10 Ara | 2026-12-10-taksit-psikolojisi | zackdfilms | olive (Ata: avatarlı kalsın) | ✓ | ✗ kredi → 17 Kas | — | — |
 
 Paylaşım metinleri: videos/<slug>/paylasim.txt (UZUN/ILK_YORUM/YT_BASLIK/TT_BASLIK/KISA). Kapaklar: public/covers/<slug>.jpg (commit f42acd6).
 Ana post yapısı: IG REEL ayrı post + FB/TT/YT tek post, 19:45; AI etiketleri false; deneme TRIAL_REEL shareTrialAutomatically=false; v2 metninin ilk paragrafı v2 kancası.
