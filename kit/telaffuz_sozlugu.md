@@ -28,3 +28,4 @@ Kural (Ata 24 Eki 16:58): marka ve özel isimlerin Türkiye'de nasıl okunduğu 
 
 - Euro → TTS "Yuro" (Ata 6 Kas 2026)
 - e-Ailem / e-Devlet → "e ailem" / "e devlet"; kilovatsaat, metreküp düz okunur (Ata 6 Kas 2026)
+- BDDK → "Be De De Ka"; BES → "Bes"; TÜİK → "Tüik" (Ata 6 Kas 2026)
