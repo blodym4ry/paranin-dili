@@ -40,3 +40,8 @@ Mevduat ≈ +%9,3 · Dolar −%6,4 · Euro −%11,2 · Gram altın −%15,4 · B
 
 - İnceleme düzeltmesi (31 Eki): "Faizler ekimde düşmeye başladı" yanlıştı. Mevduat faizi temmuzdan beri düşüyor; TCMB 22 Eki'de %37→%36 indirdi.
 - RİSK: Ekim TÜFE 3 Kas. Oca–Eki kümülatif ≳%29 olursa "mevduat geçti" iddiası çöker → 3 Kas sonrası yeniden kontrol, gerekirse yeniden yaz.
+
+## Güncelleme 6 Kas 2026 — Ekim TÜFE
+- Ekim 2026 TÜFE: aylık %2,58, yıllık %29,77, Aralık 2025'e göre (10 aylık) %27,52 → senaryo "ekim sonuna kadar yüzde yirmi yedi buçuk" — CNBC-e 03.11.2026 https://www.cnbce.com/veriler/tuik-duyurdu-ekim-ayi-enflasyon-verisi-belli-oldu-h40884
+- Artık getiri (31.12–30.10) ve çıta (Oca–Eki) aynı 10 ayı kapsıyor. Mevduat net ≈ %29 > %27,52 → "mevduat geçti, fark ince" iddiası hâlâ geçerli (fark ~1,5 puan).
+- Reel (÷1,2752): mevduat ≈ +%1,2 · dolar −%8,7 · euro −%13,4 · gram altın −%17,5 · bitcoin −%19,4 · BIST −%25,1
