@@ -25,3 +25,6 @@ Kural (Ata 24 Eki 16:58): marka ve özel isimlerin Türkiye'de nasıl okunduğu 
 - TMSF → "Temesefe" · BTK → "Beteka" · e-Devlet → "e devlet" (Ata, 30 Eki 17:02)
 - TÜRES → "Türes" · KDV → "katma değer vergisi" (açık hali; Ata 30 Eki 17:15)
 - Findeks → "Findeks" (yazıldığı gibi; Ata 30 Eki) · KMH → "kredili mevduat hesabı" (açık hali)
+
+- Euro → TTS "Yuro" (Ata 6 Kas 2026)
+- e-Ailem / e-Devlet → "e ailem" / "e devlet"; kilovatsaat, metreküp düz okunur (Ata 6 Kas 2026)
