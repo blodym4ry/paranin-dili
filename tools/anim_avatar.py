@@ -47,7 +47,7 @@ def main(anim, slug, wtrim, out):
         slots.append((max(INTRO_FROM, a0), min(b0, INTRO_MAX)))
         for s in seg[1:-1]:
             slots.append((s['a'] - T + .05, min(s['b'] - T, s['a'] - T + MID_MAX)))
-        slots.append((seg[-1]['a'] - T + .05, D))
+        slots.append((max(seg[-1]['a'] - T + .05, S[-1][0]['start'] - .05), D))   # uzun son bölümde sadece son cümle
     else:
         full = os.path.join(wd, 'avatar_cut.mov')
         if not os.path.exists(full): full = os.path.join(wd, 'seg_00.mp4')
