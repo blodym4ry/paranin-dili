@@ -1,13 +1,13 @@
 #!/bin/bash
 # Aralık ana video bitirme: sfx + Ata HERO + kontrol kareleri + v2 (21:45) + hızlı (22:45) + commit/push. Metricool ayrı.
-# kullanım: tools/aralik_bitir.sh <YYYY-MM-DD> <slug> <hizli_stil>
+# kullanım: [NOAV=1] tools/aralik_bitir.sh <YYYY-MM-DD> <slug> <hizli_stil>
 set -e
 D=$1; S=$2; HS=$3; P=/home/claude/pd_work; A=$P/anim/$D; R=/home/claude/paranin-dili; SP=/tmp/claude-0/-home-claude/e7920022-8332-59f9-b10e-dcbfb990d4a4/scratchpad
 export PD_WORK=$P
 cd $R
 bash tools/anim_sfx.sh $A/final.mp4 $A/sfx.mp4
-python3 tools/anim_avatar.py $A/sfx.mp4 $S $A/words_trim.json $A/out.mp4
-rm -f $A/sfx.mp4
+if [ "$NOAV" = "1" ]; then mv $A/sfx.mp4 $A/out.mp4   # Ata onayı 6 Kas: 3, 4, 8 Ara avatarsız (sadece ses)
+else python3 tools/anim_avatar.py $A/sfx.mp4 $S $A/words_trim.json $A/out.mp4; rm -f $A/sfx.mp4; fi
 i=0; for t in 0.1 1.2 2.5 8 14 20 26 32 38 44 50 56; do ffmpeg -v error -y -ss $t -i $A/out.mp4 -frames:v 1 -vf scale=216:-1 $A/c_$(printf %02d $i).png; i=$((i+1)); done
 ffmpeg -v error -y -i $A/c_%02d.png -vf tile=6x2 -frames:v 1 $SP/cs_$D.png; rm $A/c_*.png
 python3 tools/v2kanca.py $A/final.mp4 $A/out.mp4 $P/aralik/v2/$D.mp3 $A/words_trim.json $P/aralik/v2_$D.mp4 $P/aralik/v2/$D.json
