@@ -1,0 +1,7 @@
+# Konu kapısı — BES devlet katkısı %30→%20 (yazıldı: 6 Kas 2026, yayın: 8 Ara 2026)
+
+1. **Merak kanıtı:** Karar 7 Oca 2026'da Resmî Gazete'de çıktı; ana akımın tamamı haberleştirdi (CNN Türk "18 milyon kişi ne yapmalı?", Bloomberg HT, Medyascope, Capital, Ekonomi Gazetesi). Kitle çok geniş: ~18 milyon katılımcı (10,1 Mn gönüllü BES + 7,8 Mn OKS). "Kalayım mı çıkayım mı" sorusu karardan 3 ay sonra bile sektör yöneticilerine soruluyordu (Habertürk, 1 Nis 2026). **ZAYIF NOKTA:** Rakip hesapta medyanın ≥10 katı izlenen benzer Reels kanıtı BULUNAMADI (Instagram'a giriş yok) ve haber zirvesi Ocak 2026 — RUNBOOK'a göre "bayat" sayılabilir. Savunma: kalıcı/evergreen konu + yıl sonu (Aralık) kararı + Ocak'ta yeni asgari ücretle yıllık katkı limiti değişecek. Ata'nın kararı: geçer / ileri itilir.
+2. **İzleyicinin cebi:** Ayda 1.000 TL ödeyen yılda 1.200 TL daha az katkı alıyor (3.600→2.400). Daha büyüğü: 3 yılı doldurmadan çıkan biriktirdiği devlet katkısının tamamını, 3–6 yıl arası çıkan %85'ini kaybeder. Ör. 5 yıl 10 ayda çıkan %15 alır; 2 ay bekleyen %35 alır (aynı paranın iki katından fazlası).
+3. **Öğrenme anı:** Kalma/çıkma kararını oranın %20'ye inmesi değil, kendi giriş tarihinin bir sonraki hak ediş eşiğine (3/6/10 yıl) kaç ay uzak olduğu belirler — ve bu tarihi e-Devlet'te kendin görebilirsin.
+
+Sonuç: 2 ve 3 güçlü; 1 orta (haber hacmi var, rakip-video kanıtı yok). Senaryo yazıldı, Ata'nın onayına bayrakla sunuldu.

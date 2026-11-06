@@ -1,0 +1,26 @@
+# Kaynaklar — 2026-12-04-taksit-siniri (doğrulama 6 Kasım 2026)
+
+| Senaryodaki iddia | Kaynak | Tarih |
+|---|---|---|
+| "Sıfır telefonu kredi kartına tek taksit bile yapamazsın" / "yasak yine sürüyor": yenilenmiş olmayan cep telefonlarında kredi kartı taksit yasağı sürüyor | AA (Foreks): https://www.foreks.com/haber/detay/6abff5dc24008d7d4373b609/AA/tr/bddk-cep-telefonu-kredileri-ve-kredi-kartlarina-iliskin-duzenleme-yapti-02-10-26/ · CNN Türk: https://www.cnnturk.com/ekonomi/galeri/son-dakika-bddk-duyurdu-40-bin-tl-altindaki-telefonlar-12-aylik-krediyle-alinabilecek-3474240 · Dünya: https://www.dunya.com/gundem/bddkdan-onemli-karar-cep-telefonu-kredileri-ve-kredi-karti-odemelerinde-degisiklige-gidildi-haberi-842388 | 2 Eki 2026 |
+| "BDDK Ekim'de kuralları güncelledi": BDDK Kurulu 1 Ekim 2026, 11581 sayılı karar (telefon kredisi vadesi), 11582 sayılı karar (asgari ödeme) | CNBC-e: https://www.cnbce.com/haberler/bddkdan-cep-telefonu-kredileri-ve-kredi-karti-asgari-odemelerine-yeni-duzenleme-h38616 · CNN Türk (yukarıda) | 1–2 Eki 2026 |
+| "Yenilenmiş telefonda kart on iki taksit veriyor. Tutar sınırı yok." (yenileme merkezi ya da yetkili satıcıdan alınması şartıyla) | AA, CNBC-e, Dünya (yukarıda) · Hesapkurdu tablosu: https://www.hesapkurdu.com/kredi-karti/rehber/kredi-kartinda-hangi-harcamalar-taksitlendirilir | 2 Eki / 26 Eki 2026 |
+| "Kırk bin liraya kadar on iki ay vade. Kırk bini geçerse sadece üç ay." (tüketici kredisi; yeni telefon. Yenilenmiş telefonda eşik 50 bin TL. Önceki eşik 20 bin TL'ydi, o da Aralık 2024'te 12 binden çıkarılmıştı) | AA, Dünya (yukarıda) · Habertürk 5 Ara 2024: https://www.haberturk.com/bddk-dan-telefonlar-icin-kredi-ve-taksit-sayisinda-degisiklik-3744175-teknoloji | 2 Eki 2026 |
+| "Telefon yasağı iki bin on dörtte geldi": Banka Kartları ve Kredi Kartları Hakkında Yönetmelik değişikliği, RG 31.12.2013 / 28868, yürürlük 1.2.2014. Md. 26/7: "telekomünikasyon ve kuyumla ilgili harcamalar", yemek, gıda ve akaryakıtta taksit uygulanamaz | https://www.alomaliye.com/2013/12/31/banka-kartlari-ve-kredi-kartlari-hakkinda-yonetmelikte-degisiklik-yapilmasina-iliskin-yonetmelik-5/amp/ | 31 Ara 2013 |
+| "Telefon dahil, telekomünikasyona kartla taksit kapandı": sıfır cep telefonu telekomünikasyon kapsamında | Hesapkurdu: "telekomünikasyon (sıfır cep telefonu dahil)" (yukarıda) | 26 Eki 2026 |
+| "Gerekçe cari açık ve kart borçlarıydı" | Timeturk 24 Oca 2014 ("cari açık, kötü niyetli kart kullanımı ve kart borçları"): https://www.timeturk.com/tr/2014/01/24/1-subat-taki-yasagin-arkasinda-yatan-gercek.html · Habertürk 14 Ağu 2018 (telefon kredisi kısıtlamasının amacı: çoğu ithal pahalı telefonu frenleyip cari açığı azaltmak): https://www.haberturk.com/cep-telefonuna-taksit-6-aya-indi-2103358-ekonomi | 2014 / 2018 |
+| "Buzdolabı ve mobilyada sınır dokuz ay": elektrikli eşya (buzdolabı, çamaşır/bulaşık makinesi, küçük ev aletleri) 9 ay, mobilya 9 ay. 1 Temmuz 2021'de 12'den 9'a indi | Hesapkurdu (26 Eki 2026) · Habertürk 1 Tem 2021: https://www.haberturk.com/son-dakika-haberi-kredi-kartinda-taksit-sayilari-dusuruldu-3119581-ekonomi · Ticaret Bak. senetli satış listesi (BDDK ile uyumlu, elektrikli eşya 9 / mobilya 9): https://www.alomaliye.com/2026/10/16/senetli-satislarda-taksit-sureleri-aciklandi/ | 2021 / Eki 2026 |
+| "Televizyonda eşik hâlâ beş bin lira. Üstü sadece dört taksit": 5.000 TL altı TV 9 taksit, üstü 4. Eşik 2021'de 3.500 TL'den 5.000 TL'ye çıktı, hâlâ aynı | Habertürk 2021 · Hesapkurdu 2026 · alomaliye 16 Eki 2026 (yukarıda) | 2021 / 2026 |
+| "Kredide teklifteki toplam geri ödeme tutarına bak": Tüketici Kredisi Sözleşmeleri Yönetmeliği md. 6(1): sözleşme öncesi bilgi formunda kredinin toplam tutarı, efektif yıllık faiz oranı, ödenecek toplam tutar ve "toplam geri ödeme tutarına ilişkin karşılaştırmalı bilgi" zorunlu | https://alomaliye.com/2015/05/22/tuketici-kredisi-sozlesmeleri-yonetmeligi/ | RG 22 May 2015 |
+
+## Hesap (vade farkı, ekranda örnek; TEMSİLİ)
+- Vade farkı = (aylık taksit × taksit sayısı) − peşin fiyat. Oran = fark ÷ peşin fiyat.
+- Temsili örnek (ekran için, gerçek fiyat değil): peşin 30.000 TL, 9 × 3.600 TL = 32.400 TL → vade farkı 2.400 TL (%8).
+- "Peşin fiyatına taksit" ise çarpım peşin fiyata eşit çıkar, fark 0.
+
+## Senaryoya ALINMAYANLAR / şüpheli
+- Enuygun Finans sayfası (12 Kas 2025) telefon için "kredi kartıyla 20 bin TL'ye kadar 12 ay" yazıyor. Bu, tüketici kredisi kuralıyla karıştırılmış; AA/Dünya/CNBC-e kartta yasağın sürdüğünü söylüyor. Kullanılmadı.
+- Bilgisayar 12 ay, tablet 6 ay, eğitim/sağlık/vergi 12 ay, yurt içi havayolu/konaklama 18 ay, genel sınır 12 ay (Hesapkurdu). Tek ikincil kaynak olduğu için senaryoya alınmadı (ekranda istenirse genel sınır 12 ay kullanılabilir; Ticaret Bakanlığı listesi de genel 12 ay diyor).
+- Babacan'ın "ayakkabıya 24 ay taksit" sözü tek kaynakta (Timeturk) geçiyor, alınmadı.
+- BDDK karar PDF'lerinin (bddk.org.tr) ve mevzuat.gov.tr md. 26 güncel metninin kendisi açılamadı (fetch izni yok). Kurallar AA ve ana akım haberle doğrulandı.
+- Yayın 4 Aralık: BDDK ya da Ticaret Bakanlığı Kasım'da yeni karar alırsa rakamlar değişebilir. Yayından önce "telefon taksit BDDK" araması yeniden yapılmalı. Ekranda "Kasım 2026 itibarıyla" ibaresi önerilir.

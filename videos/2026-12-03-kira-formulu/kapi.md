@@ -1,0 +1,4 @@
+# Konu kapısı — 2026-12-03-kira-formulu
+1. **Merak kanıtı:** "Kira artış oranı" Türkiye'de her ay TÜİK verisiyle birlikte gündeme gelen kalıcı bir arama: 3 Kasım 2026'da Capital, Paratic, Milliyet Uzmanpara, Vatan, Ekonomist, Milli Gazete, YatırımX, 24 Saat dahil 15+ yayın aynı gün "Kasım kira artış oranı belli oldu" haberi yaptı; "ne zaman açıklanacak" haberleri günler önceden çıkıyor. Zayıf nokta: Google Trends ve rakipte ≥10× video kanıtı bu oturumda çekilmedi (queue.md'deki V8 notu dışında).
+2. **İzleyicinin cebi:** 30.000 TL kirada yasal tavan ile yıllık enflasyon arasındaki fark ayda 438 TL, yılda 5.256 TL. Tavanı aşan talepte aşan kısım geçersiz. Bunu bilmek pazarlıkta doğrudan para demek.
+3. **Öğrenme anı:** Enflasyon düşerken yasal kira tavanı yıllık enflasyonun üstünde kalıyor, çünkü kanun 12 aylık ortalamaya bakıyor (dikiz aynası). Tavan da zorunlu zam değil, üst sınır.

@@ -1,0 +1,5 @@
+# Konu kapısı — 2026-12-09 faiz makası
+1. **Merak kanıtı:** Referans anlatıcı Abdulkadir Genç'in "Faizler neden bu kadar yüksek" videosu 17 Mn izlenme (medyan ~2 Mn → ~8,5x; RUNBOOK §Anlatım referansı). queue.md'de konu "kanıt 146x/842x" notuyla duruyor (842x = "Faiz neden haram?"; 146x'in kaynağı repoda yazılı değil — doğrulanamadı). Güncel gündem: politika faizi Ekim'de %37→%36 indi ama Kasım kart faizi tavanı değişmedi; "kart faizleri neden düşmedi" haberleri 2 Kasım 2026'da çıktı (yenialanya/ekonomim, Alaattin Aktaş). Orta-güçlü.
+2. **İzleyicinin cebi:** Kart borcu 30–180 bin TL olan biri, her 100 TL devreden borç için yılda ~45 TL faiz + ~13,5 TL KKDF/BSMV öder (≈58,5 TL); aynı 100 TL mevduatta net ~35,4 TL getirir. Asgari ödeyip devreden kişi, kalan borca hesap kesim tarihinden itibaren faiz öder. Ekstresindeki "akdi faiz oranı"na bakıp tavanın altında oran veren kartı/bankayı seçebilir.
+3. **Öğrenme anı:** Mevduat ile kart faizi arasındaki ~23 puanlık makasın ~21 puanı bankaya değil devlete (stopaj + KKDF + BSMV) gidiyor; bankanın asıl avantajı faizsiz vadesiz para, asıl derdi batık borç.
+Sonuç: GEÇTİ.

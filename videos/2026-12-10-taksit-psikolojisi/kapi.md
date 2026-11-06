@@ -1,0 +1,5 @@
+# Konu kapısı — 2026-12-10 taksit psikolojisi
+1. **Merak kanıtı (ORTA):** Doğrudan bu konuda rakip outlier'ı bulunamadı (kuyrukta yalnız hook 82 var, kanca puanı kanıt sayılmaz). Kanıt gündem verisi: bireysel kart bakiyesi ~3 trilyon TL'ye dayandı (Mayıs 2026), batık kart alacağı yıl başından %65 artışla ~207 milyar TL (BDDK, 16 Eki 2026); taksit her ay haber gündeminde. Aynı aile (harcama psikolojisi, "telefon taksiti" geçen) "aynı maaş" konusu kuyrukta 575x kanıtla seçilmişti. Ata onayında bu madde zayıf halka olarak işaretli.
+2. **İzleyicinin cebi:** 72 bin liralık bir alışverişi faizli 12 taksitle ödemek, Kasım 2026 tavan oranıyla ~18,7 bin TL (vergilerle ~24,8 bin TL) fazladan ödeme demek; ayrıca kartla/taksitle ödeyen aynı ürüne daha fazla ödemeye razı oluyor (Prelec & Simester 2001).
+3. **Öğrenme anı:** Taksit fiyatı ucuzlatmıyor, beynin fiyatı "acıtan" sinyalini kısıyor; aylık rakam toplamı saklıyor — kararı ödeme ekranındaki "toplam" satırına ve kaç maaş ettiğine bakarak ver.
+Sonuç: GEÇTİ (1. madde orta). 4 Aralık "BDDK taksit sınırları" videosuyla çakışma yok: kural/sınır listesi hiç geçmiyor.
